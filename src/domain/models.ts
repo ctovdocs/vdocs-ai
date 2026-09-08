@@ -33,12 +33,12 @@ export const reportSchema = z.object({
     reference: z.string(),
     flag: z.enum(['high', 'low', 'normal']),
   })),
-  encounter_id: z.uuid().optional(),
-  order_id: z.uuid().optional(),
-  specimen_at: z.iso.datetime().optional(),
-  performed_at: z.iso.datetime().optional(),
-  indication: z.string().optional(),
-  author: z.string().optional(),
+  encounter_id: z.uuid().nullable().optional(),
+  order_id: z.uuid().nullable().optional(),
+  specimen_at: z.iso.datetime({ offset: true }).nullable().optional(),
+  performed_at: z.iso.datetime({ offset: true }).nullable().optional(),
+  indication: z.string().nullable().optional(),
+  author: z.string().nullable().optional(),
 });
 
 export type Patient = z.infer<typeof patientSchema>;
