@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Button, Form, Modal, Typography } from 'antd';
+import { Button, Form, Typography } from 'antd';
+import { ClinicalModal as Modal } from './ClinicalOverlay';
 import { formatDate } from '../lib/format';
 import { VoiceTextArea } from './VoiceField';
 
 export type WardRound = { id: string; recordedAt: string; title: string; body: string };
 
-export function WardRoundsCard({ rounds, onAddRound }: { rounds: WardRound[]; onAddRound: (round: { findings: string; plan: string }) => Promise<void> }) {
+export function WardRoundsCard({ rounds, onAddRound, patientId }: { rounds: WardRound[]; onAddRound: (round: { findings: string; plan: string }) => Promise<void>; patientId?: string }) {
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
   const [saving, setSaving] = useState(false);
@@ -32,7 +33,7 @@ export function WardRoundsCard({ rounds, onAddRound }: { rounds: WardRound[]; on
         <p className="ward-round-body">{round.body}</p>
       </li>)}
     </ul>
-    <Modal title="Add ward round" open={open} onCancel={() => setOpen(false)} onOk={submit} confirmLoading={saving} okText="Add round">
+    <Modal title="Document ward round" patientId={patientId} description="Record your assessment and the next steps for the care team." open={open} onCancel={() => setOpen(false)} onOk={submit} confirmLoading={saving} okText="Save round note">
       <Form form={form} layout="vertical">
         <Form.Item name="findings" label="Findings" rules={[{ required: true, message: 'Findings are required' }]}>
           <VoiceTextArea rows={2} placeholder="What did you observe on this round?" />

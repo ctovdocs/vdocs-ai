@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Alert, Button, Drawer, Form, Input, Select, Space, Table, Tag, Typography } from 'antd';
+import { Alert, Button, Form, Input, Select, Space, Table, Tag, Typography } from 'antd';
+import { ClinicalDrawer as Drawer } from '../components/ClinicalOverlay';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useWorkflow, useWorkflowAction } from '../services/useWorkflow';
 import { WorkflowToolbar } from '../components/WorkflowToolbar';
@@ -24,6 +25,10 @@ function OrderDetail({ order, state, simulator }: { order: PatientHistory['order
     <Space><Tag>{order.status}</Tag><Tag>{order.priority}</Tag><Link to={`/app/patients/${order.patient_id}`}>Open patient</Link></Space>
     <Typography.Paragraph className="section-gap">{order.indication}</Typography.Paragraph>
     <Typography.Paragraph type="secondary">Ordered by {order.requester} · {formatDate(order.placed_at)}</Typography.Paragraph>
+    {(order.specimen || order.modality) && <Typography.Paragraph><strong>{order.kind === 'lab' ? 'Specimen' : 'Modality'}:</strong> {order.specimen ?? order.modality}</Typography.Paragraph>}
+    {order.site && <Typography.Paragraph><strong>Site / collection detail:</strong> {order.site}</Typography.Paragraph>}
+    {order.instructions && <Typography.Paragraph><strong>Instructions:</strong> {order.instructions}</Typography.Paragraph>}
+    {order.batch_id && <Typography.Paragraph type="secondary">Placed together with {state.histories.flatMap(history => history.orders).filter(item => item.batch_id === order.batch_id && item.id !== order.id).map(item => item.title).join(', ') || 'no other investigations'}</Typography.Paragraph>}
     {result && <ReportList reports={[result]} />}
     {result && !state.reviews[result.id] && <Button type="primary" className="section-gap" loading={action.isPending} onClick={() => action.mutate({ type: 'report.review', patient_id: order.patient_id, entity_id: result.id })}>Mark result reviewed</Button>}
     {result && state.reviews[result.id] && <Tag color="green">Reviewed · {state.reviews[result.id].actor}</Tag>}
@@ -94,7 +99,7 @@ export function InvestigationsPage({ kind, reviewOnly = false, simulator = false
       { title: 'Review', render: (_, order) => order.result_id ? state.reviews[order.result_id] ? 'Reviewed' : <Tag color="blue">New result</Tag> : order.status === 'cancelled' ? '—' : 'Awaiting result' },
       { title: 'Action', render: (_, order) => <Button size="small" onClick={() => setParams({ id: order.id })}>Open</Button> },
     ]} />
-    <Drawer open={Boolean(selected)} title={selected ? `${selected.patient.name} · ${selected.title}` : title} size="large" onClose={() => setParams({})}>
+    <Drawer patientId={selected?.patient_id} description="Investigation details · Indication, order status and linked result." open={Boolean(selected)} title={selected?.title ?? title} size="large" onClose={() => setParams({})}>
       {selected && <OrderDetail key={`${selected.id}-${selected.version}`} order={selected} state={state} simulator={simulator} />}
     </Drawer>
   </section>;

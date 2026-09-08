@@ -1,4 +1,4 @@
-import { Button, Form, Select, Space, Tag, Typography } from 'antd';
+import { AutoComplete, Button, Form, Select, Space, Tag, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import type { PatientHistory } from '../domain/longitudinal';
 import type { Report } from '../domain/models';
@@ -26,6 +26,9 @@ export function RequestDetail({ request, reports, simulator = false }: { request
     <Space><Tag>{request.status.replaceAll('_', ' ')}</Tag><Tag color={request.priority === 'urgent' ? 'red' : 'default'}>{request.priority}</Tag><Link to={`/app/patients/${request.patient_id}`}>Open full patient context</Link></Space>
     <Typography.Paragraph className="section-gap">{request.from_department} → {request.to_department}</Typography.Paragraph>
     <Typography.Paragraph>{request.reason}</Typography.Paragraph>
+    {request.request_type && <Typography.Paragraph>Purpose: {request.request_type}</Typography.Paragraph>}
+    {request.requested_by && <Typography.Paragraph type="secondary">Requested by {request.requested_by}</Typography.Paragraph>}
+    {request.contact && <Typography.Paragraph>Callback / ward contact: {request.contact}</Typography.Paragraph>}
     {simulator && <Tag color="gold">Simulated receiving team · {request.owner}</Tag>}
     {patient && <Typography.Paragraph className="section-gap"><strong>Patient context:</strong> {patient.conditions.join(' · ')}. Allergies: {patient.allergies.join(', ') || 'Not documented'}.</Typography.Paragraph>}
     {history && <><Typography.Paragraph>{history.context.presenting_complaint}</Typography.Paragraph>
@@ -33,7 +36,7 @@ export function RequestDetail({ request, reports, simulator = false }: { request
     <Typography.Title level={5}>Attached reports</Typography.Title>
     <ReportList reports={reports.filter(report => request.source_ids.includes(report.id))} />
     <Form form={form} layout="vertical" size="small" className="section-gap" initialValues={{ ...request, response: request.response ?? request.response_draft ?? '' }} disabled={closed}>
-      <Form.Item name="owner" label="Assigned clinician" rules={[{ required: true }]}><Select showSearch options={[...new Set([request.owner, ...Object.values(owners)])].map(value => ({ value }))} /></Form.Item>
+      <Form.Item name="owner" label="Assigned clinician / team" rules={[{ required: true, whitespace: true }]}><AutoComplete placeholder="Assign a named clinician or team" options={[...new Set([request.owner, `${request.to_department} receiving team`, ...Object.values(owners)])].map(value => ({ value }))} /></Form.Item>
       <Form.Item name="priority" label="Priority"><Select options={[{ value: 'routine' }, { value: 'urgent' }]} /></Form.Item>
       <Form.Item name="response" label="Specialist response"><VoiceTextArea rows={4} placeholder="Document findings and the response to the requested question" /></Form.Item>
       {!closed && <Form.Item name="reason" label="Cancellation reason (only if cancelling)"><VoiceTextArea rows={2} /></Form.Item>}

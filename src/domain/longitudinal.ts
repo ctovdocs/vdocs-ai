@@ -22,11 +22,13 @@ export const medicationRecordSchema = z.object({
   recorded_at: z.iso.datetime({ offset: true }), reason: z.string(), author: z.string(), source_system: z.literal('MockHIS'),
 });
 export const orderSchema = z.object({
+  catalog_id: z.string().optional(), batch_id: z.uuid().optional(), specimen: z.string().optional(), modality: z.string().optional(), instructions: z.string().optional(), site: z.string().optional(),
   ...clinicalScope, title: z.string(), kind: z.enum(['lab', 'imaging']), placed_at: z.iso.datetime({ offset: true }),
   status: z.enum(['completed', 'pending', 'processing', 'cancelled']), result_id: z.uuid().nullable(), indication: z.string(), requester: z.string(), source_system: z.enum(['MockLIS', 'MockRIS', 'VDoc']),
   priority: z.enum(['routine', 'urgent']).default('routine'), version: z.number().int().default(0), cancellation_reason: z.string().nullish(),
 });
 export const requestRecordSchema = z.object({
+  requested_by: z.string().optional(), request_type: z.string().optional(), contact: z.string().optional(),
   ...clinicalScope, from_department: z.string(), to_department: z.string(), reason: z.string(),
   status: z.enum(['received', 'accepted', 'in_progress', 'completed', 'cancelled']), priority: z.enum(['urgent', 'routine']),
   requested_at: z.iso.datetime({ offset: true }), accepted_at: z.iso.datetime({ offset: true }).nullable(), completed_at: z.iso.datetime({ offset: true }).nullable(),

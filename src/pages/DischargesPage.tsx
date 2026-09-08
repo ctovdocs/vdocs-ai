@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Alert, Button, Checkbox, Drawer, Form, Input, Modal, Segmented, Select, Space, Table, Tag, Typography } from 'antd';
+import { Alert, App, Button, Checkbox, Form, Input, Segmented, Select, Space, Table, Tag, Typography } from 'antd';
+import { ClinicalDrawer as Drawer, ClinicalModal as Modal } from '../components/ClinicalOverlay';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useWorkflow, useWorkflowAction } from '../services/useWorkflow';
 import { dischargeBlockers } from '../services/workflowEngine';
@@ -12,6 +13,7 @@ import { VoiceTextArea } from '../components/VoiceField';
 import { dischargeViewRecords } from '../services/worklistSelectors';
 
 function DischargeEditor({ record, state }: { record: Discharge; state: WorkflowState }) {
+  const { modal } = App.useApp();
   const action = useWorkflowAction();
   const [form] = Form.useForm();
   const history = state.histories.find(item => item.context.patient_id === record.patient_id)!;
@@ -43,7 +45,7 @@ function DischargeEditor({ record, state }: { record: Discharge; state: Workflow
       <Space wrap className="section-gap">
         <Button loading={action.isPending} onClick={() => save('in_progress')}>Save working draft</Button>
         <Button loading={action.isPending} onClick={() => save('ready')}>Mark ready</Button>
-        {record.status === 'ready' && <Button type="primary" loading={action.isPending} onClick={() => Modal.confirm({ title: 'Complete this discharge?', content: 'This closes the IPD encounter and retains the discharge record in history.', onOk: () => save('discharged') })}>Complete discharge</Button>}
+        {record.status === 'ready' && <Button type="primary" loading={action.isPending} onClick={() => modal.confirm({ className: 'clinical-modal', centered: true, title: `Complete discharge for ${state.patients.find(patient => patient.id === record.patient_id)?.name}?`, content: 'This closes the current IPD encounter and moves the record to discharged history. Confirm that the patient’s clearance and documents have been reviewed.', okText: 'Complete discharge', cancelText: 'Keep in process', onOk: () => save('discharged') })}>Complete discharge</Button>}
         <Button danger loading={action.isPending} onClick={() => save('cancelled')}>Cancel planning</Button>
       </Space>
     </>}
@@ -97,10 +99,10 @@ export function DischargesPage() {
       { title: 'Pending', render: (_, row) => ['discharged', 'cancelled'].includes(row.status) ? '—' : row.blockers.length },
       { title: 'Action', render: (_, row) => <Button size="small" onClick={() => setParams({ id: row.id })}>Open</Button> },
     ]} />
-    <Drawer open={Boolean(selected)} title={selected ? `Discharge · ${state.patients.find(patient => patient.id === selected.patient_id)?.name}` : 'Discharge'} size="large" onClose={() => setParams({})}>
+    <Drawer patientId={selected?.patient_id} description="Review outstanding work, clinical clearance and discharge documentation." open={Boolean(selected)} title="Discharge process" size="large" onClose={() => setParams({})}>
       {selected && <DischargeEditor key={`${selected.id}-${selected.version}`} record={selected} state={state} />}
     </Drawer>
-    <Modal title="Send patient to discharge process" okText="Send to discharge" open={adding} onCancel={() => setAdding(false)} confirmLoading={action.isPending} onOk={async () => {
+    <Modal title="Start discharge process" patientId={patientId} description="Start a working list entry—not a clinical clearance or completed discharge." okText="Send to discharge" open={adding} onCancel={() => setAdding(false)} confirmLoading={action.isPending} onOk={async () => {
       if (!patientId) return;
       try { const id = await action.mutateAsync({ type: 'discharge.create', patient_id: patientId }); setAdding(false); setParams({ id }); } catch { return; }
     }} okButtonProps={{ disabled: !patientId }}>

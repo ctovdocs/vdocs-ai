@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Button, Descriptions, Drawer, Empty, Table, Tag, Typography } from 'antd';
+import { Button, Descriptions, Empty, Table, Tag, Typography } from 'antd';
+import { ClinicalDrawer as Drawer } from './ClinicalOverlay';
 import { ExperimentOutlined, FileImageOutlined, WarningFilled } from '@ant-design/icons';
 import type { Report } from '../domain/models';
 import { formatDate } from '../lib/format';
@@ -25,7 +26,7 @@ export function ReportList({ reports }: { reports: Report[] }) {
         );
       })}
     </div>
-    <Drawer title={selected?.title} open={Boolean(selected)} onClose={() => setSelected(null)} size="large">
+    <Drawer title={selected?.title} patientId={selected?.patient_id} description="Source report · Review the findings and reporting details." open={Boolean(selected)} onClose={() => setSelected(null)} size="large">
       {selected && <>
         <Tag color="gold">Synthetic report</Tag>
         {review ? <Tag color="green">Reviewed · {review.actor}</Tag> : <Button type="primary" loading={action.isPending} onClick={() => action.mutate({ type: 'report.review', patient_id: selected.patient_id, entity_id: selected.id })}>Mark reviewed</Button>}

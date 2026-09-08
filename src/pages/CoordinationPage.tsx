@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Button, Drawer, Select, Table, Tag } from 'antd';
+import { Button, Select, Table, Tag } from 'antd';
+import { ClinicalDrawer as Drawer } from '../components/ClinicalOverlay';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useWorkflow } from '../services/useWorkflow';
 import { WorkflowToolbar } from '../components/WorkflowToolbar';
@@ -47,7 +48,7 @@ export function CoordinationPage({ kind, simulator = false }: { kind?: 'request'
       { title: 'Requested', dataIndex: 'requested_at', render: formatDate, sorter: (first, second) => first.requested_at.localeCompare(second.requested_at) },
       { title: 'Action', render: (_, request) => <Button size="small" onClick={() => setParams({ id: request.id })}>Open</Button> },
     ]} />
-    <Drawer size="large" title={selected ? `${selected.patient.name} · ${selected.kind}` : 'Request'} open={Boolean(selected)} onClose={() => setParams({})}>
+    <Drawer size="large" patientId={selected?.patient_id} description="Track ownership, review clinical context and close the response loop." title={selected ? `${selected.kind === 'referral' ? 'Referral' : 'Request'} · ${selected.to_department}` : 'Request'} open={Boolean(selected)} onClose={() => setParams({})}>
       {selected && <RequestDetail key={`${selected.id}-${selected.version}`} request={selected} reports={state.reports.filter(report => report.patient_id === selected.patient_id)} simulator={simulator} />}
     </Drawer>
   </section>;

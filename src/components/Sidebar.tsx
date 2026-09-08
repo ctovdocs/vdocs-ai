@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import {
   AppstoreOutlined, CalendarOutlined, CheckSquareOutlined, ClockCircleOutlined,
-  ExperimentOutlined, FileDoneOutlined, FileTextOutlined, HomeOutlined,
+  ExperimentOutlined, FileDoneOutlined, FileTextOutlined,
   MedicineBoxOutlined, MenuFoldOutlined, MenuUnfoldOutlined, RetweetOutlined,
   ScanOutlined, SolutionOutlined, TeamOutlined, UnorderedListOutlined,
 } from '@ant-design/icons';
@@ -35,15 +35,6 @@ const clinicalSections: { label: string; items: NavigationItem[] }[] = [
   ] },
 ];
 
-const simulatorItems: NavigationItem[] = [
-  { label: 'Demo launcher', icon: <AppstoreOutlined />, path: '/demo' },
-  { label: 'HIS / EHR', icon: <HomeOutlined />, path: '/demo/his' },
-  { label: 'Laboratory', icon: <ExperimentOutlined />, path: '/demo/lab' },
-  { label: 'Advanced imaging', icon: <ScanOutlined />, path: '/demo/radiology' },
-  { label: 'Pharmacy', icon: <MedicineBoxOutlined />, path: '/demo/pharmacy' },
-  { label: 'Department requests', icon: <RetweetOutlined />, path: '/demo/referrals' },
-];
-
 export function Sidebar() {
   const { pathname } = useLocation();
   const { message } = App.useApp();
@@ -51,7 +42,6 @@ export function Sidebar() {
     try { return localStorage.getItem('vdoc.sidebar.collapsed') === 'true'; }
     catch { return false; }
   });
-  const demo = pathname.startsWith('/demo');
   const selected = pathname.startsWith('/app/patients') ? '/app/patients' : pathname;
   const toMenuItem = (item: NavigationItem) => ({
     key: item.path ?? item.label,
@@ -60,11 +50,8 @@ export function Sidebar() {
     title: item.path ? item.label : `${item.label} · planned`,
     onClick: item.path ? undefined : () => { void message.info({ content: `${item.label} is not connected yet.`, key: 'planned-navigation' }); },
   });
-  const items: MenuProps['items'] = demo ? simulatorItems.map(toMenuItem) : clinicalSections.flatMap<NonNullable<MenuProps['items']>[number]>((section, index) =>
-    collapsed
-      ? [...(index ? [{ type: 'divider' as const, key: `divider-${section.label}` }] : []), ...section.items.map(toMenuItem)]
-      : [{ type: 'group' as const, key: section.label, label: section.label, children: section.items.map(toMenuItem) }],
-  );
+  const items: MenuProps['items'] = clinicalSections.map(section =>
+    ({ type: 'group', key: section.label, label: section.label, children: section.items.map(toMenuItem) }));
   const toggle = () => {
     const next = !collapsed;
     setCollapsed(next);
@@ -82,12 +69,20 @@ export function Sidebar() {
     <Layout.Sider width={184} collapsedWidth={52} collapsed={collapsed} trigger={null}
       collapsible breakpoint="lg" onBreakpoint={broken => { if (broken) setCollapsed(true); }}
       className="sidebar compact-sidebar">
-      <Link className="sidebar-brand" to={demo ? '/demo' : '/app'} aria-label={demo ? 'Workflow Demo home' : 'VDoc dashboard'}>
-        <span className="sidebar-mark">{demo ? <ExperimentOutlined /> : 'v'}</span>
-        {!collapsed && <span className="sidebar-wordmark">{demo ? 'Workflow Demo' : 'VDoc'}</span>}
+      <Link className="sidebar-brand" to="/app" aria-label="VDoc dashboard">
+        <span className="sidebar-mark">v</span>
+        {!collapsed && <span className="sidebar-wordmark">VDoc</span>}
       </Link>
-      <nav className="sidebar-navigation" aria-label={demo ? 'Simulator navigation' : 'Clinical navigation'}>
-        <Menu mode="inline" inlineIndent={12} selectedKeys={[selected]} items={items} />
+      <nav className="sidebar-navigation" aria-label="Clinical navigation">
+        {collapsed ? <div className="sidebar-rail">{clinicalSections.map(section =>
+          <div className="sidebar-rail-group" key={section.label} role="group" aria-label={section.label}>
+            {section.items.map(item => <Tooltip key={item.path ?? item.label} title={item.path ? item.label : `${item.label} · planned`} placement="right">
+              {item.path ? <Link to={item.path} className={`sidebar-rail-item${selected === item.path ? ' is-selected' : ''}`}
+                aria-label={item.label} aria-current={selected === item.path ? 'page' : undefined}>{item.icon}</Link>
+                : <button type="button" className="sidebar-rail-item is-planned" aria-label={`${item.label} · planned`}
+                  onClick={() => { void message.info({ content: `${item.label} is not connected yet.`, key: 'planned-navigation' }); }}>{item.icon}</button>}
+            </Tooltip>)}
+          </div>)}</div> : <Menu mode="inline" inlineIndent={12} selectedKeys={[selected]} items={items} />}
       </nav>
       <div className="sidebar-controls">
         {!collapsed && <span className="sidebar-demo-label">Internal demo</span>}

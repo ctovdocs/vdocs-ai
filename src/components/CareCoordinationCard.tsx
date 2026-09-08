@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Button, Drawer, Tag } from 'antd';
+import { Button, Tag } from 'antd';
+import { ClinicalDrawer as Drawer } from './ClinicalOverlay';
 import type { PatientHistory } from '../domain/longitudinal';
 import type { Report } from '../domain/models';
 import { RequestDetail } from './RequestDetail';
@@ -20,7 +21,7 @@ export function CareCoordinationCard({ requests, workItems, reports }: {
       <div className="coordination-actions"><Button size="small" onClick={() => setOpenId(request.id)}>{request.status === 'completed' && !request.reviewed_at ? 'Review response' : 'Open request'}</Button></div>
     </div>)}</div>
     <ul className="work-items">{workItems.filter(item => item.status === 'pending').map(item => <li key={item.id}><span>{item.title}</span>{item.kind === 'discharge' ? <Link to="/app/discharges">Discharge list</Link> : <Button size="small" loading={action.isPending} onClick={() => action.mutate({ type: 'work.complete', patient_id: item.patient_id, entity_id: item.id })}>Done</Button>}</li>)}</ul>
-    <Drawer title="Care coordination" open={Boolean(open)} onClose={() => setOpenId(null)} size="large">
+    <Drawer title="Care coordination" patientId={open?.patient_id} description="Review the question, assignment and receiving team's response." open={Boolean(open)} onClose={() => setOpenId(null)} size="large">
       {open && <RequestDetail key={`${open.id}-${open.version}`} request={open} reports={reports} />}
     </Drawer>
   </div>;

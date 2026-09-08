@@ -1,4 +1,5 @@
-import { Drawer, Table, Tag, Typography } from 'antd';
+import { Table, Tag, Typography } from 'antd';
+import { ClinicalDrawer as Drawer } from './ClinicalOverlay';
 import { Link } from 'react-router-dom';
 import type { PatientHistory } from '../domain/longitudinal';
 import type { Report } from '../domain/models';
@@ -34,7 +35,7 @@ function resolve(ref: EvidenceRef, history: PatientHistory, reports: Report[]): 
 
 export function EvidenceDrawer({ evidence, history, reports, onClose }: { evidence: EvidenceRef | null; history: PatientHistory; reports: Report[]; onClose: () => void }) {
   const resolved = evidence ? resolve(evidence, history, reports) : null;
-  return <Drawer title={resolved?.title ?? 'Source record'} open={Boolean(evidence)} onClose={onClose} size="default">
+  return <Drawer title={resolved?.title ?? 'Source record'} patientId={history.context.patient_id} description="Supporting evidence · Original chart content, not an AI interpretation." open={Boolean(evidence)} onClose={onClose} size="large">
     {evidence && !resolved && <Typography.Paragraph type="secondary">This source record could not be found — it may have been superseded.</Typography.Paragraph>}
     {resolved && <>
       <Tag color="blue">{resolved.typeLabel}</Tag>

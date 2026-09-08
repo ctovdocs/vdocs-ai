@@ -146,7 +146,7 @@ export function PatientPage() {
           </div>
         </div>}
 
-        {isIPD && <WardRoundsCard rounds={wardRounds} onAddRound={async ({ findings, plan }) => { await action.mutateAsync({ type: 'round.create', patient_id: patientId, findings, plan }); }} />}
+        {isIPD && <WardRoundsCard patientId={patientId} rounds={wardRounds} onAddRound={async ({ findings, plan }) => { await action.mutateAsync({ type: 'round.create', patient_id: patientId, findings, plan }); }} />}
 
         {careTeam.size > 0 && <div className="side-card">
           <h5>Care team</h5>

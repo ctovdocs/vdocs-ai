@@ -7,8 +7,6 @@ import { PatientsPage } from '../pages/PatientsPage';
 import { DashboardPage } from '../pages/DashboardPage';
 import { PatientPage } from '../pages/PatientPage';
 import { SchedulePage } from '../pages/SchedulePage';
-import { PortalPage } from '../pages/PortalPage';
-import { LauncherPage } from '../pages/LauncherPage';
 import { AuthGate } from './AuthGate';
 import { Sidebar } from '../components/Sidebar';
 import { DischargesPage } from '../pages/DischargesPage';
@@ -21,16 +19,13 @@ import { VoiceModeProvider } from '../lib/voiceMode';
 import { WorkflowSync } from './WorkflowSync';
 
 function Shell() {
-  const location = useLocation();
   const queryClient = useQueryClient();
-  const demo = location.pathname.startsWith('/demo');
-  const isAppShell = location.pathname.startsWith('/app');
-  return <Layout className={demo ? 'app-shell simulator' : 'app-shell'}>
+  return <Layout className="app-shell">
     <WorkflowSync />
     <Sidebar />
     <Layout>
-      <Layout.Header className="topbar"><Typography.Text>{demo ? 'Hospital system simulators' : 'Fortis / Internal Medicine'}</Typography.Text><Space>{isAppShell && <VoiceModeToggle />}<Tag color={env.mode === 'mock' ? 'gold' : 'green'}>{env.mode === 'mock' ? 'Local preview' : 'Supabase'}</Tag><Link to={demo ? '/app' : '/demo'}>{demo ? 'VDoc workspace' : 'Demo launcher'} ↗</Link>{supabase && <Button size="small" onClick={async () => { const { error } = await supabase!.auth.signOut(); if (!error) queryClient.clear(); }}>Sign out</Button>}</Space></Layout.Header>
-      <Layout.Content className={isAppShell ? 'page-content page-content--tight' : 'page-content'}><Outlet /></Layout.Content>
+      <Layout.Header className="topbar"><Typography.Text>Fortis / Internal Medicine</Typography.Text><Space><VoiceModeToggle /><Tag color={env.mode === 'mock' ? 'gold' : 'green'}>{env.mode === 'mock' ? 'Local preview' : 'Supabase'}</Tag>{supabase && <Button size="small" onClick={async () => { const { error } = await supabase!.auth.signOut(); if (!error) queryClient.clear(); }}>Sign out</Button>}</Space></Layout.Header>
+      <Layout.Content className="page-content page-content--tight"><Outlet /></Layout.Content>
     </Layout>
   </Layout>;
 }
@@ -52,11 +47,6 @@ export function App() {
       <Route path="/app/imaging-orders" element={<InvestigationsPage key="imaging" kind="imaging" />} />
       <Route path="/app/results" element={<InvestigationsPage key="results" reviewOnly />} />
       <Route path="/app/handovers" element={<HandoversPage />} />
-      <Route path="/demo" element={<LauncherPage />} />
-      <Route path="/demo/lab/orders" element={<InvestigationsPage key="source-lab" kind="lab" simulator />} />
-      <Route path="/demo/radiology/orders" element={<InvestigationsPage key="source-imaging" kind="imaging" simulator />} />
-      <Route path="/demo/referrals" element={<CoordinationPage key="source-requests" simulator />} />
-      <Route path="/demo/:portal" element={<PortalPage key={location.pathname} />} />
       <Route path="/" element={<Navigate to="/app" replace />} />
       <Route path="*" element={<div><Typography.Title level={2}>Page not found</Typography.Title><Link to="/app">Return to VDoc</Link></div>} />
     </Route>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Alert, Button, Drawer, Form, Input, Modal, Select, Space, Table, Tag } from 'antd';
+import { Alert, App, Button, Form, Input, Select, Space, Table, Tag } from 'antd';
+import { ClinicalDrawer as Drawer, ClinicalModal as Modal } from '../components/ClinicalOverlay';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useWorkflow, useWorkflowAction } from '../services/useWorkflow';
 import { WorkflowToolbar } from '../components/WorkflowToolbar';
@@ -13,6 +14,7 @@ import { VoiceInput, VoiceTextArea } from '../components/VoiceField';
 const sectionLabels = { situation: 'Current situation', background: 'Important history', recent_events: 'Recent events', completed_actions: 'Completed actions', pending_items: 'Pending items', next_actions: 'Next actions' };
 
 function HandoverEditor({ record, state }: { record: Handover; state: WorkflowState }) {
+  const { modal } = App.useApp();
   const [form] = Form.useForm();
   const action = useWorkflowAction();
   const readOnly = record.status !== 'draft';
@@ -31,11 +33,11 @@ function HandoverEditor({ record, state }: { record: Handover; state: WorkflowSt
         try { const values = await form.validateFields(); await action.mutateAsync({ type: 'handover.save', patient_id: record.patient_id, entity_id: record.id, expected_version: record.version, ...values, shift_at: new Date(values.shift_at).toISOString() }); } catch { return; }
       }}>Save draft</Button>
       <Button type="primary" loading={action.isPending} onClick={() => {
-        if (form.isFieldsTouched()) { Modal.info({ title: 'Save your edits first', content: 'Approval applies to the saved version, so incoming staff receive exactly the reviewed content.' }); return; }
+        if (form.isFieldsTouched()) { modal.info({ className: 'clinical-modal', centered: true, title: 'Save your edits first', content: 'Approval applies to the saved version, so incoming staff receive exactly the reviewed content.', okText: 'Return to draft' }); return; }
         action.mutate({ type: 'handover.approve', patient_id: record.patient_id, entity_id: record.id, expected_version: record.version });
       }}>Approve handover</Button>
     </Space>}
-    {record.status === 'approved' && <Button type="primary" loading={action.isPending} onClick={() => Modal.confirm({ title: `Acknowledge as ${record.to_doctor}?`, content: 'This is a simulated incoming-doctor action recorded in the demo audit history.', onOk: () => action.mutateAsync({ type: 'handover.receive', patient_id: record.patient_id, entity_id: record.id, expected_version: record.version, actor: record.to_doctor }) })}>Incoming doctor: acknowledge receipt</Button>}
+    {record.status === 'approved' && <Button type="primary" loading={action.isPending} onClick={() => modal.confirm({ className: 'clinical-modal', centered: true, title: `Acknowledge as ${record.to_doctor}?`, content: `Confirm receipt of the ${record.shift.toLowerCase()} shift handover for ${state.patients.find(patient => patient.id === record.patient_id)?.name}. This simulated incoming-doctor action is recorded in the audit history.`, okText: 'Acknowledge receipt', cancelText: 'Back to handover', onOk: () => action.mutateAsync({ type: 'handover.receive', patient_id: record.patient_id, entity_id: record.id, expected_version: record.version, actor: record.to_doctor }) })}>Incoming doctor: acknowledge receipt</Button>}
     {record.received_at && <p className="muted">Received by {record.to_doctor} · {formatDate(record.received_at)}</p>}
     <details className="section-gap"><summary>Source reports and record references ({record.source_ids.length})</summary>
       <ReportList reports={state.reports.filter(report => record.source_ids.includes(report.id))} />
@@ -57,6 +59,7 @@ export function HandoversPage() {
   const [range, setRange] = useState('all');
   const [adding, setAdding] = useState(false);
   const [form] = Form.useForm();
+  const selectedPatientId = Form.useWatch('patient_id', form);
   if (!query.data) return <QueryState pending={query.isPending} error={query.error} />;
   const state = query.data;
   const selected = state.handovers.find(record => record.id === params.get('id'));
@@ -81,10 +84,10 @@ export function HandoversPage() {
       { title: 'Status', dataIndex: 'status', render: value => <Tag>{value}</Tag> },
       { title: 'Action', render: (_, record) => <Button size="small" onClick={() => setParams({ id: record.id })}>Open</Button> },
     ]} />
-    <Drawer size="large" open={Boolean(selected)} title={selected ? `Handover · ${state.patients.find(patient => patient.id === selected.patient_id)?.name}` : 'Handover'} onClose={() => setParams({})}>
+    <Drawer patientId={selected?.patient_id} description="Preserve the patient story and pending work across shift changes." size="large" open={Boolean(selected)} title="Shift handover" onClose={() => setParams({})}>
       {selected && <HandoverEditor key={`${selected.id}-${selected.version}`} record={selected} state={state} />}
     </Drawer>
-    <Modal title="Create IPD shift handover" open={adding} onCancel={() => setAdding(false)} confirmLoading={action.isPending} okText="Prepare draft" onOk={async () => {
+    <Modal title="Prepare shift handover" patientId={selectedPatientId} description="Choose the incoming clinician and shift. Review the draft before approval." open={adding} onCancel={() => setAdding(false)} confirmLoading={action.isPending} okText="Prepare draft" onOk={async () => {
       try { const values = await form.validateFields(); const id = await action.mutateAsync({ type: 'handover.create', ...values, shift_at: new Date(values.shift_at).toISOString() }); setAdding(false); setParams({ id }); } catch { return; }
     }}>
       <Form form={form} layout="vertical" size="small">

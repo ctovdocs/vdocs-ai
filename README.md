@@ -56,24 +56,18 @@ This foundation intentionally supersedes the original plan's Next.js/shadcn fron
 | `/app/lab-orders`, `/app/imaging-orders` | Orders, processing status and linked reports |
 | `/app/results` | Published results awaiting clinician review |
 | `/app/handovers` | IPD shift drafts, approval and incoming-doctor acknowledgement |
-| `/demo` | Presenter launcher |
-| `/demo/his` | Separate HIS/EHR lookup |
-| `/demo/lab` | Separate laboratory lookup and reports |
-| `/demo/radiology` | Separate advanced imaging report lookup |
-| `/demo/pharmacy` | Labeled placeholder for prescription readback |
-| `/demo/referrals` | Receiving-team request/referral workflow simulator |
-| `/demo/lab/orders` | Laboratory inbox and synthetic report publication |
-| `/demo/radiology/orders` | Imaging inbox and synthetic report publication |
 
-Start in HIS, search `F-DEMO-0001`, open the patient and copy the UHID. Lab and imaging links open separate tabs without automatically passing patient context. Compare this with Rahul's VDoc workspace, where reports are already attached to the patient.
+The embedded demo launcher and source-system portal routes have been removed. HIS, laboratory and advanced-imaging simulators are planned as separate repositories; they are not connected yet. Shared synthetic data, workflow services and adapters remain available for that work.
+
+Start in VDoc at `/app`, search `F-DEMO-0001`, and open Rahul's workspace to review the linked patient history and reports.
 
 All active screens read through `services/clinical.ts` and `services/workflowStore.ts`. Writes use the validated workflow command engine. In local mode, the shared browser snapshot is serialized with Web Locks; storage failures are surfaced rather than reported as successful saves. In Supabase mode, a hospital-scoped shared snapshot is saved through an atomic compare-and-swap RPC. See [workflow implementation and demo walkthrough](WORKFLOW_IMPLEMENTATION.md).
 
 Dashboard and directory tables paginate at 10 patients by default, with 20/50 options. Search and filters reset to page one; filtering applies before pagination.
 
-## Why one project
+## Repository boundaries
 
-One source tree and lockfile keep types, fixtures and UI primitives consistent. Separate routes and source-system layouts demonstrate fragmentation without separate deployment or cross-origin authentication work. A production static host must rewrite non-asset routes to `index.html` for direct links to work. Do not create separate repositories for the two-day demo; adapters allow later separation when real integration requirements are known.
+This repository contains the VDoc clinical workspace. Source-system simulators will live in separate repositories. Sharing a database alone will not connect separate apps in local preview mode: they must use the same Supabase project and compatible workflow contracts. Configure authentication and hospital scope in each app; never expose service-role credentials in a frontend. A static host must rewrite non-asset routes to `index.html` for direct links to work.
 
 ## Connect Supabase
 

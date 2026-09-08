@@ -2,6 +2,7 @@ import { workflowStateSchema, commandSchema, type WorkflowState, type WorkflowCo
 import type { Patient, Report } from '../domain/models';
 import type { PatientHistory } from '../domain/longitudinal';
 import { buildExpansionWorkflow } from '../data/expansionWorkflow';
+import { orderCatalog, referralDepartments } from '../data/orderCatalog';
 
 export function initialWorkflowState(hospitalId: string, patients: Patient[], reports: Report[], histories: PatientHistory[]): WorkflowState {
   const state = workflowStateSchema.parse({ schema_version: 1, hospital_id: hospitalId, revision: 0,
@@ -112,6 +113,26 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
       } else addNote(`Discharge: ${status}`, record.clearance_note || 'Working-list status updated.', 'progress');
       break;
     }
+    case 'order.place': {
+      const encounter = requireActive();
+      const titles = new Set<string>();
+      for (const [index, item] of command.items.entries()) {
+        const catalog = item.catalog_id ? orderCatalog.find(entry => entry.id === item.catalog_id && entry.kind === command.kind) : undefined;
+        if (item.catalog_id && (!catalog || catalog.title !== item.title)) throw new Error('Unknown or mismatched catalog item.');
+        if (!catalog && !(command.kind === 'lab' ? item.specimen : item.modality)?.trim()) throw new Error('Custom orders require a specimen or imaging modality.');
+        const normalized = item.title.toLowerCase();
+        if (titles.has(normalized) || history.orders.some(order => order.encounter_id === encounter.id && order.kind === command.kind && ['pending', 'processing'].includes(order.status) && order.title.toLowerCase() === normalized)) throw new Error(`Already ordered: ${item.title}. Remove the duplicate before submitting.`);
+        titles.add(normalized);
+        const id = `${command.id.slice(0, 24)}${(index + 1).toString(16).padStart(12, '0')}`;
+        history.orders.push({ ...item, id, batch_id: command.id, hospital_id: state.hospital_id, patient_id: patient.id, encounter_id: encounter.id,
+          kind: command.kind, specimen: catalog?.specimen ?? item.specimen, modality: catalog?.modality ?? item.modality,
+          indication: command.indication, priority: command.priority, requester: command.actor, status: 'pending', result_id: null, placed_at: command.at, source_system: 'VDoc', version: 0 });
+        history.timeline.unshift({ id, hospital_id: state.hospital_id, patient_id: patient.id, encounter_id: encounter.id,
+          occurred_at: command.at, available_at: command.at, kind: 'result', title: `Ordered: ${item.title}`, source_id: id, source_system: 'VDoc' });
+        if (index === 0) entityId = id;
+      }
+      break;
+    }
     case 'order.create': {
       const encounter = requireActive();
       if (history.orders.some(item => item.encounter_id === encounter.id && item.kind === command.kind && ['pending', 'processing'].includes(item.status) && item.title.toLowerCase() === command.title.toLowerCase())) throw new Error('An active order for this investigation already exists.');
@@ -155,9 +176,11 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
     case 'request.create': {
       requireActive();
       if (command.to_department === patient.department) throw new Error('Choose a receiving department different from the primary department.');
-      if (!state.patients.some(item => item.department === command.to_department)) throw new Error('Unknown department.');
+      if (!referralDepartments.includes(command.to_department)) throw new Error('Unknown department.');
       if (command.source_ids.some(id => !state.reports.some(report => report.id === id && report.patient_id === patient.id))) throw new Error('Attached sources must belong to this patient.');
+      if (history.requests.some(request => request.encounter_id === encounterId && request.kind === command.kind && request.to_department === command.to_department && !['completed', 'cancelled'].includes(request.status) && request.reason.trim().toLowerCase() === command.reason.toLowerCase())) throw new Error('An identical open request already exists.');
       history.requests.push({ id: command.id, hospital_id: state.hospital_id, patient_id: patient.id, encounter_id: encounterId,
+        requested_by: command.actor, request_type: command.request_type, contact: command.contact,
         from_department: patient.department, to_department: command.to_department, reason: command.reason, kind: command.kind, owner: command.owner,
         priority: command.priority, status: 'received', requested_at: command.at, accepted_at: null, completed_at: null, response: null,
         source_ids: command.source_ids, source_system: 'VDoc', version: 0, reviewed_at: null });
