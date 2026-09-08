@@ -1,0 +1,514 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000039",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0039",
+    "name": "Suraj Malhotra",
+    "age": 26,
+    "sex": "M",
+    "department": "Orthopaedics",
+    "encounter": "IPD · Surgical ICU / Bed 4",
+    "conditions": [
+      "Closed femur shaft fracture",
+      "Fat embolism risk",
+      "Road traffic injury"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000039001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000039",
+    "dob": "2000-06-10",
+    "occupation": "Motorcycle courier",
+    "preferred_language": "Hindi, Punjabi",
+    "social_context": "Colleague from the courier company alerted the family; next of kin en route.",
+    "history": "High-speed motorcycle collision reported by paramedics; a closed femur fracture was splinted at the scene. New respiratory distress and confusion developed several hours after admission.",
+    "presenting_complaint": "Petechial rash on the chest and axillae with new breathlessness and confusion following the femur fracture, raising concern for fat embolism syndrome.",
+    "acuity": "critical",
+    "acuity_reason": "Oxygen saturation 89% on room air, new petechiae and altered mental status meeting the recorded criteria suggestive of fat embolism syndrome.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000039001",
+      "00000046-0000-4000-8000-000000039001",
+      "00000042-0000-4000-8000-000000039001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000039001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of clotting or fat metabolism disorders."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "department": "Orthopaedics",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Surgical ICU / Bed 4",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Petechial rash on the chest and axillae with new breathlessness and confusion following the femur fracture, raising concern for fat embolism syndrome.",
+      "assessment": "High-speed motorcycle collision reported by paramedics; a closed femur fracture was splinted at the scene. New respiratory distress and confusion developed several hours after admission.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Current clinical assessment",
+      "body": "Petechial rash on the chest and axillae with new breathlessness and confusion following the femur fracture, raising concern for fat embolism syndrome.\nBackground: High-speed motorcycle collision reported by paramedics; a closed femur fracture was splinted at the scene. New respiratory distress and confusion developed several hours after admission.\nRecorded acuity: Oxygen saturation 89% on room air, new petechiae and altered mental status meeting the recorded criteria suggestive of fat embolism syndrome.\nHistory source and context: Colleague from the courier company alerted the family; next of kin en route.\nAvailable results: Haemoglobin 11.2 g/dL; Platelets 128 10^9/L; Creatinine 1.1 mg/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000039001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Ward round — admission day",
+      "body": "Findings: Femur fracture splinted, new petechiae and hypoxia developed. Fat embolism syndrome suspected.\nPlan: Supplemental oxygen, supportive respiratory care, urgent orthopaedic and medical review for fixation timing.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000039002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Oxygenation stable on current support. Mental status improving.\nPlan: Continue supportive care. Plan definitive fixation once respiratory status permits. Monitor petechiae resolution.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Latest progress and pending work",
+      "body": "Critical trauma with suspected fat embolism syndrome; definitive fixation timing is a documented working plan, not yet completed.\nPending: Definitive fracture fixation documentation; Repeat oxygen saturation and mental status monitoring; Chest imaging follow-up.\nDepartment question (Internal Medicine): Assess new respiratory distress and petechial rash for fat embolism syndrome versus alternative causes. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000039001",
+        "00000042-0000-4000-8000-000000039001",
+        "00000047-0000-4000-8000-000000039001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Petechial rash on the chest and axillae with new breathlessness and confusion following the femur fracture, raising concern for fat embolism syndrome.\nBackground: High-speed motorcycle collision reported by paramedics; a closed femur fracture was splinted at the scene. New respiratory distress and confusion developed several hours after admission.\nRecent results: Orthopaedics laboratory review; Femur X-ray · AP and lateral\nPending: Definitive fracture fixation documentation; Repeat oxygen saturation and mental status monitoring; Chest imaging follow-up.\nContinuity: Critical trauma with suspected fat embolism syndrome; definitive fixation timing is a documented working plan, not yet completed.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000039001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 108,
+      "diastolic": 66,
+      "pulse": 118,
+      "respiratory_rate": 30,
+      "spo2": 89,
+      "temperature_c": 37.8,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000039001",
+      "indication": "Petechial rash on the chest and axillae with new breathlessness and confusion following the femur fracture, raising concern for fat embolism syndrome.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "title": "Femur X-ray · AP and lateral",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000039001",
+      "indication": "Road traffic injury with thigh deformity.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000039100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "title": "Repeat oxygen saturation and mental status monitoring",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "from_department": "Orthopaedics",
+      "to_department": "Internal Medicine",
+      "reason": "Assess new respiratory distress and petechial rash for fat embolism syndrome versus alternative causes.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000039001",
+        "00000047-0000-4000-8000-000000039001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "title": "Definitive fracture fixation documentation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000039001",
+        "00000042-0000-4000-8000-000000039001",
+        "00000047-0000-4000-8000-000000039001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000039002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "title": "Repeat oxygen saturation and mental status monitoring",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000039001",
+        "00000042-0000-4000-8000-000000039001",
+        "00000047-0000-4000-8000-000000039001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000039003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "title": "Chest imaging follow-up",
+      "status": "pending",
+      "kind": "follow_up",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-14T04:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000039001",
+        "00000042-0000-4000-8000-000000039001",
+        "00000047-0000-4000-8000-000000039001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000039006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000039002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000039001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000039001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Definitive fracture fixation documentation",
+      "source_id": "00000051-0000-4000-8000-000000039001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat oxygen saturation and mental status monitoring",
+      "source_id": "00000051-0000-4000-8000-000000039002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Chest imaging follow-up",
+      "source_id": "00000051-0000-4000-8000-000000039003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Assess new respiratory distress and petechial rash for fat embolism syndrome versus alternative causes.",
+      "source_id": "00000050-0000-4000-8000-000000039001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000039001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Femur X-ray · AP and lateral",
+      "source_id": "00000047-0000-4000-8000-000000039001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000039001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Petechial rash on the chest and axillae with new breathlessness and confusion following the femur fracture, raising concern for fat embolism syndrome.",
+      "source_id": "00000041-0000-4000-8000-000000039001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000039005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000039001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000039002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "kind": "imaging",
+      "title": "Femur X-ray · AP and lateral",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Closed comminuted mid-shaft femur fracture. No open wound described on this radiograph.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "order_id": "00000048-0000-4000-8000-000000039001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Road traffic injury with thigh deformity.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000039001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000039",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 11.2 g/dL (low); Platelets 128 10^9/L (low); Creatinine 1.1 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "11.2",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Platelets",
+          "value": "128",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000039001",
+      "order_id": "00000043-0000-4000-8000-000000039001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Petechial rash on the chest and axillae with new breathlessness and confusion following the femur fracture, raising concern for fat embolism syndrome.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

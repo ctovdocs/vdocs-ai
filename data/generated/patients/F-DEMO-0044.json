@@ -1,0 +1,930 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000044",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0044",
+    "name": "Sushila Devi",
+    "age": 58,
+    "sex": "F",
+    "department": "Orthopaedics",
+    "encounter": "OPD · OPD / Room 7",
+    "conditions": [
+      "Post-operative surgical site infection",
+      "Post total knee replacement"
+    ],
+    "allergies": [],
+    "medications": [
+      "Paracetamol"
+    ],
+    "acuity": "noncritical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000044001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000044",
+    "dob": "1968-06-10",
+    "occupation": "Tailor",
+    "preferred_language": "Hindi, Marathi",
+    "social_context": "Daughter accompanies her to appointments; returned to light tailoring work two weeks after surgery per patient report.",
+    "history": "Underwent an elective total knee replacement six weeks ago; returns now with localised wound redness and discharge noted since yesterday, without fever.",
+    "presenting_complaint": "Localised erythema and serous discharge at the surgical site with no systemic symptoms recorded at this review.",
+    "acuity": "noncritical",
+    "acuity_reason": "Afebrile with a localised, non-spreading wound finding; stable outpatient presentation without systemic sepsis criteria.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000044005",
+      "00000046-0000-4000-8000-000000044001",
+      "00000042-0000-4000-8000-000000044005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000044005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Mother had osteoarthritis requiring joint replacement; no documented family history of joint infections."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Orthopaedics / historical encounter",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Elective total knee replacement performed.",
+      "assessment": "Elective total knee replacement performed; immediate post-operative course uncomplicated per record.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000044002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Orthopaedics / historical encounter",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Two-week post-operative wound check; healing well.",
+      "assessment": "Two-week wound check; incision healing well, sutures removed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000044003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Orthopaedics / historical encounter",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Four-week physiotherapy review.",
+      "assessment": "Four-week physiotherapy and range-of-motion review; progressing as expected.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000044004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Orthopaedics / historical encounter",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Wound concern reported by phone before this visit.",
+      "assessment": "New wound redness and discharge reported; reviewed at this visit for suspected superficial infection.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000044005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "OPD / Room 7",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Localised erythema and serous discharge at the surgical site with no systemic symptoms recorded at this review.",
+      "assessment": "Underwent an elective total knee replacement six weeks ago; returns now with localised wound redness and discharge noted since yesterday, without fever.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Hospital review 1",
+      "body": "Seen in Orthopaedics. Diagnosis: Elective total knee replacement performed; immediate post-operative course uncomplicated per record.\nThis is a retained encounter at the demo hospital. Recorded investigations: CRP 8 mg/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000044001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000044002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Hospital review 2",
+      "body": "Seen in Orthopaedics. Diagnosis: Two-week wound check; incision healing well, sutures removed.\nThis is a retained encounter at the demo hospital. Recorded investigations: CRP 6 mg/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000044002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000044003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Hospital review 3",
+      "body": "Seen in Orthopaedics. Diagnosis: Four-week physiotherapy and range-of-motion review; progressing as expected.\nThis is a retained encounter at the demo hospital. Recorded investigations: CRP 5 mg/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000044003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000044004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Hospital review 4",
+      "body": "Seen in Orthopaedics. Diagnosis: New wound redness and discharge reported; reviewed at this visit for suspected superficial infection.\nThis is a retained encounter at the demo hospital. Recorded investigations: CRP 4 mg/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000044004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000044005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Current clinical assessment",
+      "body": "Localised erythema and serous discharge at the surgical site with no systemic symptoms recorded at this review.\nBackground: Underwent an elective total knee replacement six weeks ago; returns now with localised wound redness and discharge noted since yesterday, without fever.\nRecorded acuity: Afebrile with a localised, non-spreading wound finding; stable outpatient presentation without systemic sepsis criteria.\nHistory source and context: Daughter accompanies her to appointments; returned to light tailoring work two weeks after surgery per patient report.\nAvailable results: CRP 18 mg/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. No critical state is asserted.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000044005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000056-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "kind": "procedure",
+      "recorded_at": "2019-11-03T03:15:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Total knee replacement, left knee — six weeks ago",
+      "body": "Elective procedure at this hospital; operative report on file. Current presentation is a post-operative review, not a new unrelated complaint.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Latest progress and pending work",
+      "body": "Stable outpatient review for a suspected superficial surgical site infection; deep prosthetic joint infection has not been confirmed and is not assumed.\nPending: Wound swab culture result; Repeat CRP in one week; Physiotherapy progress review.\nDepartment question (Internal Medicine): Review glycaemic and general medical status as risk factors for delayed wound healing. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000044001",
+        "00000042-0000-4000-8000-000000044005",
+        "00000047-0000-4000-8000-000000044001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Localised erythema and serous discharge at the surgical site with no systemic symptoms recorded at this review.\nBackground: Underwent an elective total knee replacement six weeks ago; returns now with localised wound redness and discharge noted since yesterday, without fever.\nRecent results: Orthopaedics laboratory review; Left knee X-ray · AP and lateral\nPending: Wound swab culture result; Repeat CRP in one week; Physiotherapy progress review.\nContinuity: Stable outpatient review for a suspected superficial surgical site infection; deep prosthetic joint infection has not been confirmed and is not assumed.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000044001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 126,
+      "diastolic": 80,
+      "pulse": 84,
+      "respiratory_rate": 16,
+      "spo2": 98,
+      "temperature_c": 37.1,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "route": "oral",
+      "frequency": "As needed",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Post-operative analgesia continued from discharge prescription.",
+      "author": "Dr. Nikhil Joshi",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044001",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000044001",
+      "indication": "Elective total knee replacement performed.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000044002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044002",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000044002",
+      "indication": "Two-week post-operative wound check; healing well.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000044003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044003",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000044003",
+      "indication": "Four-week physiotherapy review.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000044004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044004",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000044004",
+      "indication": "Wound concern reported by phone before this visit.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000044005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000044005",
+      "indication": "Localised erythema and serous discharge at the surgical site with no systemic symptoms recorded at this review.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "title": "Left knee X-ray · AP and lateral",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000044001",
+      "indication": "Post-operative wound concern; assess prosthesis position.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000044100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "title": "Repeat CRP in one week",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "from_department": "Orthopaedics",
+      "to_department": "Internal Medicine",
+      "reason": "Review glycaemic and general medical status as risk factors for delayed wound healing.",
+      "status": "received",
+      "priority": "routine",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000044005",
+        "00000047-0000-4000-8000-000000044001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "title": "Wound swab culture result",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000044001",
+        "00000042-0000-4000-8000-000000044005",
+        "00000047-0000-4000-8000-000000044001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000044002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "title": "Repeat CRP in one week",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000044001",
+        "00000042-0000-4000-8000-000000044005",
+        "00000047-0000-4000-8000-000000044001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000044003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "title": "Physiotherapy progress review",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000044001",
+        "00000042-0000-4000-8000-000000044005",
+        "00000047-0000-4000-8000-000000044001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000044019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000044001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000044001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Wound swab culture result",
+      "source_id": "00000051-0000-4000-8000-000000044001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat CRP in one week",
+      "source_id": "00000051-0000-4000-8000-000000044002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Physiotherapy progress review",
+      "source_id": "00000051-0000-4000-8000-000000044003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Paracetamol: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000044001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Review glycaemic and general medical status as risk factors for delayed wound healing.",
+      "source_id": "00000050-0000-4000-8000-000000044001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000044005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Left knee X-ray · AP and lateral",
+      "source_id": "00000047-0000-4000-8000-000000044001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000044005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Localised erythema and serous discharge at the surgical site with no systemic symptoms recorded at this review.",
+      "source_id": "00000041-0000-4000-8000-000000044005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000044004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000044004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Wound concern reported by phone before this visit.",
+      "source_id": "00000041-0000-4000-8000-000000044004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000044003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000044003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Four-week physiotherapy review.",
+      "source_id": "00000041-0000-4000-8000-000000044003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000044002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000044002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Two-week post-operative wound check; healing well.",
+      "source_id": "00000041-0000-4000-8000-000000044002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000044001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000044001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Elective total knee replacement performed.",
+      "source_id": "00000041-0000-4000-8000-000000044001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000044017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "occurred_at": "2019-11-03T03:15:00.000Z",
+      "available_at": "2019-11-03T03:15:00.000Z",
+      "kind": "note",
+      "title": "Total knee replacement, left knee — six weeks ago",
+      "source_id": "00000056-0000-4000-8000-000000044001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000044002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "kind": "imaging",
+      "title": "Left knee X-ray · AP and lateral",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Prosthesis components are well aligned with no loosening identified on this radiograph. Findings do not exclude superficial infection.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "order_id": "00000048-0000-4000-8000-000000044001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Post-operative wound concern; assess prosthesis position.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000044005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. CRP 18 mg/L (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "CRP",
+          "value": "18",
+          "unit": "mg/L",
+          "reference": "0–5",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000044005",
+      "order_id": "00000043-0000-4000-8000-000000044005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Localised erythema and serous discharge at the surgical site with no systemic symptoms recorded at this review.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000044004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. CRP 4 mg/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "CRP",
+          "value": "4",
+          "unit": "mg/L",
+          "reference": "0–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000044004",
+      "order_id": "00000043-0000-4000-8000-000000044004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Wound concern reported by phone before this visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000044003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. CRP 5 mg/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "CRP",
+          "value": "5",
+          "unit": "mg/L",
+          "reference": "0–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000044003",
+      "order_id": "00000043-0000-4000-8000-000000044003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Four-week physiotherapy review.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000044002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. CRP 6 mg/L (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "CRP",
+          "value": "6",
+          "unit": "mg/L",
+          "reference": "0–5",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000044002",
+      "order_id": "00000043-0000-4000-8000-000000044002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Two-week post-operative wound check; healing well.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000044001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000044",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. CRP 8 mg/L (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "CRP",
+          "value": "8",
+          "unit": "mg/L",
+          "reference": "0–5",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000044001",
+      "order_id": "00000043-0000-4000-8000-000000044001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Elective total knee replacement performed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

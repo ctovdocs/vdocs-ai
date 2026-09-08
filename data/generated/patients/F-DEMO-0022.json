@@ -1,0 +1,1126 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000022",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0022",
+    "name": "Iqbal Ahmed",
+    "age": 41,
+    "sex": "M",
+    "department": "Internal Medicine",
+    "encounter": "IPD · Medical ICU / Bed 7",
+    "conditions": [
+      "Severe Plasmodium falciparum malaria",
+      "Acute kidney injury",
+      "Jaundice"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000022001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000022",
+    "dob": "1985-06-10",
+    "occupation": "Long-haul truck driver",
+    "preferred_language": "Hindi, Urdu",
+    "social_context": "Work requires frequent travel; wife provides history since patient is intermittently drowsy. No prior malaria episodes documented at this hospital.",
+    "history": "Returned from a work route through a malaria-endemic district ten days before presenting with cyclical fever; this travel history is patient-reported and recorded as such.",
+    "presenting_complaint": "High-grade fever with rigors, dark urine and new jaundice, with reduced urine output over the preceding day.",
+    "acuity": "critical",
+    "acuity_reason": "Parasitaemia documented at 8%, creatinine 3.1 mg/dL and bilirubin 6.4 mg/dL meeting severe-malaria criteria as recorded.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000022005",
+      "00000046-0000-4000-8000-000000022001",
+      "00000042-0000-4000-8000-000000022005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000022005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Non-contributory; no documented hereditary renal or haematological disease."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Fever with rigors assessed; peripheral smear requested.",
+      "assessment": "Fever with rigors assessed; peripheral smear requested.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Smear positive for P. falciparum; treatment started.",
+      "assessment": "Smear positive for P. falciparum; treatment started.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000022003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Persistent fever with new dark urine.",
+      "assessment": "Persistent fever with new dark urine.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000022004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-26T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Reduced urine output prompted admission.",
+      "assessment": "Reduced urine output prompted admission.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000022005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Medical ICU / Bed 7",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "High-grade fever with rigors, dark urine and new jaundice, with reduced urine output over the preceding day.",
+      "assessment": "Returned from a work route through a malaria-endemic district ten days before presenting with cyclical fever; this travel history is patient-reported and recorded as such.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 1",
+      "body": "Fever with rigors assessed; peripheral smear requested.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 13.8 g/dL; Creatinine 0.9 mg/dL; Total bilirubin 0.9 mg/dL; Platelets 130 10^9/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000022001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 2",
+      "body": "Smear positive for P. falciparum; treatment started.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 12.4 g/dL; Creatinine 1.4 mg/dL; Total bilirubin 1.8 mg/dL; Platelets 88 10^9/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000022002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000022003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 3",
+      "body": "Persistent fever with new dark urine.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 10.9 g/dL; Creatinine 1.9 mg/dL; Total bilirubin 3.2 mg/dL; Platelets 64 10^9/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000022003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000022004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 4",
+      "body": "Reduced urine output prompted admission.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 9.6 g/dL; Creatinine 2.5 mg/dL; Total bilirubin 4.8 mg/dL; Platelets 51 10^9/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000022004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000045-0000-4000-8000-000000022004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022004",
+      "kind": "discharge",
+      "recorded_at": "2026-08-26T08:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Historical discharge record",
+      "body": "Prior admission completed. Admission context: Reduced urine output prompted admission. The hospital retained this discharge record and the linked investigations. Subsequent outpatient reviews are separate encounters; current critical status must not be applied to this historical discharge.",
+      "source_ids": [
+        "00000044-0000-4000-8000-000000022004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000022005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Current clinical assessment",
+      "body": "High-grade fever with rigors, dark urine and new jaundice, with reduced urine output over the preceding day.\nBackground: Returned from a work route through a malaria-endemic district ten days before presenting with cyclical fever; this travel history is patient-reported and recorded as such.\nRecorded acuity: Parasitaemia documented at 8%, creatinine 3.1 mg/dL and bilirubin 6.4 mg/dL meeting severe-malaria criteria as recorded.\nHistory source and context: Work requires frequent travel; wife provides history since patient is intermittently drowsy. No prior malaria episodes documented at this hospital.\nAvailable results: Haemoglobin 8.8 g/dL; Creatinine 3.1 mg/dL; Total bilirubin 6.4 mg/dL; Platelets 40 10^9/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000022005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — admission day",
+      "body": "Findings: Febrile, jaundiced, oliguric. Parasitaemia 8% on smear. Renal function worsening.\nPlan: Continue antimalarial therapy per protocol. Nephrology and Gastroenterology consults placed. Monitor for need for renal replacement.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Fever pattern less cyclical. Urine output marginally improved overnight.\nPlan: Repeat parasitaemia and renal panel. Continue close monitoring; dialysis remains a contingency, not yet indicated.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Latest progress and pending work",
+      "body": "Severe malaria with multi-organ involvement; parasitaemia clearance is not yet documented and must not be assumed.\nPending: Repeat parasitaemia count; Repeat renal panel and bilirubin; Dialysis-readiness assessment.\nDepartment question (Nephrology): Assess acute kidney injury and advise on renal replacement threshold in severe malaria. Status: in_progress. No completed specialist response available.\nDepartment question (Gastroenterology): Review malarial hepatopathy and rising bilirubin for alternative causes of jaundice. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000022001",
+        "00000050-0000-4000-8000-000000022002",
+        "00000042-0000-4000-8000-000000022005",
+        "00000047-0000-4000-8000-000000022001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: High-grade fever with rigors, dark urine and new jaundice, with reduced urine output over the preceding day.\nBackground: Returned from a work route through a malaria-endemic district ten days before presenting with cyclical fever; this travel history is patient-reported and recorded as such.\nRecent results: Internal Medicine laboratory review; Ultrasound abdomen\nPending: Repeat parasitaemia count; Repeat renal panel and bilirubin; Dialysis-readiness assessment.\nContinuity: Severe malaria with multi-organ involvement; parasitaemia clearance is not yet documented and must not be assumed.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000022001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 92,
+      "diastolic": 58,
+      "pulse": 116,
+      "respiratory_rate": 26,
+      "spo2": 93,
+      "temperature_c": 39.4,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "name": "Artesunate",
+      "dose": "Per weight-based protocol",
+      "route": "oral",
+      "frequency": "Intravenous, per treating team",
+      "status": "held",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": "2026-09-07T02:05:00.000Z",
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Administration record is outside this fixture; documented as initiated but not itemised here.",
+      "author": "Dr. Ananya Mehta",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022001",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000022001",
+      "indication": "Fever with rigors assessed; peripheral smear requested.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022002",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000022002",
+      "indication": "Smear positive for P. falciparum; treatment started.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000022003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022003",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000022003",
+      "indication": "Persistent fever with new dark urine.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000022004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022004",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000022004",
+      "indication": "Reduced urine output prompted admission.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000022005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000022005",
+      "indication": "High-grade fever with rigors, dark urine and new jaundice, with reduced urine output over the preceding day.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "title": "Ultrasound abdomen",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000022001",
+      "indication": "Fever with jaundice and renal impairment.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000022100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "title": "Repeat parasitaemia count",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "from_department": "Internal Medicine",
+      "to_department": "Nephrology",
+      "reason": "Assess acute kidney injury and advise on renal replacement threshold in severe malaria.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000022005",
+        "00000047-0000-4000-8000-000000022001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    },
+    {
+      "id": "00000050-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "from_department": "Internal Medicine",
+      "to_department": "Gastroenterology",
+      "reason": "Review malarial hepatopathy and rising bilirubin for alternative causes of jaundice.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:40:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Kavya Menon",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000022005",
+        "00000047-0000-4000-8000-000000022001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "title": "Repeat parasitaemia count",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000022001",
+        "00000050-0000-4000-8000-000000022002",
+        "00000042-0000-4000-8000-000000022005",
+        "00000047-0000-4000-8000-000000022001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "title": "Repeat renal panel and bilirubin",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000022001",
+        "00000050-0000-4000-8000-000000022002",
+        "00000042-0000-4000-8000-000000022005",
+        "00000047-0000-4000-8000-000000022001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000022003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "title": "Dialysis-readiness assessment",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000022001",
+        "00000050-0000-4000-8000-000000022002",
+        "00000042-0000-4000-8000-000000022005",
+        "00000047-0000-4000-8000-000000022001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000022019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000022002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000022001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000022001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat parasitaemia count",
+      "source_id": "00000051-0000-4000-8000-000000022001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022026",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat renal panel and bilirubin",
+      "source_id": "00000051-0000-4000-8000-000000022002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022027",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Dialysis-readiness assessment",
+      "source_id": "00000051-0000-4000-8000-000000022003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Artesunate: held",
+      "source_id": "00000049-0000-4000-8000-000000022001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "request",
+      "title": "Gastroenterology: Review malarial hepatopathy and rising bilirubin for alternative causes of jaundice.",
+      "source_id": "00000050-0000-4000-8000-000000022002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Assess acute kidney injury and advise on renal replacement threshold in severe malaria.",
+      "source_id": "00000050-0000-4000-8000-000000022001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000022005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Ultrasound abdomen",
+      "source_id": "00000047-0000-4000-8000-000000022001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000022005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: High-grade fever with rigors, dark urine and new jaundice, with reduced urine output over the preceding day.",
+      "source_id": "00000041-0000-4000-8000-000000022005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000022001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022004",
+      "occurred_at": "2026-08-26T08:00:00.000Z",
+      "available_at": "2026-08-26T08:00:00.000Z",
+      "kind": "note",
+      "title": "Historical discharge record",
+      "source_id": "00000045-0000-4000-8000-000000022004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000022004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000022004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Reduced urine output prompted admission.",
+      "source_id": "00000041-0000-4000-8000-000000022004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000022003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000022003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Persistent fever with new dark urine.",
+      "source_id": "00000041-0000-4000-8000-000000022003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000022002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000022002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Smear positive for P. falciparum; treatment started.",
+      "source_id": "00000041-0000-4000-8000-000000022002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000022001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000022001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "encounter_id": "00000041-0000-4000-8000-000000022001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Fever with rigors assessed; peripheral smear requested.",
+      "source_id": "00000041-0000-4000-8000-000000022001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "kind": "imaging",
+      "title": "Ultrasound abdomen",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Mild splenomegaly and hepatomegaly. No biliary obstruction. Kidneys are normal in size with preserved cortico-medullary differentiation.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "order_id": "00000048-0000-4000-8000-000000022001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Fever with jaundice and renal impairment.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000022005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 8.8 g/dL (low); Creatinine 3.1 mg/dL (high); Total bilirubin 6.4 mg/dL (high); Platelets 40 10^9/L (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "8.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "3.1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "6.4",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Platelets",
+          "value": "40",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000022005",
+      "order_id": "00000043-0000-4000-8000-000000022005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "High-grade fever with rigors, dark urine and new jaundice, with reduced urine output over the preceding day.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000022004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 9.6 g/dL (low); Creatinine 2.5 mg/dL (high); Total bilirubin 4.8 mg/dL (high); Platelets 51 10^9/L (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "9.6",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "2.5",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "4.8",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Platelets",
+          "value": "51",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000022004",
+      "order_id": "00000043-0000-4000-8000-000000022004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Reduced urine output prompted admission.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000022003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 10.9 g/dL (low); Creatinine 1.9 mg/dL (high); Total bilirubin 3.2 mg/dL (high); Platelets 64 10^9/L (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "10.9",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "3.2",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Platelets",
+          "value": "64",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000022003",
+      "order_id": "00000043-0000-4000-8000-000000022003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Persistent fever with new dark urine.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000022002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 12.4 g/dL (low); Creatinine 1.4 mg/dL (high); Total bilirubin 1.8 mg/dL (high); Platelets 88 10^9/L (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "12.4",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.4",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "1.8",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Platelets",
+          "value": "88",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000022002",
+      "order_id": "00000043-0000-4000-8000-000000022002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Smear positive for P. falciparum; treatment started.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000022001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000022",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 13.8 g/dL (normal); Creatinine 0.9 mg/dL (normal); Total bilirubin 0.9 mg/dL (normal); Platelets 130 10^9/L (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "normal"
+        },
+        {
+          "name": "Platelets",
+          "value": "130",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000022001",
+      "order_id": "00000043-0000-4000-8000-000000022001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Fever with rigors assessed; peripheral smear requested.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

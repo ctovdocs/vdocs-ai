@@ -1,0 +1,1061 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000060",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0060",
+    "name": "Ritu Malhotra",
+    "age": 45,
+    "sex": "F",
+    "department": "Cardiology",
+    "encounter": "IPD · Recovery ward Cardiology / Bed 10",
+    "conditions": [
+      "Recovered supraventricular tachycardia after electrophysiology admission"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "noncritical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000060001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000060",
+    "dob": "1981-06-10",
+    "occupation": "Office assistant",
+    "preferred_language": "Hindi, English",
+    "social_context": "Family can assist after discharge, but travel and support arrangements have not yet been confirmed.",
+    "history": "Recurrent documented supraventricular tachycardia without known structural heart disease. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+    "presenting_complaint": "Comfortable in sinus rhythm after the procedure and mobilising without dizziness.",
+    "acuity": "noncritical",
+    "acuity_reason": "Noncritical recovery at this assessment: Comfortable in sinus rhythm after the procedure and mobilising without dizziness. Stable recorded physiology; final discharge status is documented separately.",
+    "acuity_assessed_at": "2026-09-08T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000060005",
+      "00000046-0000-4000-8000-000000060001",
+      "00000042-0000-4000-8000-000000060005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000060005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Family history not verified; no negative history is inferred."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-07-15T02:00:00.000Z",
+      "ended_at": "2025-07-15T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Initial Cardiology assessment. Background: Recurrent documented supraventricular tachycardia without known structural heart disease.",
+      "assessment": "Initial Cardiology assessment. Background: Recurrent documented supraventricular tachycardia without known structural heart disease.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000060002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-03-12T02:00:00.000Z",
+      "ended_at": "2026-03-12T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "assessment": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000060003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-07-10T02:00:00.000Z",
+      "ended_at": "2026-07-10T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "assessment": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000060004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-08-25T02:00:00.000Z",
+      "ended_at": "2026-08-25T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "assessment": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000060005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2026-09-05T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Recovery ward Cardiology / Bed 10",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Comfortable in sinus rhythm after the procedure and mobilising without dizziness.",
+      "assessment": "Recurrent documented supraventricular tachycardia without known structural heart disease. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060001",
+      "kind": "consultation",
+      "recorded_at": "2025-07-15T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 1",
+      "body": "Initial Cardiology assessment. Background: Recurrent documented supraventricular tachycardia without known structural heart disease.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 12.8 g/dL; Albumin 4.1 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000060001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000060002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060002",
+      "kind": "consultation",
+      "recorded_at": "2026-03-12T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 2",
+      "body": "Follow-up of the recorded background; symptoms and available medication history reviewed.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 12.8 g/dL; Albumin 4 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000060002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000060003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060003",
+      "kind": "consultation",
+      "recorded_at": "2026-07-10T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 3",
+      "body": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; Haemoglobin 12.9 g/dL; Albumin 3.9 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000060003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000060004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-25T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 4",
+      "body": "Most recent outpatient clinic review of existing records and follow-up arrangements.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 12.8 g/dL; Albumin 3.8 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000060004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000060005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-08T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Current clinical assessment",
+      "body": "Comfortable in sinus rhythm after the procedure and mobilising without dizziness.\nBackground: Recurrent documented supraventricular tachycardia without known structural heart disease. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecorded acuity: Noncritical recovery at this assessment: Comfortable in sinus rhythm after the procedure and mobilising without dizziness. Stable recorded physiology; final discharge status is documented separately.\nHistory source and context: Family can assist after discharge, but travel and support arrangements have not yet been confirmed.\nAvailable results: Potassium 4.1 mmol/L; Magnesium 2 mg/dL; Creatinine 0.8 mg/dL; Haemoglobin 12.8 g/dL; Albumin 3.7 g/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. No critical state is asserted.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000060005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000066-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-05T04:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Admission assessment and hospital course",
+      "body": "Admission with recurrent symptomatic narrow-complex tachycardia. Electrophysiology assessment requested; no procedural outcome is available in this admission note.",
+      "source_ids": [
+        "00000064-0000-4000-8000-000000060001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — current admission review",
+      "body": "Findings: Comfortable in sinus rhythm after the procedure and mobilising without dizziness. Noncritical recovery at this assessment: Comfortable in sinus rhythm after the procedure and mobilising without dizziness. Stable recorded physiology; final discharge status is documented separately.\nPlan: Confirm general medical review and outpatient rhythm follow-up. Pending: Discharge summary requires completion; Outpatient rhythm follow-up appointment. Decisions remain with the treating team.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T06:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Latest progress and pending work",
+      "body": "Recovered supraventricular tachycardia after electrophysiology admission. Stable recovery; check the working-list stage before completing discharge. Confirm general medical review and outpatient rhythm follow-up.\nPending: Discharge summary requires completion; Outpatient rhythm follow-up appointment.\nDepartment question (Internal Medicine): Confirm general medical review and outpatient rhythm follow-up. Status: completed. Synthetic Internal Medicine review completed. Comfortable in sinus rhythm after the procedure and mobilising without dizziness. No unresolved issue within this consultation is recorded; primary-team discharge approval remains separate.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000060001",
+        "00000042-0000-4000-8000-000000060005",
+        "00000064-0000-4000-8000-000000060001",
+        "00000047-0000-4000-8000-000000060001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "kind": "handover",
+      "recorded_at": "2026-09-08T06:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Comfortable in sinus rhythm after the procedure and mobilising without dizziness.\nBackground: Recurrent documented supraventricular tachycardia without known structural heart disease. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecent results: Cardiology laboratory review; Admission laboratory assessment; Echocardiogram\nPending: Discharge summary requires completion; Outpatient rhythm follow-up appointment.\nContinuity: Recovered supraventricular tachycardia after electrophysiology admission. Stable recovery; check the working-list stage before completing discharge. Confirm general medical review and outpatient rhythm follow-up.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000060001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000062-0000-4000-8000-000000060005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "kind": "progress",
+      "title": "Discharge working-list review (synthetic)",
+      "body": "Summary and discharge document completion required.\nWorking summary has not yet been written.",
+      "recorded_at": "2026-09-08T07:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "source_ids": [],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "recorded_at": "2026-09-08T02:45:00.000Z",
+      "systolic": 122,
+      "diastolic": 76,
+      "pulse": 74,
+      "respiratory_rate": 16,
+      "spo2": 99,
+      "temperature_c": 36.7,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060001",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-07-15T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000060001",
+      "indication": "Initial Cardiology assessment. Background: Recurrent documented supraventricular tachycardia without known structural heart disease.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000060002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060002",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-03-12T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000060002",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000060003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060003",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-07-10T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000060003",
+      "indication": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000060004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060004",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-25T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000060004",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000060005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000060005",
+      "indication": "Comfortable in sinus rhythm after the procedure and mobilising without dizziness.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000065-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "title": "Admission laboratory assessment",
+      "kind": "lab",
+      "placed_at": "2026-09-05T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000064-0000-4000-8000-000000060001",
+      "indication": "Admission with recurrent symptomatic narrow-complex tachycardia. Electrophysiology assessment requested; no procedural outcome is available in this admission note.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "title": "Echocardiogram",
+      "kind": "imaging",
+      "placed_at": "2026-09-08T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000060001",
+      "indication": "Comfortable in sinus rhythm after the procedure and mobilising without dizziness.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "from_department": "Cardiology",
+      "to_department": "Internal Medicine",
+      "reason": "Confirm general medical review and outpatient rhythm follow-up.",
+      "status": "completed",
+      "priority": "routine",
+      "requested_at": "2026-09-08T05:35:00.000Z",
+      "accepted_at": "2026-09-08T05:45:00.000Z",
+      "completed_at": "2026-09-08T06:00:00.000Z",
+      "response": "Synthetic Internal Medicine review completed. Comfortable in sinus rhythm after the procedure and mobilising without dizziness. No unresolved issue within this consultation is recorded; primary-team discharge approval remains separate.",
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000060005",
+        "00000064-0000-4000-8000-000000060001",
+        "00000047-0000-4000-8000-000000060001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": "2026-09-08T07:10:00.000Z"
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "title": "Discharge summary requires completion",
+      "status": "pending",
+      "kind": "discharge",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000060001",
+        "00000042-0000-4000-8000-000000060005",
+        "00000064-0000-4000-8000-000000060001",
+        "00000047-0000-4000-8000-000000060001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000060002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "title": "Outpatient rhythm follow-up appointment",
+      "status": "pending",
+      "kind": "follow_up",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-15T04:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000060001",
+        "00000042-0000-4000-8000-000000060005",
+        "00000064-0000-4000-8000-000000060001",
+        "00000047-0000-4000-8000-000000060001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000063-0000-4000-8000-000000060005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T07:10:00.000Z",
+      "available_at": "2026-09-08T07:10:00.000Z",
+      "title": "Discharge planning review",
+      "kind": "note",
+      "source_id": "00000062-0000-4000-8000-000000060005",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T07:00:00.000Z",
+      "available_at": "2026-09-08T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — current admission review",
+      "source_id": "00000059-0000-4000-8000-000000060001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T06:15:00.000Z",
+      "available_at": "2026-09-08T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000060001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T06:10:00.000Z",
+      "available_at": "2026-09-08T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000060001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Discharge summary requires completion",
+      "source_id": "00000051-0000-4000-8000-000000060001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Outpatient rhythm follow-up appointment",
+      "source_id": "00000051-0000-4000-8000-000000060002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T05:35:00.000Z",
+      "available_at": "2026-09-08T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Confirm general medical review and outpatient rhythm follow-up.",
+      "source_id": "00000050-0000-4000-8000-000000060001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T05:30:00.000Z",
+      "available_at": "2026-09-08T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000060005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T03:45:00.000Z",
+      "available_at": "2026-09-08T04:30:00.000Z",
+      "kind": "result",
+      "title": "Echocardiogram",
+      "source_id": "00000047-0000-4000-8000-000000060001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-08T02:30:00.000Z",
+      "available_at": "2026-09-08T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000060005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-05T04:00:00.000Z",
+      "available_at": "2026-09-05T04:00:00.000Z",
+      "kind": "note",
+      "title": "Admission assessment and hospital course",
+      "source_id": "00000066-0000-4000-8000-000000060001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-05T02:30:00.000Z",
+      "available_at": "2026-09-05T03:30:00.000Z",
+      "kind": "result",
+      "title": "Admission laboratory assessment",
+      "source_id": "00000064-0000-4000-8000-000000060001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "occurred_at": "2026-09-05T02:00:00.000Z",
+      "available_at": "2026-09-05T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Comfortable in sinus rhythm after the procedure and mobilising without dizziness.",
+      "source_id": "00000041-0000-4000-8000-000000060005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060004",
+      "occurred_at": "2026-08-25T05:30:00.000Z",
+      "available_at": "2026-08-25T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000060004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060004",
+      "occurred_at": "2026-08-25T02:30:00.000Z",
+      "available_at": "2026-08-25T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000060004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060004",
+      "occurred_at": "2026-08-25T02:00:00.000Z",
+      "available_at": "2026-08-25T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_id": "00000041-0000-4000-8000-000000060004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060003",
+      "occurred_at": "2026-07-10T05:30:00.000Z",
+      "available_at": "2026-07-10T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000060003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060003",
+      "occurred_at": "2026-07-10T02:30:00.000Z",
+      "available_at": "2026-07-10T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000060003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060003",
+      "occurred_at": "2026-07-10T02:00:00.000Z",
+      "available_at": "2026-07-10T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_id": "00000041-0000-4000-8000-000000060003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060002",
+      "occurred_at": "2026-03-12T05:30:00.000Z",
+      "available_at": "2026-03-12T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000060002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060002",
+      "occurred_at": "2026-03-12T02:30:00.000Z",
+      "available_at": "2026-03-12T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000060002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060002",
+      "occurred_at": "2026-03-12T02:00:00.000Z",
+      "available_at": "2026-03-12T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_id": "00000041-0000-4000-8000-000000060002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060001",
+      "occurred_at": "2025-07-15T05:30:00.000Z",
+      "available_at": "2025-07-15T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000060001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060001",
+      "occurred_at": "2025-07-15T02:30:00.000Z",
+      "available_at": "2025-07-15T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000060001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "encounter_id": "00000041-0000-4000-8000-000000060001",
+      "occurred_at": "2025-07-15T02:00:00.000Z",
+      "available_at": "2025-07-15T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Initial Cardiology assessment. Background: Recurrent documented supraventricular tachycardia without known structural heart disease.",
+      "source_id": "00000041-0000-4000-8000-000000060001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "kind": "imaging",
+      "title": "Echocardiogram",
+      "source": "MockRIS",
+      "reported_at": "2026-09-08T04:30:00.000Z",
+      "findings": "Normal chamber dimensions and preserved biventricular systolic function.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "order_id": "00000048-0000-4000-8000-000000060001",
+      "performed_at": "2026-09-08T03:45:00.000Z",
+      "indication": "Comfortable in sinus rhythm after the procedure and mobilising without dizziness.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000060005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-08T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Potassium 4.1 mmol/L (normal); Magnesium 2 mg/dL (normal); Creatinine 0.8 mg/dL (normal); Haemoglobin 12.8 g/dL (normal); Albumin 3.7 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Potassium",
+          "value": "4.1",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Magnesium",
+          "value": "2",
+          "unit": "mg/dL",
+          "reference": "1.7–2.4",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.8",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.7",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "order_id": "00000043-0000-4000-8000-000000060005",
+      "specimen_at": "2026-09-08T02:30:00.000Z",
+      "indication": "Comfortable in sinus rhythm after the procedure and mobilising without dizziness.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000064-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "kind": "lab",
+      "title": "Admission laboratory assessment",
+      "source": "MockLIS",
+      "reported_at": "2026-09-05T03:30:00.000Z",
+      "findings": "Synthetic admission results, before the separate recovery report: Potassium 3.4 mmol/L; Magnesium 1.6 mg/dL; Creatinine 0.9 mg/dL.",
+      "observations": [
+        {
+          "name": "Potassium",
+          "value": "3.4",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "low"
+        },
+        {
+          "name": "Magnesium",
+          "value": "1.6",
+          "unit": "mg/dL",
+          "reference": "1.7–2.4",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "order_id": "00000065-0000-4000-8000-000000060001",
+      "specimen_at": "2026-09-05T02:30:00.000Z",
+      "indication": "Admission with recurrent symptomatic narrow-complex tachycardia. Electrophysiology assessment requested; no procedural outcome is available in this admission note.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000060004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-25T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 12.8 g/dL (normal); Albumin 3.8 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.8",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000060004",
+      "order_id": "00000043-0000-4000-8000-000000060004",
+      "specimen_at": "2026-08-25T02:30:00.000Z",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000060003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-07-10T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); Haemoglobin 12.9 g/dL (normal); Albumin 3.9 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.9",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.9",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000060003",
+      "order_id": "00000043-0000-4000-8000-000000060003",
+      "specimen_at": "2026-07-10T02:30:00.000Z",
+      "indication": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000060002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-03-12T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 12.8 g/dL (normal); Albumin 4 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000060002",
+      "order_id": "00000043-0000-4000-8000-000000060002",
+      "specimen_at": "2026-03-12T02:30:00.000Z",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000060001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-07-15T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 12.8 g/dL (normal); Albumin 4.1 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000060001",
+      "order_id": "00000043-0000-4000-8000-000000060001",
+      "specimen_at": "2025-07-15T02:30:00.000Z",
+      "indication": "Initial Cardiology assessment. Background: Recurrent documented supraventricular tachycardia without known structural heart disease.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": [
+    {
+      "id": "00000060-0000-4000-8000-000000060005",
+      "patient_id": "20000000-0000-4000-8000-000000000060",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "encounter_id": "00000041-0000-4000-8000-000000060005",
+      "owner": "Dr. Rohan Shah",
+      "priority": "routine",
+      "target_date": "2026-09-08",
+      "status": "in_progress",
+      "summary": "",
+      "clinical_clearance": true,
+      "clearance_note": "Synthetic clinician clearance fixture: recovery observations, available investigations and specialist response reviewed; no current critical physiology is recorded.",
+      "medications_checked": true,
+      "follow_up_checked": true,
+      "documents_checked": false,
+      "created_at": "2026-09-08T06:20:00.000Z",
+      "updated_at": "2026-09-08T07:10:00.000Z",
+      "discharged_at": null,
+      "version": 0
+    }
+  ]
+}

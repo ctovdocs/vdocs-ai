@@ -1,0 +1,1033 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000068",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0068",
+    "name": "Poonam Sood",
+    "age": 56,
+    "sex": "F",
+    "department": "Gastroenterology",
+    "encounter": "IPD · HDU Gastroenterology / Bed 18",
+    "conditions": [
+      "Bleeding duodenal ulcer with haemorrhagic shock"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000068001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000068",
+    "dob": "1970-06-10",
+    "occupation": "Retired teacher",
+    "preferred_language": "Marathi, Hindi",
+    "social_context": "Irregular working hours complicate weekday reviews; medication nonadherence is not assumed.",
+    "history": "Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+    "presenting_complaint": "Melaena followed by haematemesis and syncope.",
+    "acuity": "critical",
+    "acuity_reason": "Critical at this synthetic assessment: Melaena followed by haematemesis and syncope. BP 80/46 mmHg, pulse 132/min, SpO₂ 94% on room air. Supporting results: Haemoglobin 5.9 g/dL; Urea 94 mg/dL; Creatinine 1.6 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.",
+    "acuity_assessed_at": "2026-09-08T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000068005",
+      "00000046-0000-4000-8000-000000068001",
+      "00000042-0000-4000-8000-000000068005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000068005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Family history not verified; no negative history is inferred."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2025-07-15T02:00:00.000Z",
+      "ended_at": "2025-07-15T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Initial Gastroenterology assessment. Background: Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported.",
+      "assessment": "Initial Gastroenterology assessment. Background: Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000068002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-03-12T02:00:00.000Z",
+      "ended_at": "2026-03-12T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "assessment": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000068003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-07-10T02:00:00.000Z",
+      "ended_at": "2026-07-10T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "assessment": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000068004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-08-25T02:00:00.000Z",
+      "ended_at": "2026-08-25T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "assessment": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000068005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "department": "Gastroenterology",
+      "kind": "IPD",
+      "started_at": "2026-09-08T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "HDU Gastroenterology / Bed 18",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Melaena followed by haematemesis and syncope.",
+      "assessment": "Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068001",
+      "kind": "consultation",
+      "recorded_at": "2025-07-15T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 1",
+      "body": "Initial Gastroenterology assessment. Background: Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 12.8 g/dL; Creatinine 0.9 mg/dL; Albumin 4.1 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000068001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000068002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068002",
+      "kind": "consultation",
+      "recorded_at": "2026-03-12T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 2",
+      "body": "Follow-up of the recorded background; symptoms and available medication history reviewed.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 12.8 g/dL; Creatinine 0.9 mg/dL; Albumin 4 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000068002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000068003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068003",
+      "kind": "consultation",
+      "recorded_at": "2026-07-10T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 3",
+      "body": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 12.9 g/dL; Creatinine 1 mg/dL; Albumin 3.9 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000068003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000068004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-25T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 4",
+      "body": "Most recent outpatient clinic review of existing records and follow-up arrangements.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 12.8 g/dL; Creatinine 0.9 mg/dL; Albumin 3.8 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000068004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000068005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-08T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Current clinical assessment",
+      "body": "Melaena followed by haematemesis and syncope.\nBackground: Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecorded acuity: Critical at this synthetic assessment: Melaena followed by haematemesis and syncope. BP 80/46 mmHg, pulse 132/min, SpO₂ 94% on room air. Supporting results: Haemoglobin 5.9 g/dL; Urea 94 mg/dL; Creatinine 1.6 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.\nHistory source and context: Irregular working hours complicate weekday reviews; medication nonadherence is not assumed.\nAvailable results: Haemoglobin 5.9 g/dL; Urea 94 mg/dL; Creatinine 1.6 mg/dL; Albumin 3.1 g/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000068005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — current admission review",
+      "body": "Findings: Melaena followed by haematemesis and syncope. Critical at this synthetic assessment: Melaena followed by haematemesis and syncope. BP 80/46 mmHg, pulse 132/min, SpO₂ 94% on room air. Supporting results: Haemoglobin 5.9 g/dL; Urea 94 mg/dL; Creatinine 1.6 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.\nPlan: Review renal perfusion and medication history during acute bleeding care. Pending: Repeat Haemoglobin result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance. Decisions remain with the treating team.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T06:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Latest progress and pending work",
+      "body": "Bleeding duodenal ulcer with haemorrhagic shock. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Review renal perfusion and medication history during acute bleeding care.\nPending: Repeat Haemoglobin result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance.\nDepartment question (Nephrology): Review renal perfusion and medication history during acute bleeding care. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000068001",
+        "00000042-0000-4000-8000-000000068005",
+        "00000047-0000-4000-8000-000000068001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "kind": "handover",
+      "recorded_at": "2026-09-08T06:15:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Melaena followed by haematemesis and syncope.\nBackground: Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecent results: Gastroenterology laboratory review; Abdominal radiograph\nPending: Repeat Haemoglobin result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance.\nContinuity: Bleeding duodenal ulcer with haemorrhagic shock. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Review renal perfusion and medication history during acute bleeding care.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000068001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000062-0000-4000-8000-000000068005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "kind": "progress",
+      "title": "Discharge working-list review (synthetic)",
+      "body": "Future planning only. Acute investigations and clinical review remain pending. Patient must stay in the active clinical workflow.\nSynthetic discharge working draft: Bleeding duodenal ulcer with haemorrhagic shock. Melaena followed by haematemesis and syncope.\nAnticipatory planning only. Critical illness is ongoing; there is no clinical clearance and no discharge decision.\nFollow-up: Gastroenterology; specific appointment and instructions must be verified before the patient leaves.",
+      "recorded_at": "2026-09-08T07:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "source_ids": [],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "recorded_at": "2026-09-08T02:45:00.000Z",
+      "systolic": 80,
+      "diastolic": 46,
+      "pulse": 132,
+      "respiratory_rate": 28,
+      "spo2": 94,
+      "temperature_c": 36.7,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068001",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-07-15T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000068001",
+      "indication": "Initial Gastroenterology assessment. Background: Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000068002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068002",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-03-12T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000068002",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000068003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068003",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-07-10T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000068003",
+      "indication": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000068004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068004",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-25T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000068004",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000068005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000068005",
+      "indication": "Melaena followed by haematemesis and syncope.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "title": "Abdominal radiograph",
+      "kind": "imaging",
+      "placed_at": "2026-09-08T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000068001",
+      "indication": "Melaena followed by haematemesis and syncope.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000068100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "title": "Repeat Haemoglobin result and source review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "from_department": "Gastroenterology",
+      "to_department": "Nephrology",
+      "reason": "Review renal perfusion and medication history during acute bleeding care.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-08T05:35:00.000Z",
+      "accepted_at": "2026-09-08T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000068005",
+        "00000047-0000-4000-8000-000000068001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "title": "Repeat Haemoglobin result and source review",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000068001",
+        "00000042-0000-4000-8000-000000068005",
+        "00000047-0000-4000-8000-000000068001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000068002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "title": "Nephrology assessment and documented response",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000068001",
+        "00000042-0000-4000-8000-000000068005",
+        "00000047-0000-4000-8000-000000068001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000068003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "title": "Senior review of physiology and escalation plan",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000068001",
+        "00000042-0000-4000-8000-000000068005",
+        "00000047-0000-4000-8000-000000068001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000068004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "title": "Discharge planning only — current critical illness prevents clinical clearance",
+      "status": "pending",
+      "kind": "discharge",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000068001",
+        "00000042-0000-4000-8000-000000068005",
+        "00000047-0000-4000-8000-000000068001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000063-0000-4000-8000-000000068005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T07:10:00.000Z",
+      "available_at": "2026-09-08T07:10:00.000Z",
+      "title": "Discharge planning review",
+      "kind": "note",
+      "source_id": "00000062-0000-4000-8000-000000068005",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T07:00:00.000Z",
+      "available_at": "2026-09-08T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — current admission review",
+      "source_id": "00000059-0000-4000-8000-000000068001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T06:15:00.000Z",
+      "available_at": "2026-09-08T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000068001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T06:10:00.000Z",
+      "available_at": "2026-09-08T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000068001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat Haemoglobin result and source review",
+      "source_id": "00000051-0000-4000-8000-000000068001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Nephrology assessment and documented response",
+      "source_id": "00000051-0000-4000-8000-000000068002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Senior review of physiology and escalation plan",
+      "source_id": "00000051-0000-4000-8000-000000068003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Discharge planning only — current critical illness prevents clinical clearance",
+      "source_id": "00000051-0000-4000-8000-000000068004",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T05:35:00.000Z",
+      "available_at": "2026-09-08T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Review renal perfusion and medication history during acute bleeding care.",
+      "source_id": "00000050-0000-4000-8000-000000068001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T05:30:00.000Z",
+      "available_at": "2026-09-08T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000068005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T03:45:00.000Z",
+      "available_at": "2026-09-08T04:30:00.000Z",
+      "kind": "result",
+      "title": "Abdominal radiograph",
+      "source_id": "00000047-0000-4000-8000-000000068001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T02:30:00.000Z",
+      "available_at": "2026-09-08T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000068005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "occurred_at": "2026-09-08T02:00:00.000Z",
+      "available_at": "2026-09-08T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Melaena followed by haematemesis and syncope.",
+      "source_id": "00000041-0000-4000-8000-000000068005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068004",
+      "occurred_at": "2026-08-25T05:30:00.000Z",
+      "available_at": "2026-08-25T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000068004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068004",
+      "occurred_at": "2026-08-25T02:30:00.000Z",
+      "available_at": "2026-08-25T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000068004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068004",
+      "occurred_at": "2026-08-25T02:00:00.000Z",
+      "available_at": "2026-08-25T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_id": "00000041-0000-4000-8000-000000068004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068003",
+      "occurred_at": "2026-07-10T05:30:00.000Z",
+      "available_at": "2026-07-10T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000068003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068003",
+      "occurred_at": "2026-07-10T02:30:00.000Z",
+      "available_at": "2026-07-10T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000068003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068003",
+      "occurred_at": "2026-07-10T02:00:00.000Z",
+      "available_at": "2026-07-10T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_id": "00000041-0000-4000-8000-000000068003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068002",
+      "occurred_at": "2026-03-12T05:30:00.000Z",
+      "available_at": "2026-03-12T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000068002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068002",
+      "occurred_at": "2026-03-12T02:30:00.000Z",
+      "available_at": "2026-03-12T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000068002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068002",
+      "occurred_at": "2026-03-12T02:00:00.000Z",
+      "available_at": "2026-03-12T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_id": "00000041-0000-4000-8000-000000068002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068001",
+      "occurred_at": "2025-07-15T05:30:00.000Z",
+      "available_at": "2025-07-15T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000068001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068001",
+      "occurred_at": "2025-07-15T02:30:00.000Z",
+      "available_at": "2025-07-15T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000068001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "encounter_id": "00000041-0000-4000-8000-000000068001",
+      "occurred_at": "2025-07-15T02:00:00.000Z",
+      "available_at": "2025-07-15T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Initial Gastroenterology assessment. Background: Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported.",
+      "source_id": "00000041-0000-4000-8000-000000068001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "kind": "imaging",
+      "title": "Abdominal radiograph",
+      "source": "MockRIS",
+      "reported_at": "2026-09-08T04:30:00.000Z",
+      "findings": "No free subdiaphragmatic air; the bleeding source requires endoscopic assessment.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "order_id": "00000048-0000-4000-8000-000000068001",
+      "performed_at": "2026-09-08T03:45:00.000Z",
+      "indication": "Melaena followed by haematemesis and syncope.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000068005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-08T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 5.9 g/dL (low); Urea 94 mg/dL (high); Creatinine 1.6 mg/dL (high); Albumin 3.1 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "5.9",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        },
+        {
+          "name": "Urea",
+          "value": "94",
+          "unit": "mg/dL",
+          "reference": "15–45",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.6",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "order_id": "00000043-0000-4000-8000-000000068005",
+      "specimen_at": "2026-09-08T02:30:00.000Z",
+      "indication": "Melaena followed by haematemesis and syncope.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000068004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-25T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 12.8 g/dL (normal); Creatinine 0.9 mg/dL (normal); Albumin 3.8 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.8",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000068004",
+      "order_id": "00000043-0000-4000-8000-000000068004",
+      "specimen_at": "2026-08-25T02:30:00.000Z",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000068003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-07-10T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 12.9 g/dL (normal); Creatinine 1 mg/dL (normal); Albumin 3.9 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "12.9",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.9",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000068003",
+      "order_id": "00000043-0000-4000-8000-000000068003",
+      "specimen_at": "2026-07-10T02:30:00.000Z",
+      "indication": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000068002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-03-12T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 12.8 g/dL (normal); Creatinine 0.9 mg/dL (normal); Albumin 4 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000068002",
+      "order_id": "00000043-0000-4000-8000-000000068002",
+      "specimen_at": "2026-03-12T02:30:00.000Z",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000068001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-07-15T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 12.8 g/dL (normal); Creatinine 0.9 mg/dL (normal); Albumin 4.1 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000068001",
+      "order_id": "00000043-0000-4000-8000-000000068001",
+      "specimen_at": "2025-07-15T02:30:00.000Z",
+      "indication": "Initial Gastroenterology assessment. Background: Chronic dyspepsia and osteoarthritis; intermittent non-prescription analgesic exposure reported.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": [
+    {
+      "id": "00000060-0000-4000-8000-000000068005",
+      "patient_id": "20000000-0000-4000-8000-000000000068",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "encounter_id": "00000041-0000-4000-8000-000000068005",
+      "owner": "Dr. Kavya Menon",
+      "priority": "urgent",
+      "target_date": "2026-09-15",
+      "status": "in_progress",
+      "summary": "Synthetic discharge working draft: Bleeding duodenal ulcer with haemorrhagic shock. Melaena followed by haematemesis and syncope.\nAnticipatory planning only. Critical illness is ongoing; there is no clinical clearance and no discharge decision.\nFollow-up: Gastroenterology; specific appointment and instructions must be verified before the patient leaves.",
+      "clinical_clearance": false,
+      "clearance_note": "",
+      "medications_checked": false,
+      "follow_up_checked": false,
+      "documents_checked": false,
+      "created_at": "2026-09-08T06:20:00.000Z",
+      "updated_at": "2026-09-08T07:10:00.000Z",
+      "discharged_at": null,
+      "version": 0
+    }
+  ]
+}

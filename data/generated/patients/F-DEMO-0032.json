@@ -1,0 +1,1026 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000032",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0032",
+    "name": "Pramila Nair",
+    "age": 63,
+    "sex": "F",
+    "department": "Cardiology",
+    "encounter": "IPD · CCU / Bed 10",
+    "conditions": [
+      "Hypertensive emergency",
+      "Hypertensive encephalopathy",
+      "Chronic kidney disease"
+    ],
+    "allergies": [],
+    "medications": [
+      "Telmisartan"
+    ],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000032001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000032",
+    "dob": "1963-06-10",
+    "occupation": "Retired bank clerk",
+    "preferred_language": "Malayalam, English",
+    "social_context": "Son recently took over medication procurement after a pharmacy change; supply gap is documented as reported, not verified.",
+    "history": "Longstanding hypertension with recorded poor adherence following a recent change in home medication supply; presented with severe headache and confusion.",
+    "presenting_complaint": "Severe headache, blurred vision and new confusion with a markedly elevated blood pressure on recorded assessment.",
+    "acuity": "critical",
+    "acuity_reason": "Blood pressure 232/128 mmHg with new confusion and papilloedema documented on fundoscopy, meeting the recorded hypertensive emergency criteria.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000032005",
+      "00000046-0000-4000-8000-000000032001",
+      "00000042-0000-4000-8000-000000032005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000032005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Both parents had hypertension; one sibling has documented chronic kidney disease."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Hypertension and CKD follow-up.",
+      "assessment": "Hypertension and CKD follow-up.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000032002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Medication supply interruption reported.",
+      "assessment": "Medication supply interruption reported.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000032003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Blood pressure recheck; still uncontrolled.",
+      "assessment": "Blood pressure recheck; still uncontrolled.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000032004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "OPD review before the current acute presentation.",
+      "assessment": "OPD review before the current acute presentation.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000032005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "CCU / Bed 10",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Severe headache, blurred vision and new confusion with a markedly elevated blood pressure on recorded assessment.",
+      "assessment": "Longstanding hypertension with recorded poor adherence following a recent change in home medication supply; presented with severe headache and confusion.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 1",
+      "body": "Hypertension and CKD follow-up.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.4 mg/dL; Potassium 4.6 mmol/L; Haemoglobin 11.4 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000032001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000032002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 2",
+      "body": "Medication supply interruption reported.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.5 mg/dL; Potassium 4.7 mmol/L; Haemoglobin 11.2 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000032002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000032003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 3",
+      "body": "Blood pressure recheck; still uncontrolled.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.6 mg/dL; Potassium 4.8 mmol/L; Haemoglobin 11 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000032003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000032004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 4",
+      "body": "OPD review before the current acute presentation.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.7 mg/dL; Potassium 5 mmol/L; Haemoglobin 10.8 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000032004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000032005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Current clinical assessment",
+      "body": "Severe headache, blurred vision and new confusion with a markedly elevated blood pressure on recorded assessment.\nBackground: Longstanding hypertension with recorded poor adherence following a recent change in home medication supply; presented with severe headache and confusion.\nRecorded acuity: Blood pressure 232/128 mmHg with new confusion and papilloedema documented on fundoscopy, meeting the recorded hypertensive emergency criteria.\nHistory source and context: Son recently took over medication procurement after a pharmacy change; supply gap is documented as reported, not verified.\nAvailable results: Creatinine 2.1 mg/dL; Potassium 5.3 mmol/L; Haemoglobin 10.5 g/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000032005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — admission day",
+      "body": "Findings: Confused, severely hypertensive, papilloedema present. CT head shows no haemorrhage.\nPlan: Controlled intravenous antihypertensive titration, avoiding rapid drops. Nephrology consulted for CKD context.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000032002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Blood pressure trending down in a controlled manner. Confusion improving.\nPlan: Continue gradual blood-pressure control. Repeat renal panel. Transition to oral agents once stable.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Latest progress and pending work",
+      "body": "Critical hypertensive emergency with encephalopathy; rate of blood-pressure reduction is being controlled and rapid normalisation is not assumed safe.\nPending: Controlled blood-pressure reduction monitoring; Repeat renal panel; Fundoscopy follow-up review.\nDepartment question (Nephrology): Assess chronic kidney disease trajectory alongside acute hypertensive emergency management. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000032001",
+        "00000042-0000-4000-8000-000000032005",
+        "00000047-0000-4000-8000-000000032001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Severe headache, blurred vision and new confusion with a markedly elevated blood pressure on recorded assessment.\nBackground: Longstanding hypertension with recorded poor adherence following a recent change in home medication supply; presented with severe headache and confusion.\nRecent results: Cardiology laboratory review; CT head · non-contrast\nPending: Controlled blood-pressure reduction monitoring; Repeat renal panel; Fundoscopy follow-up review.\nContinuity: Critical hypertensive emergency with encephalopathy; rate of blood-pressure reduction is being controlled and rapid normalisation is not assumed safe.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000032001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 232,
+      "diastolic": 128,
+      "pulse": 108,
+      "respiratory_rate": 22,
+      "spo2": 96,
+      "temperature_c": 37,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "name": "Telmisartan",
+      "dose": "40 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Recorded home prescription; recent supply interruption is patient-reported.",
+      "author": "Dr. Rohan Shah",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032001",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000032001",
+      "indication": "Hypertension and CKD follow-up.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000032002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032002",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000032002",
+      "indication": "Medication supply interruption reported.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000032003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032003",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000032003",
+      "indication": "Blood pressure recheck; still uncontrolled.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000032004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032004",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000032004",
+      "indication": "OPD review before the current acute presentation.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000032005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000032005",
+      "indication": "Severe headache, blurred vision and new confusion with a markedly elevated blood pressure on recorded assessment.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "title": "CT head · non-contrast",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000032001",
+      "indication": "New confusion with markedly elevated blood pressure.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000032100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "title": "Repeat renal panel",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "from_department": "Cardiology",
+      "to_department": "Nephrology",
+      "reason": "Assess chronic kidney disease trajectory alongside acute hypertensive emergency management.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000032005",
+        "00000047-0000-4000-8000-000000032001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "title": "Controlled blood-pressure reduction monitoring",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000032001",
+        "00000042-0000-4000-8000-000000032005",
+        "00000047-0000-4000-8000-000000032001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000032002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "title": "Repeat renal panel",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000032001",
+        "00000042-0000-4000-8000-000000032005",
+        "00000047-0000-4000-8000-000000032001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000032003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "title": "Fundoscopy follow-up review",
+      "status": "pending",
+      "kind": "follow_up",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-14T04:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000032001",
+        "00000042-0000-4000-8000-000000032005",
+        "00000047-0000-4000-8000-000000032001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000032018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000032002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000032001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000032001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Controlled blood-pressure reduction monitoring",
+      "source_id": "00000051-0000-4000-8000-000000032001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat renal panel",
+      "source_id": "00000051-0000-4000-8000-000000032002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Fundoscopy follow-up review",
+      "source_id": "00000051-0000-4000-8000-000000032003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Telmisartan: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000032001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Assess chronic kidney disease trajectory alongside acute hypertensive emergency management.",
+      "source_id": "00000050-0000-4000-8000-000000032001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000032005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "CT head · non-contrast",
+      "source_id": "00000047-0000-4000-8000-000000032001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000032005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Severe headache, blurred vision and new confusion with a markedly elevated blood pressure on recorded assessment.",
+      "source_id": "00000041-0000-4000-8000-000000032005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000032001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000032004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000032004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: OPD review before the current acute presentation.",
+      "source_id": "00000041-0000-4000-8000-000000032004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000032003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000032003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Blood pressure recheck; still uncontrolled.",
+      "source_id": "00000041-0000-4000-8000-000000032003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000032002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000032002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Medication supply interruption reported.",
+      "source_id": "00000041-0000-4000-8000-000000032002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000032001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000032001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "encounter_id": "00000041-0000-4000-8000-000000032001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Hypertension and CKD follow-up.",
+      "source_id": "00000041-0000-4000-8000-000000032001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000032002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "kind": "imaging",
+      "title": "CT head · non-contrast",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "No acute intracranial haemorrhage. Findings do not independently confirm hypertensive encephalopathy; clinical correlation is required.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "order_id": "00000048-0000-4000-8000-000000032001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "New confusion with markedly elevated blood pressure.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000032005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 2.1 mg/dL (high); Potassium 5.3 mmol/L (high); Haemoglobin 10.5 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "2.1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Potassium",
+          "value": "5.3",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "10.5",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000032005",
+      "order_id": "00000043-0000-4000-8000-000000032005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Severe headache, blurred vision and new confusion with a markedly elevated blood pressure on recorded assessment.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000032004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.7 mg/dL (high); Potassium 5 mmol/L (normal); Haemoglobin 10.8 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.7",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Potassium",
+          "value": "5",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "10.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000032004",
+      "order_id": "00000043-0000-4000-8000-000000032004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "OPD review before the current acute presentation.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000032003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.6 mg/dL (high); Potassium 4.8 mmol/L (normal); Haemoglobin 11 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.6",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.8",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "11",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000032003",
+      "order_id": "00000043-0000-4000-8000-000000032003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Blood pressure recheck; still uncontrolled.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000032002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.5 mg/dL (high); Potassium 4.7 mmol/L (normal); Haemoglobin 11.2 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.5",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.7",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "11.2",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000032002",
+      "order_id": "00000043-0000-4000-8000-000000032002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Medication supply interruption reported.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000032001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000032",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.4 mg/dL (high); Potassium 4.6 mmol/L (normal); Haemoglobin 11.4 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.4",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.6",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "11.4",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000032001",
+      "order_id": "00000043-0000-4000-8000-000000032001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Hypertension and CKD follow-up.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

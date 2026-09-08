@@ -1,0 +1,465 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000026",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0026",
+    "name": "Ghanshyam Yadav",
+    "age": 52,
+    "sex": "M",
+    "department": "Internal Medicine",
+    "encounter": "IPD · Medical ICU / Bed 11",
+    "conditions": [
+      "Heat stroke",
+      "Acute kidney injury",
+      "Rhabdomyolysis"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000026001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000026",
+    "dob": "1974-06-10",
+    "occupation": "Construction site supervisor",
+    "preferred_language": "Hindi, Bhojpuri",
+    "social_context": "Co-workers report no prior heat-related illness; no independent verification of usual hydration habits.",
+    "history": "Collapsed at an outdoor construction site during peak afternoon heat after several hours of physical labour; co-workers report he had stopped sweating shortly before collapse.",
+    "presenting_complaint": "Altered mental status, hot dry skin and dark urine, brought in by co-workers with a recorded core temperature well above normal.",
+    "acuity": "critical",
+    "acuity_reason": "Core temperature 41.2°C, GCS 11/15 and creatine kinase markedly elevated on the recorded panel.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000026001",
+      "00000046-0000-4000-8000-000000026001",
+      "00000042-0000-4000-8000-000000026001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000026001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of heat-related illness or muscular disease."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Medical ICU / Bed 11",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Altered mental status, hot dry skin and dark urine, brought in by co-workers with a recorded core temperature well above normal.",
+      "assessment": "Collapsed at an outdoor construction site during peak afternoon heat after several hours of physical labour; co-workers report he had stopped sweating shortly before collapse.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Current clinical assessment",
+      "body": "Altered mental status, hot dry skin and dark urine, brought in by co-workers with a recorded core temperature well above normal.\nBackground: Collapsed at an outdoor construction site during peak afternoon heat after several hours of physical labour; co-workers report he had stopped sweating shortly before collapse.\nRecorded acuity: Core temperature 41.2°C, GCS 11/15 and creatine kinase markedly elevated on the recorded panel.\nHistory source and context: Co-workers report no prior heat-related illness; no independent verification of usual hydration habits.\nAvailable results: Creatine kinase 18400 U/L; Creatinine 2.6 mg/dL; Potassium 5.8 mmol/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000026001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — admission day",
+      "body": "Findings: Altered mental status on arrival, hyperthermic. Aggressive cooling initiated. CK markedly elevated.\nPlan: Continue active cooling to target normothermia. Aggressive intravenous fluids for rhabdomyolysis. Nephrology consult placed.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000026002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Temperature normalised. More alert. Urine output being monitored closely.\nPlan: Continue fluids and renal monitoring. Repeat CK and creatinine. Watch for compartment syndrome in affected limbs.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Latest progress and pending work",
+      "body": "Critical heat stroke with rhabdomyolysis; cooling response and renal trajectory are both still pending documentation.\nPending: Repeat creatine kinase and renal panel; Core temperature trend monitoring; Urine output charting.\nDepartment question (Nephrology): Assess rhabdomyolysis-associated acute kidney injury and advise on fluid and renal replacement strategy. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000026001",
+        "00000042-0000-4000-8000-000000026001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Altered mental status, hot dry skin and dark urine, brought in by co-workers with a recorded core temperature well above normal.\nBackground: Collapsed at an outdoor construction site during peak afternoon heat after several hours of physical labour; co-workers report he had stopped sweating shortly before collapse.\nRecent results: Internal Medicine laboratory review\nPending: Repeat creatine kinase and renal panel; Core temperature trend monitoring; Urine output charting.\nContinuity: Critical heat stroke with rhabdomyolysis; cooling response and renal trajectory are both still pending documentation.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000026001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 98,
+      "diastolic": 60,
+      "pulse": 128,
+      "respiratory_rate": 26,
+      "spo2": 95,
+      "temperature_c": 41.2,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000026001",
+      "indication": "Altered mental status, hot dry skin and dark urine, brought in by co-workers with a recorded core temperature well above normal.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000026100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "title": "Repeat creatine kinase and renal panel",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "from_department": "Internal Medicine",
+      "to_department": "Nephrology",
+      "reason": "Assess rhabdomyolysis-associated acute kidney injury and advise on fluid and renal replacement strategy.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000026001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "title": "Repeat creatine kinase and renal panel",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000026001",
+        "00000042-0000-4000-8000-000000026001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000026002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "title": "Core temperature trend monitoring",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000026001",
+        "00000042-0000-4000-8000-000000026001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000026003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "title": "Urine output charting",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000026001",
+        "00000042-0000-4000-8000-000000026001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000026005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000026002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000026001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000026001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat creatine kinase and renal panel",
+      "source_id": "00000051-0000-4000-8000-000000026001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Core temperature trend monitoring",
+      "source_id": "00000051-0000-4000-8000-000000026002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Urine output charting",
+      "source_id": "00000051-0000-4000-8000-000000026003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Assess rhabdomyolysis-associated acute kidney injury and advise on fluid and renal replacement strategy.",
+      "source_id": "00000050-0000-4000-8000-000000026001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000026001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000026001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Altered mental status, hot dry skin and dark urine, brought in by co-workers with a recorded core temperature well above normal.",
+      "source_id": "00000041-0000-4000-8000-000000026001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000026004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000026001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000026002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000042-0000-4000-8000-000000026001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000026",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatine kinase 18400 U/L (high); Creatinine 2.6 mg/dL (high); Potassium 5.8 mmol/L (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatine kinase",
+          "value": "18400",
+          "unit": "U/L",
+          "reference": "30–200",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "2.6",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Potassium",
+          "value": "5.8",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000026001",
+      "order_id": "00000043-0000-4000-8000-000000026001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Altered mental status, hot dry skin and dark urine, brought in by co-workers with a recorded core temperature well above normal.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

@@ -1,0 +1,1031 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000016",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0016",
+    "name": "Nisha Thomas",
+    "age": 42,
+    "sex": "F",
+    "department": "Nephrology",
+    "encounter": "IPD · Renal HDU / Bed 5",
+    "conditions": [
+      "Hypertension",
+      "Severe symptomatic hyponatraemia",
+      "Recent vomiting"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000016001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000016",
+    "dob": "1984-06-10",
+    "occupation": "Laboratory administrator",
+    "preferred_language": "Malayalam, English",
+    "social_context": "Husband is the source for the seizure history. Prior prescriptions are available for reconciliation.",
+    "history": "Prior hypertension follow-up and a recently recorded thiazide prescription are available. Family describes worsening nausea and confusion.",
+    "presenting_complaint": "A witnessed seizure followed by confusion with profound hyponatraemia; cause remains under evaluation.",
+    "acuity": "critical",
+    "acuity_reason": "Sodium 112 mmol/L with documented seizure and GCS 11/15 after the event.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000016005",
+      "00000046-0000-4000-8000-000000016001",
+      "00000042-0000-4000-8000-000000016005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000016005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Mother has documented hypertension; no family history of seizure disorders or electrolyte disease recorded."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Nephrology / historical encounter",
+      "owner": "Dr. Devika Rao",
+      "reason": "Hypertension diagnosis and baseline electrolytes.",
+      "assessment": "Hypertension diagnosis and baseline electrolytes.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000016002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Nephrology / historical encounter",
+      "owner": "Dr. Devika Rao",
+      "reason": "Blood-pressure follow-up.",
+      "assessment": "Blood-pressure follow-up.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000016003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Nephrology / historical encounter",
+      "owner": "Dr. Devika Rao",
+      "reason": "Routine renal function monitoring.",
+      "assessment": "Routine renal function monitoring.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000016004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Nephrology / historical encounter",
+      "owner": "Dr. Devika Rao",
+      "reason": "Antihypertensive prescription change recorded.",
+      "assessment": "Antihypertensive prescription change recorded.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000016005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "department": "Nephrology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Renal HDU / Bed 5",
+      "owner": "Dr. Devika Rao",
+      "reason": "A witnessed seizure followed by confusion with profound hyponatraemia; cause remains under evaluation.",
+      "assessment": "Prior hypertension follow-up and a recently recorded thiazide prescription are available. Family describes worsening nausea and confusion.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Hospital review 1",
+      "body": "Hypertension diagnosis and baseline electrolytes.\nThis is a retained encounter at the demo hospital. Recorded investigations: Sodium 139 mmol/L; Potassium 4.1 mmol/L; Creatinine 0.7 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000016001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000016002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Hospital review 2",
+      "body": "Blood-pressure follow-up.\nThis is a retained encounter at the demo hospital. Recorded investigations: Sodium 138 mmol/L; Potassium 4 mmol/L; Creatinine 0.8 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000016002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000016003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Hospital review 3",
+      "body": "Routine renal function monitoring.\nThis is a retained encounter at the demo hospital. Recorded investigations: Sodium 136 mmol/L; Potassium 3.8 mmol/L; Creatinine 0.8 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000016003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000016004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Hospital review 4",
+      "body": "Antihypertensive prescription change recorded.\nThis is a retained encounter at the demo hospital. Recorded investigations: Sodium 132 mmol/L; Potassium 3.5 mmol/L; Creatinine 0.9 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000016004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000016005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Current clinical assessment",
+      "body": "A witnessed seizure followed by confusion with profound hyponatraemia; cause remains under evaluation.\nBackground: Prior hypertension follow-up and a recently recorded thiazide prescription are available. Family describes worsening nausea and confusion.\nRecorded acuity: Sodium 112 mmol/L with documented seizure and GCS 11/15 after the event.\nHistory source and context: Husband is the source for the seizure history. Prior prescriptions are available for reconciliation.\nAvailable results: Sodium 112 mmol/L; Potassium 3.1 mmol/L; Creatinine 1 mg/dL; Serum osmolality 238 mOsm/kg.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000016005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Ward round — admission day",
+      "body": "Findings: Post-seizure, confused, sodium critically low. Thiazide held as a likely contributor pending further evaluation.\nPlan: Careful controlled sodium correction per protocol, neurological monitoring, serial sodium levels. Internal Medicine consulted.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000016002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: More alert than admission. No further seizure activity documented overnight.\nPlan: Continue controlled correction, avoiding overly rapid rise. Repeat sodium and urine studies. Ongoing neurological reassessment.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Latest progress and pending work",
+      "body": "Critical symptomatic electrolyte disturbance. No sodium correction rate or treatment dose is generated in this demo.\nPending: Serial sodium results; Urine osmolality and sodium; Document neurological reassessment.\nDepartment question (Internal Medicine): Review seizure history and possible systemic contributors to hyponatraemia. Status: accepted. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000016001",
+        "00000042-0000-4000-8000-000000016005",
+        "00000047-0000-4000-8000-000000016001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: A witnessed seizure followed by confusion with profound hyponatraemia; cause remains under evaluation.\nBackground: Prior hypertension follow-up and a recently recorded thiazide prescription are available. Family describes worsening nausea and confusion.\nRecent results: Nephrology laboratory review; CT head · non-contrast\nPending: Serial sodium results; Urine osmolality and sodium; Document neurological reassessment.\nContinuity: Critical symptomatic electrolyte disturbance. No sodium correction rate or treatment dose is generated in this demo.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000016001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 110,
+      "diastolic": 68,
+      "pulse": 102,
+      "respiratory_rate": 22,
+      "spo2": 96,
+      "temperature_c": 36.8,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "name": "Hydrochlorothiazide",
+      "dose": "12.5 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "held",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": "2026-09-07T02:05:00.000Z",
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Admission record notes hold while hyponatraemia is evaluated; causality is not established by this fixture.",
+      "author": "Dr. Devika Rao",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016001",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000016001",
+      "indication": "Hypertension diagnosis and baseline electrolytes.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000016002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016002",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000016002",
+      "indication": "Blood-pressure follow-up.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000016003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016003",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000016003",
+      "indication": "Routine renal function monitoring.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000016004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016004",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000016004",
+      "indication": "Antihypertensive prescription change recorded.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000016005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000016005",
+      "indication": "A witnessed seizure followed by confusion with profound hyponatraemia; cause remains under evaluation.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "title": "CT head · non-contrast",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000016001",
+      "indication": "New seizure and altered sensorium.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000016100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "title": "Serial sodium results",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "from_department": "Nephrology",
+      "to_department": "Internal Medicine",
+      "reason": "Review seizure history and possible systemic contributors to hyponatraemia.",
+      "status": "accepted",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000016005",
+        "00000047-0000-4000-8000-000000016001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "title": "Serial sodium results",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000016001",
+        "00000042-0000-4000-8000-000000016005",
+        "00000047-0000-4000-8000-000000016001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000016002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "title": "Urine osmolality and sodium",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000016001",
+        "00000042-0000-4000-8000-000000016005",
+        "00000047-0000-4000-8000-000000016001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000016003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "title": "Document neurological reassessment",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000016001",
+        "00000042-0000-4000-8000-000000016005",
+        "00000047-0000-4000-8000-000000016001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000016018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000016002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000016001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000016001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Serial sodium results",
+      "source_id": "00000051-0000-4000-8000-000000016001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Urine osmolality and sodium",
+      "source_id": "00000051-0000-4000-8000-000000016002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Document neurological reassessment",
+      "source_id": "00000051-0000-4000-8000-000000016003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Hydrochlorothiazide: held",
+      "source_id": "00000049-0000-4000-8000-000000016001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Review seizure history and possible systemic contributors to hyponatraemia.",
+      "source_id": "00000050-0000-4000-8000-000000016001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000016005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "CT head · non-contrast",
+      "source_id": "00000047-0000-4000-8000-000000016001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000016005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: A witnessed seizure followed by confusion with profound hyponatraemia; cause remains under evaluation.",
+      "source_id": "00000041-0000-4000-8000-000000016005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000016001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000016004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000016004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Antihypertensive prescription change recorded.",
+      "source_id": "00000041-0000-4000-8000-000000016004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000016003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000016003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Routine renal function monitoring.",
+      "source_id": "00000041-0000-4000-8000-000000016003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000016002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000016002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Blood-pressure follow-up.",
+      "source_id": "00000041-0000-4000-8000-000000016002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000016001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000016001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "encounter_id": "00000041-0000-4000-8000-000000016001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Hypertension diagnosis and baseline electrolytes.",
+      "source_id": "00000041-0000-4000-8000-000000016001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000016002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "kind": "imaging",
+      "title": "CT head · non-contrast",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "No acute intracranial haemorrhage or mass effect. Metabolic causes require clinical and laboratory assessment.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "order_id": "00000048-0000-4000-8000-000000016001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "New seizure and altered sensorium.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000016005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 112 mmol/L (low); Potassium 3.1 mmol/L (low); Creatinine 1 mg/dL (normal); Serum osmolality 238 mOsm/kg (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "112",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "low"
+        },
+        {
+          "name": "Potassium",
+          "value": "3.1",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Serum osmolality",
+          "value": "238",
+          "unit": "mOsm/kg",
+          "reference": "275–295",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000016005",
+      "order_id": "00000043-0000-4000-8000-000000016005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "A witnessed seizure followed by confusion with profound hyponatraemia; cause remains under evaluation.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000016004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 132 mmol/L (low); Potassium 3.5 mmol/L (normal); Creatinine 0.9 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "132",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "low"
+        },
+        {
+          "name": "Potassium",
+          "value": "3.5",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000016004",
+      "order_id": "00000043-0000-4000-8000-000000016004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Antihypertensive prescription change recorded.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000016003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 136 mmol/L (normal); Potassium 3.8 mmol/L (normal); Creatinine 0.8 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "136",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "3.8",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.8",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000016003",
+      "order_id": "00000043-0000-4000-8000-000000016003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Routine renal function monitoring.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000016002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 138 mmol/L (normal); Potassium 4 mmol/L (normal); Creatinine 0.8 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "138",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.8",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000016002",
+      "order_id": "00000043-0000-4000-8000-000000016002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Blood-pressure follow-up.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000016001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000016",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 139 mmol/L (normal); Potassium 4.1 mmol/L (normal); Creatinine 0.7 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "139",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.1",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.7",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000016001",
+      "order_id": "00000043-0000-4000-8000-000000016001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Hypertension diagnosis and baseline electrolytes.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

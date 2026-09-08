@@ -1,0 +1,544 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000033",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0033",
+    "name": "Rakesh Chandran",
+    "age": 44,
+    "sex": "M",
+    "department": "Gastroenterology",
+    "encounter": "IPD · GI ICU / Bed 5",
+    "conditions": [
+      "Peptic ulcer disease",
+      "Perforated duodenal ulcer",
+      "Generalised peritonitis"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000033001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000033",
+    "dob": "1982-06-10",
+    "occupation": "Restaurant chef",
+    "preferred_language": "Malayalam, English",
+    "social_context": "Restaurant colleague brought him in; no family contact reached yet at the time of this note.",
+    "history": "Documented history of dyspepsia managed intermittently with over-the-counter antacids. Sudden severe abdominal pain began abruptly this afternoon and has progressively worsened.",
+    "presenting_complaint": "Sudden-onset severe epigastric pain now generalised, with a rigid abdomen and documented guarding on examination.",
+    "acuity": "critical",
+    "acuity_reason": "Free air under the diaphragm on imaging, board-like abdominal rigidity and lactate 4.4 mmol/L at assessment.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000033001",
+      "00000046-0000-4000-8000-000000033001",
+      "00000042-0000-4000-8000-000000033001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000033001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Father has documented peptic ulcer disease; no family history of gastrointestinal malignancy recorded."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "department": "Gastroenterology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "GI ICU / Bed 5",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Sudden-onset severe epigastric pain now generalised, with a rigid abdomen and documented guarding on examination.",
+      "assessment": "Documented history of dyspepsia managed intermittently with over-the-counter antacids. Sudden severe abdominal pain began abruptly this afternoon and has progressively worsened.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Current clinical assessment",
+      "body": "Sudden-onset severe epigastric pain now generalised, with a rigid abdomen and documented guarding on examination.\nBackground: Documented history of dyspepsia managed intermittently with over-the-counter antacids. Sudden severe abdominal pain began abruptly this afternoon and has progressively worsened.\nRecorded acuity: Free air under the diaphragm on imaging, board-like abdominal rigidity and lactate 4.4 mmol/L at assessment.\nHistory source and context: Restaurant colleague brought him in; no family contact reached yet at the time of this note.\nAvailable results: WBC 19.8 10^9/L; Lactate 4.4 mmol/L; Creatinine 1.6 mg/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000033001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — admission day",
+      "body": "Findings: Rigid abdomen, free air on imaging. Surgical team notified for urgent exploration.\nPlan: Broad-spectrum antibiotics, fluid resuscitation, nil by mouth. Urgent surgical evaluation for source control.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000033002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Post-operative status pending documentation; vitals stable on current monitoring.\nPlan: Continue antibiotics and supportive care. Reassess with the surgical team once operative findings are available.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Latest progress and pending work",
+      "body": "Critical perforated viscus with peritonitis; surgical exploration outcome is not yet documented and must not be assumed.\nPending: Emergency surgical exploration documentation; Repeat lactate and renal panel; Blood culture results.\nDepartment question (Internal Medicine): Peri-operative medical optimisation review given the systemic inflammatory response. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000033001",
+        "00000042-0000-4000-8000-000000033001",
+        "00000047-0000-4000-8000-000000033001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Sudden-onset severe epigastric pain now generalised, with a rigid abdomen and documented guarding on examination.\nBackground: Documented history of dyspepsia managed intermittently with over-the-counter antacids. Sudden severe abdominal pain began abruptly this afternoon and has progressively worsened.\nRecent results: Gastroenterology laboratory review; CT abdomen · erect and supine views\nPending: Emergency surgical exploration documentation; Repeat lactate and renal panel; Blood culture results.\nContinuity: Critical perforated viscus with peritonitis; surgical exploration outcome is not yet documented and must not be assumed.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000033001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 88,
+      "diastolic": 54,
+      "pulse": 124,
+      "respiratory_rate": 28,
+      "spo2": 94,
+      "temperature_c": 38,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "name": "Antacid suspension",
+      "dose": "As needed",
+      "route": "oral",
+      "frequency": "Over-the-counter use",
+      "status": "historical",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": "2026-09-07T02:05:00.000Z",
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Self-medicated dyspepsia; not a documented prescription.",
+      "author": "Dr. Kavya Menon",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000033001",
+      "indication": "Sudden-onset severe epigastric pain now generalised, with a rigid abdomen and documented guarding on examination.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "title": "CT abdomen · erect and supine views",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000033001",
+      "indication": "Acute severe abdominal pain with rigidity.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000033100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "title": "Repeat lactate and renal panel",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "from_department": "Gastroenterology",
+      "to_department": "Internal Medicine",
+      "reason": "Peri-operative medical optimisation review given the systemic inflammatory response.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000033001",
+        "00000047-0000-4000-8000-000000033001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "title": "Emergency surgical exploration documentation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000033001",
+        "00000042-0000-4000-8000-000000033001",
+        "00000047-0000-4000-8000-000000033001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000033002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "title": "Repeat lactate and renal panel",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000033001",
+        "00000042-0000-4000-8000-000000033001",
+        "00000047-0000-4000-8000-000000033001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000033003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "title": "Blood culture results",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000033001",
+        "00000042-0000-4000-8000-000000033001",
+        "00000047-0000-4000-8000-000000033001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000033006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000033002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000033001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000033001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Emergency surgical exploration documentation",
+      "source_id": "00000051-0000-4000-8000-000000033001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat lactate and renal panel",
+      "source_id": "00000051-0000-4000-8000-000000033002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Blood culture results",
+      "source_id": "00000051-0000-4000-8000-000000033003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Antacid suspension: historical",
+      "source_id": "00000049-0000-4000-8000-000000033001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Peri-operative medical optimisation review given the systemic inflammatory response.",
+      "source_id": "00000050-0000-4000-8000-000000033001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000033001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "CT abdomen · erect and supine views",
+      "source_id": "00000047-0000-4000-8000-000000033001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000033001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Sudden-onset severe epigastric pain now generalised, with a rigid abdomen and documented guarding on examination.",
+      "source_id": "00000041-0000-4000-8000-000000033001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000033005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000033001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000033002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "kind": "imaging",
+      "title": "CT abdomen · erect and supine views",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Free intraperitoneal air and fluid consistent with a perforated hollow viscus. A duodenal source is favoured; surgical correlation is required.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "order_id": "00000048-0000-4000-8000-000000033001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Acute severe abdominal pain with rigidity.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000033001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000033",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. WBC 19.8 10^9/L (high); Lactate 4.4 mmol/L (high); Creatinine 1.6 mg/dL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "WBC",
+          "value": "19.8",
+          "unit": "10^9/L",
+          "reference": "4–11",
+          "flag": "high"
+        },
+        {
+          "name": "Lactate",
+          "value": "4.4",
+          "unit": "mmol/L",
+          "reference": "0.5–2",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.6",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000033001",
+      "order_id": "00000043-0000-4000-8000-000000033001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Sudden-onset severe epigastric pain now generalised, with a rigid abdomen and documented guarding on examination.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

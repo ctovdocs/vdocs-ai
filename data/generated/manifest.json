@@ -1,0 +1,52 @@
+{
+  "version": "india-high-acuity-100-v3",
+  "snapshot_at": "2026-09-08T07:30:00.000Z",
+  "timezone": "Asia/Kolkata",
+  "synthetic": true,
+  "clinician_review_status": "not_reviewed",
+  "counts": {
+    "patients": 100,
+    "critical_patients": 88,
+    "patients_with_multiple_visits": 80,
+    "encounters": 420,
+    "lab_reports": 420,
+    "lab_observations": 1330,
+    "imaging_reports": 99,
+    "notes": 814,
+    "requests": 104,
+    "timeline_events": 2246
+  },
+  "sources": [
+    {
+      "url": "https://www.icmr.gov.in/standard-treatment-workflows-stws",
+      "use": "Indian clinical topic catalogue consulted; not a source of patient records or validation of generated values."
+    },
+    {
+      "url": "https://clinicalestablishments.mohfw.gov.in/en/standard-treatment-guidelines",
+      "use": "Indian specialty/trauma guideline catalogue consulted; no real patient records imported."
+    },
+    {
+      "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1768823342_cardiology_1-4.pdf",
+      "use": "NSTEMI clinical reference consulted. Synthetic scenario is not a treatment protocol."
+    }
+  ],
+  "expansion": {
+    "patients": 50,
+    "critical_patients": 45,
+    "first_visits": 5,
+    "repeat_visitors": 45,
+    "active_discharge_entries": 20,
+    "planned": 5,
+    "in_progress": 13,
+    "ready": 2
+  },
+  "limitations": [
+    "88/100 critical is a deliberately enriched demonstration mix, not Indian or Fortis prevalence.",
+    "80/100 have multiple hospital encounters. First-time patients have no invented prior encounters here.",
+    "Authored synthetic scenarios, not real, de-identified, Synthea-imported or clinician-validated patients.",
+    "Medication records represent limited historical/reconciliation context, not complete emergency prescribing or administration.",
+    "Imaging is report text only. No real images, DICOM, phone numbers, addresses or ABHA identifiers are included.",
+    "Requests and handover drafts are proposed VDoc workflow fixtures, not observed Fortis capabilities.",
+    "Critical cases require clinician review before presentation as medically validated examples."
+  ]
+}

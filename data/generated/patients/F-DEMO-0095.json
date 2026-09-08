@@ -1,0 +1,1025 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000095",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0095",
+    "name": "Vijay More",
+    "age": 58,
+    "sex": "M",
+    "department": "Internal Medicine",
+    "encounter": "IPD · HDU Internal Medicine / Bed 45",
+    "conditions": [
+      "Severe community-acquired pneumonia with septic shock",
+      "Hypertension",
+      "Type 2 Diabetes"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000095001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000095",
+    "dob": "1968-06-10",
+    "occupation": "Accounts assistant",
+    "preferred_language": "Bengali, Hindi",
+    "social_context": "Family can assist after discharge, but travel and support arrangements have not yet been confirmed.",
+    "history": "Type 2 Diabetes, hypertension and previous respiratory-infection follow-up. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+    "presenting_complaint": "Fever, productive cough, pleuritic pain and new confusion.",
+    "acuity": "critical",
+    "acuity_reason": "Critical at this synthetic assessment: Fever, productive cough, pleuritic pain and new confusion. BP 82/48 mmHg, pulse 130/min, SpO₂ 84% on room air. Supporting results: WBC 26.2 10^3/µL; Lactate 5.4 mmol/L; Creatinine 2.6 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.",
+    "acuity_assessed_at": "2026-09-08T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000095005",
+      "00000046-0000-4000-8000-000000095001",
+      "00000042-0000-4000-8000-000000095005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000095005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Family history not verified; no negative history is inferred."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2025-07-15T02:00:00.000Z",
+      "ended_at": "2025-07-15T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Initial Internal Medicine assessment. Background: Type 2 Diabetes, hypertension and previous respiratory-infection follow-up.",
+      "assessment": "Initial Internal Medicine assessment. Background: Type 2 Diabetes, hypertension and previous respiratory-infection follow-up.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000095002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-03-12T02:00:00.000Z",
+      "ended_at": "2026-03-12T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "assessment": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000095003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-07-10T02:00:00.000Z",
+      "ended_at": "2026-07-10T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Interval Internal Medicine review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "assessment": "Interval Internal Medicine review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000095004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-08-25T02:00:00.000Z",
+      "ended_at": "2026-08-25T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "assessment": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000095005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2026-09-08T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "HDU Internal Medicine / Bed 45",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Fever, productive cough, pleuritic pain and new confusion.",
+      "assessment": "Type 2 Diabetes, hypertension and previous respiratory-infection follow-up. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095001",
+      "kind": "consultation",
+      "recorded_at": "2025-07-15T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 1",
+      "body": "Initial Internal Medicine assessment. Background: Type 2 Diabetes, hypertension and previous respiratory-infection follow-up.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 4.1 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000095001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000095002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095002",
+      "kind": "consultation",
+      "recorded_at": "2026-03-12T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 2",
+      "body": "Follow-up of the recorded background; symptoms and available medication history reviewed.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 4 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000095002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000095003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095003",
+      "kind": "consultation",
+      "recorded_at": "2026-07-10T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 3",
+      "body": "Interval Internal Medicine review with nutrition and laboratory context; current acute findings were not recorded at this visit.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; Haemoglobin 13.9 g/dL; Albumin 3.9 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000095003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000095004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-25T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 4",
+      "body": "Most recent outpatient clinic review of existing records and follow-up arrangements.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 3.8 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000095004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000095005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-08T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Current clinical assessment",
+      "body": "Fever, productive cough, pleuritic pain and new confusion.\nBackground: Type 2 Diabetes, hypertension and previous respiratory-infection follow-up. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecorded acuity: Critical at this synthetic assessment: Fever, productive cough, pleuritic pain and new confusion. BP 82/48 mmHg, pulse 130/min, SpO₂ 84% on room air. Supporting results: WBC 26.2 10^3/µL; Lactate 5.4 mmol/L; Creatinine 2.6 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.\nHistory source and context: Family can assist after discharge, but travel and support arrangements have not yet been confirmed.\nAvailable results: WBC 26.2 10^3/µL; Lactate 5.4 mmol/L; Creatinine 2.6 mg/dL; Haemoglobin 13.8 g/dL; Albumin 3.1 g/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000095005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — current admission review",
+      "body": "Findings: Fever, productive cough, pleuritic pain and new confusion. Critical at this synthetic assessment: Fever, productive cough, pleuritic pain and new confusion. BP 82/48 mmHg, pulse 130/min, SpO₂ 84% on room air. Supporting results: WBC 26.2 10^3/µL; Lactate 5.4 mmol/L; Creatinine 2.6 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.\nPlan: Assess renal dysfunction and ongoing urine-output monitoring. Pending: Repeat WBC result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan. Decisions remain with the treating team.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T06:10:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Latest progress and pending work",
+      "body": "Severe community-acquired pneumonia with septic shock. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Assess renal dysfunction and ongoing urine-output monitoring.\nPending: Repeat WBC result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan.\nDepartment question (Nephrology): Assess renal dysfunction and ongoing urine-output monitoring. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000095001",
+        "00000042-0000-4000-8000-000000095005",
+        "00000047-0000-4000-8000-000000095001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "kind": "handover",
+      "recorded_at": "2026-09-08T06:15:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Fever, productive cough, pleuritic pain and new confusion.\nBackground: Type 2 Diabetes, hypertension and previous respiratory-infection follow-up. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecent results: Internal Medicine laboratory review; Chest radiograph\nPending: Repeat WBC result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan.\nContinuity: Severe community-acquired pneumonia with septic shock. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Assess renal dysfunction and ongoing urine-output monitoring.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000095001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "recorded_at": "2026-09-08T02:45:00.000Z",
+      "systolic": 82,
+      "diastolic": 48,
+      "pulse": 130,
+      "respiratory_rate": 36,
+      "spo2": 84,
+      "temperature_c": 39.4,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "held",
+      "started_at": "2026-08-25T05:00:00.000Z",
+      "ended_at": "2026-09-08T02:05:00.000Z",
+      "recorded_at": "2026-09-08T05:40:00.000Z",
+      "reason": "Synthetic home-list entry only; current administration and discharge prescribing require clinician reconciliation.",
+      "author": "Dr. Ananya Mehta",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000049-0000-4000-8000-000000095002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "name": "Metformin",
+      "dose": "500 mg",
+      "route": "oral",
+      "frequency": "Twice daily",
+      "status": "held",
+      "started_at": "2026-08-25T05:00:00.000Z",
+      "ended_at": "2026-09-08T02:05:00.000Z",
+      "recorded_at": "2026-09-08T05:40:00.000Z",
+      "reason": "Home history; acute illness and renal suitability require review. This is not a prescribing instruction.",
+      "author": "Dr. Ananya Mehta",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095001",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-07-15T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000095001",
+      "indication": "Initial Internal Medicine assessment. Background: Type 2 Diabetes, hypertension and previous respiratory-infection follow-up.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000095002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095002",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-03-12T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000095002",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000095003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095003",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-07-10T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000095003",
+      "indication": "Interval Internal Medicine review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000095004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095004",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-25T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000095004",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000095005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000095005",
+      "indication": "Fever, productive cough, pleuritic pain and new confusion.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "title": "Chest radiograph",
+      "kind": "imaging",
+      "placed_at": "2026-09-08T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000095001",
+      "indication": "Fever, productive cough, pleuritic pain and new confusion.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000095100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "title": "Repeat WBC result and source review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "from_department": "Internal Medicine",
+      "to_department": "Nephrology",
+      "reason": "Assess renal dysfunction and ongoing urine-output monitoring.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-08T05:35:00.000Z",
+      "accepted_at": "2026-09-08T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000095005",
+        "00000047-0000-4000-8000-000000095001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "title": "Repeat WBC result and source review",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000095001",
+        "00000042-0000-4000-8000-000000095005",
+        "00000047-0000-4000-8000-000000095001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000095002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "title": "Nephrology assessment and documented response",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000095001",
+        "00000042-0000-4000-8000-000000095005",
+        "00000047-0000-4000-8000-000000095001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000095003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "title": "Senior review of physiology and escalation plan",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000095001",
+        "00000042-0000-4000-8000-000000095005",
+        "00000047-0000-4000-8000-000000095001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000095017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T07:00:00.000Z",
+      "available_at": "2026-09-08T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — current admission review",
+      "source_id": "00000059-0000-4000-8000-000000095001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T06:15:00.000Z",
+      "available_at": "2026-09-08T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000095001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T06:10:00.000Z",
+      "available_at": "2026-09-08T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000095001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat WBC result and source review",
+      "source_id": "00000051-0000-4000-8000-000000095001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Nephrology assessment and documented response",
+      "source_id": "00000051-0000-4000-8000-000000095002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Senior review of physiology and escalation plan",
+      "source_id": "00000051-0000-4000-8000-000000095003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T05:40:00.000Z",
+      "available_at": "2026-09-08T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Amlodipine: held",
+      "source_id": "00000049-0000-4000-8000-000000095001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T05:40:00.000Z",
+      "available_at": "2026-09-08T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Metformin: held",
+      "source_id": "00000049-0000-4000-8000-000000095002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T05:35:00.000Z",
+      "available_at": "2026-09-08T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Assess renal dysfunction and ongoing urine-output monitoring.",
+      "source_id": "00000050-0000-4000-8000-000000095001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T05:30:00.000Z",
+      "available_at": "2026-09-08T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000095005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T03:45:00.000Z",
+      "available_at": "2026-09-08T04:30:00.000Z",
+      "kind": "result",
+      "title": "Chest radiograph",
+      "source_id": "00000047-0000-4000-8000-000000095001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T02:30:00.000Z",
+      "available_at": "2026-09-08T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000095005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "occurred_at": "2026-09-08T02:00:00.000Z",
+      "available_at": "2026-09-08T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Fever, productive cough, pleuritic pain and new confusion.",
+      "source_id": "00000041-0000-4000-8000-000000095005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095004",
+      "occurred_at": "2026-08-25T05:30:00.000Z",
+      "available_at": "2026-08-25T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000095004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095004",
+      "occurred_at": "2026-08-25T02:30:00.000Z",
+      "available_at": "2026-08-25T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000095004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095004",
+      "occurred_at": "2026-08-25T02:00:00.000Z",
+      "available_at": "2026-08-25T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_id": "00000041-0000-4000-8000-000000095004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095003",
+      "occurred_at": "2026-07-10T05:30:00.000Z",
+      "available_at": "2026-07-10T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000095003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095003",
+      "occurred_at": "2026-07-10T02:30:00.000Z",
+      "available_at": "2026-07-10T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000095003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095003",
+      "occurred_at": "2026-07-10T02:00:00.000Z",
+      "available_at": "2026-07-10T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Interval Internal Medicine review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_id": "00000041-0000-4000-8000-000000095003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095002",
+      "occurred_at": "2026-03-12T05:30:00.000Z",
+      "available_at": "2026-03-12T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000095002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095002",
+      "occurred_at": "2026-03-12T02:30:00.000Z",
+      "available_at": "2026-03-12T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000095002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095002",
+      "occurred_at": "2026-03-12T02:00:00.000Z",
+      "available_at": "2026-03-12T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_id": "00000041-0000-4000-8000-000000095002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095001",
+      "occurred_at": "2025-07-15T05:30:00.000Z",
+      "available_at": "2025-07-15T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000095001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095001",
+      "occurred_at": "2025-07-15T02:30:00.000Z",
+      "available_at": "2025-07-15T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000095001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "encounter_id": "00000041-0000-4000-8000-000000095001",
+      "occurred_at": "2025-07-15T02:00:00.000Z",
+      "available_at": "2025-07-15T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Initial Internal Medicine assessment. Background: Type 2 Diabetes, hypertension and previous respiratory-infection follow-up.",
+      "source_id": "00000041-0000-4000-8000-000000095001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "kind": "imaging",
+      "title": "Chest radiograph",
+      "source": "MockRIS",
+      "reported_at": "2026-09-08T04:30:00.000Z",
+      "findings": "Right lower-zone consolidation with additional left basal opacity.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "order_id": "00000048-0000-4000-8000-000000095001",
+      "performed_at": "2026-09-08T03:45:00.000Z",
+      "indication": "Fever, productive cough, pleuritic pain and new confusion.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000095005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-08T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. WBC 26.2 10^3/µL (high); Lactate 5.4 mmol/L (high); Creatinine 2.6 mg/dL (high); Haemoglobin 13.8 g/dL (normal); Albumin 3.1 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "WBC",
+          "value": "26.2",
+          "unit": "10^3/µL",
+          "reference": "4–11",
+          "flag": "high"
+        },
+        {
+          "name": "Lactate",
+          "value": "5.4",
+          "unit": "mmol/L",
+          "reference": "0.5–2",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "2.6",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000095005",
+      "order_id": "00000043-0000-4000-8000-000000095005",
+      "specimen_at": "2026-09-08T02:30:00.000Z",
+      "indication": "Fever, productive cough, pleuritic pain and new confusion.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000095004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-25T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 3.8 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.8",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000095004",
+      "order_id": "00000043-0000-4000-8000-000000095004",
+      "specimen_at": "2026-08-25T02:30:00.000Z",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000095003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-07-10T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); Haemoglobin 13.9 g/dL (normal); Albumin 3.9 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.9",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.9",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000095003",
+      "order_id": "00000043-0000-4000-8000-000000095003",
+      "specimen_at": "2026-07-10T02:30:00.000Z",
+      "indication": "Interval Internal Medicine review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000095002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-03-12T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 4 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000095002",
+      "order_id": "00000043-0000-4000-8000-000000095002",
+      "specimen_at": "2026-03-12T02:30:00.000Z",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000095001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000095",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-07-15T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 4.1 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000095001",
+      "order_id": "00000043-0000-4000-8000-000000095001",
+      "specimen_at": "2025-07-15T02:30:00.000Z",
+      "indication": "Initial Internal Medicine assessment. Background: Type 2 Diabetes, hypertension and previous respiratory-infection follow-up.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

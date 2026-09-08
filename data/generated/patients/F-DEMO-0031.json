@@ -1,0 +1,514 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000031",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0031",
+    "name": "Waseem Akhtar",
+    "age": 47,
+    "sex": "M",
+    "department": "Cardiology",
+    "encounter": "IPD · CCU / Bed 9",
+    "conditions": [
+      "Coronary artery disease",
+      "Ventricular tachycardia",
+      "Post cardiac arrest state"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000031001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000031",
+    "dob": "1979-06-10",
+    "occupation": "Electrician",
+    "preferred_language": "Urdu, Hindi",
+    "social_context": "Wife witnessed the collapse and performed initial CPR; this is documented as bystander-witnessed, not assumed effective.",
+    "history": "Witnessed collapse at home with bystander CPR started within two minutes; paramedics documented ventricular tachycardia on the first rhythm check and delivered a shock before transport.",
+    "presenting_complaint": "Post-resuscitation drowsiness with a recorded return of spontaneous circulation and ongoing rhythm monitoring.",
+    "acuity": "critical",
+    "acuity_reason": "Witnessed cardiac arrest, shockable rhythm and GCS 9/15 on arrival following return of spontaneous circulation.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000031001",
+      "00000046-0000-4000-8000-000000031001",
+      "00000042-0000-4000-8000-000000031001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000031001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Brother reportedly died suddenly at age 50 under undocumented circumstances; not independently verified."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "CCU / Bed 9",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Post-resuscitation drowsiness with a recorded return of spontaneous circulation and ongoing rhythm monitoring.",
+      "assessment": "Witnessed collapse at home with bystander CPR started within two minutes; paramedics documented ventricular tachycardia on the first rhythm check and delivered a shock before transport.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Current clinical assessment",
+      "body": "Post-resuscitation drowsiness with a recorded return of spontaneous circulation and ongoing rhythm monitoring.\nBackground: Witnessed collapse at home with bystander CPR started within two minutes; paramedics documented ventricular tachycardia on the first rhythm check and delivered a shock before transport.\nRecorded acuity: Witnessed cardiac arrest, shockable rhythm and GCS 9/15 on arrival following return of spontaneous circulation.\nHistory source and context: Wife witnessed the collapse and performed initial CPR; this is documented as bystander-witnessed, not assumed effective.\nAvailable results: Lactate 6.8 mmol/L; High-sensitivity troponin I 890 ng/L; Potassium 4.4 mmol/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000031001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — admission day",
+      "body": "Findings: Post-arrest, drowsy, haemodynamically stable on monitoring. Inferior hypokinesia on echo.\nPlan: Targeted temperature management per protocol. Coronary evaluation planned. Nephrology monitoring for post-arrest kidney injury.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000031002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Improving alertness. No further arrhythmia on monitor overnight.\nPlan: Continue rewarming protocol as directed. Plan coronary evaluation once stable. Serial neurological assessment.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Latest progress and pending work",
+      "body": "Critical post-arrest state; neurological outcome cannot be predicted at this stage and is not stated here.\nPending: Neurological prognostication timeline; Coronary evaluation for the arrest cause; Repeat lactate clearance.\nDepartment question (Nephrology): Monitor for post-arrest acute kidney injury and advise on targeted temperature management fluid balance. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000031001",
+        "00000042-0000-4000-8000-000000031001",
+        "00000047-0000-4000-8000-000000031001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Post-resuscitation drowsiness with a recorded return of spontaneous circulation and ongoing rhythm monitoring.\nBackground: Witnessed collapse at home with bystander CPR started within two minutes; paramedics documented ventricular tachycardia on the first rhythm check and delivered a shock before transport.\nRecent results: Cardiology laboratory review; Echocardiogram\nPending: Neurological prognostication timeline; Coronary evaluation for the arrest cause; Repeat lactate clearance.\nContinuity: Critical post-arrest state; neurological outcome cannot be predicted at this stage and is not stated here.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000031001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 104,
+      "diastolic": 68,
+      "pulse": 118,
+      "respiratory_rate": 22,
+      "spo2": 93,
+      "temperature_c": 36.2,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000031001",
+      "indication": "Post-resuscitation drowsiness with a recorded return of spontaneous circulation and ongoing rhythm monitoring.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "title": "Echocardiogram",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000031001",
+      "indication": "Post cardiac arrest; assess for structural and regional cause.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000031100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "title": "Repeat lactate clearance",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "from_department": "Cardiology",
+      "to_department": "Nephrology",
+      "reason": "Monitor for post-arrest acute kidney injury and advise on targeted temperature management fluid balance.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000031001",
+        "00000047-0000-4000-8000-000000031001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "title": "Neurological prognostication timeline",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000031001",
+        "00000042-0000-4000-8000-000000031001",
+        "00000047-0000-4000-8000-000000031001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000031002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "title": "Coronary evaluation for the arrest cause",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000031001",
+        "00000042-0000-4000-8000-000000031001",
+        "00000047-0000-4000-8000-000000031001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000031003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "title": "Repeat lactate clearance",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000031001",
+        "00000042-0000-4000-8000-000000031001",
+        "00000047-0000-4000-8000-000000031001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000031006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000031002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000031001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000031001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Neurological prognostication timeline",
+      "source_id": "00000051-0000-4000-8000-000000031001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Coronary evaluation for the arrest cause",
+      "source_id": "00000051-0000-4000-8000-000000031002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat lactate clearance",
+      "source_id": "00000051-0000-4000-8000-000000031003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Monitor for post-arrest acute kidney injury and advise on targeted temperature management fluid balance.",
+      "source_id": "00000050-0000-4000-8000-000000031001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000031001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Echocardiogram",
+      "source_id": "00000047-0000-4000-8000-000000031001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000031001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Post-resuscitation drowsiness with a recorded return of spontaneous circulation and ongoing rhythm monitoring.",
+      "source_id": "00000041-0000-4000-8000-000000031001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000031005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000031001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000031002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "kind": "imaging",
+      "title": "Echocardiogram",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Inferior wall hypokinesia. LVEF approximately 38%. No pericardial effusion identified.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "order_id": "00000048-0000-4000-8000-000000031001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Post cardiac arrest; assess for structural and regional cause.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000031001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000031",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Lactate 6.8 mmol/L (high); High-sensitivity troponin I 890 ng/L (high); Potassium 4.4 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Lactate",
+          "value": "6.8",
+          "unit": "mmol/L",
+          "reference": "0.5–2",
+          "flag": "high"
+        },
+        {
+          "name": "High-sensitivity troponin I",
+          "value": "890",
+          "unit": "ng/L",
+          "reference": "0–34",
+          "flag": "high"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.4",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000031001",
+      "order_id": "00000043-0000-4000-8000-000000031001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Post-resuscitation drowsiness with a recorded return of spontaneous circulation and ongoing rhythm monitoring.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

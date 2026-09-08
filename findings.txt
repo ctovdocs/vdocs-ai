@@ -1,0 +1,220 @@
+VDocs
+Hospital Discovery Case Study — Fortis Hospital
+Site visit findings, pain points, and ROI implications — for internal review before the incubator pitch.
+Purpose of This Document
+This document captures what we observed and were told during a discovery visit to Fortis Hospital. It is a single-site case study — not yet a broad market claim — meant to give a concrete, evidence-based foundation for VDocs' product direction and incubator pitch. Each finding below includes what we observed, why it matters, and the ROI or impact angle it points to.
+A note on scope: this document is deliberately just the Fortis findings. It does not restate the VDocs product thesis or roadmap — that lives in the separate Thesis Document. Treat this as the evidence file that supports it.
+Finding 1: Fragmented Systems — No Unified Patient View
+What We Observed at Fortis:
+Fortis runs three separate systems: the main EHR/HIS, a separate portal for lab reports, and a separate PACS portal for advanced imaging. To review one patient fully, a doctor has to copy the patient's UHID from the EHR, open a new tab for the imaging portal, paste and search, then open another new tab for the lab portal, paste and search again. This is at least three tabs per patient, repeated every single time — and even after all that, there is still no single consolidated view; the doctor has to leave the main patient record just to check routine reports.
+Why It Matters:
+This isn't a minor UI annoyance — it directly eats into consultation time that could go to the patient, and it raises the risk of a doctor missing a report or working from an incomplete picture if a tab is skipped under time pressure.
+ROI & Impact for VDocs:
+A unified patient view collapsing all three sources into one page is a direct, measurable time-saved metric per doctor per patient — multiplied across 60–80 patients a day, this is one of the clearest, most demonstrable ROI stories VDocs can put in front of a hospital or an incubator.
+Finding 2: No Digital, Persistent Discharge List
+What We Observed at Fortis:
+When a patient is marked for discharge, that status does not persist as a visible, searchable list anywhere in the system — it effectively disappears the moment it's set. The only way to find it again is a manual search by UHID, name, or phone number under a separate “discharge search.” The real-world workaround today: discharge lists are shared over WhatsApp, manually re-typed, and then staff search for each patient one by one in the system to complete the discharge summary and formalities.
+Why It Matters:
+Discharge is a major bottleneck for bed turnover and hospital revenue capacity. A list that vanishes forces staff into manual, error-prone tracking, which delays discharge processing, delays freeing up beds, and adds pure administrative overhead with no visibility for management.
+ROI & Impact for VDocs:
+A live, digital discharge queue directly improves bed turnover — more patients processed through the same number of beds — while cutting the staff time currently spent on WhatsApp coordination and manual re-searching. This is a strong, quantifiable revenue-capacity argument.
+Finding 3: No Way to Trace Past Discharged Patients
+What We Observed at Fortis:
+Once a patient is discharged, there is no browsable or filterable list to find them again later — only a direct search by exact UHID, name, or phone number. In practice, institutional memory of who was discharged and when lives in WhatsApp threads and handwritten notes, not in the system itself.
+Why It Matters:
+This slows down follow-up care, readmission review, and any audit or compliance record retrieval — all of which depend on being able to find a patient's history quickly, not just by exact identifier recall.
+ROI & Impact for VDocs:
+A searchable discharged-patient history saves staff time on every follow-up or audit request, and reduces compliance risk by keeping a proper, retrievable trail instead of relying on informal channels.
+Finding 4: No Shift Handover / Knowledge Transfer Process
+What We Observed at Fortis:
+When doctors change shifts, there is no structured system to pass along a patient's status and context to the incoming doctor. This is entirely informal today, dependent on whoever happens to be around to explain verbally.
+Why It Matters:
+Informal handovers are a well-known source of patient-safety risk — the incoming doctor may lack full context, repeat a test unnecessarily, or make a decision without the complete picture from the outgoing shift.
+ROI & Impact for VDocs:
+A structured handover feature reduces repeated/duplicate tests (direct cost saving), reduces adverse events tied to missed context (risk reduction), and speeds up how quickly an incoming doctor can get up to speed on each patient.
+Finding 5: Proposed Fix: Voice-to-Structured Handover
+What We Observed at Fortis:
+Our own proposed direction, informed by this gap: let the outgoing doctor speak a natural handover summary, which AI then structures directly into the patient's record — similar in spirit to consumer voice-to-text tools, but purpose-built for structured clinical handover data.
+Why It Matters:
+Doctors are far more likely to adopt a 30-second spoken handover than a typed note — low friction drives real usage, which is what makes a handover feature actually work in practice rather than being ignored like most “please fill this form” tools.
+ROI & Impact for VDocs:
+High expected adoption due to low friction, a measurable safety improvement (fewer missed-context incidents), and a natural differentiator versus plain documentation tools. Note: any real deployment needs its own data-handling and compliance review, separate from any third-party consumer app — flagged here so it's on record before we finalize this as a claim.
+Finding 6: No Holistic Patient View With Specialty Sub-Views
+What We Observed at Fortis:
+Doctors need one page that shows the full patient timeline — every test, procedure, referral, doctor action, and diagnosis — alongside specialty-specific views (Cardiology, CNS, CVS, Respiratory, GIT, Kidney, and others), each showing pinned key values (e.g. Hb, TLC, PT/INR), current medications by category and dose, and highlighted abnormal findings.
+Why It Matters:
+Today, doctors have to manually piece this together across the fragmented systems described in Finding 1. A specialty-filtered view also reduces noise — a cardiologist doesn't need to wade through unrelated GIT notes to find what's relevant to them.
+ROI & Impact for VDocs:
+Faster diagnosis and decision-making, shorter consult time per patient, and a visible quality-of-care improvement that a hospital can use in its own positioning — this is a feature hospitals can feel good about adopting, not just tolerate.
+Finding 7: No Real-Time Interdepartmental Task Tracking
+What We Observed at Fortis:
+When one department needs specific input from another — for example, Cardiology needing particular tests or findings from Gastroenterology on a shared patient — there is no shared task queue with status. Coordination today happens through physical visits or phone calls, with no record of what was asked, what was done, or what the result was.
+Why It Matters:
+For complex, multi-department cases, this coordination delay directly extends how long a decision takes — and by extension, how long a patient stays in the hospital.
+ROI & Impact for VDocs:
+A live interdepartmental task/order tracker shortens length of stay for complex cases (direct cost saving and faster bed availability), reduces miscommunication between departments, and creates an auditable trail of who asked for what and when — valuable for both care quality and legal/compliance defense.
+Finding 8: No Referral Queue With Status Tracking (OPD & IPD)
+What We Observed at Fortis:
+When a doctor refers a patient to a team or department, there is no central, visible list showing that referral to the senior doctor and the juniors under them — no way to review the case in advance, triage urgency, or see referral status (placed, in review, action needed, done) at a glance. This applies to both outpatient (OPD) and inpatient (IPD) referrals.
+Why It Matters:
+Delays in responding to a referral can directly delay urgent care decisions, and management has no visibility into where referral bottlenecks are building up.
+ROI & Impact for VDocs:
+A referral queue with live status improves response time to urgent cases (patient outcomes), and gives hospital management a new layer of operational visibility they don't currently have — useful both for care quality and for staff workload planning.
+Finding 9: System-Wide Downtime During Maintenance
+What We Observed at Fortis:
+During EHR/HIS maintenance windows, the entire system goes down for everyone at once — doctors lose access to patient records hospital-wide during that period, described directly as putting patient care decisions at critical risk.
+Why It Matters:
+This is a single point of failure for an entire hospital's clinical operations — a serious patient-safety issue, not just an inconvenience, and one with real liability implications for the hospital.
+ROI & Impact for VDocs:
+This is one of the strongest, most serious findings in this document. A resilience layer — even something as simple as cached access to critical recent patient data during a primary-system outage — has real safety and liability value to a hospital that goes well beyond routine efficiency gains, and it's a compelling point for an incubator conversation about why this problem needs solving.
+Finding 10: No AI Summarization or Automated Abnormal-Finding Alerts
+What We Observed at Fortis:
+Today, all review of patient history, reports, and findings is fully manual — there is no automated summarization and no system-generated flag for an abnormal result.
+Why It Matters:
+Manual review at the pace of 60–80 patients a day is slow and inherently prone to fatigue-driven human error, especially for finding the one abnormal value buried in a long report.
+ROI & Impact for VDocs:
+This finding most directly validates VDocs' core “Summarize” and “Act” capabilities — it is the clearest, most immediate opportunity to demonstrate time-saved and error-reduction ROI, and arguably the single strongest data point from this visit for the incubator pitch.
+Finding 11: Angiography-Specific Report Viewing Gap
+What We Observed at Fortis:
+A specific, narrower need was flagged for better viewing support of angiography results and their associated reports.
+Why It Matters:
+This is a smaller, more specific gap compared to the others — real, but narrower in scope.
+ROI & Impact for VDocs:
+Worth logging as a backlog item for the product roadmap rather than a headline finding — useful evidence of depth in our research, not a primary pitch point.
+Summary Table
+
+How to Use This Document
+For the incubator form: Findings 1, 2, 9, and 10 are the strongest, most concrete evidence points — lead with these if space is limited.
+For product prioritization with the team: Findings 1, 6, and 10 are the most directly buildable in an early version of VDocs, since they extend the existing ingestion/structuring capability rather than requiring new categories of work.
+This is one hospital. Before finalizing claims for outside audiences, cross-check at least 2–3 more hospital visits to see which findings repeat — a pattern across multiple sites is far more persuasive than one hospital's account, however detailed.
+
+
+
+
+
+
+
+
+
+and also
+
+Fortis HIS / EHR Workflow Discovery
+Problems → Use Cases → Solution → Impact
+Working document for co-founder • Fortis observations for validation and product refinement
+Product thesis
+The hospital already has large amounts of clinical data. The problem is that doctors often have to navigate multiple systems, screens and departments to find, understand and act on that data. Our product is a patient-centric clinical workflow layer on top of the existing HIS/EHR/LIS/PACS: one patient context where doctors can see the full journey, take actions, coordinate with other teams, track pending work and hand over care.
+1. Fragmented access to lab & advanced imaging
+Problem: Doctor is already in HIS but must copy the UHID, open another tab, paste/search in the lab or imaging system, find the patient and then find the report. One patient can require 3+ tabs. Even within HIS, reports may require leaving the patient view.
+Solution: Unified patient workspace with connected Lab/PACS data and direct report access without repeated UHID searches or loss of patient context.
+Impact / ROI: Less navigation and context switching; faster report retrieval; better use of existing hospital systems.
+Example: Example: HIS → copy UHID → Lab tab → paste/search → report; repeat for PACS.
+2. No complete holistic patient view
+Problem: Information exists across labs, imaging, diagnoses, findings, procedures, referrals, consultations, medications, notes and previous admissions, but the doctor does not get one clear view of the complete patient journey.
+Solution: A longitudinal patient record showing every meaningful clinical event: test, procedure, referral, order, prescription, diagnosis, finding, consultation, report and doctor/department action.
+Impact / ROI: Doctor understands the patient faster and can follow the full clinical story without reconstructing it manually.
+Example: Example: Admission → CT → lab → Cardiology → Gastro referral → procedure → result → treatment change.
+3. AI is not turning the full record into actionable context
+Problem: Large amounts of data may be available, but important abnormalities, new events, trends and pending actions can be buried.
+Solution: Small AI layer over the holistic record: highlights important changes, abnormalities, special cases, new results and pending actions, with links to source records.
+Impact / ROI: Faster chart review and better visibility without replacing the underlying record or making autonomous clinical decisions.
+Example: Example: “Creatinine 1.4 → 2.1; Gastro referral completed; KFT pending.”
+4. Discharge patients are difficult to manage as a working list
+Problem: For discharge processing, there is no convenient active digital list. After discharge processing is initiated, the patient may disappear from the normal working flow and must be found through discharge search using UHID, name or phone number.
+Solution: A persistent Discharge Work Queue showing patients, owner/doctor, status and pending formalities. Keep historical lists and status.
+Impact / ROI: Less manual searching and coordination; clearer ownership; potentially faster discharge and bed turnover.
+Example: Example: Ready for discharge → queue → summary pending → review → documents complete → discharged.
+5. Discharge coordination relies on manual lists
+Problem: Discharge lists may be shared/maintained manually, including through WhatsApp, followed by individual patient searches in HIS.
+Solution: Digital shared discharge queue with live status, ownership, filters and history; AI can draft the discharge summary from the patient's record for doctor review.
+Impact / ROI: Reduces duplicate entry and informal coordination; improves visibility of pending discharges.
+Example: Example: “Today's discharges” should be a live system list, not a WhatsApp message.
+6. No structured doctor-to-doctor handover
+Problem: When doctors change shifts, the incoming doctor may need to read multiple notes/reports and rely on verbal communication to understand what happened and what remains pending.
+Solution: Dedicated Handover view based on the patient record: current condition, key history, recent events, completed actions, pending tests/referrals and next actions. AI/voice can draft it; doctor reviews and approves.
+Impact / ROI: Faster, more consistent handovers and better continuity of care.
+Example: Example: “CT completed; Gastro reviewed; culture pending; continue antibiotics; review tomorrow.”
+7. Clinical actions are not maintained as one connected patient record
+Problem: Orders, referrals, tests, procedures, findings and recommendations can be scattered. The next doctor may not easily see who requested what, what happened and what is still pending.
+Solution: Patient Clinical Action Timeline: every relevant request/action has owner, time, status, result and next action.
+Impact / ROI: Clear accountability and less repeated communication or manual reconstruction.
+Example: Example: Cardiology ordered Echo → Echo completed → report available → Cardiology reviewed → treatment updated.
+8. Interdepartmental requests are not closed-loop
+Problem: A doctor may need a specific action or answer from another department and may have to call, physically communicate or follow up manually to know whether it was done.
+Solution: Structured department-to-department request workflow: Request → Received → Accepted → In Progress → Completed → Result/Recommendation → Requester Reviewed.
+Impact / ROI: Faster coordination, visible ownership and fewer “Did you see the patient?” calls/messages.
+Example: Example: Cardiology asks Gastro for evaluation → Gastro reviews → orders LFT → adds recommendation → Cardiology instantly sees completion.
+9. Receiving department needs to reconstruct the case
+Problem: When another department receives a referral/request, the doctor may have to open multiple records to understand the reason, relevant history and latest investigations.
+Solution: Referral/request automatically carries relevant patient context: reason, history, medications, relevant labs/imaging and referring doctor's note, with access to the full holistic record.
+Impact / ROI: Receiving doctor can understand the case faster and act sooner.
+Example: Example: Gastro receives a Cardiology request with the relevant clinical context already attached.
+10. Referral workflow needs team visibility
+Problem: For IPD/OPD referrals, the request may need to be seen and acted on by a senior consultant and the appropriate junior/resident team. The referring doctor also needs visibility into progress.
+Solution: Department referral queue visible to authorized team members, with priority, assignment, status, consultation note, actions and response.
+Impact / ROI: Faster specialist response and less dependence on one individual being available.
+Example: Example: New urgent Cardiology referral → Gastro team sees it → junior reviews → senior decides priority → team acts.
+11. Referral priority and status are not sufficiently visible
+Problem: A referring doctor needs to know whether a referral is routine, urgent, accepted, seen or completed, and whether a response is available.
+Solution: Priority + status tracking for every referral, visible to both requesting and receiving teams.
+Impact / ROI: Reduces follow-up calls and makes urgent cases easier to identify.
+Example: Example: 🔴 Urgent / 🟡 Today / 🟢 Routine; Requested → Accepted → Seen → Completed.
+12. Doctors need information/action from another department, not only a referral
+Problem: Sometimes the requirement is specific: review a finding, provide clearance, perform an assessment, order a test or give a recommendation.
+Solution: General interdepartmental request system attached to the patient: requester specifies what is needed; receiving team acts and records the result.
+Impact / ROI: Creates a structured communication and action channel between clinical teams.
+Example: Example: “Gastro: review abdominal finding and provide recommendation before planned procedure.”
+13. Lab / imaging ordering can require workflow switching
+Problem: Doctor may have to leave the patient workflow, find the ordering module and re-identify the patient before placing an investigation.
+Solution: Order Lab / Order Imaging directly from the patient context, subject to hospital integration and permissions.
+Impact / ROI: Faster ordering and fewer screens; creates a closed loop from order to result.
+Example: Example: Patient → Order Lab → CBC + KFT → Submit → Result arrives → doctor review.
+14. Prescription workflow is repetitive
+Problem: Creating a prescription can require separate navigation and repeated medication entry, while relevant current/previous medications and allergies may be elsewhere.
+Solution: Prescription action inside patient context with current meds, previous meds and allergies visible; AI can draft, but doctor reviews and approves.
+Impact / ROI: Less repetitive documentation and safer context-aware prescribing workflow.
+Example: Example: Patient → Prescription → current meds/allergies visible → draft → doctor approval.
+15. No simple “what changed?” view
+Problem: For a returning or admitted patient, doctors often need changes since their last review rather than the entire chart again.
+Solution: “Since last review” view showing new reports, changed labs, new diagnoses, medication changes, completed referrals and pending actions.
+Impact / ROI: Reduces repetitive chart review and helps doctors focus on new information.
+Example: Example: Creatinine increased; CT uploaded; Gastro completed; antibiotic changed.
+16. No central “needs attention” view
+Problem: A doctor may have multiple patients with critical results, new reports, pending referrals and actions spread across different workflows.
+Solution: Doctor Attention Center: critical results, new reports, pending referrals, overdue tasks and items needing review.
+Impact / ROI: Prioritizes work and reduces the chance of important pending items being missed.
+Example: Example: 🔴 critical lab; 🟠 new CT; 🟠 referral pending; ⏳ culture pending.
+17. Specialty-specific clinical workspace
+Problem: Different specialties need different information first. A generic patient screen can make relevant information harder to find.
+Solution: Same underlying patient data presented through specialty-specific views, e.g. Cardiology: ECG/Echo/Troponin/Angiography; Gastro: Endoscopy/LFT/GI procedures.
+Impact / ROI: Faster specialty-specific review without duplicating the underlying patient record.
+Example: Example: Cardiology opens a patient and immediately sees relevant cardiac investigations and history.
+18. HIS downtime / maintenance can disrupt access
+Problem: If the primary HIS is unavailable, access to essential patient information and workflow can be disrupted.
+Solution: Potential future capability: secure, controlled read-only clinical snapshot for continuity during downtime, followed by reconciliation when the source system returns.
+Impact / ROI: Improves operational/clinical continuity.
+Example: Needs Fortis IT validation: frequency, duration, existing fallback, data retention, security and reconciliation requirements.
+Core product model
+SEE — Holistic patient view: complete longitudinal history and every meaningful clinical event.
+UNDERSTAND — AI: what changed, what is important, abnormal findings, trends and pending actions.
+ACT — Clinical actions: order lab/imaging, prescribe, refer, document and create follow-up.
+COORDINATE — Department workflow: request → action → result → requester review → close.
+CONTINUE — Handover and pending work: next doctor immediately sees context, completed work and what remains.
+The product in one sentence
+One Patient. One Clinical Context. Every Action Connected.  A workflow and intelligence layer that makes existing hospital data immediately usable for doctors without replacing the HIS.
+Validation for next Fortis meeting
+Show us exactly how you access a patient's lab report and advanced imaging from the HIS.
+How many systems/tabs and UHID searches are needed for one patient?
+How do you maintain today's discharge list? Can you retrieve yesterday's/last week's list?
+Show us the exact discharge workflow from “ready for discharge” to completion.
+How do you hand over a patient between doctors/shifts today?
+Show us a real IPD and OPD referral workflow end-to-end.
+Who receives a referral: one doctor or the whole department/team?
+How is referral priority communicated?
+How does the referring doctor know the other department has completed the request?
+How do departments request specific information/actions from one another today?
+How are lab/imaging orders placed and how are results surfaced back to the doctor?
+How are prescriptions created and previous medications/allergies accessed?
+What HIS task do doctors repeat most often and find most frustrating?
+For each pain point: how often does it happen, how long does it take, and what happens if it is delayed?
+Evidence discipline
+For the incubator and hospital discussions, classify each finding as: Observed directly, Doctor-confirmed, IT-confirmed, or Hypothesis / needs validation. Do not generalize one Fortis workflow to all hospitals until validated elsewhere.

@@ -1,0 +1,1033 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000047",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0047",
+    "name": "Firdaus Ali",
+    "age": 30,
+    "sex": "F",
+    "department": "Nephrology",
+    "encounter": "IPD · Renal HDU / Bed 8",
+    "conditions": [
+      "Systemic lupus erythematosus",
+      "Lupus nephritis flare",
+      "Hypertension"
+    ],
+    "allergies": [],
+    "medications": [
+      "Hydroxychloroquine"
+    ],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000047001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000047",
+    "dob": "1996-06-10",
+    "occupation": "College lecturer",
+    "preferred_language": "Urdu, Hindi",
+    "social_context": "Husband manages appointment logistics; patient continues part-time teaching duties where possible.",
+    "history": "Known systemic lupus erythematosus on maintenance immunosuppression with documented stable renal function until this presentation; recent joint pain and facial rash preceded worsening leg swelling.",
+    "presenting_complaint": "New facial rash, joint pain and progressive leg swelling with frothy urine reported over the past week.",
+    "acuity": "critical",
+    "acuity_reason": "Proteinuria in the nephrotic range, rising creatinine and active urinary sediment meeting the recorded criteria for an active lupus nephritis flare.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000047005",
+      "00000046-0000-4000-8000-000000047001",
+      "00000042-0000-4000-8000-000000047005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000047005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Mother has documented rheumatoid arthritis; no other family history of autoimmune disease recorded."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Lupus diagnosis and baseline renal assessment.",
+      "assessment": "Systemic lupus erythematosus diagnosed; baseline renal function normal at that time.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000047002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Nephrology / historical encounter",
+      "owner": "Dr. Devika Rao",
+      "reason": "Renal function stable on maintenance immunosuppression.",
+      "assessment": "Renal function and proteinuria stable on maintenance immunosuppression.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000047003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Joint flare managed with dose adjustment.",
+      "assessment": "Joint flare managed with a temporary steroid dose increase; renal parameters unaffected.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000047004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Nephrology / historical encounter",
+      "owner": "Dr. Devika Rao",
+      "reason": "Routine follow-up before the current flare.",
+      "assessment": "Routine follow-up; renal function within the previously documented stable range.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000047005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "department": "Nephrology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Renal HDU / Bed 8",
+      "owner": "Dr. Devika Rao",
+      "reason": "New facial rash, joint pain and progressive leg swelling with frothy urine reported over the past week.",
+      "assessment": "Known systemic lupus erythematosus on maintenance immunosuppression with documented stable renal function until this presentation; recent joint pain and facial rash preceded worsening leg swelling.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 1",
+      "body": "Seen in Internal Medicine. Diagnosis: Systemic lupus erythematosus diagnosed; baseline renal function normal at that time.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; C3 complement 110 mg/dL; Haemoglobin 11.6 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000047001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000047002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Hospital review 2",
+      "body": "Seen in Nephrology. Diagnosis: Renal function and proteinuria stable on maintenance immunosuppression.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; C3 complement 98 mg/dL; Haemoglobin 11.2 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000047002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000047003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 3",
+      "body": "Seen in Internal Medicine. Diagnosis: Joint flare managed with a temporary steroid dose increase; renal parameters unaffected.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; C3 complement 86 mg/dL; Haemoglobin 10.8 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000047003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000047004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Hospital review 4",
+      "body": "Seen in Nephrology. Diagnosis: Routine follow-up; renal function within the previously documented stable range.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.4 mg/dL; C3 complement 62 mg/dL; Haemoglobin 10.2 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000047004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000047005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Current clinical assessment",
+      "body": "New facial rash, joint pain and progressive leg swelling with frothy urine reported over the past week.\nBackground: Known systemic lupus erythematosus on maintenance immunosuppression with documented stable renal function until this presentation; recent joint pain and facial rash preceded worsening leg swelling.\nRecorded acuity: Proteinuria in the nephrotic range, rising creatinine and active urinary sediment meeting the recorded criteria for an active lupus nephritis flare.\nHistory source and context: Husband manages appointment logistics; patient continues part-time teaching duties where possible.\nAvailable results: Creatinine 2.1 mg/dL; C3 complement 44 mg/dL; Anti-dsDNA 180 IU/mL; Haemoglobin 9.4 g/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000047005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Ward round — admission day",
+      "body": "Findings: Facial rash, joint pain, leg oedema. Nephrotic-range proteinuria and low complement support an active flare.\nPlan: Pulse corticosteroids per protocol, plan renal biopsy for classification. Internal Medicine consulted for infection monitoring.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000047002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Oedema stable, no new rash progression overnight.\nPlan: Continue current immunosuppression. Await biopsy scheduling. Repeat complement and anti-dsDNA to track response.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Latest progress and pending work",
+      "body": "Critical active lupus nephritis flare; biopsy classification is pending and induction therapy has not yet been finalised.\nPending: Renal biopsy for lupus nephritis classification; Repeat complement and anti-dsDNA titres; Proteinuria quantification.\nDepartment question (Internal Medicine): Coordinate immunosuppression escalation and monitor for infection risk during induction therapy. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000047001",
+        "00000042-0000-4000-8000-000000047005",
+        "00000047-0000-4000-8000-000000047001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: New facial rash, joint pain and progressive leg swelling with frothy urine reported over the past week.\nBackground: Known systemic lupus erythematosus on maintenance immunosuppression with documented stable renal function until this presentation; recent joint pain and facial rash preceded worsening leg swelling.\nRecent results: Nephrology laboratory review; Ultrasound KUB\nPending: Renal biopsy for lupus nephritis classification; Repeat complement and anti-dsDNA titres; Proteinuria quantification.\nContinuity: Critical active lupus nephritis flare; biopsy classification is pending and induction therapy has not yet been finalised.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000047001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 148,
+      "diastolic": 92,
+      "pulse": 88,
+      "respiratory_rate": 18,
+      "spo2": 97,
+      "temperature_c": 37.4,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "name": "Hydroxychloroquine",
+      "dose": "200 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Maintenance lupus therapy continued from home prescription.",
+      "author": "Dr. Devika Rao",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047001",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000047001",
+      "indication": "Lupus diagnosis and baseline renal assessment.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000047002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047002",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000047002",
+      "indication": "Renal function stable on maintenance immunosuppression.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000047003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047003",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000047003",
+      "indication": "Joint flare managed with dose adjustment.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000047004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047004",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000047004",
+      "indication": "Routine follow-up before the current flare.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000047005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000047005",
+      "indication": "New facial rash, joint pain and progressive leg swelling with frothy urine reported over the past week.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "title": "Ultrasound KUB",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000047001",
+      "indication": "Lupus flare with worsening renal function.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000047100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "title": "Repeat complement and anti-dsDNA titres",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "from_department": "Nephrology",
+      "to_department": "Internal Medicine",
+      "reason": "Coordinate immunosuppression escalation and monitor for infection risk during induction therapy.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000047005",
+        "00000047-0000-4000-8000-000000047001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "title": "Renal biopsy for lupus nephritis classification",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000047001",
+        "00000042-0000-4000-8000-000000047005",
+        "00000047-0000-4000-8000-000000047001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000047002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "title": "Repeat complement and anti-dsDNA titres",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000047001",
+        "00000042-0000-4000-8000-000000047005",
+        "00000047-0000-4000-8000-000000047001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000047003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "title": "Proteinuria quantification",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000047001",
+        "00000042-0000-4000-8000-000000047005",
+        "00000047-0000-4000-8000-000000047001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000047018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000047002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000047001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000047001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Renal biopsy for lupus nephritis classification",
+      "source_id": "00000051-0000-4000-8000-000000047001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat complement and anti-dsDNA titres",
+      "source_id": "00000051-0000-4000-8000-000000047002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Proteinuria quantification",
+      "source_id": "00000051-0000-4000-8000-000000047003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Hydroxychloroquine: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000047001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Coordinate immunosuppression escalation and monitor for infection risk during induction therapy.",
+      "source_id": "00000050-0000-4000-8000-000000047001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000047005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Ultrasound KUB",
+      "source_id": "00000047-0000-4000-8000-000000047001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000047005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: New facial rash, joint pain and progressive leg swelling with frothy urine reported over the past week.",
+      "source_id": "00000041-0000-4000-8000-000000047005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000047001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000047004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000047004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Routine follow-up before the current flare.",
+      "source_id": "00000041-0000-4000-8000-000000047004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000047003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000047003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Joint flare managed with dose adjustment.",
+      "source_id": "00000041-0000-4000-8000-000000047003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000047002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000047002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Renal function stable on maintenance immunosuppression.",
+      "source_id": "00000041-0000-4000-8000-000000047002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000047001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000047001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "encounter_id": "00000041-0000-4000-8000-000000047001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Lupus diagnosis and baseline renal assessment.",
+      "source_id": "00000041-0000-4000-8000-000000047001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000047002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "kind": "imaging",
+      "title": "Ultrasound KUB",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Kidneys are normal in size with preserved cortico-medullary differentiation. No hydronephrosis identified.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "order_id": "00000048-0000-4000-8000-000000047001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Lupus flare with worsening renal function.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000047005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 2.1 mg/dL (high); C3 complement 44 mg/dL (low); Anti-dsDNA 180 IU/mL (high); Haemoglobin 9.4 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "2.1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "C3 complement",
+          "value": "44",
+          "unit": "mg/dL",
+          "reference": "90–180",
+          "flag": "low"
+        },
+        {
+          "name": "Anti-dsDNA",
+          "value": "180",
+          "unit": "IU/mL",
+          "reference": "0–30",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "9.4",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000047005",
+      "order_id": "00000043-0000-4000-8000-000000047005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "New facial rash, joint pain and progressive leg swelling with frothy urine reported over the past week.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000047004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.4 mg/dL (high); C3 complement 62 mg/dL (low); Haemoglobin 10.2 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.4",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "C3 complement",
+          "value": "62",
+          "unit": "mg/dL",
+          "reference": "90–180",
+          "flag": "low"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "10.2",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000047004",
+      "order_id": "00000043-0000-4000-8000-000000047004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Routine follow-up before the current flare.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000047003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); C3 complement 86 mg/dL (low); Haemoglobin 10.8 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "C3 complement",
+          "value": "86",
+          "unit": "mg/dL",
+          "reference": "90–180",
+          "flag": "low"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "10.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000047003",
+      "order_id": "00000043-0000-4000-8000-000000047003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Joint flare managed with dose adjustment.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000047002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); C3 complement 98 mg/dL (normal); Haemoglobin 11.2 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "C3 complement",
+          "value": "98",
+          "unit": "mg/dL",
+          "reference": "90–180",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "11.2",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000047002",
+      "order_id": "00000043-0000-4000-8000-000000047002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Renal function stable on maintenance immunosuppression.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000047001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000047",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); C3 complement 110 mg/dL (normal); Haemoglobin 11.6 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "C3 complement",
+          "value": "110",
+          "unit": "mg/dL",
+          "reference": "90–180",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "11.6",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000047001",
+      "order_id": "00000043-0000-4000-8000-000000047001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Lupus diagnosis and baseline renal assessment.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

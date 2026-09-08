@@ -1,0 +1,343 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000019",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0019",
+    "name": "Anjali Bose",
+    "age": 36,
+    "sex": "F",
+    "department": "Orthopaedics",
+    "encounter": "OPD · OPD / Room 5",
+    "conditions": [
+      "Closed distal radius fracture"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "noncritical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000019001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000019",
+    "dob": "1990-06-10",
+    "occupation": "Graphic designer",
+    "preferred_language": "Bengali, English",
+    "social_context": "Works at a computer and asks about return-to-work planning. Patient-reported absence of known chronic disease is not equivalent to verified lifelong history.",
+    "history": "First encounter at this hospital after a fall onto an outstretched hand. No earlier hospital chart is available; patient-reported history is kept separate.",
+    "presenting_complaint": "Wrist pain and swelling. Fingers warm, capillary refill under two seconds and no documented sensory deficit.",
+    "acuity": "noncritical",
+    "acuity_reason": "Stable observations and intact recorded distal neurovascular examination.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000019001",
+      "00000046-0000-4000-8000-000000019001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000019001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Patient-reported as non-contributory; no verified family medical history available at this first visit."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "OPD / Room 5",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Wrist pain and swelling. Fingers warm, capillary refill under two seconds and no documented sensory deficit.",
+      "assessment": "First encounter at this hospital after a fall onto an outstretched hand. No earlier hospital chart is available; patient-reported history is kept separate.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Current clinical assessment",
+      "body": "Wrist pain and swelling. Fingers warm, capillary refill under two seconds and no documented sensory deficit.\nBackground: First encounter at this hospital after a fall onto an outstretched hand. No earlier hospital chart is available; patient-reported history is kept separate.\nRecorded acuity: Stable observations and intact recorded distal neurovascular examination.\nHistory source and context: Works at a computer and asks about return-to-work planning. Patient-reported absence of known chronic disease is not equivalent to verified lifelong history.\nAvailable results: No laboratory results recorded.\nAssessment is a synthetic authored scenario, not an AI diagnosis. No critical state is asserted.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Latest progress and pending work",
+      "body": "Stable first-visit fracture case. No invented historical admissions or routine laboratory panels.\nPending: Fracture management review note; Follow-up radiograph appointment.\nDepartment question (Internal Medicine): Review patient-reported medical history if procedural assessment is required. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000019001",
+        "00000047-0000-4000-8000-000000019001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Wrist pain and swelling. Fingers warm, capillary refill under two seconds and no documented sensory deficit.\nBackground: First encounter at this hospital after a fall onto an outstretched hand. No earlier hospital chart is available; patient-reported history is kept separate.\nRecent results: Left wrist X-ray · AP and lateral\nPending: Fracture management review note; Follow-up radiograph appointment.\nContinuity: Stable first-visit fracture case. No invented historical admissions or routine laboratory panels.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000019001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 118,
+      "diastolic": 74,
+      "pulse": 82,
+      "respiratory_rate": 16,
+      "spo2": 99,
+      "temperature_c": 36.6,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000048-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "title": "Left wrist X-ray · AP and lateral",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000019001",
+      "indication": "Fall with focal wrist pain.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "from_department": "Orthopaedics",
+      "to_department": "Internal Medicine",
+      "reason": "Review patient-reported medical history if procedural assessment is required.",
+      "status": "received",
+      "priority": "routine",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000047-0000-4000-8000-000000019001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "title": "Fracture management review note",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000019001",
+        "00000047-0000-4000-8000-000000019001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000019002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "title": "Follow-up radiograph appointment",
+      "status": "pending",
+      "kind": "follow_up",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-14T04:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000019001",
+        "00000047-0000-4000-8000-000000019001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000019005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000019001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000019004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000019001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000019007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Fracture management review note",
+      "source_id": "00000051-0000-4000-8000-000000019001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000019008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Follow-up radiograph appointment",
+      "source_id": "00000051-0000-4000-8000-000000019002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000019006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Review patient-reported medical history if procedural assessment is required.",
+      "source_id": "00000050-0000-4000-8000-000000019001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000019003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000019001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000019002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Left wrist X-ray · AP and lateral",
+      "source_id": "00000047-0000-4000-8000-000000019001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Wrist pain and swelling. Fingers warm, capillary refill under two seconds and no documented sensory deficit.",
+      "source_id": "00000041-0000-4000-8000-000000019001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000019002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000019001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000019",
+      "kind": "imaging",
+      "title": "Left wrist X-ray · AP and lateral",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Extra-articular distal radius fracture with dorsal angulation. No associated dislocation described.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000019001",
+      "order_id": "00000048-0000-4000-8000-000000019001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Fall with focal wrist pain.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    }
+  ],
+  "discharges": []
+}

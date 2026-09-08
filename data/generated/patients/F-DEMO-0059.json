@@ -1,0 +1,1071 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000059",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0059",
+    "name": "Bipin Trivedi",
+    "age": 57,
+    "sex": "M",
+    "department": "Cardiology",
+    "encounter": "IPD · HDU Cardiology / Bed 9",
+    "conditions": [
+      "Cardiac tamponade from a large pericardial effusion",
+      "Hypertension"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000059001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000059",
+    "dob": "1969-06-10",
+    "occupation": "Small business owner",
+    "preferred_language": "Hindi, English",
+    "social_context": "Relative helps with communication with patient consent; preferred-language instructions are requested.",
+    "history": "Hypertension and an earlier small pericardial effusion under investigation. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+    "presenting_complaint": "Increasing breathlessness, raised jugular venous pressure and light-headedness.",
+    "acuity": "critical",
+    "acuity_reason": "Critical at this synthetic assessment: Increasing breathlessness, raised jugular venous pressure and light-headedness. BP 76/48 mmHg, pulse 128/min, SpO₂ 92% on room air. Supporting results: Creatinine 2.4 mg/dL; Lactate 4.8 mmol/L; CRP 72 mg/L. Senior assessment is required; a working-list entry does not mean readiness.",
+    "acuity_assessed_at": "2026-09-08T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000059005",
+      "00000046-0000-4000-8000-000000059001",
+      "00000042-0000-4000-8000-000000059005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000059005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Family history not verified; no negative history is inferred."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-07-15T02:00:00.000Z",
+      "ended_at": "2025-07-15T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Initial Cardiology assessment. Background: Hypertension and an earlier small pericardial effusion under investigation.",
+      "assessment": "Initial Cardiology assessment. Background: Hypertension and an earlier small pericardial effusion under investigation.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000059002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-03-12T02:00:00.000Z",
+      "ended_at": "2026-03-12T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "assessment": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000059003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-07-10T02:00:00.000Z",
+      "ended_at": "2026-07-10T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "assessment": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000059004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-08-25T02:00:00.000Z",
+      "ended_at": "2026-08-25T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "assessment": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000059005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2026-09-08T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "HDU Cardiology / Bed 9",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Increasing breathlessness, raised jugular venous pressure and light-headedness.",
+      "assessment": "Hypertension and an earlier small pericardial effusion under investigation. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059001",
+      "kind": "consultation",
+      "recorded_at": "2025-07-15T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 1",
+      "body": "Initial Cardiology assessment. Background: Hypertension and an earlier small pericardial effusion under investigation.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 4.1 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000059001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000059002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059002",
+      "kind": "consultation",
+      "recorded_at": "2026-03-12T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 2",
+      "body": "Follow-up of the recorded background; symptoms and available medication history reviewed.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 4 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000059002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000059003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059003",
+      "kind": "consultation",
+      "recorded_at": "2026-07-10T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 3",
+      "body": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; Haemoglobin 13.9 g/dL; Albumin 3.9 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000059003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000059004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-25T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 4",
+      "body": "Most recent outpatient clinic review of existing records and follow-up arrangements.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 3.8 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000059004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000059005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-08T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Current clinical assessment",
+      "body": "Increasing breathlessness, raised jugular venous pressure and light-headedness.\nBackground: Hypertension and an earlier small pericardial effusion under investigation. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecorded acuity: Critical at this synthetic assessment: Increasing breathlessness, raised jugular venous pressure and light-headedness. BP 76/48 mmHg, pulse 128/min, SpO₂ 92% on room air. Supporting results: Creatinine 2.4 mg/dL; Lactate 4.8 mmol/L; CRP 72 mg/L. Senior assessment is required; a working-list entry does not mean readiness.\nHistory source and context: Relative helps with communication with patient consent; preferred-language instructions are requested.\nAvailable results: Creatinine 2.4 mg/dL; Lactate 4.8 mmol/L; CRP 72 mg/L; Haemoglobin 13.8 g/dL; Albumin 3.1 g/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000059005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — current admission review",
+      "body": "Findings: Increasing breathlessness, raised jugular venous pressure and light-headedness. Critical at this synthetic assessment: Increasing breathlessness, raised jugular venous pressure and light-headedness. BP 76/48 mmHg, pulse 128/min, SpO₂ 92% on room air. Supporting results: Creatinine 2.4 mg/dL; Lactate 4.8 mmol/L; CRP 72 mg/L. Senior assessment is required; a working-list entry does not mean readiness.\nPlan: Coordinate investigation of the effusion cause after acute cardiology assessment. Pending: Repeat Creatinine result and source review; Internal Medicine assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance. Decisions remain with the treating team.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T06:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Latest progress and pending work",
+      "body": "Cardiac tamponade from a large pericardial effusion. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Coordinate investigation of the effusion cause after acute cardiology assessment.\nPending: Repeat Creatinine result and source review; Internal Medicine assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance.\nDepartment question (Internal Medicine): Coordinate investigation of the effusion cause after acute cardiology assessment. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000059001",
+        "00000042-0000-4000-8000-000000059005",
+        "00000047-0000-4000-8000-000000059001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "kind": "handover",
+      "recorded_at": "2026-09-08T06:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Increasing breathlessness, raised jugular venous pressure and light-headedness.\nBackground: Hypertension and an earlier small pericardial effusion under investigation. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecent results: Cardiology laboratory review; Emergency echocardiogram\nPending: Repeat Creatinine result and source review; Internal Medicine assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance.\nContinuity: Cardiac tamponade from a large pericardial effusion. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Coordinate investigation of the effusion cause after acute cardiology assessment.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000059001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000062-0000-4000-8000-000000059005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "kind": "progress",
+      "title": "Discharge working-list review (synthetic)",
+      "body": "Future planning only. Acute investigations and clinical review remain pending. Patient must stay in the active clinical workflow.\nSynthetic discharge working draft: Cardiac tamponade from a large pericardial effusion. Increasing breathlessness, raised jugular venous pressure and light-headedness.\nAnticipatory planning only. Critical illness is ongoing; there is no clinical clearance and no discharge decision.\nFollow-up: Cardiology; specific appointment and instructions must be verified before the patient leaves.",
+      "recorded_at": "2026-09-08T07:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "source_ids": [],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "recorded_at": "2026-09-08T02:45:00.000Z",
+      "systolic": 76,
+      "diastolic": 48,
+      "pulse": 128,
+      "respiratory_rate": 28,
+      "spo2": 92,
+      "temperature_c": 37.4,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "held",
+      "started_at": "2026-08-25T05:00:00.000Z",
+      "ended_at": "2026-09-08T02:05:00.000Z",
+      "recorded_at": "2026-09-08T05:40:00.000Z",
+      "reason": "Synthetic home-list entry only; current administration and discharge prescribing require clinician reconciliation.",
+      "author": "Dr. Rohan Shah",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059001",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-07-15T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000059001",
+      "indication": "Initial Cardiology assessment. Background: Hypertension and an earlier small pericardial effusion under investigation.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000059002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059002",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-03-12T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000059002",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000059003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059003",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-07-10T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000059003",
+      "indication": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000059004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059004",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-25T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000059004",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000059005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000059005",
+      "indication": "Increasing breathlessness, raised jugular venous pressure and light-headedness.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "title": "Emergency echocardiogram",
+      "kind": "imaging",
+      "placed_at": "2026-09-08T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000059001",
+      "indication": "Increasing breathlessness, raised jugular venous pressure and light-headedness.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000059100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "title": "Repeat Creatinine result and source review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "from_department": "Cardiology",
+      "to_department": "Internal Medicine",
+      "reason": "Coordinate investigation of the effusion cause after acute cardiology assessment.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-08T05:35:00.000Z",
+      "accepted_at": "2026-09-08T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000059005",
+        "00000047-0000-4000-8000-000000059001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "title": "Repeat Creatinine result and source review",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000059001",
+        "00000042-0000-4000-8000-000000059005",
+        "00000047-0000-4000-8000-000000059001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000059002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "title": "Internal Medicine assessment and documented response",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000059001",
+        "00000042-0000-4000-8000-000000059005",
+        "00000047-0000-4000-8000-000000059001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000059003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "title": "Senior review of physiology and escalation plan",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000059001",
+        "00000042-0000-4000-8000-000000059005",
+        "00000047-0000-4000-8000-000000059001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000059004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "title": "Discharge planning only — current critical illness prevents clinical clearance",
+      "status": "pending",
+      "kind": "discharge",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000059001",
+        "00000042-0000-4000-8000-000000059005",
+        "00000047-0000-4000-8000-000000059001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000063-0000-4000-8000-000000059005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T07:10:00.000Z",
+      "available_at": "2026-09-08T07:10:00.000Z",
+      "title": "Discharge planning review",
+      "kind": "note",
+      "source_id": "00000062-0000-4000-8000-000000059005",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T07:00:00.000Z",
+      "available_at": "2026-09-08T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — current admission review",
+      "source_id": "00000059-0000-4000-8000-000000059001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T06:15:00.000Z",
+      "available_at": "2026-09-08T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000059001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T06:10:00.000Z",
+      "available_at": "2026-09-08T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000059001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat Creatinine result and source review",
+      "source_id": "00000051-0000-4000-8000-000000059001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Internal Medicine assessment and documented response",
+      "source_id": "00000051-0000-4000-8000-000000059002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Senior review of physiology and escalation plan",
+      "source_id": "00000051-0000-4000-8000-000000059003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Discharge planning only — current critical illness prevents clinical clearance",
+      "source_id": "00000051-0000-4000-8000-000000059004",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T05:40:00.000Z",
+      "available_at": "2026-09-08T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Amlodipine: held",
+      "source_id": "00000049-0000-4000-8000-000000059001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T05:35:00.000Z",
+      "available_at": "2026-09-08T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Coordinate investigation of the effusion cause after acute cardiology assessment.",
+      "source_id": "00000050-0000-4000-8000-000000059001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T05:30:00.000Z",
+      "available_at": "2026-09-08T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000059005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T03:45:00.000Z",
+      "available_at": "2026-09-08T04:30:00.000Z",
+      "kind": "result",
+      "title": "Emergency echocardiogram",
+      "source_id": "00000047-0000-4000-8000-000000059001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T02:30:00.000Z",
+      "available_at": "2026-09-08T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000059005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "occurred_at": "2026-09-08T02:00:00.000Z",
+      "available_at": "2026-09-08T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Increasing breathlessness, raised jugular venous pressure and light-headedness.",
+      "source_id": "00000041-0000-4000-8000-000000059005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059004",
+      "occurred_at": "2026-08-25T05:30:00.000Z",
+      "available_at": "2026-08-25T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000059004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059004",
+      "occurred_at": "2026-08-25T02:30:00.000Z",
+      "available_at": "2026-08-25T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000059004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059004",
+      "occurred_at": "2026-08-25T02:00:00.000Z",
+      "available_at": "2026-08-25T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_id": "00000041-0000-4000-8000-000000059004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059003",
+      "occurred_at": "2026-07-10T05:30:00.000Z",
+      "available_at": "2026-07-10T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000059003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059003",
+      "occurred_at": "2026-07-10T02:30:00.000Z",
+      "available_at": "2026-07-10T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000059003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059003",
+      "occurred_at": "2026-07-10T02:00:00.000Z",
+      "available_at": "2026-07-10T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_id": "00000041-0000-4000-8000-000000059003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059002",
+      "occurred_at": "2026-03-12T05:30:00.000Z",
+      "available_at": "2026-03-12T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000059002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059002",
+      "occurred_at": "2026-03-12T02:30:00.000Z",
+      "available_at": "2026-03-12T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000059002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059002",
+      "occurred_at": "2026-03-12T02:00:00.000Z",
+      "available_at": "2026-03-12T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_id": "00000041-0000-4000-8000-000000059002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059001",
+      "occurred_at": "2025-07-15T05:30:00.000Z",
+      "available_at": "2025-07-15T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000059001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059001",
+      "occurred_at": "2025-07-15T02:30:00.000Z",
+      "available_at": "2025-07-15T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000059001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "encounter_id": "00000041-0000-4000-8000-000000059001",
+      "occurred_at": "2025-07-15T02:00:00.000Z",
+      "available_at": "2025-07-15T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Initial Cardiology assessment. Background: Hypertension and an earlier small pericardial effusion under investigation.",
+      "source_id": "00000041-0000-4000-8000-000000059001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "kind": "imaging",
+      "title": "Emergency echocardiogram",
+      "source": "MockRIS",
+      "reported_at": "2026-09-08T04:30:00.000Z",
+      "findings": "Large circumferential effusion with right atrial and right ventricular diastolic collapse.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "order_id": "00000048-0000-4000-8000-000000059001",
+      "performed_at": "2026-09-08T03:45:00.000Z",
+      "indication": "Increasing breathlessness, raised jugular venous pressure and light-headedness.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000059005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-08T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 2.4 mg/dL (high); Lactate 4.8 mmol/L (high); CRP 72 mg/L (high); Haemoglobin 13.8 g/dL (normal); Albumin 3.1 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "2.4",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Lactate",
+          "value": "4.8",
+          "unit": "mmol/L",
+          "reference": "0.5–2",
+          "flag": "high"
+        },
+        {
+          "name": "CRP",
+          "value": "72",
+          "unit": "mg/L",
+          "reference": "0–5",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "order_id": "00000043-0000-4000-8000-000000059005",
+      "specimen_at": "2026-09-08T02:30:00.000Z",
+      "indication": "Increasing breathlessness, raised jugular venous pressure and light-headedness.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000059004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-25T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 3.8 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.8",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000059004",
+      "order_id": "00000043-0000-4000-8000-000000059004",
+      "specimen_at": "2026-08-25T02:30:00.000Z",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000059003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-07-10T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); Haemoglobin 13.9 g/dL (normal); Albumin 3.9 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.9",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.9",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000059003",
+      "order_id": "00000043-0000-4000-8000-000000059003",
+      "specimen_at": "2026-07-10T02:30:00.000Z",
+      "indication": "Interval Cardiology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000059002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-03-12T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 4 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000059002",
+      "order_id": "00000043-0000-4000-8000-000000059002",
+      "specimen_at": "2026-03-12T02:30:00.000Z",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000059001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-07-15T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 4.1 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000059001",
+      "order_id": "00000043-0000-4000-8000-000000059001",
+      "specimen_at": "2025-07-15T02:30:00.000Z",
+      "indication": "Initial Cardiology assessment. Background: Hypertension and an earlier small pericardial effusion under investigation.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": [
+    {
+      "id": "00000060-0000-4000-8000-000000059005",
+      "patient_id": "20000000-0000-4000-8000-000000000059",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "encounter_id": "00000041-0000-4000-8000-000000059005",
+      "owner": "Dr. Rohan Shah",
+      "priority": "urgent",
+      "target_date": "2026-09-15",
+      "status": "in_progress",
+      "summary": "Synthetic discharge working draft: Cardiac tamponade from a large pericardial effusion. Increasing breathlessness, raised jugular venous pressure and light-headedness.\nAnticipatory planning only. Critical illness is ongoing; there is no clinical clearance and no discharge decision.\nFollow-up: Cardiology; specific appointment and instructions must be verified before the patient leaves.",
+      "clinical_clearance": false,
+      "clearance_note": "",
+      "medications_checked": false,
+      "follow_up_checked": false,
+      "documents_checked": false,
+      "created_at": "2026-09-08T06:20:00.000Z",
+      "updated_at": "2026-09-08T07:10:00.000Z",
+      "discharged_at": null,
+      "version": 0
+    }
+  ]
+}

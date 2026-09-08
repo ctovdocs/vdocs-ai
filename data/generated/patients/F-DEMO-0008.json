@@ -1,0 +1,1078 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000008",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0008",
+    "name": "Imran Ali",
+    "age": 45,
+    "sex": "M",
+    "department": "Cardiology",
+    "encounter": "IPD · CCU / Bed 3",
+    "conditions": [
+      "Rheumatic mitral valve disease",
+      "Atrial fibrillation",
+      "Rapid ventricular response with hypotension"
+    ],
+    "allergies": [],
+    "medications": [
+      "Warfarin"
+    ],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000008001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000008",
+    "dob": "1981-06-10",
+    "occupation": "Retail manager",
+    "preferred_language": "Hindi, Urdu",
+    "social_context": "Brings an anticoagulation booklet. No claim of missed doses is made without documentation.",
+    "history": "Valve disease and anticoagulation follow-up documented across earlier visits. Presents with palpitations and near-syncope.",
+    "presenting_complaint": "Irregular rapid pulse and hypotension with dizziness; no completed cardioversion record in this dataset.",
+    "acuity": "critical",
+    "acuity_reason": "Heart rate 158/min and BP 82/50 mmHg with near-syncope.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000008005",
+      "00000046-0000-4000-8000-000000008001",
+      "00000042-0000-4000-8000-000000008005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000008005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Documented childhood rheumatic fever; no other family history of valvular disease recorded."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Valve clinic baseline echo.",
+      "assessment": "Valve clinic baseline echo.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-13T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Atrial fibrillation admission and discharge record.",
+      "assessment": "Atrial fibrillation admission and discharge record.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000008003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Anticoagulation monitoring visit.",
+      "assessment": "Anticoagulation monitoring visit.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000008004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Valve clinic follow-up with INR review.",
+      "assessment": "Valve clinic follow-up with INR review.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000008005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "CCU / Bed 3",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Irregular rapid pulse and hypotension with dizziness; no completed cardioversion record in this dataset.",
+      "assessment": "Valve disease and anticoagulation follow-up documented across earlier visits. Presents with palpitations and near-syncope.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 1",
+      "body": "Valve clinic baseline echo.\nThis is a retained encounter at the demo hospital. Recorded investigations: INR 2.1 ratio; Haemoglobin 13.2 g/dL; Potassium 4.2 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000008001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 2",
+      "body": "Atrial fibrillation admission and discharge record.\nThis is a retained encounter at the demo hospital. Recorded investigations: INR 2.5 ratio; Haemoglobin 12.8 g/dL; Potassium 4 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000008002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000045-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008002",
+      "kind": "discharge",
+      "recorded_at": "2025-12-13T08:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Historical discharge record",
+      "body": "Prior admission completed. Admission context: Atrial fibrillation admission and discharge record. The hospital retained this discharge record and the linked investigations. Subsequent outpatient reviews are separate encounters; current critical status must not be applied to this historical discharge.",
+      "source_ids": [
+        "00000044-0000-4000-8000-000000008002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000008003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 3",
+      "body": "Anticoagulation monitoring visit.\nThis is a retained encounter at the demo hospital. Recorded investigations: INR 2.3 ratio; Haemoglobin 13 g/dL; Potassium 4.1 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000008003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000008004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 4",
+      "body": "Valve clinic follow-up with INR review.\nThis is a retained encounter at the demo hospital. Recorded investigations: INR 2.4 ratio; Haemoglobin 12.9 g/dL; Potassium 4.2 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000008004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000008005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Current clinical assessment",
+      "body": "Irregular rapid pulse and hypotension with dizziness; no completed cardioversion record in this dataset.\nBackground: Valve disease and anticoagulation follow-up documented across earlier visits. Presents with palpitations and near-syncope.\nRecorded acuity: Heart rate 158/min and BP 82/50 mmHg with near-syncope.\nHistory source and context: Brings an anticoagulation booklet. No claim of missed doses is made without documentation.\nAvailable results: INR 2.6 ratio; Haemoglobin 12.4 g/dL; Potassium 3.4 mmol/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000008005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000052-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "kind": "procedure",
+      "recorded_at": "2026-09-07T03:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Procedure / physiological study record",
+      "body": "12-lead ECG documents atrial fibrillation with rapid ventricular response.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — admission day",
+      "body": "Findings: Irregular rapid pulse, hypotensive, near-syncope. Echo confirms known mitral stenosis with restricted excursion.\nPlan: Rate control, haemodynamic monitoring, anticoagulation review given the INR trend. Internal Medicine consulted.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Heart rate better controlled. No further near-syncope episodes overnight.\nPlan: Continue current rate-control strategy. Repeat ECG. Review anticoagulation dosing per the medication reconciliation.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Latest progress and pending work",
+      "body": "Critical unstable rhythm scenario. INR flagged against laboratory reference is not automatically a bleeding emergency.\nPending: Repeat ECG after clinician-led intervention; Medication reconciliation; Senior procedure note.\nDepartment question (Internal Medicine): Review possible systemic precipitants and reconcile medication history. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000008001",
+        "00000042-0000-4000-8000-000000008005",
+        "00000047-0000-4000-8000-000000008001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Irregular rapid pulse and hypotension with dizziness; no completed cardioversion record in this dataset.\nBackground: Valve disease and anticoagulation follow-up documented across earlier visits. Presents with palpitations and near-syncope.\nRecent results: Cardiology laboratory review; Echocardiogram\nPending: Repeat ECG after clinician-led intervention; Medication reconciliation; Senior procedure note.\nContinuity: Critical unstable rhythm scenario. INR flagged against laboratory reference is not automatically a bleeding emergency.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000008001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 82,
+      "diastolic": 50,
+      "pulse": 158,
+      "respiratory_rate": 26,
+      "spo2": 94,
+      "temperature_c": 37,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "name": "Warfarin",
+      "dose": "3 mg",
+      "route": "oral",
+      "frequency": "Once daily per previous prescription",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Historical dose only. INR reference flag uses a non-anticoagulated interval, not an individual therapeutic target.",
+      "author": "Dr. Rohan Shah",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008001",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000008001",
+      "indication": "Valve clinic baseline echo.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008002",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000008002",
+      "indication": "Atrial fibrillation admission and discharge record.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000008003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008003",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000008003",
+      "indication": "Anticoagulation monitoring visit.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000008004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008004",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000008004",
+      "indication": "Valve clinic follow-up with INR review.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000008005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000008005",
+      "indication": "Irregular rapid pulse and hypotension with dizziness; no completed cardioversion record in this dataset.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "title": "Echocardiogram",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000008001",
+      "indication": "Known rheumatic valve disease with unstable arrhythmia.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000008100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "title": "Repeat ECG after clinician-led intervention",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "from_department": "Cardiology",
+      "to_department": "Internal Medicine",
+      "reason": "Review possible systemic precipitants and reconcile medication history.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000008005",
+        "00000047-0000-4000-8000-000000008001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "title": "Repeat ECG after clinician-led intervention",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000008001",
+        "00000042-0000-4000-8000-000000008005",
+        "00000047-0000-4000-8000-000000008001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "title": "Medication reconciliation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000008001",
+        "00000042-0000-4000-8000-000000008005",
+        "00000047-0000-4000-8000-000000008001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000008003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "title": "Senior procedure note",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000008001",
+        "00000042-0000-4000-8000-000000008005",
+        "00000047-0000-4000-8000-000000008001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000008020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000008002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000008001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000008001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat ECG after clinician-led intervention",
+      "source_id": "00000051-0000-4000-8000-000000008001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008026",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Medication reconciliation",
+      "source_id": "00000051-0000-4000-8000-000000008002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008027",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Senior procedure note",
+      "source_id": "00000051-0000-4000-8000-000000008003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Warfarin: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000008001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Review possible systemic precipitants and reconcile medication history.",
+      "source_id": "00000050-0000-4000-8000-000000008001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000008005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Echocardiogram",
+      "source_id": "00000047-0000-4000-8000-000000008001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000008005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T03:15:00.000Z",
+      "available_at": "2026-09-07T03:15:00.000Z",
+      "kind": "note",
+      "title": "Procedure / physiological study record",
+      "source_id": "00000052-0000-4000-8000-000000008001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Irregular rapid pulse and hypotension with dizziness; no completed cardioversion record in this dataset.",
+      "source_id": "00000041-0000-4000-8000-000000008005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000008001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000008004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000008004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Valve clinic follow-up with INR review.",
+      "source_id": "00000041-0000-4000-8000-000000008004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000008003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000008003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Anticoagulation monitoring visit.",
+      "source_id": "00000041-0000-4000-8000-000000008003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008002",
+      "occurred_at": "2025-12-13T08:00:00.000Z",
+      "available_at": "2025-12-13T08:00:00.000Z",
+      "kind": "note",
+      "title": "Historical discharge record",
+      "source_id": "00000045-0000-4000-8000-000000008002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000008002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000008002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Atrial fibrillation admission and discharge record.",
+      "source_id": "00000041-0000-4000-8000-000000008002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000008001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000008001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "encounter_id": "00000041-0000-4000-8000-000000008001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Valve clinic baseline echo.",
+      "source_id": "00000041-0000-4000-8000-000000008001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "kind": "imaging",
+      "title": "Echocardiogram",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Thickened mitral leaflets with restricted excursion and left atrial enlargement. Mitral stenosis documented; LVEF approximately 50%.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "order_id": "00000048-0000-4000-8000-000000008001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Known rheumatic valve disease with unstable arrhythmia.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000008005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. INR 2.6 ratio (high); Haemoglobin 12.4 g/dL (low); Potassium 3.4 mmol/L (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "INR",
+          "value": "2.6",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.4",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Potassium",
+          "value": "3.4",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000008005",
+      "order_id": "00000043-0000-4000-8000-000000008005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Irregular rapid pulse and hypotension with dizziness; no completed cardioversion record in this dataset.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000008004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. INR 2.4 ratio (high); Haemoglobin 12.9 g/dL (low); Potassium 4.2 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "INR",
+          "value": "2.4",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.9",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.2",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000008004",
+      "order_id": "00000043-0000-4000-8000-000000008004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Valve clinic follow-up with INR review.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000008003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. INR 2.3 ratio (high); Haemoglobin 13 g/dL (normal); Potassium 4.1 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "INR",
+          "value": "2.3",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.1",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000008003",
+      "order_id": "00000043-0000-4000-8000-000000008003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Anticoagulation monitoring visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000008002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. INR 2.5 ratio (high); Haemoglobin 12.8 g/dL (low); Potassium 4 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "INR",
+          "value": "2.5",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Potassium",
+          "value": "4",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000008002",
+      "order_id": "00000043-0000-4000-8000-000000008002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Atrial fibrillation admission and discharge record.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000008001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000008",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. INR 2.1 ratio (high); Haemoglobin 13.2 g/dL (normal); Potassium 4.2 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "INR",
+          "value": "2.1",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.2",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.2",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000008001",
+      "order_id": "00000043-0000-4000-8000-000000008001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Valve clinic baseline echo.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

@@ -1,0 +1,419 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000020",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0020",
+    "name": "Manoj Reddy",
+    "age": 60,
+    "sex": "M",
+    "department": "Orthopaedics",
+    "encounter": "OPD · OPD / Room 6",
+    "conditions": [
+      "Bilateral knee osteoarthritis",
+      "Patient-reported hypertension"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "noncritical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000020001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000020",
+    "dob": "1966-06-10",
+    "occupation": "Retired sales representative",
+    "preferred_language": "Telugu, English",
+    "social_context": "Prefers Telugu for detailed discussion and English for written appointment instructions.",
+    "history": "First hospital visit for chronic mechanical knee pain. External prescriptions are not yet available and have not been invented.",
+    "presenting_complaint": "Pain with stairs and walking; no fever, acutely hot joint or recent trauma recorded.",
+    "acuity": "noncritical",
+    "acuity_reason": "Stable outpatient presentation without documented acute red flags.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000020001",
+      "00000046-0000-4000-8000-000000020001",
+      "00000042-0000-4000-8000-000000020001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000020001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Patient reports a sibling with knee replacement surgery; not independently verified at this first hospital visit."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "OPD / Room 6",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Pain with stairs and walking; no fever, acutely hot joint or recent trauma recorded.",
+      "assessment": "First hospital visit for chronic mechanical knee pain. External prescriptions are not yet available and have not been invented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Current clinical assessment",
+      "body": "Pain with stairs and walking; no fever, acutely hot joint or recent trauma recorded.\nBackground: First hospital visit for chronic mechanical knee pain. External prescriptions are not yet available and have not been invented.\nRecorded acuity: Stable outpatient presentation without documented acute red flags.\nHistory source and context: Prefers Telugu for detailed discussion and English for written appointment instructions.\nAvailable results: Creatinine 1.1 mg/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. No critical state is asserted.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000020001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Latest progress and pending work",
+      "body": "Stable first visit. Existing hypertension is patient-reported; previous hospital records are unavailable.\nPending: Obtain external prescription history; Physiotherapy and follow-up documentation.\nDepartment question (Internal Medicine): Reconcile reported hypertension and external medication history before future procedural planning. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000020001",
+        "00000042-0000-4000-8000-000000020001",
+        "00000047-0000-4000-8000-000000020001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Pain with stairs and walking; no fever, acutely hot joint or recent trauma recorded.\nBackground: First hospital visit for chronic mechanical knee pain. External prescriptions are not yet available and have not been invented.\nRecent results: Orthopaedics laboratory review; Bilateral knee X-ray · weight-bearing\nPending: Obtain external prescription history; Physiotherapy and follow-up documentation.\nContinuity: Stable first visit. Existing hypertension is patient-reported; previous hospital records are unavailable.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000020001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 142,
+      "diastolic": 84,
+      "pulse": 78,
+      "respiratory_rate": 16,
+      "spo2": 98,
+      "temperature_c": 36.7,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000020001",
+      "indication": "Pain with stairs and walking; no fever, acutely hot joint or recent trauma recorded.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "title": "Bilateral knee X-ray · weight-bearing",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000020001",
+      "indication": "Chronic mechanical knee pain.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000020100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "title": "Follow-up laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "from_department": "Orthopaedics",
+      "to_department": "Internal Medicine",
+      "reason": "Reconcile reported hypertension and external medication history before future procedural planning.",
+      "status": "received",
+      "priority": "routine",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000020001",
+        "00000047-0000-4000-8000-000000020001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "title": "Obtain external prescription history",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000020001",
+        "00000042-0000-4000-8000-000000020001",
+        "00000047-0000-4000-8000-000000020001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000020002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "title": "Physiotherapy and follow-up documentation",
+      "status": "pending",
+      "kind": "follow_up",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-14T04:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000020001",
+        "00000042-0000-4000-8000-000000020001",
+        "00000047-0000-4000-8000-000000020001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000020006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000020001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000020005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000020001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000020008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Obtain external prescription history",
+      "source_id": "00000051-0000-4000-8000-000000020001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000020009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Physiotherapy and follow-up documentation",
+      "source_id": "00000051-0000-4000-8000-000000020002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000020007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Reconcile reported hypertension and external medication history before future procedural planning.",
+      "source_id": "00000050-0000-4000-8000-000000020001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000020004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000020001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000020003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Bilateral knee X-ray · weight-bearing",
+      "source_id": "00000047-0000-4000-8000-000000020001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000020002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000020001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Pain with stairs and walking; no fever, acutely hot joint or recent trauma recorded.",
+      "source_id": "00000041-0000-4000-8000-000000020001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000020002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "kind": "imaging",
+      "title": "Bilateral knee X-ray · weight-bearing",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Medial compartment joint-space narrowing with marginal osteophytes bilaterally. No acute fracture.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "order_id": "00000048-0000-4000-8000-000000020001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Chronic mechanical knee pain.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000020001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000020",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.1 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000020001",
+      "order_id": "00000043-0000-4000-8000-000000020001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Pain with stairs and walking; no fever, acutely hot joint or recent trauma recorded.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

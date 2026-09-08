@@ -1,0 +1,1071 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000079",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0079",
+    "name": "Ashok Rane",
+    "age": 60,
+    "sex": "M",
+    "department": "Orthopaedics",
+    "encounter": "IPD · HDU Orthopaedics / Bed 29",
+    "conditions": [
+      "Postoperative pulmonary embolism after knee arthroplasty",
+      "Hypertension"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000079001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000079",
+    "dob": "1966-06-10",
+    "occupation": "Small business owner",
+    "preferred_language": "Gujarati, Hindi",
+    "social_context": "Relative helps with communication with patient consent; preferred-language instructions are requested.",
+    "history": "Recent knee replacement and hypertension. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+    "presenting_complaint": "Sudden dyspnoea and syncope during postoperative mobilisation.",
+    "acuity": "critical",
+    "acuity_reason": "Critical at this synthetic assessment: Sudden dyspnoea and syncope during postoperative mobilisation. BP 80/48 mmHg, pulse 132/min, SpO₂ 84% on room air. Supporting results: Troponin I 0.6 ng/mL; Lactate 4.8 mmol/L; Creatinine 1.3 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.",
+    "acuity_assessed_at": "2026-09-08T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000079005",
+      "00000046-0000-4000-8000-000000079001",
+      "00000042-0000-4000-8000-000000079005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000079005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Family history not verified; no negative history is inferred."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2025-07-15T02:00:00.000Z",
+      "ended_at": "2025-07-15T08:00:00.000Z",
+      "status": "completed",
+      "location": "Orthopaedics / historical encounter",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Initial Orthopaedics assessment. Background: Recent knee replacement and hypertension.",
+      "assessment": "Initial Orthopaedics assessment. Background: Recent knee replacement and hypertension.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000079002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2026-03-12T02:00:00.000Z",
+      "ended_at": "2026-03-12T08:00:00.000Z",
+      "status": "completed",
+      "location": "Orthopaedics / historical encounter",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "assessment": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000079003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2026-07-10T02:00:00.000Z",
+      "ended_at": "2026-07-10T08:00:00.000Z",
+      "status": "completed",
+      "location": "Orthopaedics / historical encounter",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Interval Orthopaedics review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "assessment": "Interval Orthopaedics review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000079004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "department": "Orthopaedics",
+      "kind": "OPD",
+      "started_at": "2026-08-25T02:00:00.000Z",
+      "ended_at": "2026-08-25T08:00:00.000Z",
+      "status": "completed",
+      "location": "Orthopaedics / historical encounter",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "assessment": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000079005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "department": "Orthopaedics",
+      "kind": "IPD",
+      "started_at": "2026-09-08T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "HDU Orthopaedics / Bed 29",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Sudden dyspnoea and syncope during postoperative mobilisation.",
+      "assessment": "Recent knee replacement and hypertension. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079001",
+      "kind": "consultation",
+      "recorded_at": "2025-07-15T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Hospital review 1",
+      "body": "Initial Orthopaedics assessment. Background: Recent knee replacement and hypertension.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 4.1 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000079001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000079002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079002",
+      "kind": "consultation",
+      "recorded_at": "2026-03-12T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Hospital review 2",
+      "body": "Follow-up of the recorded background; symptoms and available medication history reviewed.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 4 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000079002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000079003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079003",
+      "kind": "consultation",
+      "recorded_at": "2026-07-10T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Hospital review 3",
+      "body": "Interval Orthopaedics review with nutrition and laboratory context; current acute findings were not recorded at this visit.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; Haemoglobin 13.9 g/dL; Albumin 3.9 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000079003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000079004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-25T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Hospital review 4",
+      "body": "Most recent outpatient clinic review of existing records and follow-up arrangements.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 13.8 g/dL; Albumin 3.8 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000079004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000079005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-08T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Current clinical assessment",
+      "body": "Sudden dyspnoea and syncope during postoperative mobilisation.\nBackground: Recent knee replacement and hypertension. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecorded acuity: Critical at this synthetic assessment: Sudden dyspnoea and syncope during postoperative mobilisation. BP 80/48 mmHg, pulse 132/min, SpO₂ 84% on room air. Supporting results: Troponin I 0.6 ng/mL; Lactate 4.8 mmol/L; Creatinine 1.3 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.\nHistory source and context: Relative helps with communication with patient consent; preferred-language instructions are requested.\nAvailable results: Troponin I 0.6 ng/mL; Lactate 4.8 mmol/L; Creatinine 1.3 mg/dL; Haemoglobin 13.8 g/dL; Albumin 3.1 g/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000079005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T07:00:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Ward round — current admission review",
+      "body": "Findings: Sudden dyspnoea and syncope during postoperative mobilisation. Critical at this synthetic assessment: Sudden dyspnoea and syncope during postoperative mobilisation. BP 80/48 mmHg, pulse 132/min, SpO₂ 84% on room air. Supporting results: Troponin I 0.6 ng/mL; Lactate 4.8 mmol/L; Creatinine 1.3 mg/dL. Senior assessment is required; a working-list entry does not mean readiness.\nPlan: Assess right-heart strain and haemodynamic status with the treating team. Pending: Repeat Troponin I result and source review; Cardiology assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance. Decisions remain with the treating team.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T06:10:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Latest progress and pending work",
+      "body": "Postoperative pulmonary embolism after knee arthroplasty. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Assess right-heart strain and haemodynamic status with the treating team.\nPending: Repeat Troponin I result and source review; Cardiology assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance.\nDepartment question (Cardiology): Assess right-heart strain and haemodynamic status with the treating team. Status: accepted. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000079001",
+        "00000042-0000-4000-8000-000000079005",
+        "00000047-0000-4000-8000-000000079001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "kind": "handover",
+      "recorded_at": "2026-09-08T06:15:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Sudden dyspnoea and syncope during postoperative mobilisation.\nBackground: Recent knee replacement and hypertension. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecent results: Orthopaedics laboratory review; CT pulmonary angiography report\nPending: Repeat Troponin I result and source review; Cardiology assessment and documented response; Senior review of physiology and escalation plan; Discharge planning only — current critical illness prevents clinical clearance.\nContinuity: Postoperative pulmonary embolism after knee arthroplasty. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Assess right-heart strain and haemodynamic status with the treating team.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000079001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000062-0000-4000-8000-000000079005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "kind": "progress",
+      "title": "Discharge working-list review (synthetic)",
+      "body": "Future planning only. Acute investigations and clinical review remain pending. Patient must stay in the active clinical workflow.\nSynthetic discharge working draft: Postoperative pulmonary embolism after knee arthroplasty. Sudden dyspnoea and syncope during postoperative mobilisation.\nAnticipatory planning only. Critical illness is ongoing; there is no clinical clearance and no discharge decision.\nFollow-up: Orthopaedics; specific appointment and instructions must be verified before the patient leaves.",
+      "recorded_at": "2026-09-08T07:10:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "source_ids": [],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "recorded_at": "2026-09-08T02:45:00.000Z",
+      "systolic": 80,
+      "diastolic": 48,
+      "pulse": 132,
+      "respiratory_rate": 34,
+      "spo2": 84,
+      "temperature_c": 37.2,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "held",
+      "started_at": "2026-08-25T05:00:00.000Z",
+      "ended_at": "2026-09-08T02:05:00.000Z",
+      "recorded_at": "2026-09-08T05:40:00.000Z",
+      "reason": "Synthetic home-list entry only; current administration and discharge prescribing require clinician reconciliation.",
+      "author": "Dr. Nikhil Joshi",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079001",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-07-15T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000079001",
+      "indication": "Initial Orthopaedics assessment. Background: Recent knee replacement and hypertension.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000079002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079002",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-03-12T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000079002",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000079003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079003",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-07-10T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000079003",
+      "indication": "Interval Orthopaedics review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000079004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079004",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-25T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000079004",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000079005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000079005",
+      "indication": "Sudden dyspnoea and syncope during postoperative mobilisation.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "title": "CT pulmonary angiography report",
+      "kind": "imaging",
+      "placed_at": "2026-09-08T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000079001",
+      "indication": "Sudden dyspnoea and syncope during postoperative mobilisation.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000079100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "title": "Repeat Troponin I result and source review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "from_department": "Orthopaedics",
+      "to_department": "Cardiology",
+      "reason": "Assess right-heart strain and haemodynamic status with the treating team.",
+      "status": "accepted",
+      "priority": "urgent",
+      "requested_at": "2026-09-08T05:35:00.000Z",
+      "accepted_at": "2026-09-08T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Rohan Shah",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000079005",
+        "00000047-0000-4000-8000-000000079001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "title": "Repeat Troponin I result and source review",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000079001",
+        "00000042-0000-4000-8000-000000079005",
+        "00000047-0000-4000-8000-000000079001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000079002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "title": "Cardiology assessment and documented response",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000079001",
+        "00000042-0000-4000-8000-000000079005",
+        "00000047-0000-4000-8000-000000079001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000079003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "title": "Senior review of physiology and escalation plan",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000079001",
+        "00000042-0000-4000-8000-000000079005",
+        "00000047-0000-4000-8000-000000079001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000079004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "title": "Discharge planning only — current critical illness prevents clinical clearance",
+      "status": "pending",
+      "kind": "discharge",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000079001",
+        "00000042-0000-4000-8000-000000079005",
+        "00000047-0000-4000-8000-000000079001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000063-0000-4000-8000-000000079005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T07:10:00.000Z",
+      "available_at": "2026-09-08T07:10:00.000Z",
+      "title": "Discharge planning review",
+      "kind": "note",
+      "source_id": "00000062-0000-4000-8000-000000079005",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T07:00:00.000Z",
+      "available_at": "2026-09-08T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — current admission review",
+      "source_id": "00000059-0000-4000-8000-000000079001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T06:15:00.000Z",
+      "available_at": "2026-09-08T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000079001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T06:10:00.000Z",
+      "available_at": "2026-09-08T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000079001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat Troponin I result and source review",
+      "source_id": "00000051-0000-4000-8000-000000079001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Cardiology assessment and documented response",
+      "source_id": "00000051-0000-4000-8000-000000079002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Senior review of physiology and escalation plan",
+      "source_id": "00000051-0000-4000-8000-000000079003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Discharge planning only — current critical illness prevents clinical clearance",
+      "source_id": "00000051-0000-4000-8000-000000079004",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T05:40:00.000Z",
+      "available_at": "2026-09-08T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Amlodipine: held",
+      "source_id": "00000049-0000-4000-8000-000000079001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T05:35:00.000Z",
+      "available_at": "2026-09-08T05:35:00.000Z",
+      "kind": "request",
+      "title": "Cardiology: Assess right-heart strain and haemodynamic status with the treating team.",
+      "source_id": "00000050-0000-4000-8000-000000079001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T05:30:00.000Z",
+      "available_at": "2026-09-08T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000079005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T03:45:00.000Z",
+      "available_at": "2026-09-08T04:30:00.000Z",
+      "kind": "result",
+      "title": "CT pulmonary angiography report",
+      "source_id": "00000047-0000-4000-8000-000000079001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T02:30:00.000Z",
+      "available_at": "2026-09-08T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000079005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "occurred_at": "2026-09-08T02:00:00.000Z",
+      "available_at": "2026-09-08T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Sudden dyspnoea and syncope during postoperative mobilisation.",
+      "source_id": "00000041-0000-4000-8000-000000079005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079004",
+      "occurred_at": "2026-08-25T05:30:00.000Z",
+      "available_at": "2026-08-25T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000079004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079004",
+      "occurred_at": "2026-08-25T02:30:00.000Z",
+      "available_at": "2026-08-25T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000079004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079004",
+      "occurred_at": "2026-08-25T02:00:00.000Z",
+      "available_at": "2026-08-25T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_id": "00000041-0000-4000-8000-000000079004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079003",
+      "occurred_at": "2026-07-10T05:30:00.000Z",
+      "available_at": "2026-07-10T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000079003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079003",
+      "occurred_at": "2026-07-10T02:30:00.000Z",
+      "available_at": "2026-07-10T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000079003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079003",
+      "occurred_at": "2026-07-10T02:00:00.000Z",
+      "available_at": "2026-07-10T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Interval Orthopaedics review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_id": "00000041-0000-4000-8000-000000079003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079002",
+      "occurred_at": "2026-03-12T05:30:00.000Z",
+      "available_at": "2026-03-12T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000079002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079002",
+      "occurred_at": "2026-03-12T02:30:00.000Z",
+      "available_at": "2026-03-12T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000079002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079002",
+      "occurred_at": "2026-03-12T02:00:00.000Z",
+      "available_at": "2026-03-12T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_id": "00000041-0000-4000-8000-000000079002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079001",
+      "occurred_at": "2025-07-15T05:30:00.000Z",
+      "available_at": "2025-07-15T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000079001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079001",
+      "occurred_at": "2025-07-15T02:30:00.000Z",
+      "available_at": "2025-07-15T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000079001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "encounter_id": "00000041-0000-4000-8000-000000079001",
+      "occurred_at": "2025-07-15T02:00:00.000Z",
+      "available_at": "2025-07-15T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Initial Orthopaedics assessment. Background: Recent knee replacement and hypertension.",
+      "source_id": "00000041-0000-4000-8000-000000079001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "kind": "imaging",
+      "title": "CT pulmonary angiography report",
+      "source": "MockRIS",
+      "reported_at": "2026-09-08T04:30:00.000Z",
+      "findings": "Bilateral central pulmonary arterial filling defects with right ventricular enlargement.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "order_id": "00000048-0000-4000-8000-000000079001",
+      "performed_at": "2026-09-08T03:45:00.000Z",
+      "indication": "Sudden dyspnoea and syncope during postoperative mobilisation.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000079005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-08T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Troponin I 0.6 ng/mL (high); Lactate 4.8 mmol/L (high); Creatinine 1.3 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 3.1 g/dL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Troponin I",
+          "value": "0.6",
+          "unit": "ng/mL",
+          "reference": "0–0.04",
+          "flag": "high"
+        },
+        {
+          "name": "Lactate",
+          "value": "4.8",
+          "unit": "mmol/L",
+          "reference": "0.5–2",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.3",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "order_id": "00000043-0000-4000-8000-000000079005",
+      "specimen_at": "2026-09-08T02:30:00.000Z",
+      "indication": "Sudden dyspnoea and syncope during postoperative mobilisation.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000079004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-25T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 3.8 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.8",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000079004",
+      "order_id": "00000043-0000-4000-8000-000000079004",
+      "specimen_at": "2026-08-25T02:30:00.000Z",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000079003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-07-10T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); Haemoglobin 13.9 g/dL (normal); Albumin 3.9 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.9",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.9",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000079003",
+      "order_id": "00000043-0000-4000-8000-000000079003",
+      "specimen_at": "2026-07-10T02:30:00.000Z",
+      "indication": "Interval Orthopaedics review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000079002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-03-12T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 4 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000079002",
+      "order_id": "00000043-0000-4000-8000-000000079002",
+      "specimen_at": "2026-03-12T02:30:00.000Z",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000079001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-07-15T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 13.8 g/dL (normal); Albumin 4.1 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "13.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000079001",
+      "order_id": "00000043-0000-4000-8000-000000079001",
+      "specimen_at": "2025-07-15T02:30:00.000Z",
+      "indication": "Initial Orthopaedics assessment. Background: Recent knee replacement and hypertension.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": [
+    {
+      "id": "00000060-0000-4000-8000-000000079005",
+      "patient_id": "20000000-0000-4000-8000-000000000079",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "encounter_id": "00000041-0000-4000-8000-000000079005",
+      "owner": "Dr. Nikhil Joshi",
+      "priority": "urgent",
+      "target_date": "2026-09-15",
+      "status": "in_progress",
+      "summary": "Synthetic discharge working draft: Postoperative pulmonary embolism after knee arthroplasty. Sudden dyspnoea and syncope during postoperative mobilisation.\nAnticipatory planning only. Critical illness is ongoing; there is no clinical clearance and no discharge decision.\nFollow-up: Orthopaedics; specific appointment and instructions must be verified before the patient leaves.",
+      "clinical_clearance": false,
+      "clearance_note": "",
+      "medications_checked": false,
+      "follow_up_checked": false,
+      "documents_checked": false,
+      "created_at": "2026-09-08T06:20:00.000Z",
+      "updated_at": "2026-09-08T07:10:00.000Z",
+      "discharged_at": null,
+      "version": 0
+    }
+  ]
+}

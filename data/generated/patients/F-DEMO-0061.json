@@ -1,0 +1,470 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000061",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0061",
+    "name": "Omkar Deshmukh",
+    "age": 49,
+    "sex": "M",
+    "department": "Gastroenterology",
+    "encounter": "IPD · HDU Gastroenterology / Bed 11",
+    "conditions": [
+      "Acute variceal haemorrhage with circulatory shock"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000061001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000061",
+    "dob": "1977-06-10",
+    "occupation": "School administrator",
+    "preferred_language": "Marathi, Hindi",
+    "social_context": "Spouse provides history and keeps a folder of reports; home medicines still need verification.",
+    "history": "Family reports chronic liver disease; no previous records at this hospital. First hospital encounter; outside history is reported, not a retained hospital record.",
+    "presenting_complaint": "Large-volume haematemesis and melaena with confusion and cold extremities.",
+    "acuity": "critical",
+    "acuity_reason": "Critical at this synthetic assessment: Large-volume haematemesis and melaena with confusion and cold extremities. BP 78/44 mmHg, pulse 136/min, SpO₂ 92% on room air. Supporting results: Haemoglobin 6.1 g/dL; INR 2.2 ratio; Platelets 62 10^3/µL. Senior assessment is required; a working-list entry does not mean readiness.",
+    "acuity_assessed_at": "2026-09-08T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000061001",
+      "00000046-0000-4000-8000-000000061001",
+      "00000042-0000-4000-8000-000000061001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000061001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Family history not verified; no negative history is inferred."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "department": "Gastroenterology",
+      "kind": "IPD",
+      "started_at": "2026-09-08T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "HDU Gastroenterology / Bed 11",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Large-volume haematemesis and melaena with confusion and cold extremities.",
+      "assessment": "Family reports chronic liver disease; no previous records at this hospital. First hospital encounter; outside history is reported, not a retained hospital record.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-08T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Current clinical assessment",
+      "body": "Large-volume haematemesis and melaena with confusion and cold extremities.\nBackground: Family reports chronic liver disease; no previous records at this hospital. First hospital encounter; outside history is reported, not a retained hospital record.\nRecorded acuity: Critical at this synthetic assessment: Large-volume haematemesis and melaena with confusion and cold extremities. BP 78/44 mmHg, pulse 136/min, SpO₂ 92% on room air. Supporting results: Haemoglobin 6.1 g/dL; INR 2.2 ratio; Platelets 62 10^3/µL. Senior assessment is required; a working-list entry does not mean readiness.\nHistory source and context: Spouse provides history and keeps a folder of reports; home medicines still need verification.\nAvailable results: Haemoglobin 6.1 g/dL; INR 2.2 ratio; Platelets 62 10^3/µL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000061001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — current admission review",
+      "body": "Findings: Large-volume haematemesis and melaena with confusion and cold extremities. Critical at this synthetic assessment: Large-volume haematemesis and melaena with confusion and cold extremities. BP 78/44 mmHg, pulse 136/min, SpO₂ 92% on room air. Supporting results: Haemoglobin 6.1 g/dL; INR 2.2 ratio; Platelets 62 10^3/µL. Senior assessment is required; a working-list entry does not mean readiness.\nPlan: Assess renal perfusion and urine-output trends during gastrointestinal bleeding. Pending: Repeat Haemoglobin result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan. Decisions remain with the treating team.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T06:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Latest progress and pending work",
+      "body": "Acute variceal haemorrhage with circulatory shock. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Assess renal perfusion and urine-output trends during gastrointestinal bleeding.\nPending: Repeat Haemoglobin result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan.\nDepartment question (Nephrology): Assess renal perfusion and urine-output trends during gastrointestinal bleeding. Status: accepted. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000061001",
+        "00000042-0000-4000-8000-000000061001",
+        "00000047-0000-4000-8000-000000061001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "kind": "handover",
+      "recorded_at": "2026-09-08T06:15:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Large-volume haematemesis and melaena with confusion and cold extremities.\nBackground: Family reports chronic liver disease; no previous records at this hospital. First hospital encounter; outside history is reported, not a retained hospital record.\nRecent results: Gastroenterology laboratory review; Ultrasound abdomen\nPending: Repeat Haemoglobin result and source review; Nephrology assessment and documented response; Senior review of physiology and escalation plan.\nContinuity: Acute variceal haemorrhage with circulatory shock. Critical state remains unresolved; do not mistake anticipatory discharge planning for approval. Assess renal perfusion and urine-output trends during gastrointestinal bleeding.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000061001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "recorded_at": "2026-09-08T02:45:00.000Z",
+      "systolic": 78,
+      "diastolic": 44,
+      "pulse": 136,
+      "respiratory_rate": 28,
+      "spo2": 92,
+      "temperature_c": 36.5,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000061001",
+      "indication": "Large-volume haematemesis and melaena with confusion and cold extremities.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "title": "Ultrasound abdomen",
+      "kind": "imaging",
+      "placed_at": "2026-09-08T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000061001",
+      "indication": "Large-volume haematemesis and melaena with confusion and cold extremities.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000061100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "title": "Repeat Haemoglobin result and source review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "from_department": "Gastroenterology",
+      "to_department": "Nephrology",
+      "reason": "Assess renal perfusion and urine-output trends during gastrointestinal bleeding.",
+      "status": "accepted",
+      "priority": "urgent",
+      "requested_at": "2026-09-08T05:35:00.000Z",
+      "accepted_at": "2026-09-08T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000061001",
+        "00000047-0000-4000-8000-000000061001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "title": "Repeat Haemoglobin result and source review",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000061001",
+        "00000042-0000-4000-8000-000000061001",
+        "00000047-0000-4000-8000-000000061001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000061002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "title": "Nephrology assessment and documented response",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000061001",
+        "00000042-0000-4000-8000-000000061001",
+        "00000047-0000-4000-8000-000000061001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000061003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "title": "Senior review of physiology and escalation plan",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000061001",
+        "00000042-0000-4000-8000-000000061001",
+        "00000047-0000-4000-8000-000000061001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000061005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T07:00:00.000Z",
+      "available_at": "2026-09-08T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — current admission review",
+      "source_id": "00000059-0000-4000-8000-000000061001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T06:15:00.000Z",
+      "available_at": "2026-09-08T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000061001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T06:10:00.000Z",
+      "available_at": "2026-09-08T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000061001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat Haemoglobin result and source review",
+      "source_id": "00000051-0000-4000-8000-000000061001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Nephrology assessment and documented response",
+      "source_id": "00000051-0000-4000-8000-000000061002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Senior review of physiology and escalation plan",
+      "source_id": "00000051-0000-4000-8000-000000061003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T05:35:00.000Z",
+      "available_at": "2026-09-08T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Assess renal perfusion and urine-output trends during gastrointestinal bleeding.",
+      "source_id": "00000050-0000-4000-8000-000000061001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T05:30:00.000Z",
+      "available_at": "2026-09-08T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000061001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T03:45:00.000Z",
+      "available_at": "2026-09-08T04:30:00.000Z",
+      "kind": "result",
+      "title": "Ultrasound abdomen",
+      "source_id": "00000047-0000-4000-8000-000000061001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T02:30:00.000Z",
+      "available_at": "2026-09-08T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000061001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "occurred_at": "2026-09-08T02:00:00.000Z",
+      "available_at": "2026-09-08T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Large-volume haematemesis and melaena with confusion and cold extremities.",
+      "source_id": "00000041-0000-4000-8000-000000061001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "kind": "imaging",
+      "title": "Ultrasound abdomen",
+      "source": "MockRIS",
+      "reported_at": "2026-09-08T04:30:00.000Z",
+      "findings": "Nodular liver, splenomegaly and ascites; ultrasound does not establish the bleeding source.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "order_id": "00000048-0000-4000-8000-000000061001",
+      "performed_at": "2026-09-08T03:45:00.000Z",
+      "indication": "Large-volume haematemesis and melaena with confusion and cold extremities.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000061001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000061",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-08T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 6.1 g/dL (low); INR 2.2 ratio (high); Platelets 62 10^3/µL (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "6.1",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "INR",
+          "value": "2.2",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Platelets",
+          "value": "62",
+          "unit": "10^3/µL",
+          "reference": "150–450",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000061001",
+      "order_id": "00000043-0000-4000-8000-000000061001",
+      "specimen_at": "2026-09-08T02:30:00.000Z",
+      "indication": "Large-volume haematemesis and melaena with confusion and cold extremities.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

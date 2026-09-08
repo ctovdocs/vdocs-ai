@@ -1,0 +1,521 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000035",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0035",
+    "name": "Om Prakash Tiwari",
+    "age": 38,
+    "sex": "M",
+    "department": "Gastroenterology",
+    "encounter": "IPD · GI ICU / Bed 7",
+    "conditions": [
+      "Acute viral hepatitis A",
+      "Fulminant hepatic failure",
+      "Coagulopathy"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000035001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000035",
+    "dob": "1988-06-10",
+    "occupation": "Street food vendor",
+    "preferred_language": "Hindi, Bhojpuri",
+    "social_context": "Wife reports the local outbreak affected several neighbours; not independently verified beyond the patient-reported cluster.",
+    "history": "Two weeks of jaundice and malaise following a documented local food-borne illness outbreak in his area; progressive drowsiness over the last day prompted this admission.",
+    "presenting_complaint": "Deepening jaundice, asterixis and new confusion with a markedly prolonged coagulation profile on the recorded panel.",
+    "acuity": "critical",
+    "acuity_reason": "INR 3.8, grade II hepatic encephalopathy on recorded assessment and bilirubin 18.2 mg/dL meeting fulminant hepatic failure criteria.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000035001",
+      "00000046-0000-4000-8000-000000035001",
+      "00000042-0000-4000-8000-000000035001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000035001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of liver disease; hepatitis B and C status pending on this admission."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "department": "Gastroenterology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "GI ICU / Bed 7",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Deepening jaundice, asterixis and new confusion with a markedly prolonged coagulation profile on the recorded panel.",
+      "assessment": "Two weeks of jaundice and malaise following a documented local food-borne illness outbreak in his area; progressive drowsiness over the last day prompted this admission.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Current clinical assessment",
+      "body": "Deepening jaundice, asterixis and new confusion with a markedly prolonged coagulation profile on the recorded panel.\nBackground: Two weeks of jaundice and malaise following a documented local food-borne illness outbreak in his area; progressive drowsiness over the last day prompted this admission.\nRecorded acuity: INR 3.8, grade II hepatic encephalopathy on recorded assessment and bilirubin 18.2 mg/dL meeting fulminant hepatic failure criteria.\nHistory source and context: Wife reports the local outbreak affected several neighbours; not independently verified beyond the patient-reported cluster.\nAvailable results: Total bilirubin 18.2 mg/dL; ALT 3840 U/L; INR 3.8 ratio; Ammonia 126 µmol/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000035001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — admission day",
+      "body": "Findings: Jaundiced, asterixis present, INR markedly prolonged. Grade II encephalopathy.\nPlan: Lactulose titration, N-acetylcysteine per protocol, liver transplant unit informed. Nephrology consulted for renal monitoring.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000035002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Encephalopathy grade unchanged overnight. INR trend pending repeat.\nPlan: Continue supportive management. Repeat coagulation profile and ammonia. Await transplant unit response.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Latest progress and pending work",
+      "body": "Critical fulminant hepatic failure; transplant candidacy discussion is documented as pending, not decided.\nPending: Serial INR and ammonia levels; Liver transplant unit referral discussion; Grading of encephalopathy at each round.\nDepartment question (Nephrology): Monitor for hepatorenal physiology and advise on fluid and electrolyte management in fulminant liver failure. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000035001",
+        "00000042-0000-4000-8000-000000035001",
+        "00000047-0000-4000-8000-000000035001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Deepening jaundice, asterixis and new confusion with a markedly prolonged coagulation profile on the recorded panel.\nBackground: Two weeks of jaundice and malaise following a documented local food-borne illness outbreak in his area; progressive drowsiness over the last day prompted this admission.\nRecent results: Gastroenterology laboratory review; Ultrasound abdomen\nPending: Serial INR and ammonia levels; Liver transplant unit referral discussion; Grading of encephalopathy at each round.\nContinuity: Critical fulminant hepatic failure; transplant candidacy discussion is documented as pending, not decided.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000035001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 98,
+      "diastolic": 60,
+      "pulse": 104,
+      "respiratory_rate": 22,
+      "spo2": 96,
+      "temperature_c": 37.6,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000035001",
+      "indication": "Deepening jaundice, asterixis and new confusion with a markedly prolonged coagulation profile on the recorded panel.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "title": "Ultrasound abdomen",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000035001",
+      "indication": "Fulminant hepatitis; assess liver size and exclude obstruction.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000035100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "title": "Serial INR and ammonia levels",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "from_department": "Gastroenterology",
+      "to_department": "Nephrology",
+      "reason": "Monitor for hepatorenal physiology and advise on fluid and electrolyte management in fulminant liver failure.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000035001",
+        "00000047-0000-4000-8000-000000035001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "title": "Serial INR and ammonia levels",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000035001",
+        "00000042-0000-4000-8000-000000035001",
+        "00000047-0000-4000-8000-000000035001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000035002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "title": "Liver transplant unit referral discussion",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000035001",
+        "00000042-0000-4000-8000-000000035001",
+        "00000047-0000-4000-8000-000000035001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000035003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "title": "Grading of encephalopathy at each round",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000035001",
+        "00000042-0000-4000-8000-000000035001",
+        "00000047-0000-4000-8000-000000035001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000035006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000035002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000035001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000035001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Serial INR and ammonia levels",
+      "source_id": "00000051-0000-4000-8000-000000035001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Liver transplant unit referral discussion",
+      "source_id": "00000051-0000-4000-8000-000000035002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Grading of encephalopathy at each round",
+      "source_id": "00000051-0000-4000-8000-000000035003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Monitor for hepatorenal physiology and advise on fluid and electrolyte management in fulminant liver failure.",
+      "source_id": "00000050-0000-4000-8000-000000035001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000035001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Ultrasound abdomen",
+      "source_id": "00000047-0000-4000-8000-000000035001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000035001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Deepening jaundice, asterixis and new confusion with a markedly prolonged coagulation profile on the recorded panel.",
+      "source_id": "00000041-0000-4000-8000-000000035001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000035005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000035001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000035002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "kind": "imaging",
+      "title": "Ultrasound abdomen",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Reduced liver span with coarse echotexture. No biliary obstruction. Mild ascites noted.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "order_id": "00000048-0000-4000-8000-000000035001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Fulminant hepatitis; assess liver size and exclude obstruction.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000035001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000035",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Total bilirubin 18.2 mg/dL (high); ALT 3840 U/L (high); INR 3.8 ratio (high); Ammonia 126 µmol/L (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Total bilirubin",
+          "value": "18.2",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "ALT",
+          "value": "3840",
+          "unit": "U/L",
+          "reference": "7–56",
+          "flag": "high"
+        },
+        {
+          "name": "INR",
+          "value": "3.8",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Ammonia",
+          "value": "126",
+          "unit": "µmol/L",
+          "reference": "15–45",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000035001",
+      "order_id": "00000043-0000-4000-8000-000000035001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Deepening jaundice, asterixis and new confusion with a markedly prolonged coagulation profile on the recorded panel.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

@@ -1,0 +1,420 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000025",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0025",
+    "name": "Sunanda Reddy",
+    "age": 29,
+    "sex": "F",
+    "department": "Internal Medicine",
+    "encounter": "IPD · Medical ICU / Bed 10",
+    "conditions": [
+      "Drug-induced anaphylaxis",
+      "Documented penicillin-class allergy"
+    ],
+    "allergies": [
+      "Amoxicillin-clavulanate — anaphylaxis, hospital-witnessed"
+    ],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000025001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000025",
+    "dob": "1997-06-10",
+    "occupation": "Pharmacist",
+    "preferred_language": "Telugu, English",
+    "social_context": "Colleague from the pharmacy accompanied her and confirmed the exposure timeline in detail.",
+    "history": "Received a first dose of amoxicillin-clavulanate for a dental infection at an outside clinic; the recorded reaction began within twenty minutes, witnessed by family who brought her directly to this hospital.",
+    "presenting_complaint": "Facial and lip swelling, widespread urticaria, wheeze and recorded hypotension shortly after the witnessed exposure.",
+    "acuity": "critical",
+    "acuity_reason": "BP 76/44 mmHg, audible stridor and oxygen saturation 89% on room air at the witnessed onset.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000025001",
+      "00000046-0000-4000-8000-000000025001",
+      "00000042-0000-4000-8000-000000025001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000025001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Mother has a documented shellfish allergy; no other family history of drug reactions recorded."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Medical ICU / Bed 10",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Facial and lip swelling, widespread urticaria, wheeze and recorded hypotension shortly after the witnessed exposure.",
+      "assessment": "Received a first dose of amoxicillin-clavulanate for a dental infection at an outside clinic; the recorded reaction began within twenty minutes, witnessed by family who brought her directly to this hospital.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Current clinical assessment",
+      "body": "Facial and lip swelling, widespread urticaria, wheeze and recorded hypotension shortly after the witnessed exposure.\nBackground: Received a first dose of amoxicillin-clavulanate for a dental infection at an outside clinic; the recorded reaction began within twenty minutes, witnessed by family who brought her directly to this hospital.\nRecorded acuity: BP 76/44 mmHg, audible stridor and oxygen saturation 89% on room air at the witnessed onset.\nHistory source and context: Colleague from the pharmacy accompanied her and confirmed the exposure timeline in detail.\nAvailable results: Tryptase 42 ng/mL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000025001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Latest progress and pending work",
+      "body": "Witnessed anaphylaxis with airway involvement; observation period is ongoing and discharge is not yet approved.\nPending: Serial tryptase level; Allergy alert bracelet and chart flagging; Discharge anaphylaxis action-plan counselling.\nDepartment question (Internal Medicine): Formal allergy documentation and post-reaction observation planning. Status: accepted. No completed specialist response available.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000025001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Facial and lip swelling, widespread urticaria, wheeze and recorded hypotension shortly after the witnessed exposure.\nBackground: Received a first dose of amoxicillin-clavulanate for a dental infection at an outside clinic; the recorded reaction began within twenty minutes, witnessed by family who brought her directly to this hospital.\nRecent results: Internal Medicine laboratory review\nPending: Serial tryptase level; Allergy alert bracelet and chart flagging; Discharge anaphylaxis action-plan counselling.\nContinuity: Witnessed anaphylaxis with airway involvement; observation period is ongoing and discharge is not yet approved.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000025001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 82,
+      "diastolic": 48,
+      "pulse": 132,
+      "respiratory_rate": 28,
+      "spo2": 90,
+      "temperature_c": 37.1,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "name": "Amoxicillin-clavulanate",
+      "dose": "625 mg",
+      "route": "oral",
+      "frequency": "Single outside-clinic dose",
+      "status": "historical",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": "2026-09-07T02:05:00.000Z",
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "The precipitating exposure; not a continuing prescription at this hospital.",
+      "author": "Dr. Ananya Mehta",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000025001",
+      "indication": "Facial and lip swelling, widespread urticaria, wheeze and recorded hypotension shortly after the witnessed exposure.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000025100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "title": "Serial tryptase level",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "title": "Serial tryptase level",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000025001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000025002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "title": "Allergy alert bracelet and chart flagging",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000025001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000025003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "title": "Discharge anaphylaxis action-plan counselling",
+      "status": "pending",
+      "kind": "discharge",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000025001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000061-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "title": "Formal allergy documentation and post-reaction observation planning.",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T05:35:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000025001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000025005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000025001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000025001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Serial tryptase level",
+      "source_id": "00000051-0000-4000-8000-000000025001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Allergy alert bracelet and chart flagging",
+      "source_id": "00000051-0000-4000-8000-000000025002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Discharge anaphylaxis action-plan counselling",
+      "source_id": "00000051-0000-4000-8000-000000025003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Amoxicillin-clavulanate: historical",
+      "source_id": "00000049-0000-4000-8000-000000025001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "task",
+      "title": "Formal allergy documentation and post-reaction observation planning.",
+      "source_id": "00000061-0000-4000-8000-000000025001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000025001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000025001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Facial and lip swelling, widespread urticaria, wheeze and recorded hypotension shortly after the witnessed exposure.",
+      "source_id": "00000041-0000-4000-8000-000000025001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000025002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000042-0000-4000-8000-000000025001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000025",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Tryptase 42 ng/mL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Tryptase",
+          "value": "42",
+          "unit": "ng/mL",
+          "reference": "0–11.4",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000025001",
+      "order_id": "00000043-0000-4000-8000-000000025001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Facial and lip swelling, widespread urticaria, wheeze and recorded hypotension shortly after the witnessed exposure.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

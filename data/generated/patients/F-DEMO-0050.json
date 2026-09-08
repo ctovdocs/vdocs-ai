@@ -1,0 +1,828 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000050",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0050",
+    "name": "Naresh Kohli",
+    "age": 64,
+    "sex": "M",
+    "department": "Nephrology",
+    "encounter": "OPD · OPD / Room 8",
+    "conditions": [
+      "Coronary artery disease",
+      "Contrast-induced nephropathy",
+      "Chronic kidney disease stage 2"
+    ],
+    "allergies": [],
+    "medications": [
+      "Atorvastatin"
+    ],
+    "acuity": "noncritical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000050001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000050",
+    "dob": "1962-06-10",
+    "occupation": "Retired insurance agent",
+    "preferred_language": "Hindi, Punjabi",
+    "social_context": "Drives himself to appointments; wife tracks his follow-up schedule on a shared calendar.",
+    "history": "Underwent a coronary angiogram eight days ago for investigation of exertional chest pain; a mild, self-limiting rise in creatinine was documented afterward and this is the scheduled recheck.",
+    "presenting_complaint": "Feels well with no oliguria, oedema or breathlessness; attends for the planned post-procedure renal function recheck.",
+    "acuity": "noncritical",
+    "acuity_reason": "Stable outpatient review with creatinine trending back toward baseline; no acute findings at this encounter.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000050005",
+      "00000046-0000-4000-8000-000000050001",
+      "00000042-0000-4000-8000-000000050005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000050005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Father had coronary artery disease; no documented family history of chronic kidney disease."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Cardiology assessment for exertional chest pain; angiogram planned.",
+      "assessment": "Exertional chest pain investigated; coronary angiogram planned given risk factors.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000050002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Coronary angiogram performed; mild post-procedure creatinine rise noted.",
+      "assessment": "Coronary angiogram performed; mild coronary artery disease documented. Post-procedure creatinine rise noted as a recognised contrast effect.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000050003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Nephrology / historical encounter",
+      "owner": "Dr. Devika Rao",
+      "reason": "First recheck; creatinine trending down.",
+      "assessment": "First recheck for contrast-induced nephropathy; creatinine improving from the peak value.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000050004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Nephrology / historical encounter",
+      "owner": "Dr. Devika Rao",
+      "reason": "Second recheck before this visit; continued improvement.",
+      "assessment": "Second recheck; continued improvement toward baseline renal function.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000050005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "department": "Nephrology",
+      "kind": "OPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "OPD / Room 8",
+      "owner": "Dr. Devika Rao",
+      "reason": "Feels well with no oliguria, oedema or breathlessness; attends for the planned post-procedure renal function recheck.",
+      "assessment": "Underwent a coronary angiogram eight days ago for investigation of exertional chest pain; a mild, self-limiting rise in creatinine was documented afterward and this is the scheduled recheck.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 1",
+      "body": "Seen in Cardiology. Diagnosis: Exertional chest pain investigated; coronary angiogram planned given risk factors.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000050001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000050002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 2",
+      "body": "Seen in Cardiology. Diagnosis: Coronary angiogram performed; mild coronary artery disease documented. Post-procedure creatinine rise noted as a recognised contrast effect.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.9 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000050002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000050003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Hospital review 3",
+      "body": "Seen in Nephrology. Diagnosis: First recheck for contrast-induced nephropathy; creatinine improving from the peak value.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.6 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000050003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000050004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Hospital review 4",
+      "body": "Seen in Nephrology. Diagnosis: Second recheck; continued improvement toward baseline renal function.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.3 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000050004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000050005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Current clinical assessment",
+      "body": "Feels well with no oliguria, oedema or breathlessness; attends for the planned post-procedure renal function recheck.\nBackground: Underwent a coronary angiogram eight days ago for investigation of exertional chest pain; a mild, self-limiting rise in creatinine was documented afterward and this is the scheduled recheck.\nRecorded acuity: Stable outpatient review with creatinine trending back toward baseline; no acute findings at this encounter.\nHistory source and context: Drives himself to appointments; wife tracks his follow-up schedule on a shared calendar.\nAvailable results: Creatinine 1.2 mg/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. No critical state is asserted.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000050005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Latest progress and pending work",
+      "body": "Stable outpatient recovery from contrast-induced nephropathy; renal function is trending to baseline and no acute concern is documented.\nPending: Final renal function recheck in two weeks; Cardiology follow-up appointment.\nDepartment question (Cardiology): Confirm no further contrast exposure is planned in the near term given the recent nephropathy. Status: completed. No further contrast-requiring procedures planned in the immediate term. Routine cardiology follow-up to continue as scheduled.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000050001",
+        "00000042-0000-4000-8000-000000050005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Feels well with no oliguria, oedema or breathlessness; attends for the planned post-procedure renal function recheck.\nBackground: Underwent a coronary angiogram eight days ago for investigation of exertional chest pain; a mild, self-limiting rise in creatinine was documented afterward and this is the scheduled recheck.\nRecent results: Nephrology laboratory review\nPending: Final renal function recheck in two weeks; Cardiology follow-up appointment.\nContinuity: Stable outpatient recovery from contrast-induced nephropathy; renal function is trending to baseline and no acute concern is documented.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000050001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 132,
+      "diastolic": 80,
+      "pulse": 76,
+      "respiratory_rate": 16,
+      "spo2": 98,
+      "temperature_c": 36.7,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "name": "Atorvastatin",
+      "dose": "20 mg",
+      "route": "oral",
+      "frequency": "At night",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Continued from the cardiology discharge prescription.",
+      "author": "Dr. Devika Rao",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050001",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000050001",
+      "indication": "Cardiology assessment for exertional chest pain; angiogram planned.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000050002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050002",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000050002",
+      "indication": "Coronary angiogram performed; mild post-procedure creatinine rise noted.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000050003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050003",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000050003",
+      "indication": "First recheck; creatinine trending down.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000050004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050004",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000050004",
+      "indication": "Second recheck before this visit; continued improvement.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000050005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000050005",
+      "indication": "Feels well with no oliguria, oedema or breathlessness; attends for the planned post-procedure renal function recheck.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000050100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "title": "Follow-up laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "from_department": "Nephrology",
+      "to_department": "Cardiology",
+      "reason": "Confirm no further contrast exposure is planned in the near term given the recent nephropathy.",
+      "status": "completed",
+      "priority": "routine",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": "2026-09-07T06:00:00.000Z",
+      "response": "No further contrast-requiring procedures planned in the immediate term. Routine cardiology follow-up to continue as scheduled.",
+      "owner": "Dr. Rohan Shah",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000050005"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "title": "Final renal function recheck in two weeks",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000050001",
+        "00000042-0000-4000-8000-000000050005"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000050002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "title": "Cardiology follow-up appointment",
+      "status": "pending",
+      "kind": "follow_up",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-14T04:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000050001",
+        "00000042-0000-4000-8000-000000050005"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000050017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000050001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000050001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Final renal function recheck in two weeks",
+      "source_id": "00000051-0000-4000-8000-000000050001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Cardiology follow-up appointment",
+      "source_id": "00000051-0000-4000-8000-000000050002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Atorvastatin: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000050001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Cardiology: Confirm no further contrast exposure is planned in the near term given the recent nephropathy.",
+      "source_id": "00000050-0000-4000-8000-000000050001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000050005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000050005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Feels well with no oliguria, oedema or breathlessness; attends for the planned post-procedure renal function recheck.",
+      "source_id": "00000041-0000-4000-8000-000000050005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000050004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000050004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Second recheck before this visit; continued improvement.",
+      "source_id": "00000041-0000-4000-8000-000000050004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000050003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000050003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: First recheck; creatinine trending down.",
+      "source_id": "00000041-0000-4000-8000-000000050003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000050002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000050002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Coronary angiogram performed; mild post-procedure creatinine rise noted.",
+      "source_id": "00000041-0000-4000-8000-000000050002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000050001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000050001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "encounter_id": "00000041-0000-4000-8000-000000050001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Cardiology assessment for exertional chest pain; angiogram planned.",
+      "source_id": "00000041-0000-4000-8000-000000050001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000050002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000042-0000-4000-8000-000000050005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.2 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.2",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000050005",
+      "order_id": "00000043-0000-4000-8000-000000050005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Feels well with no oliguria, oedema or breathlessness; attends for the planned post-procedure renal function recheck.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000050004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.3 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.3",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000050004",
+      "order_id": "00000043-0000-4000-8000-000000050004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Second recheck before this visit; continued improvement.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000050003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.6 mg/dL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.6",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000050003",
+      "order_id": "00000043-0000-4000-8000-000000050003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "First recheck; creatinine trending down.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000050002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.9 mg/dL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000050002",
+      "order_id": "00000043-0000-4000-8000-000000050002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Coronary angiogram performed; mild post-procedure creatinine rise noted.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000050001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000050",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000050001",
+      "order_id": "00000043-0000-4000-8000-000000050001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Cardiology assessment for exertional chest pain; angiogram planned.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

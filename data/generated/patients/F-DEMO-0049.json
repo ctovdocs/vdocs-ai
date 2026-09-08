@@ -1,0 +1,521 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000049",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0049",
+    "name": "Rupali Ghosh",
+    "age": 37,
+    "sex": "F",
+    "department": "Nephrology",
+    "encounter": "IPD · Renal HDU / Bed 10",
+    "conditions": [
+      "Thrombotic microangiopathy",
+      "Haemolytic uraemic syndrome",
+      "Acute kidney injury"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000049001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000049",
+    "dob": "1989-06-10",
+    "occupation": "Bank cashier",
+    "preferred_language": "Bengali, Hindi",
+    "social_context": "Husband reports the roadside meal as the only shared exposure among family members; no one else has fallen ill so far.",
+    "history": "Five days of bloody diarrhoea following a documented meal at a roadside stall preceded new-onset pallor, bruising and reduced urine output.",
+    "presenting_complaint": "Pallor, petechial bruising and dark urine with documented reduced urine output following a diarrhoeal illness.",
+    "acuity": "critical",
+    "acuity_reason": "Microangiopathic haemolytic anaemia on blood film, thrombocytopenia and rising creatinine meeting the recorded criteria for suspected haemolytic uraemic syndrome.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000049001",
+      "00000046-0000-4000-8000-000000049001",
+      "00000042-0000-4000-8000-000000049001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000049001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of clotting or haemolytic disorders."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "department": "Nephrology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Renal HDU / Bed 10",
+      "owner": "Dr. Devika Rao",
+      "reason": "Pallor, petechial bruising and dark urine with documented reduced urine output following a diarrhoeal illness.",
+      "assessment": "Five days of bloody diarrhoea following a documented meal at a roadside stall preceded new-onset pallor, bruising and reduced urine output.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Current clinical assessment",
+      "body": "Pallor, petechial bruising and dark urine with documented reduced urine output following a diarrhoeal illness.\nBackground: Five days of bloody diarrhoea following a documented meal at a roadside stall preceded new-onset pallor, bruising and reduced urine output.\nRecorded acuity: Microangiopathic haemolytic anaemia on blood film, thrombocytopenia and rising creatinine meeting the recorded criteria for suspected haemolytic uraemic syndrome.\nHistory source and context: Husband reports the roadside meal as the only shared exposure among family members; no one else has fallen ill so far.\nAvailable results: Haemoglobin 7.4 g/dL; Platelets 32 10^9/L; Creatinine 3.8 mg/dL; LDH 1120 U/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000049001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Ward round — admission day",
+      "body": "Findings: Pallor, bruising, oliguric. Blood film confirms microangiopathic haemolysis with thrombocytopenia.\nPlan: Supportive transfusion as needed, urgent haematology and nephrology coordination, ADAMTS13 level sent. Plasma exchange planning underway.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000049002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Haemoglobin and platelets stable on repeat. Urine output remains reduced.\nPlan: Continue supportive care. Await ADAMTS13 result to guide plasma exchange versus alternative therapy.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Latest progress and pending work",
+      "body": "Critical suspected haemolytic uraemic syndrome; plasma exchange has been discussed but not yet initiated.\nPending: ADAMTS13 activity level; Plasma exchange planning documentation; Repeat haemoglobin, platelets and renal panel.\nDepartment question (Internal Medicine): Coordinate blood film review and haematology-guided management of suspected thrombotic microangiopathy. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000049001",
+        "00000042-0000-4000-8000-000000049001",
+        "00000047-0000-4000-8000-000000049001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Devika Rao",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Pallor, petechial bruising and dark urine with documented reduced urine output following a diarrhoeal illness.\nBackground: Five days of bloody diarrhoea following a documented meal at a roadside stall preceded new-onset pallor, bruising and reduced urine output.\nRecent results: Nephrology laboratory review; Ultrasound KUB\nPending: ADAMTS13 activity level; Plasma exchange planning documentation; Repeat haemoglobin, platelets and renal panel.\nContinuity: Critical suspected haemolytic uraemic syndrome; plasma exchange has been discussed but not yet initiated.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000049001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 138,
+      "diastolic": 86,
+      "pulse": 108,
+      "respiratory_rate": 22,
+      "spo2": 95,
+      "temperature_c": 37.6,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "title": "Nephrology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000049001",
+      "indication": "Pallor, petechial bruising and dark urine with documented reduced urine output following a diarrhoeal illness.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "title": "Ultrasound KUB",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000049001",
+      "indication": "Acute kidney injury with haemolysis after diarrhoeal illness.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000049100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "title": "Repeat haemoglobin, platelets and renal panel",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Devika Rao",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "from_department": "Nephrology",
+      "to_department": "Internal Medicine",
+      "reason": "Coordinate blood film review and haematology-guided management of suspected thrombotic microangiopathy.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000049001",
+        "00000047-0000-4000-8000-000000049001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "title": "ADAMTS13 activity level",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000049001",
+        "00000042-0000-4000-8000-000000049001",
+        "00000047-0000-4000-8000-000000049001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000049002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "title": "Plasma exchange planning documentation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000049001",
+        "00000042-0000-4000-8000-000000049001",
+        "00000047-0000-4000-8000-000000049001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000049003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "title": "Repeat haemoglobin, platelets and renal panel",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Devika Rao",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000049001",
+        "00000042-0000-4000-8000-000000049001",
+        "00000047-0000-4000-8000-000000049001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000049006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000049002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000049001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000049001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "ADAMTS13 activity level",
+      "source_id": "00000051-0000-4000-8000-000000049001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Plasma exchange planning documentation",
+      "source_id": "00000051-0000-4000-8000-000000049002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat haemoglobin, platelets and renal panel",
+      "source_id": "00000051-0000-4000-8000-000000049003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Coordinate blood film review and haematology-guided management of suspected thrombotic microangiopathy.",
+      "source_id": "00000050-0000-4000-8000-000000049001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000049001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Ultrasound KUB",
+      "source_id": "00000047-0000-4000-8000-000000049001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Nephrology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000049001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Pallor, petechial bruising and dark urine with documented reduced urine output following a diarrhoeal illness.",
+      "source_id": "00000041-0000-4000-8000-000000049001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000049005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000049001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000049002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "kind": "imaging",
+      "title": "Ultrasound KUB",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Kidneys are mildly enlarged with increased cortical echogenicity bilaterally. No hydronephrosis identified.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "order_id": "00000048-0000-4000-8000-000000049001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Acute kidney injury with haemolysis after diarrhoeal illness.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000049001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000049",
+      "kind": "lab",
+      "title": "Nephrology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 7.4 g/dL (low); Platelets 32 10^9/L (low); Creatinine 3.8 mg/dL (high); LDH 1120 U/L (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "7.4",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        },
+        {
+          "name": "Platelets",
+          "value": "32",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "3.8",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "LDH",
+          "value": "1120",
+          "unit": "U/L",
+          "reference": "140–280",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000049001",
+      "order_id": "00000043-0000-4000-8000-000000049001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Pallor, petechial bruising and dark urine with documented reduced urine output following a diarrhoeal illness.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

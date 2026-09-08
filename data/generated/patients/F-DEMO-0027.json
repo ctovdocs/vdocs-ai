@@ -1,0 +1,1023 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000027",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0027",
+    "name": "Harpreet Bedi",
+    "age": 58,
+    "sex": "M",
+    "department": "Cardiology",
+    "encounter": "IPD · CCU / Bed 5",
+    "conditions": [
+      "Coronary artery disease",
+      "Hypertension",
+      "Anterior STEMI"
+    ],
+    "allergies": [],
+    "medications": [
+      "Amlodipine"
+    ],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000027001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000027",
+    "dob": "1968-06-10",
+    "occupation": "Bank manager",
+    "preferred_language": "Punjabi, Hindi",
+    "social_context": "Wife is en route; colleagues provided the onset time, which is recorded as witnessed.",
+    "history": "No prior cardiac history on file. Sudden onset crushing central chest pain radiating to the left arm while at his desk, with colleagues calling emergency services within minutes.",
+    "presenting_complaint": "Ongoing severe chest pain, diaphoresis and documented ST elevation on the presenting ECG.",
+    "acuity": "critical",
+    "acuity_reason": "ST elevation across anterior leads, high-sensitivity troponin I 2400 ng/L and door-to-needle window actively being tracked.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000027005",
+      "00000046-0000-4000-8000-000000027001",
+      "00000042-0000-4000-8000-000000027005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000027005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Father had a fatal myocardial infarction at age 60. One brother has documented coronary artery disease."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Routine health check; borderline blood pressure noted.",
+      "assessment": "Routine health check; borderline blood pressure noted.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000027002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Lipid panel review; lifestyle advice given.",
+      "assessment": "Lipid panel review; lifestyle advice given.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000027003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Hypertension follow-up; medication started.",
+      "assessment": "Hypertension follow-up; medication started.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000027004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Blood pressure recheck before the current event.",
+      "assessment": "Blood pressure recheck before the current event.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000027005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "CCU / Bed 5",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Ongoing severe chest pain, diaphoresis and documented ST elevation on the presenting ECG.",
+      "assessment": "No prior cardiac history on file. Sudden onset crushing central chest pain radiating to the left arm while at his desk, with colleagues calling emergency services within minutes.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 1",
+      "body": "Routine health check; borderline blood pressure noted.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; LDL cholesterol 98 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000027001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000027002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 2",
+      "body": "Lipid panel review; lifestyle advice given.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; LDL cholesterol 112 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000027002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000027003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 3",
+      "body": "Hypertension follow-up; medication started.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; LDL cholesterol 128 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000027003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000027004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 4",
+      "body": "Blood pressure recheck before the current event.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; LDL cholesterol 134 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000027004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000027005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Current clinical assessment",
+      "body": "Ongoing severe chest pain, diaphoresis and documented ST elevation on the presenting ECG.\nBackground: No prior cardiac history on file. Sudden onset crushing central chest pain radiating to the left arm while at his desk, with colleagues calling emergency services within minutes.\nRecorded acuity: ST elevation across anterior leads, high-sensitivity troponin I 2400 ng/L and door-to-needle window actively being tracked.\nHistory source and context: Wife is en route; colleagues provided the onset time, which is recorded as witnessed.\nAvailable results: High-sensitivity troponin I 2400 ng/L; Creatinine 1.1 mg/dL; LDL cholesterol 148 mg/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000027005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000056-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "kind": "procedure",
+      "recorded_at": "2019-11-03T03:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Exercise stress test — 2024",
+      "body": "Reported as inconclusive at an outside facility; no prior angiogram or intervention on file at this hospital.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — admission day",
+      "body": "Findings: Ongoing chest pain on arrival, ST elevation confirmed. Taken for emergency reperfusion assessment.\nPlan: Dual antiplatelet therapy and anticoagulation per acute coronary syndrome protocol. Reperfusion procedure planned urgently.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000027002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Pain-free post-procedure. Haemodynamically stable.\nPlan: Continue dual antiplatelet therapy. Repeat troponin trend and echocardiogram. Cardiac rehabilitation referral once stable.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Latest progress and pending work",
+      "body": "Critical anterior STEMI; reperfusion procedure completion is not yet documented and must not be assumed.\nPending: Primary reperfusion procedure documentation; Repeat troponin trend; Post-procedure echocardiogram.\nDepartment question (Nephrology): Assess renal function before and after contrast exposure for the planned procedure. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000027001",
+        "00000042-0000-4000-8000-000000027005",
+        "00000047-0000-4000-8000-000000027001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Ongoing severe chest pain, diaphoresis and documented ST elevation on the presenting ECG.\nBackground: No prior cardiac history on file. Sudden onset crushing central chest pain radiating to the left arm while at his desk, with colleagues calling emergency services within minutes.\nRecent results: Cardiology laboratory review; Echocardiogram\nPending: Primary reperfusion procedure documentation; Repeat troponin trend; Post-procedure echocardiogram.\nContinuity: Critical anterior STEMI; reperfusion procedure completion is not yet documented and must not be assumed.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000027001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 96,
+      "diastolic": 62,
+      "pulse": 108,
+      "respiratory_rate": 24,
+      "spo2": 94,
+      "temperature_c": 36.9,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Recent antihypertensive prescription; acute reperfusion therapy record is outside this fixture.",
+      "author": "Dr. Rohan Shah",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027001",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000027001",
+      "indication": "Routine health check; borderline blood pressure noted.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000027002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027002",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000027002",
+      "indication": "Lipid panel review; lifestyle advice given.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000027003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027003",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000027003",
+      "indication": "Hypertension follow-up; medication started.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000027004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027004",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000027004",
+      "indication": "Blood pressure recheck before the current event.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000027005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000027005",
+      "indication": "Ongoing severe chest pain, diaphoresis and documented ST elevation on the presenting ECG.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "title": "Echocardiogram",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000027001",
+      "indication": "Acute anterior STEMI; assess regional function.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000027100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "title": "Repeat troponin trend",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "from_department": "Cardiology",
+      "to_department": "Nephrology",
+      "reason": "Assess renal function before and after contrast exposure for the planned procedure.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000027005",
+        "00000047-0000-4000-8000-000000027001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "title": "Primary reperfusion procedure documentation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000027001",
+        "00000042-0000-4000-8000-000000027005",
+        "00000047-0000-4000-8000-000000027001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000027002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "title": "Repeat troponin trend",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000027001",
+        "00000042-0000-4000-8000-000000027005",
+        "00000047-0000-4000-8000-000000027001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000027003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "title": "Post-procedure echocardiogram",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000027001",
+        "00000042-0000-4000-8000-000000027005",
+        "00000047-0000-4000-8000-000000027001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000027019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000027002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000027001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000027001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Primary reperfusion procedure documentation",
+      "source_id": "00000051-0000-4000-8000-000000027001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat troponin trend",
+      "source_id": "00000051-0000-4000-8000-000000027002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027026",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Post-procedure echocardiogram",
+      "source_id": "00000051-0000-4000-8000-000000027003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Amlodipine: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000027001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Assess renal function before and after contrast exposure for the planned procedure.",
+      "source_id": "00000050-0000-4000-8000-000000027001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000027005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Echocardiogram",
+      "source_id": "00000047-0000-4000-8000-000000027001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000027005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Ongoing severe chest pain, diaphoresis and documented ST elevation on the presenting ECG.",
+      "source_id": "00000041-0000-4000-8000-000000027005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000027001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000027004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000027004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Blood pressure recheck before the current event.",
+      "source_id": "00000041-0000-4000-8000-000000027004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000027003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000027003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Hypertension follow-up; medication started.",
+      "source_id": "00000041-0000-4000-8000-000000027003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000027002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000027002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Lipid panel review; lifestyle advice given.",
+      "source_id": "00000041-0000-4000-8000-000000027002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000027001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000027001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Routine health check; borderline blood pressure noted.",
+      "source_id": "00000041-0000-4000-8000-000000027001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000027017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "occurred_at": "2019-11-03T03:15:00.000Z",
+      "available_at": "2019-11-03T03:15:00.000Z",
+      "kind": "note",
+      "title": "Exercise stress test — 2024",
+      "source_id": "00000056-0000-4000-8000-000000027001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000027002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "kind": "imaging",
+      "title": "Echocardiogram",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Anterior and apical akinesis. LVEF approximately 32%. No mechanical complication identified on this study.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "order_id": "00000048-0000-4000-8000-000000027001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Acute anterior STEMI; assess regional function.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000027005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. High-sensitivity troponin I 2400 ng/L (high); Creatinine 1.1 mg/dL (normal); LDL cholesterol 148 mg/dL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "High-sensitivity troponin I",
+          "value": "2400",
+          "unit": "ng/L",
+          "reference": "0–34",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "LDL cholesterol",
+          "value": "148",
+          "unit": "mg/dL",
+          "reference": "0–100",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000027005",
+      "order_id": "00000043-0000-4000-8000-000000027005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Ongoing severe chest pain, diaphoresis and documented ST elevation on the presenting ECG.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000027004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); LDL cholesterol 134 mg/dL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "LDL cholesterol",
+          "value": "134",
+          "unit": "mg/dL",
+          "reference": "0–100",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000027004",
+      "order_id": "00000043-0000-4000-8000-000000027004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Blood pressure recheck before the current event.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000027003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); LDL cholesterol 128 mg/dL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "LDL cholesterol",
+          "value": "128",
+          "unit": "mg/dL",
+          "reference": "0–100",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000027003",
+      "order_id": "00000043-0000-4000-8000-000000027003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Hypertension follow-up; medication started.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000027002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); LDL cholesterol 112 mg/dL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "LDL cholesterol",
+          "value": "112",
+          "unit": "mg/dL",
+          "reference": "0–100",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000027002",
+      "order_id": "00000043-0000-4000-8000-000000027002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Lipid panel review; lifestyle advice given.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000027001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000027",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); LDL cholesterol 98 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "LDL cholesterol",
+          "value": "98",
+          "unit": "mg/dL",
+          "reference": "0–100",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000027001",
+      "order_id": "00000043-0000-4000-8000-000000027001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Routine health check; borderline blood pressure noted.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

@@ -1,0 +1,1084 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000010",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0010",
+    "name": "Deepak Mishra",
+    "age": 57,
+    "sex": "M",
+    "department": "Gastroenterology",
+    "encounter": "IPD · GI ICU / Bed 1",
+    "conditions": [
+      "Cirrhosis with portal hypertension",
+      "Type 2 Diabetes",
+      "Acute upper GI bleeding"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000010001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000010",
+    "dob": "1969-06-10",
+    "occupation": "Transport supervisor",
+    "preferred_language": "Hindi",
+    "social_context": "Wife reports symptom timing. Alcohol history is recorded as unavailable rather than inferred from cirrhosis.",
+    "history": "Cirrhosis surveillance and prior variceal assessment are in the hospital record. Current admission follows haematemesis and melaena.",
+    "presenting_complaint": "Hypotension, tachycardia and symptomatic anaemia after overt bleeding.",
+    "acuity": "critical",
+    "acuity_reason": "BP 86/54 mmHg, pulse 122/min and haemoglobin 6.4 g/dL with ongoing GI bleeding history.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000010005",
+      "00000046-0000-4000-8000-000000010001",
+      "00000042-0000-4000-8000-000000010005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000010005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of liver disease; alcohol use history is explicitly unavailable rather than assumed."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Cirrhosis evaluation and ultrasound filed.",
+      "assessment": "Cirrhosis evaluation and ultrasound filed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000010002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Surveillance endoscopy encounter.",
+      "assessment": "Surveillance endoscopy encounter.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000010003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Ascites review and renal monitoring.",
+      "assessment": "Ascites review and renal monitoring.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000010004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Clinic visit documenting no overt bleeding at that time.",
+      "assessment": "Clinic visit documenting no overt bleeding at that time.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000010005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "department": "Gastroenterology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "GI ICU / Bed 1",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Hypotension, tachycardia and symptomatic anaemia after overt bleeding.",
+      "assessment": "Cirrhosis surveillance and prior variceal assessment are in the hospital record. Current admission follows haematemesis and melaena.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 1",
+      "body": "Cirrhosis evaluation and ultrasound filed.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 11.2 g/dL; Platelets 110 10^9/L; INR 1.3 ratio; Creatinine 0.9 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000010001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000010002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 2",
+      "body": "Surveillance endoscopy encounter.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 10.8 g/dL; Platelets 98 10^9/L; INR 1.4 ratio; Creatinine 1 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000010002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000010003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 3",
+      "body": "Ascites review and renal monitoring.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 10.5 g/dL; Platelets 92 10^9/L; INR 1.5 ratio; Creatinine 1.1 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000010003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000010004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 4",
+      "body": "Clinic visit documenting no overt bleeding at that time.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 10.1 g/dL; Platelets 88 10^9/L; INR 1.5 ratio; Creatinine 1.2 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000010004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000010005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Current clinical assessment",
+      "body": "Hypotension, tachycardia and symptomatic anaemia after overt bleeding.\nBackground: Cirrhosis surveillance and prior variceal assessment are in the hospital record. Current admission follows haematemesis and melaena.\nRecorded acuity: BP 86/54 mmHg, pulse 122/min and haemoglobin 6.4 g/dL with ongoing GI bleeding history.\nHistory source and context: Wife reports symptom timing. Alcohol history is recorded as unavailable rather than inferred from cirrhosis.\nAvailable results: Haemoglobin 6.4 g/dL; Platelets 64 10^9/L; INR 1.9 ratio; Creatinine 1.9 mg/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000010005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000056-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "kind": "procedure",
+      "recorded_at": "2019-11-03T03:15:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Surveillance upper endoscopy — prior visit",
+      "body": "Documented as part of cirrhosis surveillance; findings from that study are recorded separately in the visit history.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — admission day",
+      "body": "Findings: Hypotensive, tachycardic, haemoglobin critically low. Resuscitation started, endoscopy planned urgently.\nPlan: Blood transfusion per protocol, proton pump inhibitor infusion, urgent endoscopy for source identification. Nephrology consulted.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000010002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Haemodynamics stabilising post-transfusion. No further overt bleeding documented overnight.\nPlan: Continue supportive care pending endoscopy findings. Repeat CBC. Reassess transfusion requirement.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Latest progress and pending work",
+      "body": "Critical bleeding scenario. Do not label the bleed variceal until the source is documented.\nPending: Endoscopy findings and source documentation; Repeat CBC; Blood-bank compatibility report.\nDepartment question (Nephrology): Review renal deterioration during current haemodynamic instability. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000010001",
+        "00000042-0000-4000-8000-000000010005",
+        "00000047-0000-4000-8000-000000010001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Hypotension, tachycardia and symptomatic anaemia after overt bleeding.\nBackground: Cirrhosis surveillance and prior variceal assessment are in the hospital record. Current admission follows haematemesis and melaena.\nRecent results: Gastroenterology laboratory review; Ultrasound abdomen\nPending: Endoscopy findings and source documentation; Repeat CBC; Blood-bank compatibility report.\nContinuity: Critical bleeding scenario. Do not label the bleed variceal until the source is documented.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000010001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 86,
+      "diastolic": 54,
+      "pulse": 122,
+      "respiratory_rate": 26,
+      "spo2": 95,
+      "temperature_c": 36.7,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "name": "Carvedilol",
+      "dose": "6.25 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "held",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": "2026-09-07T02:05:00.000Z",
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Recorded hold during hypotension; historical portal-hypertension prescription.",
+      "author": "Dr. Kavya Menon",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010001",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000010001",
+      "indication": "Cirrhosis evaluation and ultrasound filed.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000010002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010002",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000010002",
+      "indication": "Surveillance endoscopy encounter.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000010003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010003",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000010003",
+      "indication": "Ascites review and renal monitoring.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000010004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010004",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000010004",
+      "indication": "Clinic visit documenting no overt bleeding at that time.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000010005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000010005",
+      "indication": "Hypotension, tachycardia and symptomatic anaemia after overt bleeding.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "title": "Ultrasound abdomen",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000010001",
+      "indication": "Known cirrhosis with current GI bleed.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000010100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "title": "Repeat CBC",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "from_department": "Gastroenterology",
+      "to_department": "Nephrology",
+      "reason": "Review renal deterioration during current haemodynamic instability.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000010005",
+        "00000047-0000-4000-8000-000000010001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "title": "Endoscopy findings and source documentation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000010001",
+        "00000042-0000-4000-8000-000000010005",
+        "00000047-0000-4000-8000-000000010001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000010002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "title": "Repeat CBC",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000010001",
+        "00000042-0000-4000-8000-000000010005",
+        "00000047-0000-4000-8000-000000010001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000010003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "title": "Blood-bank compatibility report",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000010001",
+        "00000042-0000-4000-8000-000000010005",
+        "00000047-0000-4000-8000-000000010001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000010019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000010002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000010001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000010001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Endoscopy findings and source documentation",
+      "source_id": "00000051-0000-4000-8000-000000010001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat CBC",
+      "source_id": "00000051-0000-4000-8000-000000010002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010026",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Blood-bank compatibility report",
+      "source_id": "00000051-0000-4000-8000-000000010003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Carvedilol: held",
+      "source_id": "00000049-0000-4000-8000-000000010001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Review renal deterioration during current haemodynamic instability.",
+      "source_id": "00000050-0000-4000-8000-000000010001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000010005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Ultrasound abdomen",
+      "source_id": "00000047-0000-4000-8000-000000010001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000010005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Hypotension, tachycardia and symptomatic anaemia after overt bleeding.",
+      "source_id": "00000041-0000-4000-8000-000000010005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000010001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000010004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000010004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Clinic visit documenting no overt bleeding at that time.",
+      "source_id": "00000041-0000-4000-8000-000000010004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000010003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000010003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Ascites review and renal monitoring.",
+      "source_id": "00000041-0000-4000-8000-000000010003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000010002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000010002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Surveillance endoscopy encounter.",
+      "source_id": "00000041-0000-4000-8000-000000010002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000010001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000010001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Cirrhosis evaluation and ultrasound filed.",
+      "source_id": "00000041-0000-4000-8000-000000010001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000010017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "occurred_at": "2019-11-03T03:15:00.000Z",
+      "available_at": "2019-11-03T03:15:00.000Z",
+      "kind": "note",
+      "title": "Surveillance upper endoscopy — prior visit",
+      "source_id": "00000056-0000-4000-8000-000000010001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000010002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "kind": "imaging",
+      "title": "Ultrasound abdomen",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Coarse nodular liver, splenomegaly and moderate ascites. Report does not establish the bleeding source.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "order_id": "00000048-0000-4000-8000-000000010001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Known cirrhosis with current GI bleed.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000010005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 6.4 g/dL (low); Platelets 64 10^9/L (low); INR 1.9 ratio (high); Creatinine 1.9 mg/dL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "6.4",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Platelets",
+          "value": "64",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "INR",
+          "value": "1.9",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000010005",
+      "order_id": "00000043-0000-4000-8000-000000010005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Hypotension, tachycardia and symptomatic anaemia after overt bleeding.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000010004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 10.1 g/dL (low); Platelets 88 10^9/L (low); INR 1.5 ratio (high); Creatinine 1.2 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "10.1",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Platelets",
+          "value": "88",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "INR",
+          "value": "1.5",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.2",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000010004",
+      "order_id": "00000043-0000-4000-8000-000000010004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Clinic visit documenting no overt bleeding at that time.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000010003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 10.5 g/dL (low); Platelets 92 10^9/L (low); INR 1.5 ratio (high); Creatinine 1.1 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "10.5",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Platelets",
+          "value": "92",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "INR",
+          "value": "1.5",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000010003",
+      "order_id": "00000043-0000-4000-8000-000000010003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Ascites review and renal monitoring.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000010002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 10.8 g/dL (low); Platelets 98 10^9/L (low); INR 1.4 ratio (high); Creatinine 1 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "10.8",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Platelets",
+          "value": "98",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "INR",
+          "value": "1.4",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000010002",
+      "order_id": "00000043-0000-4000-8000-000000010002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Surveillance endoscopy encounter.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000010001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000010",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 11.2 g/dL (low); Platelets 110 10^9/L (low); INR 1.3 ratio (high); Creatinine 0.9 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "11.2",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "low"
+        },
+        {
+          "name": "Platelets",
+          "value": "110",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "INR",
+          "value": "1.3",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000010001",
+      "order_id": "00000043-0000-4000-8000-000000010001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Cirrhosis evaluation and ultrasound filed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

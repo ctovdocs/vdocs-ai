@@ -1,0 +1,1023 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000005",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0005",
+    "name": "Arjun Desai",
+    "age": 34,
+    "sex": "M",
+    "department": "Internal Medicine",
+    "encounter": "IPD · Medical ICU / Bed 5",
+    "conditions": [
+      "Type 1 Diabetes",
+      "Diabetic ketoacidosis",
+      "Dehydration"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000005001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000005",
+    "dob": "1992-06-10",
+    "occupation": "Software support engineer",
+    "preferred_language": "Marathi, English",
+    "social_context": "Works night shifts; cousin provides the glucose diary. Recent vomiting is documented; no unrecorded non-adherence is inferred.",
+    "history": "Insulin-treated diabetes with four previous hospital encounters. Vomiting and inability to maintain intake preceded this admission; the home insulin history is being reconciled.",
+    "presenting_complaint": "Drowsiness, abdominal discomfort and deep rapid breathing with hyperglycaemia, ketonaemia and acidosis.",
+    "acuity": "critical",
+    "acuity_reason": "Venous pH 7.08, bicarbonate 9 mmol/L and glucose 486 mg/dL with tachycardia.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000005005",
+      "00000046-0000-4000-8000-000000005001",
+      "00000042-0000-4000-8000-000000005005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000005005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Father has documented Type 1 Diabetes diagnosed in adolescence; no other endocrine disease recorded in the family."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Diabetes education visit and home regimen documentation.",
+      "assessment": "Diabetes education visit and home regimen documentation.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-13T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Admission for gastroenteritis with glucose monitoring.",
+      "assessment": "Admission for gastroenteritis with glucose monitoring.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000005003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Post-discharge glucose diary review.",
+      "assessment": "Post-discharge glucose diary review.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000005004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "OPD review; insulin storage and administration history discussed.",
+      "assessment": "OPD review; insulin storage and administration history discussed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000005005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Medical ICU / Bed 5",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Drowsiness, abdominal discomfort and deep rapid breathing with hyperglycaemia, ketonaemia and acidosis.",
+      "assessment": "Insulin-treated diabetes with four previous hospital encounters. Vomiting and inability to maintain intake preceded this admission; the home insulin history is being reconciled.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 1",
+      "body": "Diabetes education visit and home regimen documentation.\nThis is a retained encounter at the demo hospital. Recorded investigations: Glucose 168 mg/dL; Creatinine 0.9 mg/dL; Potassium 4.2 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000005001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 2",
+      "body": "Admission for gastroenteritis with glucose monitoring.\nThis is a retained encounter at the demo hospital. Recorded investigations: Glucose 204 mg/dL; Creatinine 1.1 mg/dL; Potassium 4.5 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000005002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000045-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005002",
+      "kind": "discharge",
+      "recorded_at": "2025-12-13T08:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Historical discharge record",
+      "body": "Prior admission completed. Admission context: Admission for gastroenteritis with glucose monitoring. The hospital retained this discharge record and the linked investigations. Subsequent outpatient reviews are separate encounters; current critical status must not be applied to this historical discharge.",
+      "source_ids": [
+        "00000044-0000-4000-8000-000000005002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000005003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 3",
+      "body": "Post-discharge glucose diary review.\nThis is a retained encounter at the demo hospital. Recorded investigations: Glucose 172 mg/dL; Creatinine 0.9 mg/dL; Potassium 4.1 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000005003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000005004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 4",
+      "body": "OPD review; insulin storage and administration history discussed.\nThis is a retained encounter at the demo hospital. Recorded investigations: Glucose 186 mg/dL; Creatinine 1 mg/dL; Potassium 4.3 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000005004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000005005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Current clinical assessment",
+      "body": "Drowsiness, abdominal discomfort and deep rapid breathing with hyperglycaemia, ketonaemia and acidosis.\nBackground: Insulin-treated diabetes with four previous hospital encounters. Vomiting and inability to maintain intake preceded this admission; the home insulin history is being reconciled.\nRecorded acuity: Venous pH 7.08, bicarbonate 9 mmol/L and glucose 486 mg/dL with tachycardia.\nHistory source and context: Works night shifts; cousin provides the glucose diary. Recent vomiting is documented; no unrecorded non-adherence is inferred.\nAvailable results: Glucose 486 mg/dL; Creatinine 1.8 mg/dL; Potassium 5.8 mmol/L; Venous pH 7.08 ; Bicarbonate 9 mmol/L; Beta-hydroxybutyrate 6.5 mmol/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000005005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — admission day",
+      "body": "Findings: Drowsy, acidotic, ketonaemic. Venous gas confirms severe metabolic acidosis. Insulin infusion started per protocol.\nPlan: Intravenous insulin infusion, potassium replacement per protocol, hourly glucose monitoring. Nephrology consulted for electrolyte trend.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: More alert, acidosis improving on repeat gas. Ketones trending down.\nPlan: Continue insulin infusion until anion gap closes. Transition planning to subcutaneous insulin once tolerating oral intake.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Latest progress and pending work",
+      "body": "Critical metabolic presentation. Baseline home insulin is not an acute prescribing instruction; subsequent treatment and resolution must be separately documented.\nPending: Repeat venous gas and electrolytes; Reconcile home insulin regimen; Document subsequent neurological assessment.\nDepartment question (Nephrology): Review renal dysfunction and electrolyte trend during the current metabolic emergency. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000005001",
+        "00000042-0000-4000-8000-000000005005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Drowsiness, abdominal discomfort and deep rapid breathing with hyperglycaemia, ketonaemia and acidosis.\nBackground: Insulin-treated diabetes with four previous hospital encounters. Vomiting and inability to maintain intake preceded this admission; the home insulin history is being reconciled.\nRecent results: Internal Medicine laboratory review\nPending: Repeat venous gas and electrolytes; Reconcile home insulin regimen; Document subsequent neurological assessment.\nContinuity: Critical metabolic presentation. Baseline home insulin is not an acute prescribing instruction; subsequent treatment and resolution must be separately documented.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000005001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 94,
+      "diastolic": 60,
+      "pulse": 124,
+      "respiratory_rate": 30,
+      "spo2": 97,
+      "temperature_c": 37.4,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "name": "Insulin glargine",
+      "dose": "18 units",
+      "route": "subcutaneous",
+      "frequency": "At night",
+      "status": "historical",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": "2026-09-07T02:05:00.000Z",
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Last outpatient prescription only; acute insulin treatment is not represented by this row.",
+      "author": "Dr. Ananya Mehta",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005001",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000005001",
+      "indication": "Diabetes education visit and home regimen documentation.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005002",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000005002",
+      "indication": "Admission for gastroenteritis with glucose monitoring.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000005003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005003",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000005003",
+      "indication": "Post-discharge glucose diary review.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000005004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005004",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000005004",
+      "indication": "OPD review; insulin storage and administration history discussed.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000005005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000005005",
+      "indication": "Drowsiness, abdominal discomfort and deep rapid breathing with hyperglycaemia, ketonaemia and acidosis.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000005100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "title": "Repeat venous gas and electrolytes",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "from_department": "Internal Medicine",
+      "to_department": "Nephrology",
+      "reason": "Review renal dysfunction and electrolyte trend during the current metabolic emergency.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000005005"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "title": "Repeat venous gas and electrolytes",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000005001",
+        "00000042-0000-4000-8000-000000005005"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "title": "Reconcile home insulin regimen",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000005001",
+        "00000042-0000-4000-8000-000000005005"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000005003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "title": "Document subsequent neurological assessment",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000005001",
+        "00000042-0000-4000-8000-000000005005"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000005018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000005002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000005001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000005001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat venous gas and electrolytes",
+      "source_id": "00000051-0000-4000-8000-000000005001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Reconcile home insulin regimen",
+      "source_id": "00000051-0000-4000-8000-000000005002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Document subsequent neurological assessment",
+      "source_id": "00000051-0000-4000-8000-000000005003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Insulin glargine: historical",
+      "source_id": "00000049-0000-4000-8000-000000005001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Review renal dysfunction and electrolyte trend during the current metabolic emergency.",
+      "source_id": "00000050-0000-4000-8000-000000005001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000005005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000005005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Drowsiness, abdominal discomfort and deep rapid breathing with hyperglycaemia, ketonaemia and acidosis.",
+      "source_id": "00000041-0000-4000-8000-000000005005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000005001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000005004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000005004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: OPD review; insulin storage and administration history discussed.",
+      "source_id": "00000041-0000-4000-8000-000000005004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000005003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000005003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Post-discharge glucose diary review.",
+      "source_id": "00000041-0000-4000-8000-000000005003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005002",
+      "occurred_at": "2025-12-13T08:00:00.000Z",
+      "available_at": "2025-12-13T08:00:00.000Z",
+      "kind": "note",
+      "title": "Historical discharge record",
+      "source_id": "00000045-0000-4000-8000-000000005002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000005002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000005002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Admission for gastroenteritis with glucose monitoring.",
+      "source_id": "00000041-0000-4000-8000-000000005002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000005001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000005001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "encounter_id": "00000041-0000-4000-8000-000000005001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Diabetes education visit and home regimen documentation.",
+      "source_id": "00000041-0000-4000-8000-000000005001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000042-0000-4000-8000-000000005005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Glucose 486 mg/dL (high); Creatinine 1.8 mg/dL (high); Potassium 5.8 mmol/L (high); Venous pH 7.08  (low); Bicarbonate 9 mmol/L (low); Beta-hydroxybutyrate 6.5 mmol/L (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Glucose",
+          "value": "486",
+          "unit": "mg/dL",
+          "reference": "70–140",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.8",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "high"
+        },
+        {
+          "name": "Potassium",
+          "value": "5.8",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "high"
+        },
+        {
+          "name": "Venous pH",
+          "value": "7.08",
+          "unit": "",
+          "reference": "7.31–7.41",
+          "flag": "low"
+        },
+        {
+          "name": "Bicarbonate",
+          "value": "9",
+          "unit": "mmol/L",
+          "reference": "22–29",
+          "flag": "low"
+        },
+        {
+          "name": "Beta-hydroxybutyrate",
+          "value": "6.5",
+          "unit": "mmol/L",
+          "reference": "0–0.6",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000005005",
+      "order_id": "00000043-0000-4000-8000-000000005005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Drowsiness, abdominal discomfort and deep rapid breathing with hyperglycaemia, ketonaemia and acidosis.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000005004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Glucose 186 mg/dL (high); Creatinine 1 mg/dL (normal); Potassium 4.3 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Glucose",
+          "value": "186",
+          "unit": "mg/dL",
+          "reference": "70–140",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.3",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000005004",
+      "order_id": "00000043-0000-4000-8000-000000005004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "OPD review; insulin storage and administration history discussed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000005003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Glucose 172 mg/dL (high); Creatinine 0.9 mg/dL (normal); Potassium 4.1 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Glucose",
+          "value": "172",
+          "unit": "mg/dL",
+          "reference": "70–140",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.1",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000005003",
+      "order_id": "00000043-0000-4000-8000-000000005003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Post-discharge glucose diary review.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000005002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Glucose 204 mg/dL (high); Creatinine 1.1 mg/dL (normal); Potassium 4.5 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Glucose",
+          "value": "204",
+          "unit": "mg/dL",
+          "reference": "70–140",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.5",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000005002",
+      "order_id": "00000043-0000-4000-8000-000000005002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Admission for gastroenteritis with glucose monitoring.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000005001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000005",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Glucose 168 mg/dL (high); Creatinine 0.9 mg/dL (normal); Potassium 4.2 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Glucose",
+          "value": "168",
+          "unit": "mg/dL",
+          "reference": "70–140",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.2",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000005001",
+      "order_id": "00000043-0000-4000-8000-000000005001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Diabetes education visit and home regimen documentation.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

@@ -1,0 +1,920 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000002",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0002",
+    "name": "Priya Patel",
+    "age": 46,
+    "sex": "F",
+    "department": "Internal Medicine",
+    "encounter": "OPD · OPD / Room 3",
+    "conditions": [
+      "Hypertension",
+      "Iron deficiency anaemia under follow-up"
+    ],
+    "allergies": [],
+    "medications": [
+      "Amlodipine"
+    ],
+    "acuity": "noncritical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000002001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000002",
+    "dob": "1980-06-10",
+    "occupation": "School administrator",
+    "preferred_language": "Gujarati, Hindi",
+    "social_context": "Maintains a written BP diary. Prefers morning appointments before school hours.",
+    "history": "Known to the hospital for blood-pressure monitoring and fatigue. Prior anaemia assessment is recorded; no current bleeding symptoms.",
+    "presenting_complaint": "Scheduled OPD follow-up. Fatigue has improved; no chest pain, syncope or breathlessness at rest.",
+    "acuity": "noncritical",
+    "acuity_reason": "Stable outpatient review with improving laboratory trend.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000002005",
+      "00000046-0000-4000-8000-000000002001",
+      "00000042-0000-4000-8000-000000002005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000002005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3"
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Initial hypertension evaluation.",
+      "assessment": "Newly diagnosed essential hypertension; lifestyle advice given and Amlodipine started.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000002002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Fatigue and anaemia investigated.",
+      "assessment": "Palpitations reported soon after the new hypertension diagnosis; ECG and examination unremarkable, likely benign ectopic beats.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000002003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Response to recorded oral iron prescription reviewed.",
+      "assessment": "Iron deficiency anaemia identified on routine bloods.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000002004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Home blood-pressure log discussed and repeat CBC requested.",
+      "assessment": "Improving iron deficiency anaemia on oral iron; hypertension well controlled on current dose.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000002005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "OPD / Room 3",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Scheduled OPD follow-up. Fatigue has improved; no chest pain, syncope or breathlessness at rest.",
+      "assessment": "Known to the hospital for blood-pressure monitoring and fatigue. Prior anaemia assessment is recorded; no current bleeding symptoms.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 1",
+      "body": "Seen in Internal Medicine. Diagnosis: Newly diagnosed essential hypertension; lifestyle advice given and Amlodipine started.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 9.2 g/dL; Ferritin 7 ng/mL; Creatinine 0.8 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000002001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000002002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 2",
+      "body": "Seen in Cardiology. Diagnosis: Palpitations reported soon after the new hypertension diagnosis; ECG and examination unremarkable, likely benign ectopic beats.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 9.6 g/dL; Ferritin 9 ng/mL; Creatinine 0.8 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000002002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000002003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 3",
+      "body": "Seen in Internal Medicine. Diagnosis: Iron deficiency anaemia identified on routine bloods.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 10.4 g/dL; Ferritin 15 ng/mL; Creatinine 0.9 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000002003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000002004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 4",
+      "body": "Seen in Internal Medicine. Diagnosis: Improving iron deficiency anaemia on oral iron; hypertension well controlled on current dose.\nThis is a retained encounter at the demo hospital. Recorded investigations: Haemoglobin 11.1 g/dL; Ferritin 22 ng/mL; Creatinine 0.8 mg/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000002004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000002005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Current clinical assessment",
+      "body": "Scheduled OPD follow-up. Fatigue has improved; no chest pain, syncope or breathlessness at rest.\nBackground: Known to the hospital for blood-pressure monitoring and fatigue. Prior anaemia assessment is recorded; no current bleeding symptoms.\nRecorded acuity: Stable outpatient review with improving laboratory trend.\nHistory source and context: Maintains a written BP diary. Prefers morning appointments before school hours.\nAvailable results: Haemoglobin 11.8 g/dL; Ferritin 31 ng/mL; Creatinine 0.8 mg/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. No critical state is asserted.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000002005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Latest progress and pending work",
+      "body": "Routine OPD follow-up; no critical alert at this encounter.\nPending: Review current CBC with patient; Schedule next outpatient review.\n",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000002005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Scheduled OPD follow-up. Fatigue has improved; no chest pain, syncope or breathlessness at rest.\nBackground: Known to the hospital for blood-pressure monitoring and fatigue. Prior anaemia assessment is recorded; no current bleeding symptoms.\nRecent results: Internal Medicine laboratory review\nPending: Review current CBC with patient; Schedule next outpatient review.\nContinuity: Routine OPD follow-up; no critical alert at this encounter.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000002001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 128,
+      "diastolic": 78,
+      "pulse": 76,
+      "respiratory_rate": 16,
+      "spo2": 99,
+      "temperature_c": 36.7,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Prescription brought to follow-up.",
+      "author": "Dr. Ananya Mehta",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000049-0000-4000-8000-000000002002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "name": "Ferrous sulphate",
+      "dose": "Equivalent to 60 mg elemental iron",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "historical",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": "2026-09-07T02:05:00.000Z",
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Previous course completed; no automatic renewal.",
+      "author": "Dr. Ananya Mehta",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002001",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000002001",
+      "indication": "Initial hypertension evaluation.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000002002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002002",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000002002",
+      "indication": "Fatigue and anaemia investigated.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000002003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002003",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000002003",
+      "indication": "Response to recorded oral iron prescription reviewed.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000002004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002004",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000002004",
+      "indication": "Home blood-pressure log discussed and repeat CBC requested.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000002005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000002005",
+      "indication": "Scheduled OPD follow-up. Fatigue has improved; no chest pain, syncope or breathlessness at rest.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000002100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "title": "Follow-up laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000058-0000-4000-8000-000000002003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002003",
+      "from_department": "Internal Medicine",
+      "to_department": "Gastroenterology",
+      "reason": "Evaluate for a GI source of iron deficiency before starting oral replacement therapy.",
+      "status": "completed",
+      "priority": "routine",
+      "requested_at": "2026-06-09T05:35:00.000Z",
+      "accepted_at": "2026-06-09T05:45:00.000Z",
+      "completed_at": "2026-06-10T10:00:00.000Z",
+      "response": "No structural or bleeding source identified on history and examination. Anaemia attributed to dietary iron intake; oral iron replacement started.",
+      "owner": "Dr. Kavya Menon",
+      "source_ids": [],
+      "source_system": "VDoc",
+      "kind": "referral",
+      "version": 0,
+      "reviewed_at": "2026-06-10T11:00:00.000Z"
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "title": "Review current CBC with patient",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000002005"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000002002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "title": "Schedule next outpatient review",
+      "status": "pending",
+      "kind": "follow_up",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-14T04:00:00.000Z",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000002005"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000002017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000002001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000002001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Review current CBC with patient",
+      "source_id": "00000051-0000-4000-8000-000000002001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Schedule next outpatient review",
+      "source_id": "00000051-0000-4000-8000-000000002002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Amlodipine: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000002001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Ferrous sulphate: historical",
+      "source_id": "00000049-0000-4000-8000-000000002002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000002005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000002005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Scheduled OPD follow-up. Fatigue has improved; no chest pain, syncope or breathlessness at rest.",
+      "source_id": "00000041-0000-4000-8000-000000002005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000002004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000002004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Home blood-pressure log discussed and repeat CBC requested.",
+      "source_id": "00000041-0000-4000-8000-000000002004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002003",
+      "occurred_at": "2026-06-09T05:35:00.000Z",
+      "available_at": "2026-06-09T05:35:00.000Z",
+      "kind": "request",
+      "title": "Gastroenterology: Evaluate for a GI source of iron deficiency before starting oral replacement therapy.",
+      "source_id": "00000058-0000-4000-8000-000000002003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000002003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000002003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Response to recorded oral iron prescription reviewed.",
+      "source_id": "00000041-0000-4000-8000-000000002003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000002002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000002002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Fatigue and anaemia investigated.",
+      "source_id": "00000041-0000-4000-8000-000000002002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000002001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000002001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "encounter_id": "00000041-0000-4000-8000-000000002001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Initial hypertension evaluation.",
+      "source_id": "00000041-0000-4000-8000-000000002001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000002002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000042-0000-4000-8000-000000002005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 11.8 g/dL (low); Ferritin 31 ng/mL (normal); Creatinine 0.8 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "11.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        },
+        {
+          "name": "Ferritin",
+          "value": "31",
+          "unit": "ng/mL",
+          "reference": "15–150",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.8",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000002005",
+      "order_id": "00000043-0000-4000-8000-000000002005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Scheduled OPD follow-up. Fatigue has improved; no chest pain, syncope or breathlessness at rest.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000002004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 11.1 g/dL (low); Ferritin 22 ng/mL (normal); Creatinine 0.8 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "11.1",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        },
+        {
+          "name": "Ferritin",
+          "value": "22",
+          "unit": "ng/mL",
+          "reference": "15–150",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.8",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000002004",
+      "order_id": "00000043-0000-4000-8000-000000002004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Home blood-pressure log discussed and repeat CBC requested.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000002003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 10.4 g/dL (low); Ferritin 15 ng/mL (normal); Creatinine 0.9 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "10.4",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        },
+        {
+          "name": "Ferritin",
+          "value": "15",
+          "unit": "ng/mL",
+          "reference": "15–150",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000002003",
+      "order_id": "00000043-0000-4000-8000-000000002003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Response to recorded oral iron prescription reviewed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000002002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 9.6 g/dL (low); Ferritin 9 ng/mL (low); Creatinine 0.8 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "9.6",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        },
+        {
+          "name": "Ferritin",
+          "value": "9",
+          "unit": "ng/mL",
+          "reference": "15–150",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.8",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000002002",
+      "order_id": "00000043-0000-4000-8000-000000002002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Fatigue and anaemia investigated.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000002001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000002",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 9.2 g/dL (low); Ferritin 7 ng/mL (low); Creatinine 0.8 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "9.2",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "low"
+        },
+        {
+          "name": "Ferritin",
+          "value": "7",
+          "unit": "ng/mL",
+          "reference": "15–150",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.8",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000002001",
+      "order_id": "00000043-0000-4000-8000-000000002001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Initial hypertension evaluation.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

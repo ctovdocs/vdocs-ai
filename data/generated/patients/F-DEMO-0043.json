@@ -1,0 +1,506 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000043",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0043",
+    "name": "Vijay Kumar Meena",
+    "age": 42,
+    "sex": "M",
+    "department": "Orthopaedics",
+    "encounter": "IPD · Surgical ICU / Bed 8",
+    "conditions": [
+      "Cervical spine fracture",
+      "Incomplete spinal cord injury"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 1
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000043001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000043",
+    "dob": "1984-06-10",
+    "occupation": "Delivery van driver",
+    "preferred_language": "Hindi, Rajasthani",
+    "social_context": "Brother travelling from another city; patient is alert and oriented despite the injury.",
+    "history": "Head-on vehicle collision reported by paramedics with immediate neck pain and reduced sensation in the limbs at the scene; cervical immobilisation was applied before transport.",
+    "presenting_complaint": "Neck pain with documented reduced power and altered sensation in both upper and lower limbs on the recorded neurological examination.",
+    "acuity": "critical",
+    "acuity_reason": "Cervical fracture with cord signal change on imaging and a documented incomplete neurological deficit at assessment.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000043001",
+      "00000046-0000-4000-8000-000000043001",
+      "00000042-0000-4000-8000-000000043001"
+    ],
+    "previous_records_status": "first_hospital_visit",
+    "current_encounter_id": "00000041-0000-4000-8000-000000043001",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of spinal or neurological disease."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "department": "Orthopaedics",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Surgical ICU / Bed 8",
+      "owner": "Dr. Nikhil Joshi",
+      "reason": "Neck pain with documented reduced power and altered sensation in both upper and lower limbs on the recorded neurological examination.",
+      "assessment": "Head-on vehicle collision reported by paramedics with immediate neck pain and reduced sensation in the limbs at the scene; cervical immobilisation was applied before transport.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Current clinical assessment",
+      "body": "Neck pain with documented reduced power and altered sensation in both upper and lower limbs on the recorded neurological examination.\nBackground: Head-on vehicle collision reported by paramedics with immediate neck pain and reduced sensation in the limbs at the scene; cervical immobilisation was applied before transport.\nRecorded acuity: Cervical fracture with cord signal change on imaging and a documented incomplete neurological deficit at assessment.\nHistory source and context: Brother travelling from another city; patient is alert and oriented despite the injury.\nAvailable results: Haemoglobin 13.6 g/dL; Creatinine 1 mg/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000043001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Ward round — admission day",
+      "body": "Findings: Cervical fracture with incomplete cord injury confirmed on imaging. Immobilised, haemodynamically borderline.\nPlan: Maintain spinal precautions, blood-pressure support to maintain cord perfusion, urgent spinal surgical review.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000043002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Neurological examination unchanged from admission baseline. Haemodynamics stable on current support.\nPlan: Continue spinal precautions and haemodynamic support. Await surgical stabilisation decision. Serial neuro checks.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Latest progress and pending work",
+      "body": "Critical cervical spinal cord injury; surgical stabilisation timing and neurological trajectory are both undetermined at this stage.\nPending: Neurosurgical/spinal stabilisation decision documentation; Serial neurological examination charting; Bladder and bowel care planning.\nDepartment question (Internal Medicine): Manage neurogenic haemodynamic instability and monitor for autonomic dysreflexia risk. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000043001",
+        "00000042-0000-4000-8000-000000043001",
+        "00000047-0000-4000-8000-000000043001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Nikhil Joshi",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Neck pain with documented reduced power and altered sensation in both upper and lower limbs on the recorded neurological examination.\nBackground: Head-on vehicle collision reported by paramedics with immediate neck pain and reduced sensation in the limbs at the scene; cervical immobilisation was applied before transport.\nRecent results: Orthopaedics laboratory review; CT and MRI cervical spine\nPending: Neurosurgical/spinal stabilisation decision documentation; Serial neurological examination charting; Bladder and bowel care planning.\nContinuity: Critical cervical spinal cord injury; surgical stabilisation timing and neurological trajectory are both undetermined at this stage.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000043001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 92,
+      "diastolic": 58,
+      "pulse": 62,
+      "respiratory_rate": 18,
+      "spo2": 96,
+      "temperature_c": 36.4,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "title": "Orthopaedics laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000043001",
+      "indication": "Neck pain with documented reduced power and altered sensation in both upper and lower limbs on the recorded neurological examination.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "title": "CT and MRI cervical spine",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000043001",
+      "indication": "Neck pain with limb weakness after collision.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000043100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "title": "Serial neurological examination charting",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Nikhil Joshi",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "from_department": "Orthopaedics",
+      "to_department": "Internal Medicine",
+      "reason": "Manage neurogenic haemodynamic instability and monitor for autonomic dysreflexia risk.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000043001",
+        "00000047-0000-4000-8000-000000043001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "title": "Neurosurgical/spinal stabilisation decision documentation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000043001",
+        "00000042-0000-4000-8000-000000043001",
+        "00000047-0000-4000-8000-000000043001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000043002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "title": "Serial neurological examination charting",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000043001",
+        "00000042-0000-4000-8000-000000043001",
+        "00000047-0000-4000-8000-000000043001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000043003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "title": "Bladder and bowel care planning",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Nikhil Joshi",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000043001",
+        "00000042-0000-4000-8000-000000043001",
+        "00000047-0000-4000-8000-000000043001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000043006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000043002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000043001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000043001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Neurosurgical/spinal stabilisation decision documentation",
+      "source_id": "00000051-0000-4000-8000-000000043001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Serial neurological examination charting",
+      "source_id": "00000051-0000-4000-8000-000000043002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Bladder and bowel care planning",
+      "source_id": "00000051-0000-4000-8000-000000043003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Manage neurogenic haemodynamic instability and monitor for autonomic dysreflexia risk.",
+      "source_id": "00000050-0000-4000-8000-000000043001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000043001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "CT and MRI cervical spine",
+      "source_id": "00000047-0000-4000-8000-000000043001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Orthopaedics laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000043001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Neck pain with documented reduced power and altered sensation in both upper and lower limbs on the recorded neurological examination.",
+      "source_id": "00000041-0000-4000-8000-000000043001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000043005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000043001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000043002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "kind": "imaging",
+      "title": "CT and MRI cervical spine",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "C5-C6 fracture-subluxation with cord signal change on the recorded MRI sequence. Spinal alignment is disrupted at this level.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "order_id": "00000048-0000-4000-8000-000000043001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Neck pain with limb weakness after collision.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000043001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000043",
+      "kind": "lab",
+      "title": "Orthopaedics laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Haemoglobin 13.6 g/dL (normal); Creatinine 1 mg/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Haemoglobin",
+          "value": "13.6",
+          "unit": "g/dL",
+          "reference": "13–17",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.7–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000043001",
+      "order_id": "00000043-0000-4000-8000-000000043001",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Neck pain with documented reduced power and altered sensation in both upper and lower limbs on the recorded neurological examination.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

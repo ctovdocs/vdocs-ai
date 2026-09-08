@@ -1,0 +1,1096 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000070",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0070",
+    "name": "Zarina Contractor",
+    "age": 62,
+    "sex": "F",
+    "department": "Gastroenterology",
+    "encounter": "IPD · Recovery ward Gastroenterology / Bed 20",
+    "conditions": [
+      "Resolved biliary obstruction after endoscopic stone extraction",
+      "Hypertension"
+    ],
+    "allergies": [
+      "Penicillin — rash reported; verification pending"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "acuity": "noncritical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000070001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000070",
+    "dob": "1964-06-10",
+    "occupation": "Office assistant",
+    "preferred_language": "Marathi, Hindi",
+    "social_context": "Family can assist after discharge, but travel and support arrangements have not yet been confirmed.",
+    "history": "Recurrent choledocholithiasis and hypertension. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+    "presenting_complaint": "Afebrile, tolerating oral intake and comfortable after documented biliary intervention.",
+    "acuity": "noncritical",
+    "acuity_reason": "Noncritical recovery at this assessment: Afebrile, tolerating oral intake and comfortable after documented biliary intervention. Stable recorded physiology; final discharge status is documented separately.",
+    "acuity_assessed_at": "2026-09-08T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000070005",
+      "00000046-0000-4000-8000-000000070001",
+      "00000042-0000-4000-8000-000000070005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000070005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "Family history not verified; no negative history is inferred."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2025-07-15T02:00:00.000Z",
+      "ended_at": "2025-07-15T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Initial Gastroenterology assessment. Background: Recurrent choledocholithiasis and hypertension.",
+      "assessment": "Initial Gastroenterology assessment. Background: Recurrent choledocholithiasis and hypertension.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000070002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-03-12T02:00:00.000Z",
+      "ended_at": "2026-03-12T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "assessment": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000070003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-07-10T02:00:00.000Z",
+      "ended_at": "2026-07-10T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "assessment": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000070004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-08-25T02:00:00.000Z",
+      "ended_at": "2026-08-25T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "assessment": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000070005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "department": "Gastroenterology",
+      "kind": "IPD",
+      "started_at": "2026-09-05T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Recovery ward Gastroenterology / Bed 20",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Afebrile, tolerating oral intake and comfortable after documented biliary intervention.",
+      "assessment": "Recurrent choledocholithiasis and hypertension. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070001",
+      "kind": "consultation",
+      "recorded_at": "2025-07-15T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 1",
+      "body": "Initial Gastroenterology assessment. Background: Recurrent choledocholithiasis and hypertension.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 12.8 g/dL; Albumin 4.1 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000070001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000070002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070002",
+      "kind": "consultation",
+      "recorded_at": "2026-03-12T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 2",
+      "body": "Follow-up of the recorded background; symptoms and available medication history reviewed.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 12.8 g/dL; Albumin 4 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000070002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000070003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070003",
+      "kind": "consultation",
+      "recorded_at": "2026-07-10T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 3",
+      "body": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; Haemoglobin 12.9 g/dL; Albumin 3.9 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000070003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000070004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-25T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 4",
+      "body": "Most recent outpatient clinic review of existing records and follow-up arrangements.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Haemoglobin 12.8 g/dL; Albumin 3.8 g/dL.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000070004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000070005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-08T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Current clinical assessment",
+      "body": "Afebrile, tolerating oral intake and comfortable after documented biliary intervention.\nBackground: Recurrent choledocholithiasis and hypertension. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecorded acuity: Noncritical recovery at this assessment: Afebrile, tolerating oral intake and comfortable after documented biliary intervention. Stable recorded physiology; final discharge status is documented separately.\nHistory source and context: Family can assist after discharge, but travel and support arrangements have not yet been confirmed.\nAvailable results: Bilirubin 1.7 mg/dL; WBC 7.8 10^3/µL; Creatinine 0.9 mg/dL; Haemoglobin 12.8 g/dL; Albumin 3.7 g/dL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. No critical state is asserted.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000070005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000066-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-05T04:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Admission assessment and hospital course",
+      "body": "Admission with jaundice and biliary pain. Gastroenterology review of suspected duct obstruction requested; no post-intervention findings are available yet.",
+      "source_ids": [
+        "00000064-0000-4000-8000-000000070001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — current admission review",
+      "body": "Findings: Afebrile, tolerating oral intake and comfortable after documented biliary intervention. Noncritical recovery at this assessment: Afebrile, tolerating oral intake and comfortable after documented biliary intervention. Stable recorded physiology; final discharge status is documented separately.\nPlan: Confirm medication reconciliation and follow-up communication. Pending: Discharge documents and instructions pending; Gastroenterology follow-up appointment. Decisions remain with the treating team.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "kind": "progress",
+      "recorded_at": "2026-09-08T06:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Latest progress and pending work",
+      "body": "Resolved biliary obstruction after endoscopic stone extraction. Stable recovery; check the working-list stage before completing discharge. Confirm medication reconciliation and follow-up communication.\nPending: Discharge documents and instructions pending; Gastroenterology follow-up appointment.\nDepartment question (Internal Medicine): Confirm medication reconciliation and follow-up communication. Status: completed. Synthetic Internal Medicine review completed. Afebrile, tolerating oral intake and comfortable after documented biliary intervention. No unresolved issue within this consultation is recorded; primary-team discharge approval remains separate.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000070001",
+        "00000042-0000-4000-8000-000000070005",
+        "00000064-0000-4000-8000-000000070001",
+        "00000047-0000-4000-8000-000000070001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "kind": "handover",
+      "recorded_at": "2026-09-08T06:15:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Afebrile, tolerating oral intake and comfortable after documented biliary intervention.\nBackground: Recurrent choledocholithiasis and hypertension. Four previous hospital visits are retained. Current acute findings must not be backdated into earlier encounters.\nRecent results: Gastroenterology laboratory review; Admission laboratory assessment; Follow-up hepatobiliary ultrasound\nPending: Discharge documents and instructions pending; Gastroenterology follow-up appointment.\nContinuity: Resolved biliary obstruction after endoscopic stone extraction. Stable recovery; check the working-list stage before completing discharge. Confirm medication reconciliation and follow-up communication.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000070001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000062-0000-4000-8000-000000070005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "kind": "progress",
+      "title": "Discharge working-list review (synthetic)",
+      "body": "Discharge documents and patient instructions require completion.\nSynthetic discharge working draft: Resolved biliary obstruction after endoscopic stone extraction. Afebrile, tolerating oral intake and comfortable after documented biliary intervention.\nCurrent recovery assessment reviewed; the checklist below determines whether final approval is complete.\nFollow-up: Gastroenterology; specific appointment and instructions must be verified before the patient leaves.",
+      "recorded_at": "2026-09-08T07:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "source_ids": [],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "recorded_at": "2026-09-08T02:45:00.000Z",
+      "systolic": 128,
+      "diastolic": 78,
+      "pulse": 78,
+      "respiratory_rate": 17,
+      "spo2": 98,
+      "temperature_c": 36.8,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "documented_home",
+      "started_at": "2026-08-25T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-08T05:40:00.000Z",
+      "reason": "Synthetic home-list entry only; current administration and discharge prescribing require clinician reconciliation.",
+      "author": "Dr. Kavya Menon",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070001",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-07-15T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000070001",
+      "indication": "Initial Gastroenterology assessment. Background: Recurrent choledocholithiasis and hypertension.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000070002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070002",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-03-12T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000070002",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000070003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070003",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-07-10T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000070003",
+      "indication": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000070004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070004",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-25T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000070004",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000070005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-08T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000070005",
+      "indication": "Afebrile, tolerating oral intake and comfortable after documented biliary intervention.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000065-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "title": "Admission laboratory assessment",
+      "kind": "lab",
+      "placed_at": "2026-09-05T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000064-0000-4000-8000-000000070001",
+      "indication": "Admission with jaundice and biliary pain. Gastroenterology review of suspected duct obstruction requested; no post-intervention findings are available yet.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "title": "Follow-up hepatobiliary ultrasound",
+      "kind": "imaging",
+      "placed_at": "2026-09-08T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000070001",
+      "indication": "Afebrile, tolerating oral intake and comfortable after documented biliary intervention.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "from_department": "Gastroenterology",
+      "to_department": "Internal Medicine",
+      "reason": "Confirm medication reconciliation and follow-up communication.",
+      "status": "completed",
+      "priority": "routine",
+      "requested_at": "2026-09-08T05:35:00.000Z",
+      "accepted_at": "2026-09-08T05:45:00.000Z",
+      "completed_at": "2026-09-08T06:00:00.000Z",
+      "response": "Synthetic Internal Medicine review completed. Afebrile, tolerating oral intake and comfortable after documented biliary intervention. No unresolved issue within this consultation is recorded; primary-team discharge approval remains separate.",
+      "owner": "Dr. Ananya Mehta",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000070005",
+        "00000064-0000-4000-8000-000000070001",
+        "00000047-0000-4000-8000-000000070001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": "2026-09-08T07:10:00.000Z"
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "title": "Discharge documents and instructions pending",
+      "status": "pending",
+      "kind": "discharge",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-08T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000070001",
+        "00000042-0000-4000-8000-000000070005",
+        "00000064-0000-4000-8000-000000070001",
+        "00000047-0000-4000-8000-000000070001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000070002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "title": "Gastroenterology follow-up appointment",
+      "status": "pending",
+      "kind": "follow_up",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-08T06:05:00.000Z",
+      "due_at": "2026-09-15T04:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000070001",
+        "00000042-0000-4000-8000-000000070005",
+        "00000064-0000-4000-8000-000000070001",
+        "00000047-0000-4000-8000-000000070001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000063-0000-4000-8000-000000070005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T07:10:00.000Z",
+      "available_at": "2026-09-08T07:10:00.000Z",
+      "title": "Discharge planning review",
+      "kind": "note",
+      "source_id": "00000062-0000-4000-8000-000000070005",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T07:00:00.000Z",
+      "available_at": "2026-09-08T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — current admission review",
+      "source_id": "00000059-0000-4000-8000-000000070001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T06:15:00.000Z",
+      "available_at": "2026-09-08T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000070001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T06:10:00.000Z",
+      "available_at": "2026-09-08T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000070001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Discharge documents and instructions pending",
+      "source_id": "00000051-0000-4000-8000-000000070001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T06:05:00.000Z",
+      "available_at": "2026-09-08T06:05:00.000Z",
+      "kind": "task",
+      "title": "Gastroenterology follow-up appointment",
+      "source_id": "00000051-0000-4000-8000-000000070002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T05:40:00.000Z",
+      "available_at": "2026-09-08T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Amlodipine: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000070001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T05:35:00.000Z",
+      "available_at": "2026-09-08T05:35:00.000Z",
+      "kind": "request",
+      "title": "Internal Medicine: Confirm medication reconciliation and follow-up communication.",
+      "source_id": "00000050-0000-4000-8000-000000070001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T05:30:00.000Z",
+      "available_at": "2026-09-08T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000070005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T03:45:00.000Z",
+      "available_at": "2026-09-08T04:30:00.000Z",
+      "kind": "result",
+      "title": "Follow-up hepatobiliary ultrasound",
+      "source_id": "00000047-0000-4000-8000-000000070001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-08T02:30:00.000Z",
+      "available_at": "2026-09-08T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000070005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-05T04:00:00.000Z",
+      "available_at": "2026-09-05T04:00:00.000Z",
+      "kind": "note",
+      "title": "Admission assessment and hospital course",
+      "source_id": "00000066-0000-4000-8000-000000070001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-05T02:30:00.000Z",
+      "available_at": "2026-09-05T03:30:00.000Z",
+      "kind": "result",
+      "title": "Admission laboratory assessment",
+      "source_id": "00000064-0000-4000-8000-000000070001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "occurred_at": "2026-09-05T02:00:00.000Z",
+      "available_at": "2026-09-05T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Afebrile, tolerating oral intake and comfortable after documented biliary intervention.",
+      "source_id": "00000041-0000-4000-8000-000000070005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070004",
+      "occurred_at": "2026-08-25T05:30:00.000Z",
+      "available_at": "2026-08-25T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000070004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070004",
+      "occurred_at": "2026-08-25T02:30:00.000Z",
+      "available_at": "2026-08-25T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000070004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070004",
+      "occurred_at": "2026-08-25T02:00:00.000Z",
+      "available_at": "2026-08-25T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "source_id": "00000041-0000-4000-8000-000000070004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070003",
+      "occurred_at": "2026-07-10T05:30:00.000Z",
+      "available_at": "2026-07-10T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000070003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070003",
+      "occurred_at": "2026-07-10T02:30:00.000Z",
+      "available_at": "2026-07-10T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000070003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070003",
+      "occurred_at": "2026-07-10T02:00:00.000Z",
+      "available_at": "2026-07-10T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "source_id": "00000041-0000-4000-8000-000000070003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070002",
+      "occurred_at": "2026-03-12T05:30:00.000Z",
+      "available_at": "2026-03-12T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000070002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070002",
+      "occurred_at": "2026-03-12T02:30:00.000Z",
+      "available_at": "2026-03-12T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000070002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070002",
+      "occurred_at": "2026-03-12T02:00:00.000Z",
+      "available_at": "2026-03-12T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "source_id": "00000041-0000-4000-8000-000000070002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070001",
+      "occurred_at": "2025-07-15T05:30:00.000Z",
+      "available_at": "2025-07-15T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000070001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070001",
+      "occurred_at": "2025-07-15T02:30:00.000Z",
+      "available_at": "2025-07-15T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000070001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "encounter_id": "00000041-0000-4000-8000-000000070001",
+      "occurred_at": "2025-07-15T02:00:00.000Z",
+      "available_at": "2025-07-15T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Initial Gastroenterology assessment. Background: Recurrent choledocholithiasis and hypertension.",
+      "source_id": "00000041-0000-4000-8000-000000070001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "kind": "imaging",
+      "title": "Follow-up hepatobiliary ultrasound",
+      "source": "MockRIS",
+      "reported_at": "2026-09-08T04:30:00.000Z",
+      "findings": "Improved biliary dilatation with no new collection identified.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "order_id": "00000048-0000-4000-8000-000000070001",
+      "performed_at": "2026-09-08T03:45:00.000Z",
+      "indication": "Afebrile, tolerating oral intake and comfortable after documented biliary intervention.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000070005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-08T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Bilirubin 1.7 mg/dL (high); WBC 7.8 10^3/µL (normal); Creatinine 0.9 mg/dL (normal); Haemoglobin 12.8 g/dL (normal); Albumin 3.7 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Bilirubin",
+          "value": "1.7",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "WBC",
+          "value": "7.8",
+          "unit": "10^3/µL",
+          "reference": "4–11",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.7",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "order_id": "00000043-0000-4000-8000-000000070005",
+      "specimen_at": "2026-09-08T02:30:00.000Z",
+      "indication": "Afebrile, tolerating oral intake and comfortable after documented biliary intervention.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000064-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "kind": "lab",
+      "title": "Admission laboratory assessment",
+      "source": "MockLIS",
+      "reported_at": "2026-09-05T03:30:00.000Z",
+      "findings": "Synthetic admission results, before the separate recovery report: Bilirubin 5.2 mg/dL; WBC 13.4 10^3/µL; Creatinine 1.1 mg/dL.",
+      "observations": [
+        {
+          "name": "Bilirubin",
+          "value": "5.2",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "WBC",
+          "value": "13.4",
+          "unit": "10^3/µL",
+          "reference": "4–11",
+          "flag": "high"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "order_id": "00000065-0000-4000-8000-000000070001",
+      "specimen_at": "2026-09-05T02:30:00.000Z",
+      "indication": "Admission with jaundice and biliary pain. Gastroenterology review of suspected duct obstruction requested; no post-intervention findings are available yet.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000070004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-25T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 12.8 g/dL (normal); Albumin 3.8 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.8",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000070004",
+      "order_id": "00000043-0000-4000-8000-000000070004",
+      "specimen_at": "2026-08-25T02:30:00.000Z",
+      "indication": "Most recent outpatient clinic review of existing records and follow-up arrangements.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000070003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-07-10T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); Haemoglobin 12.9 g/dL (normal); Albumin 3.9 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.9",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "3.9",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000070003",
+      "order_id": "00000043-0000-4000-8000-000000070003",
+      "specimen_at": "2026-07-10T02:30:00.000Z",
+      "indication": "Interval Gastroenterology review with nutrition and laboratory context; current acute findings were not recorded at this visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000070002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-03-12T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 12.8 g/dL (normal); Albumin 4 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000070002",
+      "order_id": "00000043-0000-4000-8000-000000070002",
+      "specimen_at": "2026-03-12T02:30:00.000Z",
+      "indication": "Follow-up of the recorded background; symptoms and available medication history reviewed.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000070001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-07-15T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Haemoglobin 12.8 g/dL (normal); Albumin 4.1 g/dL (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.3",
+          "flag": "normal"
+        },
+        {
+          "name": "Haemoglobin",
+          "value": "12.8",
+          "unit": "g/dL",
+          "reference": "12–15",
+          "flag": "normal"
+        },
+        {
+          "name": "Albumin",
+          "value": "4.1",
+          "unit": "g/dL",
+          "reference": "3.5–5",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000070001",
+      "order_id": "00000043-0000-4000-8000-000000070001",
+      "specimen_at": "2025-07-15T02:30:00.000Z",
+      "indication": "Initial Gastroenterology assessment. Background: Recurrent choledocholithiasis and hypertension.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": [
+    {
+      "id": "00000060-0000-4000-8000-000000070005",
+      "patient_id": "20000000-0000-4000-8000-000000000070",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "encounter_id": "00000041-0000-4000-8000-000000070005",
+      "owner": "Dr. Kavya Menon",
+      "priority": "routine",
+      "target_date": "2026-09-08",
+      "status": "in_progress",
+      "summary": "Synthetic discharge working draft: Resolved biliary obstruction after endoscopic stone extraction. Afebrile, tolerating oral intake and comfortable after documented biliary intervention.\nCurrent recovery assessment reviewed; the checklist below determines whether final approval is complete.\nFollow-up: Gastroenterology; specific appointment and instructions must be verified before the patient leaves.",
+      "clinical_clearance": true,
+      "clearance_note": "Synthetic clinician clearance fixture: recovery observations, available investigations and specialist response reviewed; no current critical physiology is recorded.",
+      "medications_checked": true,
+      "follow_up_checked": true,
+      "documents_checked": false,
+      "created_at": "2026-09-08T06:20:00.000Z",
+      "updated_at": "2026-09-08T07:10:00.000Z",
+      "discharged_at": null,
+      "version": 0
+    }
+  ]
+}

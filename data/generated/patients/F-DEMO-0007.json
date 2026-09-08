@@ -1,0 +1,1109 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000007",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0007",
+    "name": "Kavita Iyer",
+    "age": 49,
+    "sex": "F",
+    "department": "Cardiology",
+    "encounter": "IPD · CCU / Bed 2",
+    "conditions": [
+      "Dilated cardiomyopathy",
+      "Hypertension",
+      "Acute decompensated heart failure"
+    ],
+    "allergies": [],
+    "medications": [
+      "Carvedilol"
+    ],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000007001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000007",
+    "dob": "1977-06-10",
+    "occupation": "Lecturer",
+    "preferred_language": "Tamil, English",
+    "social_context": "Husband keeps a home weight diary; the last week is incomplete and explicitly marked as missing.",
+    "history": "Known reduced LV function with prior admissions and interval clinic visits. Three days of orthopnoea and increasing leg swelling preceded this admission.",
+    "presenting_complaint": "Acute respiratory distress with bilateral crepitations and pulmonary oedema on the report.",
+    "acuity": "critical",
+    "acuity_reason": "Oxygen saturation 84% on room air and respiratory rate 34/min with severe LV dysfunction.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000007005",
+      "00000046-0000-4000-8000-000000007001",
+      "00000042-0000-4000-8000-000000007005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000007005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of cardiomyopathy; genetic counselling has not been offered per this record."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Cardiomyopathy diagnosis and initial echocardiography.",
+      "assessment": "Cardiomyopathy diagnosis and initial echocardiography.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-13T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Heart-failure admission; discharge summary retained.",
+      "assessment": "Heart-failure admission; discharge summary retained.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000007003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Post-discharge weight and renal review.",
+      "assessment": "Post-discharge weight and renal review.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000007004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "department": "Cardiology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Cardiology / historical encounter",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Clinic review documenting exertional limitation.",
+      "assessment": "Clinic review documenting exertional limitation.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000007005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "department": "Cardiology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "CCU / Bed 2",
+      "owner": "Dr. Rohan Shah",
+      "reason": "Acute respiratory distress with bilateral crepitations and pulmonary oedema on the report.",
+      "assessment": "Known reduced LV function with prior admissions and interval clinic visits. Three days of orthopnoea and increasing leg swelling preceded this admission.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 1",
+      "body": "Cardiomyopathy diagnosis and initial echocardiography.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 0.9 mg/dL; Sodium 138 mmol/L; Potassium 4.3 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000007001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 2",
+      "body": "Heart-failure admission; discharge summary retained.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.2 mg/dL; Sodium 134 mmol/L; Potassium 4.5 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000007002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000045-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007002",
+      "kind": "discharge",
+      "recorded_at": "2025-12-13T08:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Historical discharge record",
+      "body": "Prior admission completed. Admission context: Heart-failure admission; discharge summary retained. The hospital retained this discharge record and the linked investigations. Subsequent outpatient reviews are separate encounters; current critical status must not be applied to this historical discharge.",
+      "source_ids": [
+        "00000044-0000-4000-8000-000000007002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000007003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 3",
+      "body": "Post-discharge weight and renal review.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1 mg/dL; Sodium 137 mmol/L; Potassium 4.2 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000007003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000007004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Hospital review 4",
+      "body": "Clinic review documenting exertional limitation.\nThis is a retained encounter at the demo hospital. Recorded investigations: Creatinine 1.1 mg/dL; Sodium 135 mmol/L; Potassium 4.6 mmol/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000007004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000007005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Current clinical assessment",
+      "body": "Acute respiratory distress with bilateral crepitations and pulmonary oedema on the report.\nBackground: Known reduced LV function with prior admissions and interval clinic visits. Three days of orthopnoea and increasing leg swelling preceded this admission.\nRecorded acuity: Oxygen saturation 84% on room air and respiratory rate 34/min with severe LV dysfunction.\nHistory source and context: Husband keeps a home weight diary; the last week is incomplete and explicitly marked as missing.\nAvailable results: Creatinine 1.9 mg/dL; Sodium 128 mmol/L; Potassium 5.2 mmol/L; NT-proBNP 6800 pg/mL.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000007005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — admission day",
+      "body": "Findings: Severe respiratory distress, bilateral crepitations, hypoxic. NT-proBNP markedly elevated.\nPlan: Intravenous diuresis, oxygen support, strict fluid balance charting. Nephrology consulted for renal deterioration.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Breathing more comfortable, oxygen requirement reducing. Weight trending down with diuresis.\nPlan: Continue diuresis with renal monitoring. Reassess fluid balance twice daily. Plan heart-failure therapy optimisation once euvolaemic.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Latest progress and pending work",
+      "body": "Critical respiratory presentation. Room-air saturation is a baseline observation, not the saturation after support.\nPending: Repeat renal panel; Fluid-balance chart reconciliation; Specialist response.\nDepartment question (Nephrology): Assess renal deterioration and assist with documented fluid-balance review. Status: accepted. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000007001",
+        "00000042-0000-4000-8000-000000007005",
+        "00000047-0000-4000-8000-000000007001",
+        "00000047-0000-4000-8000-000000007002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Rohan Shah",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Acute respiratory distress with bilateral crepitations and pulmonary oedema on the report.\nBackground: Known reduced LV function with prior admissions and interval clinic visits. Three days of orthopnoea and increasing leg swelling preceded this admission.\nRecent results: Cardiology laboratory review; Chest X-ray · portable AP; Echocardiogram\nPending: Repeat renal panel; Fluid-balance chart reconciliation; Specialist response.\nContinuity: Critical respiratory presentation. Room-air saturation is a baseline observation, not the saturation after support.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000007001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 104,
+      "diastolic": 68,
+      "pulse": 118,
+      "respiratory_rate": 34,
+      "spo2": 84,
+      "temperature_c": 36.8,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "name": "Carvedilol",
+      "dose": "6.25 mg",
+      "route": "oral",
+      "frequency": "Twice daily",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Home prescription only; current haemodynamic review required.",
+      "author": "Dr. Rohan Shah",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007001",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000007001",
+      "indication": "Cardiomyopathy diagnosis and initial echocardiography.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007002",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000007002",
+      "indication": "Heart-failure admission; discharge summary retained.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000007003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007003",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000007003",
+      "indication": "Post-discharge weight and renal review.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000007004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007004",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000007004",
+      "indication": "Clinic review documenting exertional limitation.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000007005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "title": "Cardiology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000007005",
+      "indication": "Acute respiratory distress with bilateral crepitations and pulmonary oedema on the report.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "title": "Chest X-ray · portable AP",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000007001",
+      "indication": "Acute orthopnoea and hypoxaemia.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "title": "Echocardiogram",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000007002",
+      "indication": "Reassessment of documented cardiomyopathy.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000007100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "title": "Repeat renal panel",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Rohan Shah",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "from_department": "Cardiology",
+      "to_department": "Nephrology",
+      "reason": "Assess renal deterioration and assist with documented fluid-balance review.",
+      "status": "accepted",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000007005",
+        "00000047-0000-4000-8000-000000007001",
+        "00000047-0000-4000-8000-000000007002"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "title": "Repeat renal panel",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000007001",
+        "00000042-0000-4000-8000-000000007005",
+        "00000047-0000-4000-8000-000000007001",
+        "00000047-0000-4000-8000-000000007002"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "title": "Fluid-balance chart reconciliation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000007001",
+        "00000042-0000-4000-8000-000000007005",
+        "00000047-0000-4000-8000-000000007001",
+        "00000047-0000-4000-8000-000000007002"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000007003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "title": "Specialist response",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Rohan Shah",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000007001",
+        "00000042-0000-4000-8000-000000007005",
+        "00000047-0000-4000-8000-000000007001",
+        "00000047-0000-4000-8000-000000007002"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000007020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000007002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000007001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000007001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat renal panel",
+      "source_id": "00000051-0000-4000-8000-000000007001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007026",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Fluid-balance chart reconciliation",
+      "source_id": "00000051-0000-4000-8000-000000007002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007027",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Specialist response",
+      "source_id": "00000051-0000-4000-8000-000000007003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Carvedilol: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000007001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Assess renal deterioration and assist with documented fluid-balance review.",
+      "source_id": "00000050-0000-4000-8000-000000007001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000007005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T03:46:00.000Z",
+      "available_at": "2026-09-07T04:31:00.000Z",
+      "kind": "result",
+      "title": "Echocardiogram",
+      "source_id": "00000047-0000-4000-8000-000000007002",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Chest X-ray · portable AP",
+      "source_id": "00000047-0000-4000-8000-000000007001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000007005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Acute respiratory distress with bilateral crepitations and pulmonary oedema on the report.",
+      "source_id": "00000041-0000-4000-8000-000000007005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000007001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000007004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000007004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Clinic review documenting exertional limitation.",
+      "source_id": "00000041-0000-4000-8000-000000007004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000007003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000007003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Post-discharge weight and renal review.",
+      "source_id": "00000041-0000-4000-8000-000000007003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007002",
+      "occurred_at": "2025-12-13T08:00:00.000Z",
+      "available_at": "2025-12-13T08:00:00.000Z",
+      "kind": "note",
+      "title": "Historical discharge record",
+      "source_id": "00000045-0000-4000-8000-000000007002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000007002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000007002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Heart-failure admission; discharge summary retained.",
+      "source_id": "00000041-0000-4000-8000-000000007002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000007001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Cardiology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000007001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "encounter_id": "00000041-0000-4000-8000-000000007001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Cardiomyopathy diagnosis and initial echocardiography.",
+      "source_id": "00000041-0000-4000-8000-000000007001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "kind": "imaging",
+      "title": "Echocardiogram",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:31:00.000Z",
+      "findings": "Dilated LV with global hypokinesia; LVEF approximately 25%. Moderate functional mitral regurgitation.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "order_id": "00000048-0000-4000-8000-000000007002",
+      "performed_at": "2026-09-07T03:46:00.000Z",
+      "indication": "Reassessment of documented cardiomyopathy.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000047-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "kind": "imaging",
+      "title": "Chest X-ray · portable AP",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Cardiomegaly and bilateral perihilar opacities with small bilateral effusions.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "order_id": "00000048-0000-4000-8000-000000007001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Acute orthopnoea and hypoxaemia.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000007005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.9 mg/dL (high); Sodium 128 mmol/L (low); Potassium 5.2 mmol/L (high); NT-proBNP 6800 pg/mL (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Sodium",
+          "value": "128",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "low"
+        },
+        {
+          "name": "Potassium",
+          "value": "5.2",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "high"
+        },
+        {
+          "name": "NT-proBNP",
+          "value": "6800",
+          "unit": "pg/mL",
+          "reference": "0–125",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000007005",
+      "order_id": "00000043-0000-4000-8000-000000007005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Acute respiratory distress with bilateral crepitations and pulmonary oedema on the report.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000007004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.1 mg/dL (normal); Sodium 135 mmol/L (normal); Potassium 4.6 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Sodium",
+          "value": "135",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.6",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000007004",
+      "order_id": "00000043-0000-4000-8000-000000007004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Clinic review documenting exertional limitation.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000007003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1 mg/dL (normal); Sodium 137 mmol/L (normal); Potassium 4.2 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Sodium",
+          "value": "137",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.2",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000007003",
+      "order_id": "00000043-0000-4000-8000-000000007003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Post-discharge weight and renal review.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000007002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 1.2 mg/dL (high); Sodium 134 mmol/L (low); Potassium 4.5 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "1.2",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Sodium",
+          "value": "134",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "low"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.5",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000007002",
+      "order_id": "00000043-0000-4000-8000-000000007002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Heart-failure admission; discharge summary retained.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000007001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000007",
+      "kind": "lab",
+      "title": "Cardiology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Creatinine 0.9 mg/dL (normal); Sodium 138 mmol/L (normal); Potassium 4.3 mmol/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Sodium",
+          "value": "138",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "normal"
+        },
+        {
+          "name": "Potassium",
+          "value": "4.3",
+          "unit": "mmol/L",
+          "reference": "3.5–5.1",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000007001",
+      "order_id": "00000043-0000-4000-8000-000000007001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Cardiomyopathy diagnosis and initial echocardiography.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

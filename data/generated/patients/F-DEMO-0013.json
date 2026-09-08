@@ -1,0 +1,1087 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000013",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0013",
+    "name": "Leela Das",
+    "age": 69,
+    "sex": "F",
+    "department": "Gastroenterology",
+    "encounter": "IPD · GI ICU / Bed 4",
+    "conditions": [
+      "Metabolic dysfunction-associated cirrhosis",
+      "Hypertension",
+      "Hepatic encephalopathy",
+      "Acute renal dysfunction"
+    ],
+    "allergies": [],
+    "medications": [],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000013001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000013",
+    "dob": "1957-06-10",
+    "occupation": "Retired librarian",
+    "preferred_language": "Bengali, Hindi",
+    "social_context": "Son supplies the history while the patient is drowsy; source of history is explicitly recorded.",
+    "history": "Cirrhosis and ascites follow-up are documented. Family reports new confusion and reduced bowel frequency before admission.",
+    "presenting_complaint": "Disorientation and somnolence with worsening renal function; precipitating cause remains under evaluation.",
+    "acuity": "critical",
+    "acuity_reason": "Documented GCS 10/15 and new altered sensorium requiring monitored care; creatinine 2.3 mg/dL.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000013005",
+      "00000046-0000-4000-8000-000000013001",
+      "00000042-0000-4000-8000-000000013005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000013005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of liver disease; metabolic dysfunction-associated cirrhosis risk factors are recorded from the clinic history alone."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Cirrhosis staging and ascites assessment.",
+      "assessment": "Cirrhosis staging and ascites assessment.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "department": "Gastroenterology",
+      "kind": "IPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-13T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Admission for fluid retention; discharged after review.",
+      "assessment": "Admission for fluid retention; discharged after review.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000013003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Liver clinic follow-up.",
+      "assessment": "Liver clinic follow-up.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000013004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "department": "Gastroenterology",
+      "kind": "OPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-24T08:00:00.000Z",
+      "status": "completed",
+      "location": "Gastroenterology / historical encounter",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Medication reconciliation and renal baseline visit.",
+      "assessment": "Medication reconciliation and renal baseline visit.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000013005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "department": "Gastroenterology",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "GI ICU / Bed 4",
+      "owner": "Dr. Kavya Menon",
+      "reason": "Disorientation and somnolence with worsening renal function; precipitating cause remains under evaluation.",
+      "assessment": "Cirrhosis and ascites follow-up are documented. Family reports new confusion and reduced bowel frequency before admission.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 1",
+      "body": "Cirrhosis staging and ascites assessment.\nThis is a retained encounter at the demo hospital. Recorded investigations: Sodium 137 mmol/L; Creatinine 0.9 mg/dL; Total bilirubin 1.6 mg/dL; INR 1.3 ratio.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000013001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 2",
+      "body": "Admission for fluid retention; discharged after review.\nThis is a retained encounter at the demo hospital. Recorded investigations: Sodium 133 mmol/L; Creatinine 1.1 mg/dL; Total bilirubin 2.1 mg/dL; INR 1.5 ratio.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000013002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000045-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013002",
+      "kind": "discharge",
+      "recorded_at": "2025-12-13T08:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Historical discharge record",
+      "body": "Prior admission completed. Admission context: Admission for fluid retention; discharged after review. The hospital retained this discharge record and the linked investigations. Subsequent outpatient reviews are separate encounters; current critical status must not be applied to this historical discharge.",
+      "source_ids": [
+        "00000044-0000-4000-8000-000000013002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000013003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 3",
+      "body": "Liver clinic follow-up.\nThis is a retained encounter at the demo hospital. Recorded investigations: Sodium 134 mmol/L; Creatinine 1 mg/dL; Total bilirubin 2.4 mg/dL; INR 1.5 ratio.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000013003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000013004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Hospital review 4",
+      "body": "Medication reconciliation and renal baseline visit.\nThis is a retained encounter at the demo hospital. Recorded investigations: Sodium 132 mmol/L; Creatinine 1.2 mg/dL; Total bilirubin 2.8 mg/dL; INR 1.6 ratio.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000013004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000013005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Current clinical assessment",
+      "body": "Disorientation and somnolence with worsening renal function; precipitating cause remains under evaluation.\nBackground: Cirrhosis and ascites follow-up are documented. Family reports new confusion and reduced bowel frequency before admission.\nRecorded acuity: Documented GCS 10/15 and new altered sensorium requiring monitored care; creatinine 2.3 mg/dL.\nHistory source and context: Son supplies the history while the patient is drowsy; source of history is explicitly recorded.\nAvailable results: Sodium 126 mmol/L; Creatinine 2.3 mg/dL; Total bilirubin 4.6 mg/dL; INR 2 ratio.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000013005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — admission day",
+      "body": "Findings: Disoriented, somnolent, GCS 10/15. Renal function worsening. Precipitant for encephalopathy under evaluation.\nPlan: Lactulose titration, ascitic fluid analysis sent, renal monitoring. Nephrology consulted for the aetiology of deterioration.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Sensorium slightly improved on repeat assessment. No fever documented overnight.\nPlan: Continue lactulose. Await ascitic fluid culture. Repeat sensorium assessment each round.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Latest progress and pending work",
+      "body": "Critical altered-sensorium case. Infection and other precipitants are being evaluated; pending cultures are not negative cultures.\nPending: Ascitic fluid analysis and culture; Repeat sensorium assessment; Renal consultation.\nDepartment question (Nephrology): Review renal deterioration in decompensated liver disease; aetiology is not yet established. Status: received. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000013001",
+        "00000042-0000-4000-8000-000000013005",
+        "00000047-0000-4000-8000-000000013001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Kavya Menon",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Disorientation and somnolence with worsening renal function; precipitating cause remains under evaluation.\nBackground: Cirrhosis and ascites follow-up are documented. Family reports new confusion and reduced bowel frequency before admission.\nRecent results: Gastroenterology laboratory review; CT head · non-contrast\nPending: Ascitic fluid analysis and culture; Repeat sensorium assessment; Renal consultation.\nContinuity: Critical altered-sensorium case. Infection and other precipitants are being evaluated; pending cultures are not negative cultures.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000013001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 96,
+      "diastolic": 60,
+      "pulse": 104,
+      "respiratory_rate": 24,
+      "spo2": 94,
+      "temperature_c": 37.8,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "name": "Spironolactone",
+      "dose": "50 mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "status": "held",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": "2026-09-07T02:05:00.000Z",
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Admission review records hold while renal and electrolyte status are assessed.",
+      "author": "Dr. Kavya Menon",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013001",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000013001",
+      "indication": "Cirrhosis staging and ascites assessment.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013002",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000013002",
+      "indication": "Admission for fluid retention; discharged after review.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000013003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013003",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000013003",
+      "indication": "Liver clinic follow-up.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000013004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013004",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000013004",
+      "indication": "Medication reconciliation and renal baseline visit.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000013005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "title": "Gastroenterology laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000013005",
+      "indication": "Disorientation and somnolence with worsening renal function; precipitating cause remains under evaluation.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "title": "CT head · non-contrast",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000013001",
+      "indication": "New altered sensorium; exclude structural intracranial cause.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000013100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "title": "Repeat sensorium assessment",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Kavya Menon",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "from_department": "Gastroenterology",
+      "to_department": "Nephrology",
+      "reason": "Review renal deterioration in decompensated liver disease; aetiology is not yet established.",
+      "status": "received",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": null,
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000013005",
+        "00000047-0000-4000-8000-000000013001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "title": "Ascitic fluid analysis and culture",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000013001",
+        "00000042-0000-4000-8000-000000013005",
+        "00000047-0000-4000-8000-000000013001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "title": "Repeat sensorium assessment",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000013001",
+        "00000042-0000-4000-8000-000000013005",
+        "00000047-0000-4000-8000-000000013001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000013003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "title": "Renal consultation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Kavya Menon",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000013001",
+        "00000042-0000-4000-8000-000000013005",
+        "00000047-0000-4000-8000-000000013001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000013019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000013002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000013001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000013001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Ascitic fluid analysis and culture",
+      "source_id": "00000051-0000-4000-8000-000000013001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat sensorium assessment",
+      "source_id": "00000051-0000-4000-8000-000000013002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013026",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Renal consultation",
+      "source_id": "00000051-0000-4000-8000-000000013003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Spironolactone: held",
+      "source_id": "00000049-0000-4000-8000-000000013001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Review renal deterioration in decompensated liver disease; aetiology is not yet established.",
+      "source_id": "00000050-0000-4000-8000-000000013001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000013005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "CT head · non-contrast",
+      "source_id": "00000047-0000-4000-8000-000000013001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000013005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Disorientation and somnolence with worsening renal function; precipitating cause remains under evaluation.",
+      "source_id": "00000041-0000-4000-8000-000000013005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000013001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000013004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000013004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Medication reconciliation and renal baseline visit.",
+      "source_id": "00000041-0000-4000-8000-000000013004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000013003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000013003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Liver clinic follow-up.",
+      "source_id": "00000041-0000-4000-8000-000000013003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013002",
+      "occurred_at": "2025-12-13T08:00:00.000Z",
+      "available_at": "2025-12-13T08:00:00.000Z",
+      "kind": "note",
+      "title": "Historical discharge record",
+      "source_id": "00000045-0000-4000-8000-000000013002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000013002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000013002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Admission for fluid retention; discharged after review.",
+      "source_id": "00000041-0000-4000-8000-000000013002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000013001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Gastroenterology laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000013001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "encounter_id": "00000041-0000-4000-8000-000000013001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Cirrhosis staging and ascites assessment.",
+      "source_id": "00000041-0000-4000-8000-000000013001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "kind": "imaging",
+      "title": "CT head · non-contrast",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "No acute intracranial haemorrhage or large territorial infarct. This report does not independently diagnose hepatic encephalopathy.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "order_id": "00000048-0000-4000-8000-000000013001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "New altered sensorium; exclude structural intracranial cause.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000013005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 126 mmol/L (low); Creatinine 2.3 mg/dL (high); Total bilirubin 4.6 mg/dL (high); INR 2 ratio (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "126",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "2.3",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "4.6",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "INR",
+          "value": "2",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000013005",
+      "order_id": "00000043-0000-4000-8000-000000013005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Disorientation and somnolence with worsening renal function; precipitating cause remains under evaluation.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000013004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 132 mmol/L (low); Creatinine 1.2 mg/dL (high); Total bilirubin 2.8 mg/dL (high); INR 1.6 ratio (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "132",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.2",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "high"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "2.8",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "INR",
+          "value": "1.6",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000013004",
+      "order_id": "00000043-0000-4000-8000-000000013004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Medication reconciliation and renal baseline visit.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000013003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 134 mmol/L (low); Creatinine 1 mg/dL (normal); Total bilirubin 2.4 mg/dL (high); INR 1.5 ratio (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "134",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "2.4",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "INR",
+          "value": "1.5",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000013003",
+      "order_id": "00000043-0000-4000-8000-000000013003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Liver clinic follow-up.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000013002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 133 mmol/L (low); Creatinine 1.1 mg/dL (normal); Total bilirubin 2.1 mg/dL (high); INR 1.5 ratio (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "133",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "low"
+        },
+        {
+          "name": "Creatinine",
+          "value": "1.1",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "2.1",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "INR",
+          "value": "1.5",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000013002",
+      "order_id": "00000043-0000-4000-8000-000000013002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Admission for fluid retention; discharged after review.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000013001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000013",
+      "kind": "lab",
+      "title": "Gastroenterology laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Sodium 137 mmol/L (normal); Creatinine 0.9 mg/dL (normal); Total bilirubin 1.6 mg/dL (high); INR 1.3 ratio (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Sodium",
+          "value": "137",
+          "unit": "mmol/L",
+          "reference": "135–145",
+          "flag": "normal"
+        },
+        {
+          "name": "Creatinine",
+          "value": "0.9",
+          "unit": "mg/dL",
+          "reference": "0.6–1.1",
+          "flag": "normal"
+        },
+        {
+          "name": "Total bilirubin",
+          "value": "1.6",
+          "unit": "mg/dL",
+          "reference": "0.2–1.2",
+          "flag": "high"
+        },
+        {
+          "name": "INR",
+          "value": "1.3",
+          "unit": "ratio",
+          "reference": "0.8–1.2",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000013001",
+      "order_id": "00000043-0000-4000-8000-000000013001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Cirrhosis staging and ascites assessment.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}

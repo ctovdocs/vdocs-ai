@@ -1,0 +1,1060 @@
+{
+  "metadata": {
+    "version": "india-high-acuity-100-v3",
+    "synthetic": true,
+    "clinician_review_status": "not_reviewed"
+  },
+  "patient": {
+    "id": "20000000-0000-4000-8000-000000000021",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "uhid": "F-DEMO-0021",
+    "name": "Meenal Kulkarni",
+    "age": 27,
+    "sex": "F",
+    "department": "Internal Medicine",
+    "encounter": "IPD · Medical ICU / Bed 6",
+    "conditions": [
+      "Dengue haemorrhagic fever",
+      "Thrombocytopenia",
+      "Plasma leakage with warning signs"
+    ],
+    "allergies": [],
+    "medications": [
+      "Paracetamol"
+    ],
+    "acuity": "critical",
+    "visit_count": 5
+  },
+  "context": {
+    "id": "00000040-0000-4000-8000-000000021001",
+    "hospital_id": "10000000-0000-4000-8000-000000000001",
+    "patient_id": "20000000-0000-4000-8000-000000000021",
+    "dob": "1999-06-10",
+    "occupation": "Textile designer",
+    "preferred_language": "Marathi, Hindi",
+    "social_context": "Lives with roommates in a shared flat; recent cluster of fever cases reported in the building, not independently verified.",
+    "history": "Four days of high fever followed by defervescence with worsening abdominal pain and lethargy — the recorded pattern is consistent with the critical phase of dengue, not a new unrelated illness.",
+    "presenting_complaint": "Postural dizziness, persistent vomiting and abdominal tenderness with a falling platelet count and rising haematocrit on the recorded trend.",
+    "acuity": "critical",
+    "acuity_reason": "Platelets 18,000/µL, narrowing pulse pressure and documented warning signs for plasma leakage.",
+    "acuity_assessed_at": "2026-09-07T05:30:00.000Z",
+    "acuity_source_ids": [
+      "00000044-0000-4000-8000-000000021005",
+      "00000046-0000-4000-8000-000000021001",
+      "00000042-0000-4000-8000-000000021005"
+    ],
+    "previous_records_status": "hospital_records_available",
+    "current_encounter_id": "00000041-0000-4000-8000-000000021005",
+    "clinician_review_status": "not_reviewed",
+    "synthetic": true,
+    "scenario_version": "india-high-acuity-100-v3",
+    "family_history": "No documented family history of bleeding disorders or haematological disease."
+  },
+  "encounters": [
+    {
+      "id": "00000041-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2025-03-16T02:00:00.000Z",
+      "ended_at": "2025-03-16T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Fever onset assessed; dengue NS1 sent.",
+      "assessment": "Fever onset assessed; dengue NS1 sent.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000021002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2025-12-11T02:00:00.000Z",
+      "ended_at": "2025-12-11T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Fever persisting; platelet trend requested.",
+      "assessment": "Fever persisting; platelet trend requested.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000021003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "department": "Internal Medicine",
+      "kind": "OPD",
+      "started_at": "2026-06-09T02:00:00.000Z",
+      "ended_at": "2026-06-09T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Defervescence with new abdominal pain.",
+      "assessment": "Defervescence with new abdominal pain.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000021004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2026-08-24T02:00:00.000Z",
+      "ended_at": "2026-08-26T08:00:00.000Z",
+      "status": "completed",
+      "location": "Internal Medicine / historical encounter",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Warning signs identified; admission advised.",
+      "assessment": "Warning signs identified; admission advised.",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000041-0000-4000-8000-000000021005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "department": "Internal Medicine",
+      "kind": "IPD",
+      "started_at": "2026-09-07T02:00:00.000Z",
+      "ended_at": null,
+      "status": "active",
+      "location": "Medical ICU / Bed 6",
+      "owner": "Dr. Ananya Mehta",
+      "reason": "Postural dizziness, persistent vomiting and abdominal tenderness with a falling platelet count and rising haematocrit on the recorded trend.",
+      "assessment": "Four days of high fever followed by defervescence with worsening abdominal pain and lethargy — the recorded pattern is consistent with the critical phase of dengue, not a new unrelated illness.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "notes": [
+    {
+      "id": "00000044-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021001",
+      "kind": "consultation",
+      "recorded_at": "2025-03-16T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 1",
+      "body": "Fever onset assessed; dengue NS1 sent.\nThis is a retained encounter at the demo hospital. Recorded investigations: Platelets 140 10^9/L; Haematocrit 38 %; WBC 5.2 10^9/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000021001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000021002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021002",
+      "kind": "consultation",
+      "recorded_at": "2025-12-11T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 2",
+      "body": "Fever persisting; platelet trend requested.\nThis is a retained encounter at the demo hospital. Recorded investigations: Platelets 95 10^9/L; Haematocrit 40 %; WBC 4.1 10^9/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000021002"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000021003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021003",
+      "kind": "consultation",
+      "recorded_at": "2026-06-09T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 3",
+      "body": "Defervescence with new abdominal pain.\nThis is a retained encounter at the demo hospital. Recorded investigations: Platelets 62 10^9/L; Haematocrit 43 %; WBC 3.2 10^9/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000021003"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000021004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021004",
+      "kind": "consultation",
+      "recorded_at": "2026-08-24T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Hospital review 4",
+      "body": "Warning signs identified; admission advised.\nThis is a retained encounter at the demo hospital. Recorded investigations: Platelets 38 10^9/L; Haematocrit 47 %; WBC 2.8 10^9/L.\nNo current-admission diagnosis or future result is backdated into this visit.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000021004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000045-0000-4000-8000-000000021004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021004",
+      "kind": "discharge",
+      "recorded_at": "2026-08-26T08:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Historical discharge record",
+      "body": "Prior admission completed. Admission context: Warning signs identified; admission advised. The hospital retained this discharge record and the linked investigations. Subsequent outpatient reviews are separate encounters; current critical status must not be applied to this historical discharge.",
+      "source_ids": [
+        "00000044-0000-4000-8000-000000021004"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000044-0000-4000-8000-000000021005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "kind": "consultation",
+      "recorded_at": "2026-09-07T05:30:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Current clinical assessment",
+      "body": "Postural dizziness, persistent vomiting and abdominal tenderness with a falling platelet count and rising haematocrit on the recorded trend.\nBackground: Four days of high fever followed by defervescence with worsening abdominal pain and lethargy — the recorded pattern is consistent with the critical phase of dengue, not a new unrelated illness.\nRecorded acuity: Platelets 18,000/µL, narrowing pulse pressure and documented warning signs for plasma leakage.\nHistory source and context: Lives with roommates in a shared flat; recent cluster of fever cases reported in the building, not independently verified.\nAvailable results: Platelets 18 10^9/L; Haematocrit 51 %; WBC 2.6 10^9/L; ALT 180 U/L.\nAssessment is a synthetic authored scenario, not an AI diagnosis. Senior team assessment is documented. Acute resuscitation, administration records and full critical-care charting are intentionally not represented; this is not a complete treatment record.",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000021005"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "kind": "progress",
+      "recorded_at": "2026-09-06T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — admission day",
+      "body": "Findings: Alert, postural dizziness on standing. Platelets falling, haematocrit rising — critical phase confirmed.\nPlan: Careful isotonic fluid titration per haematocrit trend. Strict input-output charting. Avoid unnecessary invasive procedures.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000059-0000-4000-8000-000000021002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T07:00:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Ward round — today, morning round",
+      "body": "Findings: Haemodynamically stable overnight. No new bleeding manifestations documented.\nPlan: Continue fluid titration. Repeat platelet count. Reassess for defervescence and recovery phase.",
+      "source_ids": [],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000053-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "kind": "progress",
+      "recorded_at": "2026-09-07T06:10:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Latest progress and pending work",
+      "body": "Critical phase of dengue with warning signs; platelet transfusion is not indicated by count alone and is not assumed here.\nPending: Repeat platelet count and haematocrit; Monitor for bleeding manifestations; Fluid balance chart reconciliation.\nDepartment question (Nephrology): Advise on fluid management strategy given plasma leakage and falling urine output risk. Status: in_progress. No completed specialist response available.",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000021001",
+        "00000042-0000-4000-8000-000000021005",
+        "00000047-0000-4000-8000-000000021001"
+      ],
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000054-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "kind": "handover",
+      "recorded_at": "2026-09-07T06:15:00.000Z",
+      "author": "Dr. Ananya Mehta",
+      "title": "Synthetic handover draft — not approved",
+      "body": "Situation: Postural dizziness, persistent vomiting and abdominal tenderness with a falling platelet count and rising haematocrit on the recorded trend.\nBackground: Four days of high fever followed by defervescence with worsening abdominal pain and lethargy — the recorded pattern is consistent with the critical phase of dengue, not a new unrelated illness.\nRecent results: Internal Medicine laboratory review; Ultrasound abdomen\nPending: Repeat platelet count and haematocrit; Monitor for bleeding manifestations; Fluid balance chart reconciliation.\nContinuity: Critical phase of dengue with warning signs; platelet transfusion is not indicated by count alone and is not assumed here.\nThis is a seeded VDoc draft, not evidence of a Fortis handover system.",
+      "source_ids": [
+        "00000053-0000-4000-8000-000000021001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "vitals": [
+    {
+      "id": "00000046-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "recorded_at": "2026-09-07T02:45:00.000Z",
+      "systolic": 96,
+      "diastolic": 62,
+      "pulse": 112,
+      "respiratory_rate": 24,
+      "spo2": 96,
+      "temperature_c": 38.6,
+      "oxygen_context": "Room air at the recorded assessment; subsequent support and response not represented.",
+      "source_system": "MockHIS"
+    }
+  ],
+  "medications": [
+    {
+      "id": "00000049-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "route": "oral",
+      "frequency": "As needed, avoiding NSAIDs",
+      "status": "documented_home",
+      "started_at": "2026-08-24T05:00:00.000Z",
+      "ended_at": null,
+      "recorded_at": "2026-09-07T05:40:00.000Z",
+      "reason": "Home antipyretic use prior to admission; bleeding-risk medications specifically avoided in the documented history.",
+      "author": "Dr. Ananya Mehta",
+      "source_system": "MockHIS"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00000043-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021001",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-03-16T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000021001",
+      "indication": "Fever onset assessed; dengue NS1 sent.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000021002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021002",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2025-12-11T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000021002",
+      "indication": "Fever persisting; platelet trend requested.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000021003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021003",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-06-09T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000021003",
+      "indication": "Defervescence with new abdominal pain.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000021004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021004",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-08-24T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000021004",
+      "indication": "Warning signs identified; admission advised.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000021005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "title": "Internal Medicine laboratory review",
+      "kind": "lab",
+      "placed_at": "2026-09-07T02:10:00.000Z",
+      "status": "completed",
+      "result_id": "00000042-0000-4000-8000-000000021005",
+      "indication": "Postural dizziness, persistent vomiting and abdominal tenderness with a falling platelet count and rising haematocrit on the recorded trend.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000048-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "title": "Ultrasound abdomen",
+      "kind": "imaging",
+      "placed_at": "2026-09-07T03:35:00.000Z",
+      "status": "completed",
+      "result_id": "00000047-0000-4000-8000-000000021001",
+      "indication": "Suspected plasma leakage in dengue.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockRIS",
+      "priority": "routine",
+      "version": 0
+    },
+    {
+      "id": "00000043-0000-4000-8000-000000021100",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "title": "Repeat platelet count and haematocrit",
+      "kind": "lab",
+      "placed_at": "2026-09-07T06:05:00.000Z",
+      "status": "pending",
+      "result_id": null,
+      "indication": "Synthetic clinician-authored follow-up request; no future result has been generated.",
+      "requester": "Dr. Ananya Mehta",
+      "source_system": "MockLIS",
+      "priority": "urgent",
+      "version": 0
+    }
+  ],
+  "requests": [
+    {
+      "id": "00000050-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "from_department": "Internal Medicine",
+      "to_department": "Nephrology",
+      "reason": "Advise on fluid management strategy given plasma leakage and falling urine output risk.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "requested_at": "2026-09-07T05:35:00.000Z",
+      "accepted_at": "2026-09-07T05:45:00.000Z",
+      "completed_at": null,
+      "response": null,
+      "owner": "Dr. Devika Rao",
+      "source_ids": [
+        "00000042-0000-4000-8000-000000021005",
+        "00000047-0000-4000-8000-000000021001"
+      ],
+      "source_system": "VDoc",
+      "kind": "request",
+      "version": 0,
+      "reviewed_at": null
+    }
+  ],
+  "work_items": [
+    {
+      "id": "00000051-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "title": "Repeat platelet count and haematocrit",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000021001",
+        "00000042-0000-4000-8000-000000021005",
+        "00000047-0000-4000-8000-000000021001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000021002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "title": "Monitor for bleeding manifestations",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000021001",
+        "00000042-0000-4000-8000-000000021005",
+        "00000047-0000-4000-8000-000000021001"
+      ],
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000051-0000-4000-8000-000000021003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "title": "Fluid balance chart reconciliation",
+      "status": "pending",
+      "kind": "review",
+      "owner": "Dr. Ananya Mehta",
+      "created_at": "2026-09-07T06:05:00.000Z",
+      "due_at": "2026-09-07T08:00:00.000Z",
+      "source_ids": [
+        "00000050-0000-4000-8000-000000021001",
+        "00000042-0000-4000-8000-000000021005",
+        "00000047-0000-4000-8000-000000021001"
+      ],
+      "source_system": "VDoc"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "00000055-0000-4000-8000-000000021019",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T07:00:00.000Z",
+      "available_at": "2026-09-07T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — today, morning round",
+      "source_id": "00000059-0000-4000-8000-000000021002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021021",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T06:15:00.000Z",
+      "available_at": "2026-09-07T06:15:00.000Z",
+      "kind": "note",
+      "title": "Synthetic handover draft — not approved",
+      "source_id": "00000054-0000-4000-8000-000000021001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021020",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T06:10:00.000Z",
+      "available_at": "2026-09-07T06:10:00.000Z",
+      "kind": "note",
+      "title": "Latest progress and pending work",
+      "source_id": "00000053-0000-4000-8000-000000021001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021024",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Repeat platelet count and haematocrit",
+      "source_id": "00000051-0000-4000-8000-000000021001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021025",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Monitor for bleeding manifestations",
+      "source_id": "00000051-0000-4000-8000-000000021002",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021026",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T06:05:00.000Z",
+      "available_at": "2026-09-07T06:05:00.000Z",
+      "kind": "task",
+      "title": "Fluid balance chart reconciliation",
+      "source_id": "00000051-0000-4000-8000-000000021003",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021022",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T05:40:00.000Z",
+      "available_at": "2026-09-07T05:40:00.000Z",
+      "kind": "medication",
+      "title": "Paracetamol: documented_home",
+      "source_id": "00000049-0000-4000-8000-000000021001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021023",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T05:35:00.000Z",
+      "available_at": "2026-09-07T05:35:00.000Z",
+      "kind": "request",
+      "title": "Nephrology: Advise on fluid management strategy given plasma leakage and falling urine output risk.",
+      "source_id": "00000050-0000-4000-8000-000000021001",
+      "source_system": "VDoc"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021017",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T05:30:00.000Z",
+      "available_at": "2026-09-07T05:30:00.000Z",
+      "kind": "note",
+      "title": "Current clinical assessment",
+      "source_id": "00000044-0000-4000-8000-000000021005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021011",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T03:45:00.000Z",
+      "available_at": "2026-09-07T04:30:00.000Z",
+      "kind": "result",
+      "title": "Ultrasound abdomen",
+      "source_id": "00000047-0000-4000-8000-000000021001",
+      "source_system": "MockRIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021010",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T02:30:00.000Z",
+      "available_at": "2026-09-07T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000021005",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-07T02:00:00.000Z",
+      "available_at": "2026-09-07T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Postural dizziness, persistent vomiting and abdominal tenderness with a falling platelet count and rising haematocrit on the recorded trend.",
+      "source_id": "00000041-0000-4000-8000-000000021005",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021018",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "occurred_at": "2026-09-06T07:00:00.000Z",
+      "available_at": "2026-09-06T07:00:00.000Z",
+      "kind": "note",
+      "title": "Ward round — admission day",
+      "source_id": "00000059-0000-4000-8000-000000021001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021016",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021004",
+      "occurred_at": "2026-08-26T08:00:00.000Z",
+      "available_at": "2026-08-26T08:00:00.000Z",
+      "kind": "note",
+      "title": "Historical discharge record",
+      "source_id": "00000045-0000-4000-8000-000000021004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021015",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021004",
+      "occurred_at": "2026-08-24T05:30:00.000Z",
+      "available_at": "2026-08-24T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 4",
+      "source_id": "00000044-0000-4000-8000-000000021004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021009",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021004",
+      "occurred_at": "2026-08-24T02:30:00.000Z",
+      "available_at": "2026-08-24T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000021004",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021004",
+      "occurred_at": "2026-08-24T02:00:00.000Z",
+      "available_at": "2026-08-24T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "IPD: Warning signs identified; admission advised.",
+      "source_id": "00000041-0000-4000-8000-000000021004",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021014",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021003",
+      "occurred_at": "2026-06-09T05:30:00.000Z",
+      "available_at": "2026-06-09T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 3",
+      "source_id": "00000044-0000-4000-8000-000000021003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021008",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021003",
+      "occurred_at": "2026-06-09T02:30:00.000Z",
+      "available_at": "2026-06-09T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000021003",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021003",
+      "occurred_at": "2026-06-09T02:00:00.000Z",
+      "available_at": "2026-06-09T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Defervescence with new abdominal pain.",
+      "source_id": "00000041-0000-4000-8000-000000021003",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021013",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021002",
+      "occurred_at": "2025-12-11T05:30:00.000Z",
+      "available_at": "2025-12-11T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 2",
+      "source_id": "00000044-0000-4000-8000-000000021002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021007",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021002",
+      "occurred_at": "2025-12-11T02:30:00.000Z",
+      "available_at": "2025-12-11T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000021002",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021002",
+      "occurred_at": "2025-12-11T02:00:00.000Z",
+      "available_at": "2025-12-11T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Fever persisting; platelet trend requested.",
+      "source_id": "00000041-0000-4000-8000-000000021002",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021012",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021001",
+      "occurred_at": "2025-03-16T05:30:00.000Z",
+      "available_at": "2025-03-16T05:30:00.000Z",
+      "kind": "note",
+      "title": "Hospital review 1",
+      "source_id": "00000044-0000-4000-8000-000000021001",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021006",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021001",
+      "occurred_at": "2025-03-16T02:30:00.000Z",
+      "available_at": "2025-03-16T03:30:00.000Z",
+      "kind": "result",
+      "title": "Internal Medicine laboratory review",
+      "source_id": "00000042-0000-4000-8000-000000021001",
+      "source_system": "MockLIS"
+    },
+    {
+      "id": "00000055-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "encounter_id": "00000041-0000-4000-8000-000000021001",
+      "occurred_at": "2025-03-16T02:00:00.000Z",
+      "available_at": "2025-03-16T02:00:00.000Z",
+      "kind": "encounter",
+      "title": "OPD: Fever onset assessed; dengue NS1 sent.",
+      "source_id": "00000041-0000-4000-8000-000000021001",
+      "source_system": "MockHIS"
+    }
+  ],
+  "immunizations": [
+    {
+      "id": "00000057-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "name": "Influenza (seasonal)",
+      "administered_at": "2026-02-19T09:00:00.000Z",
+      "source_system": "MockHIS"
+    },
+    {
+      "id": "00000057-0000-4000-8000-000000021002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "name": "Hepatitis B",
+      "administered_at": "2023-05-26T09:00:00.000Z",
+      "source_system": "MockHIS"
+    }
+  ],
+  "reports": [
+    {
+      "id": "00000047-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "kind": "imaging",
+      "title": "Ultrasound abdomen",
+      "source": "MockRIS",
+      "reported_at": "2026-09-07T04:30:00.000Z",
+      "findings": "Small right pleural effusion and mild gallbladder wall oedema. No free intraperitoneal fluid described.\nSynthetic report text only; no DICOM acquisition or diagnostic image is supplied.",
+      "observations": [],
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "order_id": "00000048-0000-4000-8000-000000021001",
+      "performed_at": "2026-09-07T03:45:00.000Z",
+      "indication": "Suspected plasma leakage in dengue.",
+      "author": "Dr. Tara Bose · Reporting clinician (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000021005",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-09-07T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Platelets 18 10^9/L (low); Haematocrit 51 % (high); WBC 2.6 10^9/L (low); ALT 180 U/L (high). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Platelets",
+          "value": "18",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "Haematocrit",
+          "value": "51",
+          "unit": "%",
+          "reference": "36–46",
+          "flag": "high"
+        },
+        {
+          "name": "WBC",
+          "value": "2.6",
+          "unit": "10^9/L",
+          "reference": "4–11",
+          "flag": "low"
+        },
+        {
+          "name": "ALT",
+          "value": "180",
+          "unit": "U/L",
+          "reference": "7–56",
+          "flag": "high"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000021005",
+      "order_id": "00000043-0000-4000-8000-000000021005",
+      "specimen_at": "2026-09-07T02:30:00.000Z",
+      "indication": "Postural dizziness, persistent vomiting and abdominal tenderness with a falling platelet count and rising haematocrit on the recorded trend.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000021004",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-08-24T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Platelets 38 10^9/L (low); Haematocrit 47 % (high); WBC 2.8 10^9/L (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Platelets",
+          "value": "38",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "Haematocrit",
+          "value": "47",
+          "unit": "%",
+          "reference": "36–46",
+          "flag": "high"
+        },
+        {
+          "name": "WBC",
+          "value": "2.8",
+          "unit": "10^9/L",
+          "reference": "4–11",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000021004",
+      "order_id": "00000043-0000-4000-8000-000000021004",
+      "specimen_at": "2026-08-24T02:30:00.000Z",
+      "indication": "Warning signs identified; admission advised.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000021003",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2026-06-09T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Platelets 62 10^9/L (low); Haematocrit 43 % (normal); WBC 3.2 10^9/L (low). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Platelets",
+          "value": "62",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "Haematocrit",
+          "value": "43",
+          "unit": "%",
+          "reference": "36–46",
+          "flag": "normal"
+        },
+        {
+          "name": "WBC",
+          "value": "3.2",
+          "unit": "10^9/L",
+          "reference": "4–11",
+          "flag": "low"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000021003",
+      "order_id": "00000043-0000-4000-8000-000000021003",
+      "specimen_at": "2026-06-09T02:30:00.000Z",
+      "indication": "Defervescence with new abdominal pain.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000021002",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-12-11T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Platelets 95 10^9/L (low); Haematocrit 40 % (normal); WBC 4.1 10^9/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Platelets",
+          "value": "95",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "Haematocrit",
+          "value": "40",
+          "unit": "%",
+          "reference": "36–46",
+          "flag": "normal"
+        },
+        {
+          "name": "WBC",
+          "value": "4.1",
+          "unit": "10^9/L",
+          "reference": "4–11",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000021002",
+      "order_id": "00000043-0000-4000-8000-000000021002",
+      "specimen_at": "2025-12-11T02:30:00.000Z",
+      "indication": "Fever persisting; platelet trend requested.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    },
+    {
+      "id": "00000042-0000-4000-8000-000000021001",
+      "hospital_id": "10000000-0000-4000-8000-000000000001",
+      "patient_id": "20000000-0000-4000-8000-000000000021",
+      "kind": "lab",
+      "title": "Internal Medicine laboratory review",
+      "source": "MockLIS",
+      "reported_at": "2025-03-16T03:30:00.000Z",
+      "findings": "Synthetic results associated with this encounter. Platelets 140 10^9/L (low); Haematocrit 38 % (normal); WBC 5.2 10^9/L (normal). Laboratory reference flags are distinct from patient acuity and individual treatment targets.",
+      "observations": [
+        {
+          "name": "Platelets",
+          "value": "140",
+          "unit": "10^9/L",
+          "reference": "150–450",
+          "flag": "low"
+        },
+        {
+          "name": "Haematocrit",
+          "value": "38",
+          "unit": "%",
+          "reference": "36–46",
+          "flag": "normal"
+        },
+        {
+          "name": "WBC",
+          "value": "5.2",
+          "unit": "10^9/L",
+          "reference": "4–11",
+          "flag": "normal"
+        }
+      ],
+      "encounter_id": "00000041-0000-4000-8000-000000021001",
+      "order_id": "00000043-0000-4000-8000-000000021001",
+      "specimen_at": "2025-03-16T02:30:00.000Z",
+      "indication": "Fever onset assessed; dengue NS1 sent.",
+      "author": "Dr. Aditi Sen · Pathology (synthetic)"
+    }
+  ],
+  "discharges": []
+}
