@@ -28,7 +28,7 @@ function resolve(ref: EvidenceRef, history: PatientHistory, reports: Report[]): 
     case 'immunization': { const record = history.immunizations.find(item => item.id === ref.record_id); if (!record) return null;
       return { title: record.name, typeLabel: 'Immunization', meta: formatDate(record.administered_at) }; }
     case 'report': { const record = reports.find(item => item.id === ref.record_id); if (!record) return null;
-      return { title: record.title, typeLabel: record.kind === 'lab' ? 'Lab report' : 'Imaging report', meta: `${record.source} · ${formatDate(record.reported_at)}${record.author ? ` · ${record.author}` : ''}`, body: record.findings, observations: record.observations, sourcePath: `/app/results?id=${record.id}` }; }
+      return { title: record.title, typeLabel: record.kind === 'lab' ? 'Lab report' : 'Imaging report', meta: `${record.source} · ${formatDate(record.reported_at)}${record.author ? ` · ${record.author}` : ''}`, body: record.findings, observations: record.observations, sourcePath: record.order_id ? `/app/${record.kind === 'lab' ? 'lab-orders' : 'imaging-orders'}?id=${record.order_id}` : undefined }; }
     default: return null;
   }
 }

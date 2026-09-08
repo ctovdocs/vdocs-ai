@@ -166,8 +166,7 @@ export function PatientPage() {
       </aside>
     </div>
 
-    <section className="surface patient-page-card">
-      <div className="section-toolbar"><Typography.Title level={5}>Patient history</Typography.Title></div>
+    <section className="surface section-gap">
       <PatientHistoryPanel patientId={patientId} />
     </section>
     <p className="foundation-note">Synthetic clinical records · Saved workflows sync across the demo.</p>

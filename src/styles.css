@@ -250,6 +250,62 @@ a { color: #155c53; }
 .workflow-toolbar > a { margin-right: 10px; }
 .workflow-work-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px solid #edf0ee; }
 .compact-list { margin: 4px 0; padding-left: 18px; }
+.patient-history { padding: 0 14px 10px; min-width: 0; }
+.history-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0 10px; }
+.history-heading h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.history-heading p { margin: 3px 0 0; color: #687774; font-size: 12px; }
+.history-counts { display: flex; flex-wrap: wrap; gap: 16px; color: #687774; font-size: 12px; }
+.history-counts strong { color: #20322f; font-weight: 600; }
+.history-background { border: 1px solid #e6ece9; background: #fafcfb; border-radius: 5px; }
+.history-background-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.history-acuity { padding: 10px 12px; margin-bottom: 14px; border: 1px solid #e4e9e6; border-radius: 5px; background: #fff; }
+.history-acuity-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-bottom: 6px; }
+.history-acuity-heading strong { font-size: 12px; font-weight: 600; color: #40534c; }
+.history-acuity-heading span { color: #7b8781; font-size: 11px; }
+.history-background-grid .history-acuity p { color: #687774; font-size: 12px; margin: 0; line-height: 1.6; }
+.history-acuity.is-critical { border-left: 3px solid #bd4946; }
+.history-acuity.is-critical .history-acuity-heading strong { color: #a73532; }
+.patient-history h4 { margin: 0 0 6px; font-size: 12px; font-weight: 600; }
+.history-background-grid p, .history-assessment p { margin: 0 0 10px; line-height: 1.65; white-space: pre-wrap; }
+.patient-history .history-tabs > .ant-tabs-nav { padding: 0; margin-bottom: 10px; }
+.history-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.history-filters .ant-input-search { max-width: 340px; }
+.history-filters .ant-select { min-width: 150px; }
+.history-journey { display: grid; grid-template-columns: 260px minmax(0, 1fr); border: 1px solid #e2e9e5; border-radius: 6px; overflow: hidden; }
+.history-visit-list { background: #f8faf9; border-right: 1px solid #e2e9e5; padding: 6px; }
+.history-visit { display: flex; flex-direction: column; gap: 6px; width: 100%; padding: 12px 10px; border: 1px solid transparent; border-radius: 5px; background: transparent; color: #20322f; text-align: left; cursor: pointer; font: inherit; margin-bottom: 3px; }
+.history-visit:hover { background: #eff4f1; }
+.history-visit.is-selected { background: #fff; border-color: #b9cec3; box-shadow: inset 3px 0 #155c53; }
+.history-visit:focus-visible, .history-note-row:focus-visible { outline: 2px solid #155c53; outline-offset: -2px; }
+.history-visit-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 11px; }
+.history-visit-top .ant-tag { margin: 0; font-size: 10px; }
+.history-visit strong { font-size: 12px; font-weight: 600; }
+.history-visit small, .history-small { color: #687774; font-size: 11px; line-height: 1.6; }
+.history-visit-list .ant-pagination { margin: 10px 0; text-align: center; }
+.history-visit-detail { padding: 16px; min-width: 0; }
+.history-detail-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.history-detail-heading h4 { font-size: 14px; }
+.history-detail-heading span { font-size: 11px; color: #687774; }
+.history-assessment { border-top: 1px solid #e6ece9; margin-top: 12px; padding-top: 12px; }
+.history-note-row { width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 12px 4px; border: 0; border-bottom: 1px solid #edf1ef; background: transparent; text-align: left; cursor: pointer; color: #20322f; font: inherit; }
+.history-note-row:hover { background: #f8faf9; }
+.history-note-row > span:not(.anticon) { flex: 1; min-width: 0; }
+.history-note-row > .anticon { color: #687774; margin-top: 3px; }
+.history-note-row strong { font-size: 12px; font-weight: 600; display: block; }
+.history-note-preview { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; color: #52665c; line-height: 1.55; font-size: 12px; margin-top: 3px; }
+.history-note-row small, .history-linked-list small { display: block; color: #687774; font-size: 11px; margin-top: 5px; line-height: 1.5; }
+.history-linked-list > a { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #edf1ef; }
+.history-linked-list > a > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.history-event { position: relative; display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #edf1ef; }
+.history-event > div { flex: 1; min-width: 0; }
+.history-event strong { display: block; font-size: 12px; font-weight: 500; overflow-wrap: anywhere; }
+.history-event small { display: block; color: #687774; font-size: 11px; margin-top: 4px; }
+.history-event-dot { width: 7px; height: 7px; border-radius: 50%; background: #8b9c94; flex-shrink: 0; margin: 5px 0 0 3px; }
+.history-event-dot.kind-result { background: #155c53; }
+.history-event-dot.kind-request { background: #627da3; }
+.patient-history .history-text-button { padding: 0; height: auto; white-space: normal; text-align: left; font-size: 12px; }
+.history-footer { margin-top: 12px; padding-top: 10px; border-top: 1px solid #edf1ef; color: #87938d; font-size: 10px; }
+@media (max-width: 760px) { .history-heading { align-items: flex-start; flex-direction: column; } .history-journey, .history-background-grid { grid-template-columns: 1fr; } .history-visit-list { border-right: 0; border-bottom: 1px solid #e2e9e5; max-height: 280px; overflow-y: auto; } .history-visit-detail { padding: 12px; } .patient-history { padding-inline: 10px; } }
 .order-catalog-search, .order-form-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; }
 .order-catalog-search .ant-select { width: 100%; }
 .order-basket-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 8px 0; }
