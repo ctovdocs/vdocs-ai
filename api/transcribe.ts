@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { handleTranscribeRequest, resolveTranscribeEnv } from '../server/transcribe.ts';
+import { handleTranscribeRequest, resolveTranscribeEnv } from '../server/transcribe.js';
 
 export const config = { api: { bodyParser: false } };
 

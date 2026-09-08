@@ -1,4 +1,4 @@
-import { callProvider, type AiProvider } from './aiProviders.ts';
+import { callProvider, type AiProvider } from './aiProviders.js';
 
 export type RecordType = 'encounter' | 'note' | 'vital' | 'medication' | 'order' | 'request' | 'work_item' | 'immunization' | 'report';
 const RECORD_TYPES: RecordType[] = ['encounter', 'note', 'vital', 'medication', 'order', 'request', 'work_item', 'immunization', 'report'];

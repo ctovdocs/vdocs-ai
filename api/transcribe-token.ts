@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { handleStreamingTokenRequest, resolveTranscribeEnv } from '../server/transcribe.ts';
+import { handleStreamingTokenRequest, resolveTranscribeEnv } from '../server/transcribe.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') { res.status(405).end('Method not allowed'); return; }

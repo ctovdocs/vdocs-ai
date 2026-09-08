@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { handlePatientAiRequest, resolveProviderEnv } from '../server/patientAi.ts';
+import { handlePatientAiRequest, resolveProviderEnv } from '../server/patientAi.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') { res.status(405).end('Method not allowed'); return; }
