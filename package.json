@@ -15,6 +15,7 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "data:export": "node --experimental-strip-types scripts/export-data.ts",
+    "data:shifts": "node scripts/export-shifts.mjs",
     "check": "npm run typecheck && npm run lint && npm test && npm run build"
   },
   "dependencies": {

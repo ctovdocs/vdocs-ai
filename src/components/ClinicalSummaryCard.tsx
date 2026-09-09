@@ -6,6 +6,7 @@ import type { PatientHistory } from '../domain/longitudinal';
 import { VoiceInput, VoiceTextArea } from './VoiceField';
 import { getDoctorKey } from '../lib/aiChatStore';
 import { loadDoctorNote, saveDoctorNote } from '../lib/doctorNotesStore';
+import { useWorkflowAction } from '../services/useWorkflow';
 
 function seedText(patient: Patient, history: PatientHistory) {
   return `${patient.name} — ${history.context.presenting_complaint} ${history.context.acuity_reason}`;
@@ -15,6 +16,7 @@ export function ClinicalSummaryCard({ patient, history, abnormalCount, activeCoo
   patient: Patient; history?: PatientHistory | null; abnormalCount: number; activeCoordinationCount: number; pendingOrdersCount: number; dischargeReady: boolean;
 }) {
   const [customHighlights, setCustomHighlights] = useState<string[]>([]);
+  const action = useWorkflowAction();
   const [adding, setAdding] = useState(false);
   const [draft, setDraft] = useState('');
 
@@ -33,18 +35,20 @@ export function ClinicalSummaryCard({ patient, history, abnormalCount, activeCoo
       doctorKeyRef.current = doctorKey;
       loadedForPatient.current = patient.id;
       const stored = loadDoctorNote(doctorKey, patient.id);
-      const initial = stored?.text ?? seedText(patient, history);
+      const shared = history.notes.filter(note => note.title === 'Doctor clinical note').sort((first, second) => second.recorded_at.localeCompare(first.recorded_at))[0];
+      const initial = shared?.body ?? stored?.text ?? seedText(patient, history);
       setNoteText(initial);
       setSavedText(initial);
-      setSavedAt(stored?.savedAt ?? null);
+      setSavedAt(shared?.recorded_at ?? stored?.savedAt ?? null);
       setReady(true);
     });
     return () => { active = false; };
   }, [patient, history]);
 
   const dirty = noteText !== savedText;
-  const save = () => {
+  const save = async () => {
     if (!doctorKeyRef.current) return;
+    try { await action.mutateAsync({ type: 'note.create', patient_id: patient.id, body: noteText }); } catch { return; }
     const note = saveDoctorNote(doctorKeyRef.current, patient.id, noteText);
     setSavedText(note.text);
     setSavedAt(note.savedAt);
@@ -64,7 +68,7 @@ export function ClinicalSummaryCard({ patient, history, abnormalCount, activeCoo
         ? <div className="notes-save-actions">
           <Tag color="gold">Unsaved changes</Tag>
           <Button size="small" type="text" onClick={revert}>Revert</Button>
-          <Button size="small" type="primary" onClick={save}>Save</Button>
+          <Button size="small" type="primary" loading={action.isPending} onClick={save}>Save to chart</Button>
         </div>
         : savedAt && <Typography.Text type="secondary" className="notes-saved-at">Saved {new Date(savedAt).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}</Typography.Text>}
     </div>

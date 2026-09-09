@@ -62,9 +62,9 @@ export function HandoversPage() {
   const selectedPatientId = Form.useWatch('patient_id', form);
   if (!query.data) return <QueryState pending={query.isPending} error={query.error} />;
   const state = query.data;
-  const selected = state.handovers.find(record => record.id === params.get('id'));
+  const selected = state.handovers.find(record => !record.shift_id && record.id === params.get('id'));
   const ipd = state.patients.filter(patient => state.histories.some(history => history.context.patient_id === patient.id && history.encounters.some(encounter => encounter.status === 'active' && encounter.kind === 'IPD')));
-  const rows = state.handovers.map(record => ({ ...record, patient: state.patients.find(patient => patient.id === record.patient_id)! }))
+  const rows = state.handovers.filter(record => !record.shift_id).map(record => ({ ...record, patient: state.patients.find(patient => patient.id === record.patient_id)! }))
     .filter(record => !department || record.patient.department === department).filter(record => !status || record.status === status)
     .filter(record => !shift || record.shift === shift).filter(record => !recipient || record.to_doctor === recipient)
     .filter(record => withinDateRange(record.shift_at, range))

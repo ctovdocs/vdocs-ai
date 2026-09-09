@@ -250,6 +250,17 @@ a { color: #155c53; }
 .workflow-toolbar > a { margin-right: 10px; }
 .workflow-work-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px solid #edf0ee; }
 .compact-list { margin: 4px 0; padding-left: 18px; }
+.shift-packet-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-bottom: 14px; }
+.shift-packet-meta > span { color: #687774; font-size: 12px; }
+.shift-packet-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); border: 1px solid #e2e9e5; border-radius: 5px; margin-top: 12px; }
+.shift-patient-roster { padding: 8px; background: #f8faf9; border-right: 1px solid #e2e9e5; }
+.shift-patient-roster .history-visit { margin-top: 6px; }
+.shift-patient-roster .history-visit:disabled { cursor: default; opacity: .7; }
+.shift-patient-content { padding: 16px; min-width: 0; }
+.shift-source-meta { display: block; font-size: 11px; color: #687774; margin-top: 4px; }
+.shift-receipt { margin-top: 16px; padding: 14px; border: 1px solid #dae6df; border-radius: 5px; background: #f8faf9; }
+.shift-receipt h4 { margin: 0 0 10px; }
+@media (max-width: 760px) { .shift-packet-layout { grid-template-columns: 1fr; } .shift-patient-roster { border-right: 0; border-bottom: 1px solid #e2e9e5; max-height: 240px; overflow-y: auto; } }
 .patient-history { padding: 0 14px 10px; min-width: 0; }
 .history-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0 10px; }
 .history-heading h3 { margin: 0; font-size: 15px; font-weight: 600; }

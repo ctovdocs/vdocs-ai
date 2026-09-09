@@ -3,6 +3,8 @@ import type { Patient, Report } from '../domain/models';
 import type { PatientHistory } from '../domain/longitudinal';
 import { buildExpansionWorkflow } from '../data/expansionWorkflow';
 import { orderCatalog, referralDepartments } from '../data/orderCatalog';
+import { applyShiftCommand, shiftChanged } from './shiftHandover';
+import { seedShiftDemo } from '../data/shiftDemo';
 
 export function initialWorkflowState(hospitalId: string, patients: Patient[], reports: Report[], histories: PatientHistory[]): WorkflowState {
   const state = workflowStateSchema.parse({ schema_version: 1, hospital_id: hospitalId, revision: 0,
@@ -59,6 +61,11 @@ export function dischargeBlockers(state: WorkflowState, record: Discharge) {
 
 export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowCommand): WorkflowState {
   const command = commandSchema.parse(rawCommand);
+  if (command.type === 'shift.seed') {
+    if (!input.patients.some(patient => patient.id === command.patient_id && patient.hospital_id === input.hospital_id)) throw new Error('Patient outside hospital scope.');
+    return seedShiftDemo(input, command.at);
+  }
+  if (command.type === 'shift.create' || command.type === 'shift.refresh' || command.type === 'shift.approve' || command.type === 'shift.receive') return applyShiftCommand(input, command);
   if (input.commands.includes(command.id)) return input;
   const state = structuredClone(input);
   const patient = state.patients.find(item => item.id === command.patient_id && item.hospital_id === state.hospital_id);
@@ -216,6 +223,9 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
       if (work.kind === 'discharge') throw new Error('Complete discharge through the discharge checklist, not a task shortcut.');
       work.status = 'completed'; work.completed_at = command.at; entityId = work.id; encounterId = work.encounter_id; break;
     }
+    case 'note.create': {
+      requireActive(); entityId = addNote('Doctor clinical note', command.body, 'progress'); break;
+    }
     case 'round.create': {
       requireActive(true); entityId = addNote('Ward round', `Findings: ${command.findings}\nPlan: ${command.plan}`, 'progress'); break;
     }
@@ -242,14 +252,18 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
       const handover = state.handovers.find(item => item.id === command.entity_id && item.patient_id === patient.id);
       expectVersion(handover);
       if (!handover || handover.status !== 'draft') throw new Error('An approved handover cannot be edited. Create a new handover instead.');
+      if (handover.shift_id && (command.actor !== handover.from_doctor || command.to_doctor !== handover.to_doctor || command.shift !== handover.shift || command.shift_at !== handover.shift_at)) throw new Error('Shift ownership and dates cannot be changed from the patient editor.');
+      if (handover.shift_id && command.shift_reviewed && shiftChanged(state, handover, command.at)) throw new Error('Refresh the packet sources before marking this patient reviewed.');
       requireActive(true);
       Object.assign(handover, { sections: command.sections, to_doctor: command.to_doctor, shift: command.shift, shift_at: command.shift_at, updated_at: command.at });
+      if (handover.shift_id) { handover.escalation = command.escalation ?? handover.escalation; handover.shift_reviewed = command.shift_reviewed ?? false; }
       handover.version++; entityId = handover.id; break;
     }
     case 'handover.approve': {
       const handover = state.handovers.find(item => item.id === command.entity_id && item.patient_id === patient.id);
       expectVersion(handover); requireActive(true);
       if (!handover || handover.status !== 'draft') throw new Error('Only a draft can be approved.');
+      if (handover.shift_id) throw new Error('Approve the complete shift packet instead.');
       if (!handover.sections.situation.trim() || !handover.sections.next_actions.trim()) throw new Error('Situation and next actions must be reviewed and completed.');
       handover.status = 'approved'; handover.approved_at = command.at; handover.updated_at = command.at; handover.version++; entityId = handover.id;
       addNote(`Approved handover to ${handover.to_doctor}`, Object.entries(handover.sections).map(([key, value]) => `${key.replaceAll('_', ' ')}: ${value}`).join('\n'), 'handover', handover.source_ids);
@@ -259,6 +273,7 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
       const handover = state.handovers.find(item => item.id === command.entity_id && item.patient_id === patient.id);
       expectVersion(handover);
       if (!handover || handover.status !== 'approved') throw new Error('Only an approved handover can be received.');
+      if (handover.shift_id) throw new Error('Acknowledge the complete shift packet instead.');
       if (command.actor !== handover.to_doctor) throw new Error('Acknowledge as the named receiving doctor.');
       handover.status = 'received'; handover.received_at = command.at; handover.updated_at = command.at; handover.version++; entityId = handover.id; encounterId = handover.encounter_id; break;
     }

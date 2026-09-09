@@ -12,7 +12,7 @@ import { Sidebar } from '../components/Sidebar';
 import { DischargesPage } from '../pages/DischargesPage';
 import { CoordinationPage } from '../pages/CoordinationPage';
 import { InvestigationsPage } from '../pages/InvestigationsPage';
-import { HandoversPage } from '../pages/HandoversPage';
+import { ShiftHandoversPage as HandoversPage } from '../pages/ShiftHandoversPage';
 import { PatientDirectoryTable } from '../components/PatientDirectoryTable';
 import { VoiceModeToggle } from '../components/VoiceModeToggle';
 import { VoiceModeProvider } from '../lib/voiceMode';

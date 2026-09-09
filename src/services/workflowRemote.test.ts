@@ -11,6 +11,45 @@ vi.mock('../lib/supabase', () => ({ supabase: { from: () => ({ select: () => ({ 
 beforeEach(() => { vi.clearAllMocks(); clearWorkflowCache(); });
 
 describe('Supabase workflow persistence contract', () => {
+  it('saves the ten-shift seed once and treats repeated import as a no-op', async () => {
+    let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
+    remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
+    remote.save.mockImplementation(async (_name, args) => {
+      expect(args.next_state.revision).toBe(database.revision + 1);
+      database = structuredClone(args.next_state);
+      return { error: null };
+    });
+    vi.stubGlobal('window', new EventTarget());
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-09-09T12:00:00.000Z'));
+    try {
+      await dispatchWorkflow({ type: 'shift.seed', patient_id: cohort.patients[0].id });
+      await dispatchWorkflow({ type: 'shift.seed', patient_id: cohort.patients[0].id });
+      expect(remote.save).toHaveBeenCalledTimes(1);
+      expect(database.handovers).toHaveLength(120);
+      expect((await readWorkflow()).handovers).toHaveLength(120);
+    } finally { vi.useRealTimers(); vi.unstubAllGlobals(); }
+  });
+
+  it('persists a multi-patient shift packet in one RPC and preserves source snapshots on reload', async () => {
+    let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
+    const patients = database.patients.filter(patient => patient.department === 'Internal Medicine' && database.histories.some(history => history.context.patient_id === patient.id && history.encounters.some(encounter => encounter.kind === 'IPD' && encounter.status === 'active'))).slice(0, 2);
+    remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
+    remote.save.mockImplementation(async (_name, args) => {
+      expect(args.next_state.revision).toBe(database.revision + 1);
+      database = structuredClone(args.next_state);
+      return { error: null };
+    });
+    vi.stubGlobal('window', new EventTarget());
+    try {
+      const id = await dispatchWorkflow({ type: 'shift.create', patient_id: patients[0].id, patient_ids: patients.map(patient => patient.id), actor: 'Dr. Ananya Mehta', to_doctor: 'Dr. Incoming', department: 'Internal Medicine', shift: 'Day', starts_at: '2026-09-08T00:00:00.000Z', ends_at: '2026-09-08T08:00:00.000Z' });
+      expect(remote.save).toHaveBeenCalledTimes(1);
+      const reloaded = await readWorkflow();
+      expect(reloaded.handovers.filter(record => record.shift_id === id)).toHaveLength(2);
+      expect(reloaded.handovers[0].source_snapshot?.length).toBeGreaterThan(0);
+    } finally { vi.unstubAllGlobals(); }
+  });
+
   it('writes a whole basket in one database revision and reads the saved orders through patient services', async () => {
     let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
     remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));

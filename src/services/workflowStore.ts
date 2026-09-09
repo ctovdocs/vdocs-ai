@@ -92,12 +92,14 @@ export async function readWorkflow(): Promise<WorkflowState> {
   return structuredClone(await remoteRead);
 }
 
-function notifyChange() {
-  remoteRead = null;
+function notifyChange(committed?: WorkflowState) {
+  remoteRead = committed ? Promise.resolve(structuredClone(committed)) : null;
+  remoteReadAt = committed ? Date.now() : 0;
   window.dispatchEvent(new Event(WORKFLOW_CHANGED));
 }
 
 export async function dispatchWorkflow(input: CommandInput) {
+  let committed: WorkflowState | undefined;
   const at = new Date(Math.max(Date.now(), new Date(SNAPSHOT_AT).getTime() + 60_000)).toISOString();
   const command = { ...input, id: crypto.randomUUID(), actor: input.actor ?? 'Dr. Ananya Mehta', at } as WorkflowCommand;
   if (env.mode === 'mock') {
@@ -110,11 +112,12 @@ export async function dispatchWorkflow(input: CommandInput) {
     for (let attempt = 0; attempt < 3; attempt++) {
       const current = await readRemote();
       const next = applyWorkflowCommand(current, command);
+      if (next === current) { committed = current; break; }
       const { error } = await supabase!.rpc('save_demo_workflow', { target_hospital: DEMO_HOSPITAL_ID, expected_revision: current.revision, next_state: next });
-      if (!error) break;
+      if (!error) { committed = next; break; }
       if (error.code !== '40001' || attempt === 2) throw new Error(error.message);
     }
   }
-  notifyChange();
+  notifyChange(committed);
   return command.id;
 }
