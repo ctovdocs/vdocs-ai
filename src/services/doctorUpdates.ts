@@ -27,7 +27,7 @@ export function doctorUpdates(state: WorkflowState, doctor = UPDATE_DOCTOR): Doc
       }
       for (const order of history.orders.filter(order => order.encounter_id === current && order.status !== 'completed')) add({ id: `order:${order.id}:${order.version}:${order.status}`, patient_id: patientId, type: 'order', title: `${order.title} · ${order.status}`, detail: `${order.requester} · ${order.indication}`, at: state.audit.filter(event => event.entity_id === order.id).at(-1)?.at ?? order.placed_at,
         attention: order.priority === 'urgent' && order.status !== 'cancelled', href: `/app/${order.kind === 'lab' ? 'lab-orders' : 'imaging-orders'}?id=${order.id}` });
-      for (const task of history.work_items.filter(task => task.kind === 'follow_up' && task.status === 'pending')) add({ id: `follow-up:${task.id}:${task.due_at}`, patient_id: patientId, type: 'follow_up', title: task.title, detail: `${task.owner} · Follow-up due ${task.due_at}`, at: task.due_at, attention: task.due_at <= new Date().toISOString(), href: `/app/patients/${patientId}` });
+      for (const task of history.work_items.filter(task => task.kind === 'follow_up' && task.status === 'pending')) add({ id: `follow-up:${task.id}:${task.due_at}`, patient_id: patientId, type: 'follow_up', title: task.title, detail: `${task.owner} · Follow-up due ${task.due_at}`, at: task.created_at, attention: task.due_at <= new Date().toISOString(), href: `/app/patients/${patientId}` });
     }
     for (const request of history.requests) {
       const incoming = request.owner === doctor || (doctor === UPDATE_DOCTOR && request.to_department === UPDATE_DEPARTMENT);

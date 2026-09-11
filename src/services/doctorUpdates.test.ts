@@ -50,6 +50,27 @@ describe('doctor updates inbox', () => {
     expect(doctorUpdates(senderRead).find(item => item.id === changed.id)?.read).toBe(false);
   });
 
+  it('sorts follow-up reminders by when they were created, not their future due date', () => {
+    let state = initial();
+    const patientId = doctorUpdates(state).find(item => item.type === 'lab')!.patient_id;
+    const base = { patient_id: patientId, actor: UPDATE_DOCTOR, at: '2026-09-11T08:00:00.000Z' };
+    state = applyWorkflowCommand(state, { ...base, id: crypto.randomUUID(), type: 'order.create', kind: 'lab', title: 'Sort-order test investigation', indication: 'Synthetic test', priority: 'routine' });
+    const order = state.histories.find(item => item.context.patient_id === patientId)!.orders.at(-1)!;
+    state = applyWorkflowCommand(state, { ...base, id: crypto.randomUUID(), type: 'order.publish', entity_id: order.id, expected_version: order.version, performed_at: base.at, findings: 'Synthetic result', observations: [{ name: 'Creatinine', value: '2.2', unit: 'mg/dL', reference: '0.7–1.3', flag: 'high' }] });
+    // Old reminder created long ago, but due far in the future — must not outrank the report just published above.
+    const history = state.histories.find(item => item.context.patient_id === patientId)!;
+    history.work_items.push({
+      id: crypto.randomUUID(), hospital_id: DEMO_HOSPITAL_ID, patient_id: patientId, encounter_id: history.context.current_encounter_id,
+      title: 'Far-future follow-up', status: 'pending', kind: 'follow_up', owner: UPDATE_DOCTOR,
+      created_at: '2026-01-01T08:00:00.000Z', due_at: '2027-01-01T08:00:00.000Z', source_ids: [], source_system: 'VDoc',
+    });
+    const updates = doctorUpdates(state);
+    const reportUpdate = updates.find(item => item.id.startsWith('report:') && item.title.includes('Sort-order test investigation'))!;
+    const followUpUpdate = updates.find(item => item.title === 'Far-future follow-up')!;
+    expect(followUpUpdate.at).toBe('2026-01-01T08:00:00.000Z');
+    expect(updates.indexOf(reportUpdate)).toBeLessThan(updates.indexOf(followUpUpdate));
+  });
+
   it('includes newly published reports linked to their orders', () => {
     let state = initial();
     const patientId = doctorUpdates(state).find(item => item.type === 'lab')!.patient_id;
