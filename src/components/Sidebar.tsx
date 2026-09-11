@@ -1,11 +1,13 @@
 import { useState, type ReactNode } from 'react';
 import {
-  AppstoreOutlined, CalendarOutlined, CheckSquareOutlined, ClockCircleOutlined,
+  AppstoreOutlined, BellOutlined, CalendarOutlined, CheckSquareOutlined, ClockCircleOutlined,
   ExperimentOutlined, FileDoneOutlined, FileTextOutlined,
   MedicineBoxOutlined, MenuFoldOutlined, MenuUnfoldOutlined, RetweetOutlined,
   ScanOutlined, SolutionOutlined, TeamOutlined, UnorderedListOutlined,
 } from '@ant-design/icons';
-import { App, Button, ConfigProvider, Layout, Menu, Tooltip, type MenuProps } from 'antd';
+import { App, Badge, Button, ConfigProvider, Layout, Menu, Tooltip, type MenuProps } from 'antd';
+import { useWorkflow } from '../services/useWorkflow';
+import { doctorUpdates } from '../services/doctorUpdates';
 import { Link, useLocation } from 'react-router-dom';
 
 type NavigationItem = { label: string; icon: ReactNode; path?: string };
@@ -13,6 +15,7 @@ type NavigationItem = { label: string; icon: ReactNode; path?: string };
 const clinicalSections: { label: string; items: NavigationItem[] }[] = [
   { label: 'Daily work', items: [
     { label: 'Dashboard', icon: <AppstoreOutlined />, path: '/app' },
+    { label: 'Updates', icon: <BellOutlined />, path: '/app/updates' },
     { label: 'Patient list', icon: <TeamOutlined />, path: '/app/patients' },
     { label: 'Schedule', icon: <CalendarOutlined />, path: '/app/schedule' },
     { label: 'OPD visits', icon: <SolutionOutlined />, path: '/app/opd' },
@@ -36,6 +39,8 @@ const clinicalSections: { label: string; items: NavigationItem[] }[] = [
 ];
 
 export function Sidebar() {
+  const workflow = useWorkflow();
+  const unread = workflow.data ? doctorUpdates(workflow.data).filter(item => !item.read).length : 0;
   const { pathname } = useLocation();
   const { message } = App.useApp();
   const [collapsed, setCollapsed] = useState(() => {
@@ -46,7 +51,7 @@ export function Sidebar() {
   const toMenuItem = (item: NavigationItem) => ({
     key: item.path ?? item.label,
     icon: item.icon,
-    label: item.path ? <Link to={item.path}>{item.label}</Link> : item.label,
+    label: item.path ? <Link to={item.path}>{item.label}{item.path === '/app/updates' && <Badge className="sidebar-update-count" count={unread} overflowCount={99} size="small" />}</Link> : item.label,
     title: item.path ? item.label : `${item.label} · planned`,
     onClick: item.path ? undefined : () => { void message.info({ content: `${item.label} is not connected yet.`, key: 'planned-navigation' }); },
   });
@@ -78,7 +83,7 @@ export function Sidebar() {
           <div className="sidebar-rail-group" key={section.label} role="group" aria-label={section.label}>
             {section.items.map(item => <Tooltip key={item.path ?? item.label} title={item.path ? item.label : `${item.label} · planned`} placement="right">
               {item.path ? <Link to={item.path} className={`sidebar-rail-item${selected === item.path ? ' is-selected' : ''}`}
-                aria-label={item.label} aria-current={selected === item.path ? 'page' : undefined}>{item.icon}</Link>
+                aria-label={item.path === '/app/updates' ? `Updates, ${unread} unread` : item.label} aria-current={selected === item.path ? 'page' : undefined}>{item.path === '/app/updates' ? <Badge count={unread} size="small" overflowCount={99}>{item.icon}</Badge> : item.icon}</Link>
                 : <button type="button" className="sidebar-rail-item is-planned" aria-label={`${item.label} · planned`}
                   onClick={() => { void message.info({ content: `${item.label} is not connected yet.`, key: 'planned-navigation' }); }}>{item.icon}</button>}
             </Tooltip>)}

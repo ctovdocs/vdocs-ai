@@ -17,6 +17,7 @@ import { PatientDirectoryTable } from '../components/PatientDirectoryTable';
 import { VoiceModeToggle } from '../components/VoiceModeToggle';
 import { VoiceModeProvider } from '../lib/voiceMode';
 import { WorkflowSync } from './WorkflowSync';
+import { UpdatesPage } from '../pages/UpdatesPage';
 
 function Shell() {
   const queryClient = useQueryClient();
@@ -35,6 +36,7 @@ export function App() {
   return <VoiceModeProvider><AuthGate><Routes>
     <Route element={<Shell />}>
       <Route path="/app" element={<DashboardPage />} />
+      <Route path="/app/updates" element={<UpdatesPage />} />
       <Route path="/app/patients" element={<PatientsPage />} />
       <Route path="/app/patients/:patientId" element={<PatientPage key={location.pathname} />} />
       <Route path="/app/schedule" element={<SchedulePage />} />

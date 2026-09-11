@@ -5,6 +5,7 @@ import { buildExpansionWorkflow } from '../data/expansionWorkflow';
 import { orderCatalog, referralDepartments } from '../data/orderCatalog';
 import { applyShiftCommand, shiftChanged } from './shiftHandover';
 import { seedShiftDemo } from '../data/shiftDemo';
+import { doctorUpdates } from './doctorUpdates';
 
 export function initialWorkflowState(hospitalId: string, patients: Patient[], reports: Report[], histories: PatientHistory[]): WorkflowState {
   const state = workflowStateSchema.parse({ schema_version: 1, hospital_id: hospitalId, revision: 0,
@@ -67,6 +68,19 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
   }
   if (command.type === 'shift.create' || command.type === 'shift.refresh' || command.type === 'shift.approve' || command.type === 'shift.receive') return applyShiftCommand(input, command);
   if (input.commands.includes(command.id)) return input;
+  if (command.type === 'updates.read') {
+    const updates = doctorUpdates(input, command.actor);
+    const valid = new Set(updates.map(update => update.id));
+    if (command.update_ids.some(id => !valid.has(id))) throw new Error('An update changed or is outside this doctor’s inbox. Refresh and try again.');
+    if (updates.find(update => update.id === command.update_ids[0])?.patient_id !== command.patient_id) throw new Error('Update patient does not match.');
+    const state = structuredClone(input);
+    state.update_receipts ??= {};
+    const receipts = state.update_receipts[command.actor] ??= {};
+    for (const id of command.update_ids) { if (command.read) receipts[id] = command.at; else delete receipts[id]; }
+    state.revision++; state.commands.push(command.id);
+    state.audit.push({ id: command.id, at: command.at, actor: command.actor, action: command.type, patient_id: command.patient_id, entity_id: command.update_ids[0] });
+    return workflowStateSchema.parse(state);
+  }
   const state = structuredClone(input);
   const patient = state.patients.find(item => item.id === command.patient_id && item.hospital_id === state.hospital_id);
   const history = state.histories.find(item => item.context.patient_id === command.patient_id && item.context.hospital_id === state.hospital_id);

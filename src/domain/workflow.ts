@@ -26,6 +26,7 @@ export const handoverSchema = z.object({
   created_at: z.string(), updated_at: z.string(), approved_at: z.string().nullable(), received_at: z.string().nullable(), version: z.number().int(),
 });
 export const workflowStateSchema = z.object({
+  update_receipts: z.record(z.string(), z.record(z.string(), z.iso.datetime())).optional(),
   schema_version: z.literal(1), hospital_id: z.uuid(), revision: z.number().int(),
   patients: z.array(patientSchema), reports: z.array(reportSchema), histories: z.array(historySchema),
   discharges: z.array(dischargeSchema), handovers: z.array(handoverSchema),
@@ -40,6 +41,7 @@ export type Handover = z.infer<typeof handoverSchema>;
 const base = { id: z.uuid(), patient_id: z.uuid(), actor: z.string().trim().min(1), at: z.iso.datetime() };
 const expected = { entity_id: z.string(), expected_version: z.number().int() };
 export const commandSchema = z.discriminatedUnion('type', [
+  z.object({ ...base, type: z.literal('updates.read'), update_ids: z.array(z.string()).min(1).max(500), read: z.boolean() }),
   z.object({ ...base, type: z.literal('shift.seed') }),
   z.object({ ...base, type: z.literal('shift.create'), patient_ids: z.array(z.uuid()).min(1).max(50), to_doctor: z.string().trim().min(1), shift: z.string().trim().min(1), department: z.string().trim().min(1), starts_at: z.iso.datetime(), ends_at: z.iso.datetime() }),
   z.object({ ...base, type: z.literal('shift.refresh'), shift_id: z.uuid(), expected_revision: z.number().int() }),

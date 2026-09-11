@@ -3,6 +3,7 @@ import { cohort, DEMO_HOSPITAL_ID } from '../data/cohort';
 import { initialWorkflowState } from './workflowEngine';
 import { clearWorkflowCache, dispatchWorkflow, readWorkflow } from './workflowStore';
 import { patientService } from './clinical';
+import { doctorUpdates, UPDATE_DOCTOR } from './doctorUpdates';
 
 const remote = vi.hoisted(() => ({ read: vi.fn(), save: vi.fn() }));
 vi.mock('../lib/env', () => ({ env: { mode: 'supabase' } }));
@@ -11,6 +12,25 @@ vi.mock('../lib/supabase', () => ({ supabase: { from: () => ({ select: () => ({ 
 beforeEach(() => { vi.clearAllMocks(); clearWorkflowCache(); });
 
 describe('Supabase workflow persistence contract', () => {
+  it('saves inbox read receipts and restores them after a fresh database read', async () => {
+    let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
+    const update = doctorUpdates(database)[0];
+    remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
+    remote.save.mockImplementation(async (name, args) => {
+      expect(name).toBe('save_demo_workflow');
+      expect(args.expected_revision).toBe(database.revision);
+      database = structuredClone(args.next_state);
+      return { error: null };
+    });
+    vi.stubGlobal('window', new EventTarget());
+    try {
+      await dispatchWorkflow({ type: 'updates.read', patient_id: update.patient_id, actor: UPDATE_DOCTOR, update_ids: [update.id], read: true });
+      clearWorkflowCache();
+      expect(doctorUpdates(await readWorkflow()).find(item => item.id === update.id)?.read).toBe(true);
+      expect(remote.save).toHaveBeenCalledTimes(1);
+    } finally { vi.unstubAllGlobals(); }
+  });
+
   it('saves the ten-shift seed once and treats repeated import as a no-op', async () => {
     let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
     remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
