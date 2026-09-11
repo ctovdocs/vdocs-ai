@@ -3,27 +3,29 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { ClinicalDrawer } from '../components/ClinicalOverlay';
 import { QueryState } from '../components/QueryState';
 import { useWorkflow, useWorkflowAction } from '../services/useWorkflow';
-import { doctorUpdates, UPDATE_DOCTOR, UPDATE_DEPARTMENT, type DoctorUpdate } from '../services/doctorUpdates';
+import { doctorUpdates, type DoctorUpdate } from '../services/doctorUpdates';
+import { useActiveDoctor } from '../services/activeDoctor';
 import { patchArchiveParams } from '../services/shiftArchive';
 import { formatDate } from '../lib/format';
 
 export function UpdatesPage() {
   const query = useWorkflow();
   const action = useWorkflowAction();
+  const activeDoctor = useActiveDoctor();
   const [params, setParams] = useSearchParams();
   const change = (updates: Record<string, string | null>, replace = false) => setParams(current => patchArchiveParams(current, updates), { replace });
   const search = params.get('search') ?? '';
   const view = params.get('view') ?? 'all';
   const category = params.get('category') ?? '';
   if (!query.data) return <QueryState pending={query.isPending} error={query.error} />;
-  const all = doctorUpdates(query.data);
+  const all = doctorUpdates(query.data, activeDoctor.data.name);
   const unread = all.filter(item => !item.read).length;
   const attention = all.filter(item => item.attention).length;
   const rows = all.filter(item => (!category || item.type === category) && (view === 'all' || (view === 'unread' ? !item.read : item.attention))
     && `${item.title} ${item.detail} ${item.patient} ${item.uhid}`.toLowerCase().includes(search.trim().toLowerCase()));
   const selected = all.find(item => item.id === params.get('update'));
   const mark = (items: DoctorUpdate[], read: boolean) => {
-    if (items.length) action.mutate({ type: 'updates.read', patient_id: items[0].patient_id, actor: UPDATE_DOCTOR, update_ids: items.slice(0, 500).map(item => item.id), read });
+    if (items.length) action.mutate({ type: 'updates.read', patient_id: items[0].patient_id, actor: activeDoctor.data.name, update_ids: items.slice(0, 500).map(item => item.id), read });
   };
   const open = (item: DoctorUpdate) => { change({ update: item.id }); if (!item.read) mark([item], true); };
   // Report update ids are built as `report:${report.id}` in doctorUpdates.ts — jump straight to that report in the patient view instead of a plain patient link, so opening a lab/imaging update takes one click instead of several.
@@ -31,7 +33,7 @@ export function UpdatesPage() {
     ? `/app/patients/${item.patient_id}?report=${item.id.slice(item.id.indexOf(':') + 1)}`
     : `/app/patients/${item.patient_id}`;
   return <section className="surface workflow-page updates-page">
-    <div className="history-heading updates-heading"><div><h3>Updates <Badge count={unread} overflowCount={999} /></h3><p>{UPDATE_DOCTOR} · {UPDATE_DEPARTMENT} and incoming consultations</p></div><span className="history-small">Reading an update does not complete clinical review.</span></div>
+    <div className="history-heading updates-heading"><div><h3>Updates <Badge count={unread} overflowCount={999} /></h3><p>{activeDoctor.data.name} · {activeDoctor.data.department} and incoming consultations</p></div><span className="history-small">Reading an update does not complete clinical review.</span></div>
     {query.error && <QueryState pending={false} error={query.error} />}
     <div className="workflow-toolbar">
       <Segmented size="small" value={view} onChange={value => change({ view: value, page: null }, true)} options={[{ value: 'all', label: `All (${all.length})` }, { value: 'unread', label: `Unread (${unread})` }, { value: 'attention', label: `Needs attention (${attention})` }]} />

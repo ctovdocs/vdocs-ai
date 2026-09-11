@@ -12,17 +12,19 @@ import { dateRangeOptions } from '../lib/dateRange';
 import { patchArchiveParams } from '../services/shiftArchive';
 import { matchesReferralDates, matchesReferralScope } from '../services/referralViews';
 import { owners } from '../data/cohort';
+import { useActiveDoctor } from '../services/activeDoctor';
 
 export function CoordinationPage({ kind = 'request', simulator = false }: { kind?: 'request' | 'referral'; simulator?: boolean }) {
   const query = useWorkflow();
   const location = useLocation();
+  const activeDoctor = useActiveDoctor();
   const [params, setParams] = useSearchParams();
-  const [pinned, setPinned] = useState(() => {
-    try { return localStorage.getItem('vdoc.referrals.doctor') ?? 'Dr. Ananya Mehta'; } catch { return 'Dr. Ananya Mehta'; }
+  const [pinned, setPinned] = useState<string | null>(() => {
+    try { return localStorage.getItem('vdoc.referrals.doctor'); } catch { return null; }
   });
   const referral = kind === 'referral';
   const title = referral ? 'Referrals' : 'Department coordination';
-  const doctor = params.get('doctor') ?? (referral ? pinned : '');
+  const doctor = params.get('doctor') ?? (referral ? (pinned ?? activeDoctor.data.name) : '');
   const department = params.get('department') ?? '';
   const direction = params.get('direction') === 'outgoing' ? 'outgoing' : 'incoming';
   const search = params.get('search') ?? '';

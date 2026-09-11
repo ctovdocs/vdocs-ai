@@ -14,6 +14,7 @@ import { HandoversPage as LegacyHandoversPage } from './HandoversPage';
 import { SHIFT_DEMO_MARKER } from '../data/shiftDemo';
 import { env } from '../lib/env';
 import { patchArchiveParams, shiftRoster } from '../services/shiftArchive';
+import { useActiveDoctor } from '../services/activeDoctor';
 
 const labels = { situation: 'Current situation & recorded severity', background: 'Important history & allergies', recent_events: 'Shift events / rounds', completed_actions: 'Completed actions / assessments', pending_items: 'Pending work & responses', next_actions: 'Next actions — owner and timing' };
 
@@ -79,6 +80,7 @@ function ShiftPacket({ records, state, dirty, onDirty }: { records: Handover[]; 
 export function ShiftHandoversPage() {
   const query = useWorkflow();
   const action = useWorkflowAction();
+  const activeDoctor = useActiveDoctor();
   const { modal } = App.useApp();
   const [params, setParams] = useSearchParams();
   const updateParams = (updates: Record<string, string | null>, replace = false) => setParams(current => patchArchiveParams(current, updates), { replace });
@@ -138,7 +140,7 @@ export function ShiftHandoversPage() {
         <Input aria-label="Shifts from date" type="date" value={fromDate} onChange={event => setFromDate(event.target.value)} style={{ width: 140 }} /><Input aria-label="Shifts to date" type="date" value={toDate} onChange={event => setToDate(event.target.value)} style={{ width: 140 }} />
         <Button onClick={() => { const end = new Date(); const start = new Date(end.getTime() - 7 * 86400000); updateParams({ from: toLocalDateTime(start.toISOString()).slice(0, 10), to: toLocalDateTime(end.toISOString()).slice(0, 10), page: null }, true); }}>Last 7 days</Button>
         <Button onClick={() => updateParams({ search: null, doctor: null, incoming: null, department: null, status: null, from: null, to: null, page: null }, true)}>Clear filters</Button>
-        <Button type="primary" onClick={() => { const patient = state.patients.find(patient => patient.id === params.get('patient')); const end = new Date(); form.resetFields(); form.setFieldsValue({ department: patient?.department ?? 'Internal Medicine', from_doctor: 'Dr. Ananya Mehta', patient_ids: patient ? [patient.id] : [], shift: 'Day', starts_at: toLocalDateTime(new Date(end.getTime() - 8 * 3600000).toISOString()), ends_at: toLocalDateTime(end.toISOString()) }); setAdding(true); }}>New shift packet</Button>
+        <Button type="primary" onClick={() => { const patient = state.patients.find(patient => patient.id === params.get('patient')); const end = new Date(); form.resetFields(); form.setFieldsValue({ department: patient?.department ?? activeDoctor.data.department, from_doctor: activeDoctor.data.name, patient_ids: patient ? [patient.id] : [], shift: 'Day', starts_at: toLocalDateTime(new Date(end.getTime() - 8 * 3600000).toISOString()), ends_at: toLocalDateTime(end.toISOString()) }); setAdding(true); }}>New shift packet</Button>
       </div>
       <Table size="small" rowKey="shift_id" dataSource={rows} pagination={{ current: Math.min(Math.max(1, Number(params.get('page')) || 1), Math.max(1, Math.ceil(rows.length / ([5, 10, 20].includes(Number(params.get('size'))) ? Number(params.get('size')) : 10)))), pageSize: [5, 10, 20].includes(Number(params.get('size'))) ? Number(params.get('size')) : 10, showTotal: total => `${total} shifts`, showSizeChanger: true, pageSizeOptions: [5, 10, 20], onChange: (page, size) => updateParams({ page: String(page), size: String(size) }, true) }} scroll={{ x: 900 }} columns={[
         { title: 'Shift · IST', render: (_, packet) => <><strong>{packet.shift}</strong><div className="history-small">{formatDate(packet.shift_start!)} → {formatDate(packet.shift_end!)}</div></> },

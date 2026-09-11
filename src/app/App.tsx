@@ -18,14 +18,16 @@ import { VoiceModeToggle } from '../components/VoiceModeToggle';
 import { VoiceModeProvider } from '../lib/voiceMode';
 import { WorkflowSync } from './WorkflowSync';
 import { UpdatesPage } from '../pages/UpdatesPage';
+import { useActiveDoctor } from '../services/activeDoctor';
 
 function Shell() {
   const queryClient = useQueryClient();
+  const activeDoctor = useActiveDoctor();
   return <Layout className="app-shell">
     <WorkflowSync />
     <Sidebar />
     <Layout>
-      <Layout.Header className="topbar"><Typography.Text>Fortis / Internal Medicine</Typography.Text><Space><VoiceModeToggle /><Tag color={env.mode === 'mock' ? 'gold' : 'green'}>{env.mode === 'mock' ? 'Local preview' : 'Supabase'}</Tag>{supabase && <Button size="small" onClick={async () => { const { error } = await supabase!.auth.signOut(); if (!error) queryClient.clear(); }}>Sign out</Button>}</Space></Layout.Header>
+      <Layout.Header className="topbar"><Typography.Text>Fortis / {activeDoctor.data.name} · {activeDoctor.data.department}</Typography.Text><Space><VoiceModeToggle /><Tag color={env.mode === 'mock' ? 'gold' : 'green'}>{env.mode === 'mock' ? 'Local preview' : 'Supabase'}</Tag>{supabase && <Button size="small" onClick={async () => { const { error } = await supabase!.auth.signOut(); if (!error) queryClient.clear(); }}>Sign out</Button>}</Space></Layout.Header>
       <Layout.Content className="page-content page-content--tight"><Outlet /></Layout.Content>
     </Layout>
   </Layout>;

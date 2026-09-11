@@ -8,6 +8,7 @@ import {
 import { App, Badge, Button, ConfigProvider, Layout, Menu, Tooltip, type MenuProps } from 'antd';
 import { useWorkflow } from '../services/useWorkflow';
 import { doctorUpdates } from '../services/doctorUpdates';
+import { useActiveDoctor } from '../services/activeDoctor';
 import { Link, useLocation } from 'react-router-dom';
 
 type NavigationItem = { label: string; icon: ReactNode; path?: string };
@@ -40,7 +41,8 @@ const clinicalSections: { label: string; items: NavigationItem[] }[] = [
 
 export function Sidebar() {
   const workflow = useWorkflow();
-  const unread = workflow.data ? doctorUpdates(workflow.data).filter(item => !item.read).length : 0;
+  const activeDoctor = useActiveDoctor();
+  const unread = workflow.data ? doctorUpdates(workflow.data, activeDoctor.data.name).filter(item => !item.read).length : 0;
   const { pathname } = useLocation();
   const { message } = App.useApp();
   const [collapsed, setCollapsed] = useState(() => {
