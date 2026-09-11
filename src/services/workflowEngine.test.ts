@@ -142,6 +142,22 @@ describe('connected clinical workflows', () => {
     expect(state.revision).toBe(0);
   });
 
+  it('registers a brand-new patient with a usable active encounter', () => {
+    const newPatientId = crypto.randomUUID();
+    const encounterId = crypto.randomUUID();
+    let state = execute(initial(), { type: 'patient.register', patient_id: newPatientId, encounter_id: encounterId,
+      uhid: 'F-TEST-0001', name: 'Test Walk-in', age: 40, sex: 'M', department: 'Cardiology',
+      reason: 'Chest pain on exertion', kind: 'OPD', location: 'OPD / Room 9' });
+    expect(state.patients).toHaveLength(101);
+    const patient = state.patients.find(patient => patient.id === newPatientId);
+    expect(patient).toMatchObject({ uhid: 'F-TEST-0001', name: 'Test Walk-in', department: 'Cardiology' });
+    const history = state.histories.find(history => history.context.patient_id === newPatientId)!;
+    expect(history.encounters).toMatchObject([{ id: encounterId, status: 'active', owner: 'Dr. Rohan Shah' }]);
+    expect(history.context.current_encounter_id).toBe(encounterId);
+    state = execute(state, { type: 'order.create', patient_id: newPatientId, kind: 'lab', title: 'Troponin', indication: 'Rule out ACS', priority: 'urgent' });
+    expect(state.histories.find(history => history.context.patient_id === newPatientId)!.orders).toHaveLength(1);
+  });
+
   it('applies date filters at IST midnight, excluding future dates', () => {
     const now = new Date('2026-09-07T18:45:00.000Z');
     expect(withinDateRange('2026-09-07T18:30:00.000Z', 'today', now)).toBe(true);

@@ -6,6 +6,7 @@ import { orderCatalog, referralDepartments } from '../data/orderCatalog.js';
 import { applyShiftCommand, shiftChanged } from './shiftHandover.js';
 import { seedShiftDemo } from '../data/shiftDemo.js';
 import { doctorUpdates } from './doctorUpdates.js';
+import { owners } from '../data/cohort.js';
 
 export function initialWorkflowState(hospitalId: string, patients: Patient[], reports: Report[], histories: PatientHistory[]): WorkflowState {
   const state = workflowStateSchema.parse({ schema_version: 1, hospital_id: hospitalId, revision: 0,
@@ -79,6 +80,33 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
     for (const id of command.update_ids) { if (command.read) receipts[id] = command.at; else delete receipts[id]; }
     state.revision++; state.commands.push(command.id);
     state.audit.push({ id: command.id, at: command.at, actor: command.actor, action: command.type, patient_id: command.patient_id, entity_id: command.update_ids[0] });
+    return workflowStateSchema.parse(state);
+  }
+  if (command.type === 'patient.register') {
+    const owner = owners[command.department];
+    if (!owner) throw new Error('Unknown department.');
+    const state = structuredClone(input);
+    const dob = `${new Date(command.at).getUTCFullYear() - command.age}-01-01`;
+    state.patients.push({ id: command.patient_id, hospital_id: state.hospital_id, uhid: command.uhid, name: command.name,
+      age: command.age, sex: command.sex, department: command.department, encounter: `${command.kind} · ${command.location}`,
+      conditions: [], allergies: [], medications: [], acuity: 'noncritical', visit_count: 1 });
+    state.histories.push({
+      context: { id: command.id, hospital_id: state.hospital_id, patient_id: command.patient_id, dob,
+        occupation: 'Not recorded', preferred_language: 'Not recorded', social_context: 'Not recorded',
+        history: 'First visit to this hospital; no prior records available.', presenting_complaint: command.reason,
+        acuity: 'noncritical', acuity_reason: 'Newly registered; not yet triaged.', acuity_assessed_at: command.at, acuity_source_ids: [],
+        previous_records_status: 'first_hospital_visit', current_encounter_id: command.encounter_id,
+        clinician_review_status: 'not_reviewed', synthetic: true, scenario_version: 'mockhis-walkin-v1', family_history: null },
+      encounters: [{ id: command.encounter_id, hospital_id: state.hospital_id, patient_id: command.patient_id, department: command.department,
+        kind: command.kind, started_at: command.at, ended_at: null, status: 'active', location: command.location, owner,
+        reason: command.reason, assessment: 'Pending clinical assessment.', source_system: 'MockHIS' }],
+      notes: [], vitals: [], medications: [], orders: [], requests: [], work_items: [],
+      timeline: [{ id: command.encounter_id, hospital_id: state.hospital_id, patient_id: command.patient_id, encounter_id: command.encounter_id,
+        occurred_at: command.at, available_at: command.at, kind: 'encounter', title: `${command.kind}: ${command.reason}`, source_id: command.encounter_id, source_system: 'MockHIS' }],
+      immunizations: [],
+    });
+    state.revision++; state.commands.push(command.id);
+    state.audit.push({ id: command.id, at: command.at, actor: command.actor, action: command.type, patient_id: command.patient_id, entity_id: command.patient_id });
     return workflowStateSchema.parse(state);
   }
   const state = structuredClone(input);

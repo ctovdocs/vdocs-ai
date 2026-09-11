@@ -25,7 +25,7 @@ export function handleCorsPreflight(req: VercelRequest, res: VercelResponse): bo
   return false;
 }
 
-function serviceClient() {
+export function serviceClient() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!key) throw new Error('SUPABASE_SERVICE_ROLE_KEY is not configured on the server.');
   return createClient(SUPABASE_URL, key, { auth: { persistSession: false } });

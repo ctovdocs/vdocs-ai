@@ -65,6 +65,10 @@ export const commandSchema = z.discriminatedUnion('type', [
   z.object({ ...base, ...expected, type: z.literal('handover.save'), sections: handoverSectionsSchema, to_doctor: z.string().trim().min(1), shift: z.string().trim().min(1), shift_at: z.iso.datetime(), escalation: z.string().optional(), shift_reviewed: z.boolean().optional() }),
   z.object({ ...base, ...expected, type: z.literal('handover.approve') }),
   z.object({ ...base, ...expected, type: z.literal('handover.receive') }),
+  z.object({ ...base, type: z.literal('patient.register'), encounter_id: z.uuid(), uhid: z.string().trim().min(1),
+    name: z.string().trim().min(1), age: z.number().int().min(0).max(130), sex: z.enum(['M', 'F']),
+    department: z.string().trim().min(1), reason: z.string().trim().min(1),
+    kind: z.enum(['OPD', 'IPD']), location: z.string().trim().min(1) }),
 ]);
 export type WorkflowCommand = z.infer<typeof commandSchema>;
 export type CommandInput = WorkflowCommand extends infer Command ? Command extends WorkflowCommand ? Omit<Command, 'id' | 'at' | 'actor'> & { actor?: string } : never : never;
