@@ -29,15 +29,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const actor = body.actor ?? (body.kind === 'lab' ? 'MockLab operator' : 'MockRadiology operator');
     const orderId = crypto.randomUUID();
-    const now = new Date().toISOString();
+    // A walk-in test is recorded after the fact: order.placed_at must be <= performed_at,
+    // and the publish time (order.at) must be >= performed_at, regardless of clock skew
+    // between the caller and this server.
+    const performedAt = new Date(body.performed_at);
+    const placedAt = new Date(performedAt.getTime() - 5 * 60_000).toISOString();
+    const publishedAt = new Date(Math.max(Date.now(), performedAt.getTime() + 1000)).toISOString();
 
     const next = await applyAndSave(() => {
       const createCommand: WorkflowCommand = {
-        id: orderId, type: 'order.create', patient_id: patient.id, actor, at: now,
+        id: orderId, type: 'order.create', patient_id: patient.id, actor, at: placedAt,
         title: body.title, kind: body.kind, indication: body.indication, priority: 'routine',
       };
       const publishCommand: WorkflowCommand = {
-        id: crypto.randomUUID(), type: 'order.publish', patient_id: patient.id, actor, at: now,
+        id: crypto.randomUUID(), type: 'order.publish', patient_id: patient.id, actor, at: publishedAt,
         entity_id: orderId, expected_version: 0,
         findings: body.findings, observations: body.kind === 'lab' ? (body.observations ?? []) : [],
         performed_at: body.performed_at,
