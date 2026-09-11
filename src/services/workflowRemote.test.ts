@@ -4,6 +4,7 @@ import { initialWorkflowState } from './workflowEngine';
 import { clearWorkflowCache, dispatchWorkflow, readWorkflow } from './workflowStore';
 import { patientService } from './clinical';
 import { doctorUpdates, UPDATE_DOCTOR } from './doctorUpdates';
+import { applyWorkflowPatch } from './workflowDiff';
 
 const remote = vi.hoisted(() => ({ read: vi.fn(), save: vi.fn() }));
 vi.mock('../lib/env', () => ({ env: { mode: 'supabase' } }));
@@ -17,9 +18,9 @@ describe('Supabase workflow persistence contract', () => {
     const patientId = database.histories.find(history => history.encounters.some(encounter => encounter.status === 'active'))!.context.patient_id;
     remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
     remote.save.mockImplementation(async (name, args) => {
-      expect(name).toBe('save_demo_workflow');
+      expect(name).toBe('save_demo_workflow_patch');
       expect(args.expected_revision).toBe(database.revision);
-      database = structuredClone(args.next_state);
+      database = applyWorkflowPatch(database, args.patch);
       return { error: null };
     });
     vi.stubGlobal('window', new EventTarget());
@@ -41,9 +42,9 @@ describe('Supabase workflow persistence contract', () => {
     const update = doctorUpdates(database)[0];
     remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
     remote.save.mockImplementation(async (name, args) => {
-      expect(name).toBe('save_demo_workflow');
+      expect(name).toBe('save_demo_workflow_patch');
       expect(args.expected_revision).toBe(database.revision);
-      database = structuredClone(args.next_state);
+      database = applyWorkflowPatch(database, args.patch);
       return { error: null };
     });
     vi.stubGlobal('window', new EventTarget());
@@ -59,8 +60,8 @@ describe('Supabase workflow persistence contract', () => {
     let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
     remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
     remote.save.mockImplementation(async (_name, args) => {
-      expect(args.next_state.revision).toBe(database.revision + 1);
-      database = structuredClone(args.next_state);
+      expect(args.patch.revision).toBe(database.revision + 1);
+      database = applyWorkflowPatch(database, args.patch);
       return { error: null };
     });
     vi.stubGlobal('window', new EventTarget());
@@ -80,8 +81,8 @@ describe('Supabase workflow persistence contract', () => {
     const patients = database.patients.filter(patient => patient.department === 'Internal Medicine' && database.histories.some(history => history.context.patient_id === patient.id && history.encounters.some(encounter => encounter.kind === 'IPD' && encounter.status === 'active'))).slice(0, 2);
     remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
     remote.save.mockImplementation(async (_name, args) => {
-      expect(args.next_state.revision).toBe(database.revision + 1);
-      database = structuredClone(args.next_state);
+      expect(args.patch.revision).toBe(database.revision + 1);
+      database = applyWorkflowPatch(database, args.patch);
       return { error: null };
     });
     vi.stubGlobal('window', new EventTarget());
@@ -98,11 +99,11 @@ describe('Supabase workflow persistence contract', () => {
     let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
     remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
     remote.save.mockImplementation(async (name, args) => {
-      expect(name).toBe('save_demo_workflow');
+      expect(name).toBe('save_demo_workflow_patch');
       expect(args.target_hospital).toBe(DEMO_HOSPITAL_ID);
       expect(args.expected_revision).toBe(database.revision);
-      expect(args.next_state.revision).toBe(database.revision + 1);
-      database = structuredClone(args.next_state);
+      expect(args.patch.revision).toBe(database.revision + 1);
+      database = applyWorkflowPatch(database, args.patch);
       return { error: null };
     });
     vi.stubGlobal('window', new EventTarget());
@@ -122,5 +123,26 @@ describe('Supabase workflow persistence contract', () => {
     remote.save.mockResolvedValue({ error: { code: '42501', message: 'Hospital membership required' } });
     await expect(dispatchWorkflow({ type: 'order.place', patient_id: cohort.patients[0].id, kind: 'imaging', priority: 'routine', indication: 'Synthetic evaluation', items: [{ title: 'Custom study', modality: 'MRI' }] })).rejects.toThrow('Hospital membership');
     expect(database.histories[0].orders.some(order => order.title === 'Custom study')).toBe(false);
+    expect(remote.save).toHaveBeenCalledTimes(1);
+    expect(remote.save).toHaveBeenCalledWith('save_demo_workflow_patch', expect.anything());
+  });
+
+  it('falls back to a full-state save when the patch cannot be applied, and never falls back on a permission error', async () => {
+    let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
+    remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
+    remote.save.mockImplementationOnce(async () => ({ error: { code: 'PATCH1', message: 'Patch target not found' } }));
+    remote.save.mockImplementationOnce(async (name, args) => {
+      expect(name).toBe('save_demo_workflow');
+      database = structuredClone(args.next_state);
+      return { error: null };
+    });
+    vi.stubGlobal('window', new EventTarget());
+    try {
+      await dispatchWorkflow({ type: 'note.create', patient_id: cohort.patients[0].id, body: 'Falls back on PATCH1.' });
+      expect(remote.save).toHaveBeenCalledTimes(2);
+      expect(remote.save).toHaveBeenNthCalledWith(1, 'save_demo_workflow_patch', expect.anything());
+      expect(remote.save).toHaveBeenNthCalledWith(2, 'save_demo_workflow', expect.anything());
+      expect(database.histories.find(item => item.context.patient_id === cohort.patients[0].id)?.notes.some(note => note.body === 'Falls back on PATCH1.')).toBe(true);
+    } finally { vi.unstubAllGlobals(); }
   });
 });

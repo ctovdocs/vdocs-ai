@@ -6,6 +6,7 @@ import { buildExpansionWorkflow, mergeNewPatients } from '../data/expansionWorkf
 import { env } from '../lib/env';
 import { supabase } from '../lib/supabase';
 import { applyWorkflowCommand, initialWorkflowState } from './workflowEngine';
+import { diffWorkflowState } from './workflowDiff';
 import { decodeWorkflow, encodeWorkflow } from './workflowStorageCodec';
 import { removeLegacyInferredDischarges } from './dischargeMigration';
 
@@ -113,8 +114,15 @@ export async function dispatchWorkflow(input: CommandInput) {
       const current = await readRemote();
       const next = applyWorkflowCommand(current, command);
       if (next === current) { committed = current; break; }
-      const { error } = await supabase!.rpc('save_demo_workflow', { target_hospital: DEMO_HOSPITAL_ID, expected_revision: current.revision, next_state: next });
+      const patch = diffWorkflowState(current, next);
+      const { error } = await supabase!.rpc('save_demo_workflow_patch', { target_hospital: DEMO_HOSPITAL_ID, expected_revision: current.revision, patch });
       if (!error) { committed = next; break; }
+      if (error.code === 'PATCH1') {
+        const fallback = await supabase!.rpc('save_demo_workflow', { target_hospital: DEMO_HOSPITAL_ID, expected_revision: current.revision, next_state: next });
+        if (!fallback.error) { committed = next; break; }
+        if (fallback.error.code !== '40001' || attempt === 2) throw new Error(fallback.error.message);
+        continue;
+      }
       if (error.code !== '40001' || attempt === 2) throw new Error(error.message);
     }
   }
