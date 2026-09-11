@@ -22,7 +22,9 @@ export function DashboardPage() {
   const todayBlocks = doctorSchedules.find(schedule => schedule.doctor === doctor)?.blocks.filter(block => block.days.includes(TODAY)).length ?? 0;
   const patientIds = new Set(clinicalPatients.map(patient => patient.id));
   const results = workflow.data?.reports.filter(report => patientIds.has(report.patient_id) && !workflow.data?.reviews[report.id]).length ?? 0;
-  const requests = workflow.data?.histories.flatMap(history => history.requests).filter(request => patientIds.has(request.patient_id) && !['completed', 'cancelled'].includes(request.status)).length ?? 0;
+  const openRequests = workflow.data?.histories.flatMap(history => history.requests).filter(request => patientIds.has(request.patient_id) && !['completed', 'cancelled'].includes(request.status)) ?? [];
+  const requests = openRequests.filter(request => request.kind === 'request').length;
+  const referrals = openRequests.filter(request => request.kind === 'referral').length;
   const discharges = workflow.data?.discharges.filter(record => patientIds.has(record.patient_id) && !['discharged', 'cancelled'].includes(record.status)).length ?? 0;
 
   return <>
@@ -42,7 +44,8 @@ export function DashboardPage() {
 
     <div className="workflow-toolbar" aria-label="Work requiring attention">
       <strong>Attention</strong><Link to="/app/results">{results} results to review</Link>
-      <Link to="/app/requests">{requests} pending requests / referrals</Link>
+      <Link to="/app/requests">{requests} pending requests</Link>
+      <Link to="/app/referrals">{referrals} pending referrals</Link>
       <Link to="/app/discharges">{discharges} active discharges</Link>
       <Link to="/app/handovers">Shift handovers</Link>
     </div>
