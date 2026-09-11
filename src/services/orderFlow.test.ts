@@ -40,6 +40,29 @@ describe('catalog and multi-investigation workflow', () => {
     expect(completed.reviews[completed.reports[0].id]).toBeUndefined();
   });
 
+  it('keeps reports sorted newest-first even when published out of insertion order', () => {
+    const input = command('lab');
+    const state = applyWorkflowCommand(initial(), input);
+    const orders = state.histories[0].orders.filter(order => order.batch_id === input.id);
+    const publish = (order: typeof orders[number], at: string) => applyWorkflowCommand(state, {
+      type: 'order.publish', id: crypto.randomUUID(), actor: 'Synthetic receiving service', patient_id: patientId,
+      at, performed_at: input.at, entity_id: order.id, expected_version: 0,
+      findings: 'Synthetic findings', observations: [{ name: 'Test result', value: 'Negative', unit: '', reference: 'Negative', flag: 'normal' }],
+    });
+    // Publish the second order first (later reported_at), then the first order with an earlier
+    // reported_at — insertion order alone would put the earlier one on top; the array must stay
+    // sorted by reported_at regardless of which order the publishes happened in.
+    const afterSecond = publish(orders[1], '2026-09-08T11:00:00.000Z');
+    const afterFirst = applyWorkflowCommand(afterSecond, {
+      type: 'order.publish', id: crypto.randomUUID(), actor: 'Synthetic receiving service', patient_id: patientId,
+      at: '2026-09-08T10:00:00.000Z', performed_at: input.at, entity_id: orders[0].id, expected_version: 0,
+      findings: 'Synthetic findings', observations: [{ name: 'Test result', value: 'Negative', unit: '', reference: 'Negative', flag: 'normal' }],
+    });
+    const reported = afterFirst.reports.map(report => report.reported_at);
+    expect(reported).toEqual([...reported].sort((first, second) => second.localeCompare(first)));
+    expect(afterFirst.reports[0].order_id).toBe(orders[1].id);
+  });
+
   it('rejects duplicates, invalid catalog, and custom orders missing specimen without partial changes', () => {
     const state = initial();
     const snapshot = structuredClone(state);

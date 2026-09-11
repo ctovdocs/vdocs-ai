@@ -185,7 +185,9 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
         title: order.title, kind: order.kind, findings: command.findings, observations: order.kind === 'lab' ? command.observations : [],
         source: order.kind === 'lab' ? 'MockLIS' : 'MockRIS', reported_at: command.at, author: command.actor, indication: order.indication,
         ...(order.kind === 'lab' ? { specimen_at: command.performed_at } : { performed_at: command.performed_at }) };
-      state.reports.unshift(report); order.result_id = report.id; order.status = 'completed'; order.version++; encounterId = order.encounter_id;
+      state.reports.unshift(report);
+      state.reports.sort((first, second) => second.reported_at.localeCompare(first.reported_at));
+      order.result_id = report.id; order.status = 'completed'; order.version++; encounterId = order.encounter_id;
       break;
     }
     case 'report.review': {

@@ -47,7 +47,7 @@ describe('connected clinical workflows', () => {
     state = execute(state, { type: 'order.status', patient_id: patientId, entity_id: order.id, expected_version: 0, status: 'processing' });
     state = execute(state, { type: 'order.publish', patient_id: patientId, entity_id: order.id, expected_version: 1, findings: 'Synthetic report findings', performed_at: at,
       observations: kind === 'lab' ? [{ name: 'Creatinine', value: '2.2', unit: 'mg/dL', reference: '0.7–1.3', flag: 'high' }] : [] });
-    const report = state.reports[0];
+    const report = state.reports.find(report => report.order_id === order.id)!;
     expect(historyFor(state).orders.at(-1)).toMatchObject({ status: 'completed', result_id: report.id, version: 2 });
     expect(report).toMatchObject({ patient_id: patientId, order_id: order.id, kind });
     expect(state.reviews[report.id]).toBeUndefined();
