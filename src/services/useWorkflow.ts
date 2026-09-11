@@ -14,7 +14,7 @@ export function useWorkflowAction() {
   const activeDoctor = useActiveDoctor();
   return useMutation({
     mutationFn: (input: CommandInput) => dispatchWorkflow({ actor: activeDoctor.data.name, ...input }),
-    onSuccess: async () => { await client.invalidateQueries(); },
+    onSuccess: () => { void client.invalidateQueries({ queryKey: ['workflow'] }); },
     onError: error => { void message.error(error.message); },
   });
 }

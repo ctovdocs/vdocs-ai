@@ -5,7 +5,7 @@ import { WORKFLOW_CHANGED, WORKFLOW_STORAGE_KEY } from '../services/workflowStor
 export function WorkflowSync() {
   const client = useQueryClient();
   useEffect(() => {
-    const refresh = () => { void client.invalidateQueries(); };
+    const refresh = () => { void client.invalidateQueries({ queryKey: ['workflow'] }); };
     const storage = (event: StorageEvent) => { if (event.key === WORKFLOW_STORAGE_KEY) refresh(); };
     const timer = window.setInterval(() => { if (document.visibilityState === 'visible') refresh(); }, 5000);
     window.addEventListener(WORKFLOW_CHANGED, refresh);
