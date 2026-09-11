@@ -32,10 +32,12 @@ describe('English dictation cleanup', () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('timeout')));
     expect(await cleanVoice(body, { GEMINI_API_KEY: 'test', VOICE_CLEANUP_MODEL: 'test' })).toMatchObject({ cleanedText: body.transcript });
   });
-  it('requests structured output and accepts conservative cleanup', async () => {
+  it.each([undefined, '', 'custom-model'])('uses the existing Gemini key with model override %s', async model => {
     const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ candidates: [{ finishReason: 'STOP', content: { parts: [{ text: JSON.stringify({ cleanedText: 'Patient is stable.', reviewWarnings: [] }) }] } }] }) });
     vi.stubGlobal('fetch', fetcher);
-    expect(await cleanVoice({ transcript: 'Um patient patient is stable.' }, { GEMINI_API_KEY: 'test', VOICE_CLEANUP_MODEL: 'test' })).toEqual({ cleanedText: 'Patient is stable.', reviewWarnings: [] });
+    expect(await cleanVoice({ transcript: 'Um patient patient is stable.' }, { GEMINI_API_KEY: 'test', VOICE_CLEANUP_MODEL: model })).toEqual({ cleanedText: 'Patient is stable.', reviewWarnings: [] });
+    expect(fetcher.mock.calls[0][0]).toContain(`/models/${model || 'gemini-2.5-flash'}:generateContent`);
+    expect(fetcher.mock.calls[0][1].headers['x-goog-api-key']).toBe('test');
     expect(JSON.parse(fetcher.mock.calls[0][1].body).generationConfig.responseMimeType).toBe('application/json');
     expect(fetcher.mock.calls[0][0]).not.toContain('key=');
   });

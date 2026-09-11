@@ -9,10 +9,9 @@ Set these server-only variables locally and in the deployed project's environmen
 ```dotenv
 ASSEMBLYAI_API_KEY=your-assemblyai-key
 GEMINI_API_KEY=your-gemini-key
-VOICE_CLEANUP_MODEL=your-enabled-stable-gemini-model-id
 ```
 
-Use a stable Flash-family model supporting structured output, evaluate it with synthetic dictations, and pin its exact ID here. Restart Vite after changing environment variables; redeploy after changing deployed configuration. The cleanup model is independent of `AI_PROVIDER` and `AI_MODEL` used by patient chat. Never prefix these secrets with `VITE_`.
+The existing `GEMINI_API_KEY` is sufficient: cleanup defaults to `gemini-2.5-flash`. Optionally set `VOICE_CLEANUP_MODEL` to override it; an empty value uses the default. Restart Vite after changing environment variables; redeploy after changing deployed configuration. The cleanup model is independent of `AI_PROVIDER` and `AI_MODEL` used by patient chat. Never prefix these secrets with `VITE_`.
 
 Missing Gemini configuration leaves dictation usable and displays an original-text fallback warning. No provider calls were made during automated validation.
 
