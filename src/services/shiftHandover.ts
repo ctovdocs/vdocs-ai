@@ -1,5 +1,5 @@
-import { workflowStateSchema, type Handover, type WorkflowCommand, type WorkflowState } from '../domain/workflow';
-import { shiftRoster } from './shiftArchive';
+import { workflowStateSchema, type Handover, type WorkflowCommand, type WorkflowState } from '../domain/workflow.js';
+import { shiftRoster } from './shiftArchive.js';
 
 type Source = NonNullable<Handover['source_snapshot']>[number];
 type ShiftCommand = Extract<WorkflowCommand, { type: 'shift.create' | 'shift.refresh' | 'shift.approve' | 'shift.receive' }>;

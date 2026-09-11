@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { patientSchema, reportSchema } from './models';
-import { historySchema } from './longitudinal';
+import { patientSchema, reportSchema } from './models.js';
+import { historySchema } from './longitudinal.js';
 
 export const dischargeSchema = z.object({
   id: z.uuid(), patient_id: z.uuid(), encounter_id: z.uuid(), hospital_id: z.uuid(),

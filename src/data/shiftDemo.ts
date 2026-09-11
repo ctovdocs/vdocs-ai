@@ -1,5 +1,5 @@
-import { workflowStateSchema, type Handover, type WorkflowState } from '../domain/workflow';
-import { captureShift } from '../services/shiftHandover';
+import { workflowStateSchema, type Handover, type WorkflowState } from '../domain/workflow.js';
+import { captureShift } from '../services/shiftHandover.js';
 
 export const SHIFT_DEMO_MARKER = 'vdoc.shift-fixtures.v1';
 const idFor = (category: number, sequence: number) => `${category}000000-0000-4000-8000-${String(sequence).padStart(12, '0')}`;

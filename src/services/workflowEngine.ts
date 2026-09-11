@@ -1,11 +1,11 @@
-import { workflowStateSchema, commandSchema, type WorkflowState, type WorkflowCommand, type Discharge } from '../domain/workflow';
+import { workflowStateSchema, commandSchema, type WorkflowState, type WorkflowCommand, type Discharge } from '../domain/workflow.js';
 import type { Patient, Report } from '../domain/models';
 import type { PatientHistory } from '../domain/longitudinal';
-import { buildExpansionWorkflow } from '../data/expansionWorkflow';
-import { orderCatalog, referralDepartments } from '../data/orderCatalog';
-import { applyShiftCommand, shiftChanged } from './shiftHandover';
-import { seedShiftDemo } from '../data/shiftDemo';
-import { doctorUpdates } from './doctorUpdates';
+import { buildExpansionWorkflow } from '../data/expansionWorkflow.js';
+import { orderCatalog, referralDepartments } from '../data/orderCatalog.js';
+import { applyShiftCommand, shiftChanged } from './shiftHandover.js';
+import { seedShiftDemo } from '../data/shiftDemo.js';
+import { doctorUpdates } from './doctorUpdates.js';
 
 export function initialWorkflowState(hospitalId: string, patients: Patient[], reports: Report[], histories: PatientHistory[]): WorkflowState {
   const state = workflowStateSchema.parse({ schema_version: 1, hospital_id: hospitalId, revision: 0,
