@@ -1,7 +1,7 @@
-import { patientSchema, reportSchema, type Patient, type Report } from '../domain/models.ts';
-import { historySchema, type PatientHistory } from '../domain/longitudinal.ts';
-import { scenarios as originalScenarios } from './scenarios.ts';
-import { expandedScenarios } from './expandedScenarios.ts';
+import { patientSchema, reportSchema, type Patient, type Report } from '../domain/models.js';
+import { historySchema, type PatientHistory } from '../domain/longitudinal.js';
+import { scenarios as originalScenarios } from './scenarios.js';
+import { expandedScenarios } from './expandedScenarios.js';
 
 export const scenarios = [...originalScenarios, ...expandedScenarios];
 

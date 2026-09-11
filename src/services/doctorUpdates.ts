@@ -1,5 +1,5 @@
-import type { WorkflowState } from '../domain/workflow';
-import { owners } from '../data/cohort';
+import type { WorkflowState } from '../domain/workflow.js';
+import { owners } from '../data/cohort.js';
 
 export const UPDATE_DOCTOR = 'Dr. Ananya Mehta';
 export const UPDATE_DEPARTMENT = 'Internal Medicine';

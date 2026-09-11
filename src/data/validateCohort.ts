@@ -1,7 +1,7 @@
-import { patientSchema, reportSchema } from '../domain/models.ts';
-import { historySchema } from '../domain/longitudinal.ts';
-import { SNAPSHOT_AT, type buildCohort } from './cohort.ts';
-import { scenarios } from './cohort.ts';
+import { patientSchema, reportSchema } from '../domain/models.js';
+import { historySchema } from '../domain/longitudinal.js';
+import { SNAPSHOT_AT, type buildCohort } from './cohort.js';
+import { scenarios } from './cohort.js';
 
 export function validateCohort(dataset: ReturnType<typeof buildCohort>) {
   const failures: string[] = [];

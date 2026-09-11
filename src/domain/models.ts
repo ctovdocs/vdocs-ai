@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { PatientHistory } from './longitudinal.ts';
+import type { PatientHistory } from './longitudinal.js';
 
 export const patientSchema = z.object({
   id: z.uuid(),
