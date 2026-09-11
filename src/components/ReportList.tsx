@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Descriptions, Empty, Table, Tag, Typography } from 'antd';
 import { ClinicalDrawer as Drawer } from './ClinicalOverlay';
 import { ExperimentOutlined, FileImageOutlined, WarningFilled } from '@ant-design/icons';
@@ -6,10 +6,19 @@ import type { Report } from '../domain/models';
 import { formatDate } from '../lib/format';
 import { useWorkflow, useWorkflowAction } from '../services/useWorkflow';
 
-export function ReportList({ reports }: { reports: Report[] }) {
+export function ReportList({ reports, focusReportId, onFocusHandled }: { reports: Report[]; focusReportId?: string; onFocusHandled?: () => void }) {
   const [selected, setSelected] = useState<Report | null>(null);
+  const [handledFocusId, setHandledFocusId] = useState<string | undefined>(undefined);
   const workflow = useWorkflow();
   const action = useWorkflowAction();
+  if (focusReportId && focusReportId !== handledFocusId) {
+    setHandledFocusId(focusReportId);
+    const match = reports.find(report => report.id === focusReportId);
+    if (match) setSelected(match);
+  }
+  useEffect(() => {
+    if (focusReportId && reports.some(report => report.id === focusReportId)) onFocusHandled?.();
+  }, [focusReportId, reports, onFocusHandled]);
   const review = selected && workflow.data?.reviews[selected.id];
   if (!reports.length) return <Empty className="report-grid-empty" description="No reports available" />;
   return <>

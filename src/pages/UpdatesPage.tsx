@@ -26,6 +26,10 @@ export function UpdatesPage() {
     if (items.length) action.mutate({ type: 'updates.read', patient_id: items[0].patient_id, actor: UPDATE_DOCTOR, update_ids: items.slice(0, 500).map(item => item.id), read });
   };
   const open = (item: DoctorUpdate) => { change({ update: item.id }); if (!item.read) mark([item], true); };
+  // Report update ids are built as `report:${report.id}` in doctorUpdates.ts — jump straight to that report in the patient view instead of a plain patient link, so opening a lab/imaging update takes one click instead of several.
+  const patientHref = (item: DoctorUpdate) => (item.type === 'lab' || item.type === 'imaging')
+    ? `/app/patients/${item.patient_id}?report=${item.id.slice(item.id.indexOf(':') + 1)}`
+    : `/app/patients/${item.patient_id}`;
   return <section className="surface workflow-page updates-page">
     <div className="history-heading updates-heading"><div><h3>Updates <Badge count={unread} overflowCount={999} /></h3><p>{UPDATE_DOCTOR} · {UPDATE_DEPARTMENT} and incoming consultations</p></div><span className="history-small">Reading an update does not complete clinical review.</span></div>
     {query.error && <QueryState pending={false} error={query.error} />}
@@ -39,7 +43,7 @@ export function UpdatesPage() {
     <Table size="small" rowKey="id" dataSource={rows} rowClassName={item => item.read ? '' : 'update-row-unread'} locale={{ emptyText: <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={view === 'unread' ? 'You’re caught up on these updates' : 'No updates match these filters'} /> }} scroll={{ x: 850 }} pagination={{ pageSize: 15, current: Math.min(Math.max(1, Number(params.get('page')) || 1), Math.max(1, Math.ceil(rows.length / 15))), showSizeChanger: false, showTotal: total => `${total} updates`, onChange: page => change({ page: String(page) }, true) }} columns={[
       { title: '', width: 30, render: (_, item) => <Badge status={item.read ? 'default' : 'processing'} aria-label={item.read ? 'Read' : 'Unread'} /> },
       { title: 'Update', render: (_, item) => <button className="update-open" type="button" onClick={() => open(item)}><strong>{item.title}</strong><small>{item.type.replaceAll('_', ' ')}{item.attention ? ' · Needs attention' : ''}</small></button> },
-      { title: 'Patient', render: (_, item) => <><Link to={`/app/patients/${item.patient_id}`}>{item.patient}</Link><div className="history-small">{item.uhid}</div></> },
+      { title: 'Patient', render: (_, item) => <><Link to={patientHref(item)}>{item.patient}</Link><div className="history-small">{item.uhid}</div></> },
       { title: 'Updated · IST', dataIndex: 'at', render: formatDate, width: 170 },
       { title: 'Action', render: (_, item) => <Button size="small" loading={action.isPending} onClick={() => mark([item], !item.read)}>Mark {item.read ? 'unread' : 'read'}</Button> },
     ]} />

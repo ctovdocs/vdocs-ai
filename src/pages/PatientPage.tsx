@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Button, Empty, Segmented, Tag, Typography } from 'antd';
 import { ClockCircleOutlined, WarningOutlined } from '@ant-design/icons';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { patientService, labService, imagingService } from '../services/clinical';
 import type { Report } from '../domain/models';
 import { ReportList } from '../components/ReportList';
@@ -28,6 +28,8 @@ const VITAL_STATS: { key: VitalKey; label: string }[] = [
 
 export function PatientPage() {
   const { patientId = '' } = useParams();
+  const [params, setParams] = useSearchParams();
+  const focusReportId = params.get('report') ?? undefined;
   const [lens, setLens] = useState<string>(GENERAL_LENS);
   const [reportFilter, setReportFilter] = useState<'All' | 'Labs' | 'Imaging'>('All');
   const [evidence, setEvidence] = useState<EvidenceRef | null>(null);
@@ -124,7 +126,7 @@ export function PatientPage() {
         {pendingOrders.length > 0 && <ul className="pending-orders">
           {pendingOrders.map(order => <li key={order.id}><ClockCircleOutlined /><Link to={`/app/${order.kind === 'lab' ? 'lab-orders' : 'imaging-orders'}?id=${order.id}`}>{order.title}</Link><Tag color={order.kind === 'lab' ? 'default' : 'blue'}>{order.kind}</Tag><span className="pending-order-status">{order.status}</span></li>)}
         </ul>}
-        <ReportList reports={sortedReports} />
+        <ReportList reports={sortedReports} focusReportId={focusReportId} onFocusHandled={() => setParams(current => { const next = new URLSearchParams(current); next.delete('report'); return next; }, { replace: true })} />
       </div>
 
       <aside className="patient-dashboard-side">
