@@ -70,7 +70,7 @@ function useSyncVoiceRecorder(onResult: (text: string) => void) {
     } catch { busy.current = false; if (mounted.current) setStatus('unavailable'); }
   };
 
-  const stop = () => { if (mediaRecorderRef.current?.state === 'recording') mediaRecorderRef.current.stop(); };
+  const stop = () => { if (mediaRecorderRef.current?.state === 'recording') { setStatus('transcribing'); mediaRecorderRef.current.stop(); } };
 
   return { status, partialText: undefined as string | undefined, start, stop };
 }

@@ -27,6 +27,8 @@ Missing Gemini configuration leaves dictation usable and displays an original-te
 
 ## Demo verification
 
+Doctor notes display a continuous processing/cleaning strip after Stop, with Save/Update and Undo disabled until dictation finishes. Save uses the shared workflow RPC in Supabase mode. Update adds a new dated clinical-note entry rather than deleting the previous record. Failed saves retain the draft; Undo changes restores the editor's last saved text. The note editor is scoped to the current encounter and closed encounters are read-only. Refresh/close warns about unsaved edits; internal route navigation is not blocked.
+
 Dictate a short English note in both modes; stop, inspect cleaned text and Original, then Undo. Repeat with negation, doses, decimals, medication names, hesitation and spoken corrections. Edit the field while processing and verify insertion waits. Test missing Gemini configuration and disconnected network. Save explicitly and confirm only the reviewed field text reaches the chart.
 
 Tests cover streaming turn merging, preserved safety markers, request validation, Gemini response parsing, missing configuration and failures. Browser/microphone and live API tests remain manual; no Playwright was run.

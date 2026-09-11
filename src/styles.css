@@ -378,3 +378,13 @@ a { color: #155c53; }
 .voice-progress { font-size: 11px; color: #64746e; display: inline-flex; gap: 5px; align-items: center; }
 .voice-recovery { font-size: 11px; margin-top: 4px; }
 .voice-original { white-space: pre-wrap; max-width: 440px; max-height: 240px; overflow: auto; }
+.doctor-note-editor { padding: 12px 14px; margin-bottom: 12px; }
+.doctor-note-heading, .doctor-note-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.doctor-note-heading { margin-bottom: 8px; font-size: 12px; }
+.doctor-note-heading strong { display: inline-flex; align-items: center; gap: 7px; color: #283c35; font-size: 13px; }
+.doctor-note-editor .clinical-summary-text { margin-bottom: 0 !important; font-size: 13px; line-height: 1.7; padding: 9px 36px 9px 10px; border-color: #dce4df; border-radius: 5px; }
+.doctor-note-footer { margin-top: 8px; }
+.note-draft-state { color: #89621a; font-size: 11px; }
+.doctor-note-context { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 9px; padding-top: 8px; border-top: 1px solid #eef1ef; font-size: 11px; color: #67786f; }
+.voice-processing-strip { display: flex; align-items: center; gap: 9px; padding: 8px 10px; margin-top: 5px; background: #f0f6f3; color: #245e4c; border-radius: 4px; font-size: 12px; }
+.voice-processing-strip small { display: block; color: #63786f; font-size: 11px; margin-top: 2px; }

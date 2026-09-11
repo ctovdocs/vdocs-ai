@@ -1,94 +1,94 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button, Tag, Typography } from 'antd';
-import { CheckOutlined, CloseOutlined, EditOutlined, WarningOutlined } from '@ant-design/icons';
+import { Alert, Button, Space, Typography } from 'antd';
+import { EditOutlined, SaveOutlined, UndoOutlined } from '@ant-design/icons';
 import type { Patient } from '../domain/models';
 import type { PatientHistory } from '../domain/longitudinal';
-import { VoiceInput, VoiceTextArea } from './VoiceField';
+import { VoiceTextArea } from './VoiceField';
+import type { VoiceRecorderStatus } from '../hooks/voiceRecorderTypes';
 import { getDoctorKey } from '../lib/aiChatStore';
-import { loadDoctorNote, saveDoctorNote } from '../lib/doctorNotesStore';
+import { loadDoctorNote } from '../lib/doctorNotesStore';
 import { useWorkflowAction } from '../services/useWorkflow';
-
-function seedText(patient: Patient, history: PatientHistory) {
-  return `${patient.name} — ${history.context.presenting_complaint} ${history.context.acuity_reason}`;
-}
+import { env } from '../lib/env';
+import { formatDate } from '../lib/format';
 
 export function ClinicalSummaryCard({ patient, history, abnormalCount, activeCoordinationCount, pendingOrdersCount, dischargeReady }: {
   patient: Patient; history?: PatientHistory | null; abnormalCount: number; activeCoordinationCount: number; pendingOrdersCount: number; dischargeReady: boolean;
 }) {
-  const [customHighlights, setCustomHighlights] = useState<string[]>([]);
   const action = useWorkflowAction();
-  const [adding, setAdding] = useState(false);
-  const [draft, setDraft] = useState('');
-
   const [noteText, setNoteText] = useState('');
   const [savedText, setSavedText] = useState('');
-  const [savedAt, setSavedAt] = useState<string | null>(null);
+  const [hasSaved, setHasSaved] = useState(false);
   const [ready, setReady] = useState(false);
-  const doctorKeyRef = useRef<string | null>(null);
+  const [voiceStatus, setVoiceStatus] = useState<VoiceRecorderStatus>('idle');
+  const [editorVersion, setEditorVersion] = useState(0);
+  const [saveError, setSaveError] = useState(false);
   const loadedForPatient = useRef<string | null>(null);
+  const busy = ['recording', 'transcribing', 'cleaning'].includes(voiceStatus);
+  const latest = history?.notes.filter(note => note.title === 'Doctor clinical note' && note.encounter_id === history.context.current_encounter_id)
+    .sort((first, second) => second.recorded_at.localeCompare(first.recorded_at))[0];
 
   useEffect(() => {
     if (!history || loadedForPatient.current === patient.id) return;
     let active = true;
     getDoctorKey().then(doctorKey => {
       if (!active) return;
-      doctorKeyRef.current = doctorKey;
-      loadedForPatient.current = patient.id;
       const stored = loadDoctorNote(doctorKey, patient.id);
-      const shared = history.notes.filter(note => note.title === 'Doctor clinical note').sort((first, second) => second.recorded_at.localeCompare(first.recorded_at))[0];
-      const initial = shared?.body ?? stored?.text ?? seedText(patient, history);
-      setNoteText(initial);
-      setSavedText(initial);
-      setSavedAt(shared?.recorded_at ?? stored?.savedAt ?? null);
+      const initial = latest?.body ?? stored?.text ?? '';
+      setNoteText(initial); setSavedText(latest?.body ?? '');
+      setHasSaved(Boolean(latest));
+      loadedForPatient.current = patient.id;
       setReady(true);
+    }).catch(() => {
+      if (!active) return;
+      setNoteText(latest?.body ?? ''); setSavedText(latest?.body ?? '');
+      setHasSaved(Boolean(latest)); loadedForPatient.current = patient.id; setReady(true);
     });
     return () => { active = false; };
-  }, [patient, history]);
+  }, [patient.id, history, latest]);
 
   const dirty = noteText !== savedText;
+  useEffect(() => {
+    if (!dirty) return;
+    const warn = (event: BeforeUnloadEvent) => { event.preventDefault(); event.returnValue = ''; };
+    window.addEventListener('beforeunload', warn);
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [dirty]);
+
   const save = async () => {
-    if (!doctorKeyRef.current) return;
-    try { await action.mutateAsync({ type: 'note.create', patient_id: patient.id, body: noteText }); } catch { return; }
-    const note = saveDoctorNote(doctorKeyRef.current, patient.id, noteText);
-    setSavedText(note.text);
-    setSavedAt(note.savedAt);
+    if (busy || action.isPending || !noteText.trim()) return;
+    const submitted = noteText;
+    setSaveError(false);
+    try {
+      await action.mutateAsync({ type: 'note.create', patient_id: patient.id, body: submitted });
+      setSavedText(submitted); setHasSaved(true); setEditorVersion(version => version + 1);
+    } catch { setSaveError(true); }
   };
-  const revert = () => setNoteText(savedText);
-
-  const submit = () => {
-    if (draft.trim()) setCustomHighlights(current => [...current, draft.trim()]);
-    setDraft('');
-    setAdding(false);
-  };
-
-  return <section className="surface clinical-summary">
-    <div className="section-toolbar">
-      <Typography.Title level={5}><EditOutlined /> Doctor's Notes</Typography.Title>
-      {dirty
-        ? <div className="notes-save-actions">
-          <Tag color="gold">Unsaved changes</Tag>
-          <Button size="small" type="text" onClick={revert}>Revert</Button>
-          <Button size="small" type="primary" loading={action.isPending} onClick={save}>Save to chart</Button>
-        </div>
-        : savedAt && <Typography.Text type="secondary" className="notes-saved-at">Saved {new Date(savedAt).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}</Typography.Text>}
+  const undo = () => { setNoteText(savedText); setSaveError(false); setEditorVersion(version => version + 1); };
+  const activeEncounter = history?.encounters.some(encounter => encounter.id === history.context.current_encounter_id && encounter.status === 'active');
+  return <section className="surface clinical-summary doctor-note-editor">
+    <div className="doctor-note-heading"><strong><EditOutlined /> Doctor notes</strong>
+      <span className={dirty ? 'note-draft-state' : 'muted'}>{busy ? 'Dictation in progress' : dirty ? 'Unsaved draft' : hasSaved ? 'Saved to chart' : 'New note'}</span>
     </div>
-    {!ready
-      ? <Typography.Text type="secondary">Waiting on the chart to finish loading…</Typography.Text>
-      : <VoiceTextArea className="clinical-summary-text" autoSize={{ minRows: 2, maxRows: 8 }} value={noteText} onChange={event => setNoteText(event.target.value)} placeholder="Write or speak your assessment for this patient…" />}
-    <div className="highlight-row">
-      {abnormalCount > 0 && <Tag color="orange">{abnormalCount} abnormal result{abnormalCount > 1 ? 's' : ''}</Tag>}
-      {activeCoordinationCount > 0 && <Tag color="blue">{activeCoordinationCount} active coordination request{activeCoordinationCount > 1 ? 's' : ''}</Tag>}
-      {pendingOrdersCount > 0 && <Tag>{pendingOrdersCount} pending order{pendingOrdersCount > 1 ? 's' : ''}</Tag>}
-      {patient.allergies.length > 0 && <Tag color="red" icon={<WarningOutlined />}>Allergy on record</Tag>}
-      {dischargeReady && <Tag color="gold">Flagged for discharge</Tag>}
-      {customHighlights.map((highlight, index) => <Tag key={`${highlight}-${index}`} color="purple" closable onClose={() => setCustomHighlights(current => current.filter((_, itemIndex) => itemIndex !== index))} closeIcon={<CloseOutlined />}>{highlight}</Tag>)}
-      {adding
-        ? <span className="highlight-add-input">
-          <VoiceInput size="small" autoFocus value={draft} onChange={event => setDraft(event.target.value)} onPressEnter={submit} placeholder="Type or speak a highlight" style={{ width: 240 }} />
-          <Button size="small" type="text" icon={<CheckOutlined />} onClick={submit} />
-          <Button size="small" type="text" icon={<CloseOutlined />} onClick={() => { setDraft(''); setAdding(false); }} />
-        </span>
-        : <Button size="small" type="dashed" onClick={() => setAdding(true)}>+ Add highlight</Button>}
+    {!ready ? <Typography.Text type="secondary">Loading notes…</Typography.Text>
+      : <VoiceTextArea key={editorVersion} aria-label="Doctor clinical note" className="clinical-summary-text" autoSize={{ minRows: 3, maxRows: 10 }}
+        value={noteText} disabled={action.isPending || !activeEncounter} onVoiceStatusChange={setVoiceStatus}
+        onChange={event => setNoteText(event.target.value)} placeholder="Assessment, findings and plan. Type here or use the microphone to dictate in English." />}
+    {saveError && <Alert type="error" showIcon title="Note was not saved. Your draft is retained — try again." />}
+    {!activeEncounter && ready && <span className="muted">This encounter is closed. Notes are read-only.</span>}
+    <div className="doctor-note-footer">
+      <span className="notes-saved-at">{latest ? `${latest.author} · ${formatDate(latest.recorded_at)}` : 'Review dictation before saving.'}
+        {env.mode !== 'supabase' && <span> · Local preview only</span>}</span>
+      <Space size={6}>
+        <Button size="small" icon={<UndoOutlined />} disabled={!dirty || busy || action.isPending} onClick={undo}>Undo changes</Button>
+        <Button size="small" type="primary" icon={<SaveOutlined />} loading={action.isPending}
+          disabled={!ready || !activeEncounter || busy || !noteText.trim() || (!dirty && hasSaved)} onClick={save}>{hasSaved ? 'Update note' : 'Save note'}</Button>
+      </Space>
     </div>
+    {(abnormalCount > 0 || activeCoordinationCount > 0 || pendingOrdersCount > 0 || dischargeReady) && <div className="doctor-note-context">
+      {abnormalCount > 0 && <span>{abnormalCount} abnormal observations in chart</span>}
+      {activeCoordinationCount > 0 && <span>{activeCoordinationCount} coordination items</span>}
+      {pendingOrdersCount > 0 && <span>{pendingOrdersCount} pending orders</span>}
+      {dischargeReady && <span>Discharge in progress</span>}
+    </div>}
   </section>;
 }

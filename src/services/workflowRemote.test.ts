@@ -12,6 +12,30 @@ vi.mock('../lib/supabase', () => ({ supabase: { from: () => ({ select: () => ({ 
 beforeEach(() => { vi.clearAllMocks(); clearWorkflowCache(); });
 
 describe('Supabase workflow persistence contract', () => {
+  it('saves and updates doctor notes while retaining earlier chart entries', async () => {
+    let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
+    const patientId = database.histories.find(history => history.encounters.some(encounter => encounter.status === 'active'))!.context.patient_id;
+    remote.read.mockImplementation(async () => ({ data: { state: structuredClone(database) }, error: null }));
+    remote.save.mockImplementation(async (name, args) => {
+      expect(name).toBe('save_demo_workflow');
+      expect(args.expected_revision).toBe(database.revision);
+      database = structuredClone(args.next_state);
+      return { error: null };
+    });
+    vi.stubGlobal('window', new EventTarget());
+    try {
+      await dispatchWorkflow({ type: 'note.create', patient_id: patientId, body: 'Initial clinician assessment.' });
+      await dispatchWorkflow({ type: 'note.create', patient_id: patientId, body: 'Updated clinician assessment.' });
+      clearWorkflowCache();
+      const history = await patientService.history(patientId);
+      expect(history?.notes.filter(note => note.title === 'Doctor clinical note').map(note => note.body)).toEqual(expect.arrayContaining(['Initial clinician assessment.', 'Updated clinician assessment.']));
+      expect(remote.save).toHaveBeenCalledTimes(2);
+      remote.save.mockResolvedValueOnce({ error: { code: '42501', message: 'Save denied' } });
+      await expect(dispatchWorkflow({ type: 'note.create', patient_id: patientId, body: 'Failed update.' })).rejects.toThrow();
+      expect(database.histories.find(item => item.context.patient_id === patientId)?.notes.some(note => note.body === 'Failed update.')).toBe(false);
+    } finally { vi.unstubAllGlobals(); }
+  });
+
   it('saves inbox read receipts and restores them after a fresh database read', async () => {
     let database = initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
     const update = doctorUpdates(database)[0];

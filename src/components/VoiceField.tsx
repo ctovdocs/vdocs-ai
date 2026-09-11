@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Button, ConfigProvider, Input, Tooltip, type InputProps } from 'antd';
 import type { TextAreaProps } from 'antd/es/input';
 import { AudioOutlined, LoadingOutlined } from '@ant-design/icons';
@@ -29,14 +30,17 @@ export function VoiceInput({ value, onChange, ...rest }: InputProps) {
   return <div><Input value={value} onChange={onChange} {...rest} suffix={<MicButton {...field.recorder} onStart={field.recorder.start} onStop={field.recorder.stop} disabled={disabled} className="voice-mic-btn" />} />{field.controls}</div>;
 }
 
-export function VoiceTextArea({ value, onChange, ...rest }: TextAreaProps) {
+export function VoiceTextArea({ value, onChange, onVoiceStatusChange, ...rest }: TextAreaProps & { onVoiceStatusChange?: (status: VoiceRecorderStatus) => void }) {
   const { componentDisabled } = ConfigProvider.useConfig();
   const disabled = (rest.disabled ?? componentDisabled) || rest.readOnly;
   const emit = (next: string) => onChange?.({ target: { value: next } } as Parameters<NonNullable<TextAreaProps['onChange']>>[0]);
   const field = useDictationField(String(value ?? ''), emit, String(rest.placeholder ?? 'Clinical note'), disabled);
+  useEffect(() => { onVoiceStatusChange?.(field.recorder.status); }, [field.recorder.status, onVoiceStatusChange]);
   return <div><div className="voice-field-wrap">
     <Input.TextArea value={value} onChange={onChange} {...rest} />
-    <MicButton {...field.recorder} onStart={field.recorder.start} onStop={field.recorder.stop} disabled={disabled} className="voice-mic-btn voice-mic-btn-overlay" />
+    {field.recorder.status === 'transcribing' || field.recorder.status === 'cleaning'
+      ? <div className="voice-processing-strip" role="status" aria-live="polite"><LoadingOutlined spin /><span>{field.recorder.status === 'cleaning' ? 'Cleaning dictation…' : 'Processing speech…'}<small>Your text will appear here when ready.</small></span></div>
+      : <MicButton {...field.recorder} onStart={field.recorder.start} onStop={field.recorder.stop} disabled={disabled} className="voice-mic-btn voice-mic-btn-overlay" />}
     </div>
     {field.controls}
   </div>;
