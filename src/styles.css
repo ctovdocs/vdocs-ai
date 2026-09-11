@@ -375,3 +375,6 @@ a { color: #155c53; }
 .directory-table .ant-table-pagination { margin: 6px 8px; }
 @media (max-width: 700px) { .result-input-row { grid-template-columns: 1fr 1fr; } .workflow-toolbar .ant-select { max-width: 100%; } }
 @media (max-width: 900px) { .page-content { padding: 24px 18px; } .topbar { padding: 0 18px; gap: 12px; } .topbar > .ant-typography { display: none; } .section-toolbar, .page-heading { flex-wrap: wrap; } .search-input { max-width: 100%; } }
+.voice-progress { font-size: 11px; color: #64746e; display: inline-flex; gap: 5px; align-items: center; }
+.voice-recovery { font-size: 11px; margin-top: 4px; }
+.voice-original { white-space: pre-wrap; max-width: 440px; max-height: 240px; overflow: auto; }

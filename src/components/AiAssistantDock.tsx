@@ -6,7 +6,7 @@ import type { Patient, Report } from '../domain/models';
 import type { PatientHistory } from '../domain/longitudinal';
 import { askAboutPatient, type AiChatTurn } from '../services/aiAssistant';
 import { getDoctorKey, loadChat, saveChat, type StoredChatMessage } from '../lib/aiChatStore';
-import { useVoiceRecorder } from '../hooks/useVoiceRecorder';
+import { useDictationField } from '../hooks/useDictationField';
 import { Waveform } from './VoiceField';
 import type { EvidenceRef } from './EvidenceDrawer';
 
@@ -30,7 +30,8 @@ export function AiAssistantDock({ open, onOpenChange, patient, history, reports,
   const [unavailable, setUnavailable] = useState(false);
   const doctorKeyRef = useRef<string | null>(null);
   const loadedForPatient = useRef<string | null>(null);
-  const voice = useVoiceRecorder(text => setDraft(current => (current.trim() ? `${current.trim()} ${text}` : text)));
+  const dictation = useDictationField(draft, setDraft, 'Question about the patient', pending || !open);
+  const voice = dictation.recorder;
 
   useEffect(() => {
     let active = true;
@@ -108,11 +109,13 @@ export function AiAssistantDock({ open, onOpenChange, patient, history, reports,
         <Sender value={draft} onChange={setDraft} onSubmit={ask} loading={pending} placeholder="Ask a question about this patient, or tap the mic to speak"
           prefix={voice.status === 'unavailable'
             ? <Tooltip title="Voice input isn't available"><Button type="text" shape="circle" disabled icon={<AudioOutlined />} /></Tooltip>
-            : voice.status === 'transcribing'
+            : voice.status === 'transcribing' || voice.status === 'cleaning'
               ? <Button type="text" shape="circle" disabled icon={<LoadingOutlined spin />} />
               : voice.status === 'recording'
                 ? <Tooltip title="Stop and insert"><Button type="text" shape="circle" danger className="voice-mic-recording" icon={<Waveform />} onClick={voice.stop} /></Tooltip>
                 : <Tooltip title="Speak your question"><Button type="text" shape="circle" icon={<AudioOutlined />} onClick={voice.start} /></Tooltip>} />
+        {voice.status === 'cleaning' && <span role="status">Cleaning dictation…</span>}
+        {dictation.controls}
       </div>}
     </div>}
   </>;

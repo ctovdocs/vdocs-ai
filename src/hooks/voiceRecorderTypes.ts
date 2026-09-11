@@ -1,4 +1,4 @@
-export type VoiceRecorderStatus = 'idle' | 'recording' | 'transcribing' | 'unavailable';
+export type VoiceRecorderStatus = 'idle' | 'recording' | 'transcribing' | 'cleaning' | 'unavailable';
 
 export interface VoiceRecorderHandle {
   status: VoiceRecorderStatus;

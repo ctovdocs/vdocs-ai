@@ -1,4 +1,5 @@
 import { AssemblyAI, SyncTranscriptError } from 'assemblyai';
+import { medicalVocabulary } from '../src/lib/voiceCleanup.js';
 
 export interface TranscribeEnv { apiKey: string }
 
@@ -10,7 +11,7 @@ export function resolveTranscribeEnv(env: Record<string, string | undefined>): T
 export async function handleTranscribeRequest(audio: Buffer, env: TranscribeEnv): Promise<{ text: string }> {
   const client = new AssemblyAI({ apiKey: env.apiKey });
   try {
-    const result = await client.sync.transcribe(audio, { model: 'universal-3-5-pro' });
+    const result = await client.sync.transcribe(audio, { model: 'universal-3-5-pro', language_codes: ['en'], keyterms_prompt: medicalVocabulary });
     return { text: result.text.trim() };
   } catch (error) {
     if (error instanceof SyncTranscriptError) throw new Error(`AssemblyAI transcription failed (${error.errorCode ?? error.status}): ${error.message}`, { cause: error });

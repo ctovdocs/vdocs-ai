@@ -1,98 +1,88 @@
 import { useEffect, useRef, useState } from 'react';
 import { message } from 'antd';
-import { startPcmCapture, type PcmCapture } from '../lib/pcmCapture';
+import { startPcmCapture } from '../lib/pcmCapture';
+import { medicalVocabulary, VoiceTurns } from '../lib/voiceCleanup';
 import type { VoiceRecorderStatus } from './voiceRecorderTypes';
-
-interface TurnMessage {
-  type: 'Turn';
-  transcript?: string;
-  end_of_turn?: boolean;
-  turn_is_formatted?: boolean;
-}
-interface ErrorMessage { type: 'Error'; error?: string }
-type StreamMessage = TurnMessage | ErrorMessage | { type: 'Begin' | 'Termination' | 'SpeechStarted' | 'Heartbeat' };
-
-const CONNECTION_PARAMS = {
-  sample_rate: '16000',
-  speech_model: 'universal-3-5-pro',
-  domain: 'medical-v1',
-  mode: 'max_accuracy',
-  min_turn_silence: '800',
-  max_turn_silence: '3600',
-};
 
 export function useLiveVoiceRecorder(onResult: (text: string) => void) {
   const [status, setStatus] = useState<VoiceRecorderStatus>('idle');
   const [partialText, setPartialText] = useState('');
-  const wsRef = useRef<WebSocket | null>(null);
-  const captureRef = useRef<PcmCapture | null>(null);
-  const streamRef = useRef<MediaStream | null>(null);
-  const onResultRef = useRef(onResult);
-  useEffect(() => { onResultRef.current = onResult; });
-
-  const cleanup = () => {
-    captureRef.current?.stop();
-    captureRef.current = null;
-    streamRef.current?.getTracks().forEach(track => track.stop());
-    streamRef.current = null;
-    wsRef.current = null;
-  };
-
-  useEffect(() => () => { wsRef.current?.close(); cleanup(); }, []);
+  const active = useRef(false);
+  const mounted = useRef(true);
+  const finishRef = useRef<(() => void) | null>(null);
+  const cancelRef = useRef<(() => void) | null>(null);
+  const callback = useRef(onResult);
+  useEffect(() => { callback.current = onResult; });
+  useEffect(() => { mounted.current = true; return () => { mounted.current = false; cancelRef.current?.(); }; }, []);
 
   const start = async () => {
-    if (!navigator.mediaDevices?.getUserMedia) { setStatus('unavailable'); return; }
+    if (active.current) return;
+    active.current = true;
+    setStatus('transcribing');
+    let disposed = false;
+    const controller = new AbortController();
+    const release: (() => void)[] = [() => controller.abort()];
+    const cleanup = () => { disposed = true; for (const stop of release) stop(); active.current = false; };
+    cancelRef.current = cleanup;
     try {
-      const tokenResponse = await fetch('/api/transcribe-token', { method: 'POST' });
-      if (tokenResponse.status === 503) { setStatus('unavailable'); return; }
-      if (!tokenResponse.ok) { message.error('Could not start live dictation'); setStatus('idle'); return; }
-      const { token } = await tokenResponse.json() as { token: string };
-
+      const response = await fetch('/api/transcribe-token', { method: 'POST', signal: controller.signal });
+      if (!response.ok) throw new Error('Could not start dictation. Check voice configuration.');
+      const { token } = await response.json();
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      streamRef.current = stream;
-
-      const params = new URLSearchParams({ ...CONNECTION_PARAMS, token });
-      const ws = new WebSocket(`wss://streaming.assemblyai.com/v3/ws?${params.toString()}`);
-      wsRef.current = ws;
-      setPartialText('');
-
-      ws.onopen = () => {
-        captureRef.current = startPcmCapture(stream, chunk => { if (ws.readyState === WebSocket.OPEN) ws.send(chunk); });
-        setStatus('recording');
+      if (disposed || !mounted.current) { stream.getTracks().forEach(track => track.stop()); return; }
+      release.push(() => stream.getTracks().forEach(track => track.stop()));
+      const params = new URLSearchParams({ sample_rate: '16000', speech_model: 'universal-3-5-pro', domain: 'medical-v1', mode: 'max_accuracy', min_turn_silence: '800', max_turn_silence: '3600', keyterms_prompt: JSON.stringify(medicalVocabulary) });
+      params.set('token', token);
+      const socket = new WebSocket(`wss://streaming.assemblyai.com/v3/ws?${params}`);
+      release.push(() => socket.close());
+      const turns = new VoiceTurns();
+      let delivered = false;
+      let stopCapture = () => {};
+      const deliver = (interrupted = false) => {
+        if (delivered || disposed) return;
+        delivered = true;
+        const text = turns.text();
+        cleanup();
+        if (!mounted.current) return;
+        setStatus('idle'); setPartialText('');
+        if (interrupted) message.warning('Dictation connection interrupted. Recovered text may be incomplete; review before saving.');
+        if (text) callback.current(text);
+        else message.info('No speech detected — try again.');
       };
-      ws.onmessage = event => {
-        const data = JSON.parse(event.data) as StreamMessage;
-        if (data.type === 'Turn') {
-          if (data.end_of_turn && data.turn_is_formatted) {
-            setPartialText('');
-            if (data.transcript) onResultRef.current(data.transcript);
-          } else {
-            setPartialText(data.transcript ?? '');
-          }
-        } else if (data.type === 'Error') {
-          message.error(data.error ?? 'Live dictation error');
-        } else if (data.type === 'Termination') {
-          cleanup();
-          setStatus('idle');
-          setPartialText('');
-        }
+      const connectTimeout = window.setTimeout(() => deliver(true), 15000);
+      release.push(() => window.clearTimeout(connectTimeout));
+      socket.onopen = () => {
+        if (disposed) return;
+        window.clearTimeout(connectTimeout);
+        try {
+          const capture = startPcmCapture(stream, chunk => { if (socket.readyState === WebSocket.OPEN) socket.send(chunk); });
+          stopCapture = () => capture.stop(); release.push(stopCapture);
+          setStatus('recording');
+        } catch { deliver(true); }
       };
-      ws.onerror = () => message.error('Live dictation connection failed');
-      ws.onclose = () => { cleanup(); setStatus('idle'); setPartialText(''); };
+      socket.onmessage = event => {
+        if (disposed) return;
+        try {
+          const data = JSON.parse(event.data);
+          if (data.type === 'Turn') { turns.update(data); setPartialText(turns.text()); }
+          else if (data.type === 'Termination') deliver();
+          else if (data.type === 'Error') deliver(true);
+        } catch { deliver(true); }
+      };
+      socket.onerror = () => deliver(true);
+      socket.onclose = () => deliver(true);
+      finishRef.current = () => {
+        stopCapture(); stream.getTracks().forEach(track => track.stop());
+        setStatus('transcribing');
+        if (socket.readyState !== WebSocket.OPEN) { deliver(true); return; }
+        socket.send(JSON.stringify({ type: 'Terminate' }));
+        const timeout = window.setTimeout(() => deliver(true), 5000);
+        release.push(() => window.clearTimeout(timeout));
+      };
     } catch {
-      setStatus('unavailable');
-    }
-  };
-
-  const stop = () => {
-    if (wsRef.current?.readyState === WebSocket.OPEN) {
-      wsRef.current.send(JSON.stringify({ type: 'Terminate' }));
-      setStatus('transcribing');
-    } else {
+      if (!disposed && mounted.current) { message.error('Could not start dictation. Check microphone permission and configuration.'); setStatus('idle'); }
       cleanup();
-      setStatus('idle');
     }
   };
-
-  return { status, partialText, start, stop };
+  return { status, partialText, start, stop: () => finishRef.current?.() };
 }
