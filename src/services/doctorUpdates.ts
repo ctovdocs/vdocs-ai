@@ -1,16 +1,22 @@
 import type { WorkflowState } from '../domain/workflow';
+import { owners } from '../data/cohort';
 
 export const UPDATE_DOCTOR = 'Dr. Ananya Mehta';
 export const UPDATE_DEPARTMENT = 'Internal Medicine';
 export type DoctorUpdate = { id: string; patient_id: string; patient: string; uhid: string; type: 'lab' | 'imaging' | 'referral' | 'coordination' | 'order' | 'handover' | 'discharge' | 'follow_up'; title: string; detail: string; at: string; attention: boolean; href: string; read: boolean };
 
+function departmentOf(doctor: string): string | undefined {
+  return Object.entries(owners).find(([, name]) => name === doctor)?.[0];
+}
+
 export function doctorUpdates(state: WorkflowState, doctor = UPDATE_DOCTOR): DoctorUpdate[] {
   const rows: DoctorUpdate[] = [];
   const receipts = state.update_receipts?.[doctor] ?? {};
+  const department = departmentOf(doctor);
   const scoped = new Set(state.histories.filter(history => {
     const patient = state.patients.find(patient => patient.id === history.context.patient_id);
-    return (doctor === UPDATE_DOCTOR && patient?.department === UPDATE_DEPARTMENT) || history.encounters.some(encounter => encounter.status === 'active' && encounter.owner === doctor)
-      || history.requests.some(request => !['completed', 'cancelled'].includes(request.status) && (request.owner === doctor || (doctor === UPDATE_DOCTOR && request.to_department === UPDATE_DEPARTMENT)));
+    return (department && patient?.department === department) || history.encounters.some(encounter => encounter.status === 'active' && encounter.owner === doctor)
+      || history.requests.some(request => !['completed', 'cancelled'].includes(request.status) && (request.owner === doctor || (department && request.to_department === department)));
   }).map(history => history.context.patient_id));
   const add = (item: Omit<DoctorUpdate, 'patient' | 'uhid' | 'read'>) => {
     const patient = state.patients.find(patient => patient.id === item.patient_id && patient.hospital_id === state.hospital_id);
@@ -30,8 +36,8 @@ export function doctorUpdates(state: WorkflowState, doctor = UPDATE_DOCTOR): Doc
       for (const task of history.work_items.filter(task => task.kind === 'follow_up' && task.status === 'pending')) add({ id: `follow-up:${task.id}:${task.due_at}`, patient_id: patientId, type: 'follow_up', title: task.title, detail: `${task.owner} · Follow-up due ${task.due_at}`, at: task.created_at, attention: task.due_at <= new Date().toISOString(), href: `/app/patients/${patientId}` });
     }
     for (const request of history.requests) {
-      const incoming = request.owner === doctor || (doctor === UPDATE_DOCTOR && request.to_department === UPDATE_DEPARTMENT);
-      const outgoing = request.requested_by === doctor || (doctor === UPDATE_DOCTOR && request.from_department === UPDATE_DEPARTMENT);
+      const incoming = request.owner === doctor || Boolean(department && request.to_department === department);
+      const outgoing = request.requested_by === doctor || Boolean(department && request.from_department === department);
       if (!incoming && !outgoing) continue;
       add({ id: `request:${request.id}:${request.version}:${request.status}:${request.owner}`, patient_id: patientId, type: request.kind === 'referral' ? 'referral' : 'coordination',
         title: `${incoming ? 'Incoming' : 'Sent'} ${request.kind} · ${request.status.replaceAll('_', ' ')}`, detail: `${request.from_department} → ${request.to_department} · ${request.owner}\n${request.reason}${request.response ? `\nResponse: ${request.response}` : ''}`,
