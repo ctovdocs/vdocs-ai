@@ -19,6 +19,7 @@ import { GENERAL_LENS, specialtyFocus, type VitalKey } from '../data/specialtyFo
 import type { Department } from '../data/scenarios';
 import { formatDate } from '../lib/format';
 import { useWorkflow, useWorkflowAction } from '../services/useWorkflow';
+import { PatientBackButton } from '../components/PatientBackButton';
 
 const VITAL_STATS: { key: VitalKey; label: string }[] = [
   { key: 'systolic', label: 'BP' }, { key: 'pulse', label: 'Pulse' }, { key: 'respiratory_rate', label: 'RR' },
@@ -40,9 +41,9 @@ export function PatientPage() {
   } });
   const historyQuery = useQuery({ queryKey: ['history', patientId], queryFn: () => patientService.history(patientId) });
 
-  if (!query.data) return <QueryState pending={query.isPending} error={query.error} />;
+  if (!query.data) return <><PatientBackButton /><QueryState pending={query.isPending} error={query.error} /></>;
   const { patient, labs, imaging } = query.data;
-  if (!patient) return <Empty description="Patient not found or access unavailable"><Link to="/app/patients">Back to patients</Link></Empty>;
+  if (!patient) return <Empty description="Patient not found or access unavailable"><PatientBackButton /></Empty>;
   const history = historyQuery.data;
   const requests = history?.requests ?? [];
   const activeEncounter = history?.encounters.find(encounter => encounter.status === 'active');
@@ -79,6 +80,7 @@ export function PatientPage() {
   return <>
     <section className="patient-header surface">
       <div className="patient-header-row">
+        <PatientBackButton />
         <div className="patient-identity">
           <Typography.Title level={4}>{patient.name}</Typography.Title>
           <span className="patient-meta">{patient.age}{patient.sex} · <Typography.Text copyable>{patient.uhid}</Typography.Text></span>

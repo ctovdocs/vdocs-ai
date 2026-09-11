@@ -1,14 +1,16 @@
 import { AutoComplete, Button, Form, Select, Space, Tag, Typography } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import type { PatientHistory } from '../domain/longitudinal';
 import type { Report } from '../domain/models';
 import { useWorkflow, useWorkflowAction } from '../services/useWorkflow';
 import { owners } from '../data/cohort';
 import { ReportList } from './ReportList';
 import { VoiceTextArea } from './VoiceField';
+import { formatDate } from '../lib/format';
 
 export function RequestDetail({ request, reports, simulator = false }: { request: PatientHistory['requests'][number]; reports: Report[]; simulator?: boolean }) {
   const action = useWorkflowAction();
+  const location = useLocation();
   const workflow = useWorkflow();
   const patient = workflow.data?.patients.find(patient => patient.id === request.patient_id);
   const history = workflow.data?.histories.find(history => history.context.patient_id === request.patient_id);
@@ -23,9 +25,10 @@ export function RequestDetail({ request, reports, simulator = false }: { request
     } catch { return; }
   };
   return <>
-    <Space><Tag>{request.status.replaceAll('_', ' ')}</Tag><Tag color={request.priority === 'urgent' ? 'red' : 'default'}>{request.priority}</Tag><Link to={`/app/patients/${request.patient_id}`}>Open full patient context</Link></Space>
+    <Space><Tag>{request.status.replaceAll('_', ' ')}</Tag><Tag color={request.priority === 'urgent' ? 'red' : 'default'}>{request.priority}</Tag><Link state={{ returnTo: location.pathname + location.search, returnLabel: location.pathname === '/app/referrals' ? 'Referrals' : location.pathname === '/app/requests' ? 'Department coordination' : undefined }} to={`/app/patients/${request.patient_id}`}>Open full patient context</Link></Space>
     <Typography.Paragraph className="section-gap">{request.from_department} → {request.to_department}</Typography.Paragraph>
     <Typography.Paragraph>{request.reason}</Typography.Paragraph>
+    <Typography.Paragraph type="secondary">Requested {formatDate(request.requested_at)}{request.accepted_at ? ` · Accepted ${formatDate(request.accepted_at)}` : ''}{request.completed_at ? ` · Completed ${formatDate(request.completed_at)}` : ''}</Typography.Paragraph>
     {request.request_type && <Typography.Paragraph>Purpose: {request.request_type}</Typography.Paragraph>}
     {request.requested_by && <Typography.Paragraph type="secondary">Requested by {request.requested_by}</Typography.Paragraph>}
     {request.contact && <Typography.Paragraph>Callback / ward contact: {request.contact}</Typography.Paragraph>}
@@ -38,7 +41,7 @@ export function RequestDetail({ request, reports, simulator = false }: { request
     <Form form={form} layout="vertical" size="small" className="section-gap" initialValues={{ ...request, response: request.response ?? request.response_draft ?? '' }} disabled={closed}>
       <Form.Item name="owner" label="Assigned clinician / team" rules={[{ required: true, whitespace: true }]}><AutoComplete placeholder="Assign a named clinician or team" options={[...new Set([request.owner, `${request.to_department} receiving team`, ...Object.values(owners)])].map(value => ({ value }))} /></Form.Item>
       <Form.Item name="priority" label="Priority"><Select options={[{ value: 'routine' }, { value: 'urgent' }]} /></Form.Item>
-      <Form.Item name="response" label="Specialist response"><VoiceTextArea rows={4} placeholder="Document findings and the response to the requested question" /></Form.Item>
+      <Form.Item name="response" label={request.kind === 'referral' ? 'Specialist assessment / response' : 'Action taken / coordination response'}><VoiceTextArea rows={4} placeholder="Document findings and the response to the requested question" /></Form.Item>
       {!closed && <Form.Item name="reason" label="Cancellation reason (only if cancelling)"><VoiceTextArea rows={2} /></Form.Item>}
     </Form>
     {!closed && <Space wrap>
