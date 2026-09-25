@@ -41,6 +41,7 @@ export type Handover = z.infer<typeof handoverSchema>;
 const base = { id: z.uuid(), patient_id: z.uuid(), actor: z.string().trim().min(1), at: z.iso.datetime() };
 const expected = { entity_id: z.string(), expected_version: z.number().int() };
 export const commandSchema = z.discriminatedUnion('type', [
+  z.object({ ...base, type: z.literal('labs.seed') }),
   z.object({ ...base, type: z.literal('updates.read'), update_ids: z.array(z.string()).min(1).max(500), read: z.boolean() }),
   z.object({ ...base, type: z.literal('shift.seed') }),
   z.object({ ...base, type: z.literal('shift.create'), patient_ids: z.array(z.uuid()).min(1).max(50), to_doctor: z.string().trim().min(1), shift: z.string().trim().min(1), department: z.string().trim().min(1), starts_at: z.iso.datetime(), ends_at: z.iso.datetime() }),

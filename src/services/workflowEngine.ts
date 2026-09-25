@@ -7,6 +7,7 @@ import { applyShiftCommand, shiftChanged } from './shiftHandover.js';
 import { seedShiftDemo } from '../data/shiftDemo.js';
 import { doctorUpdates } from './doctorUpdates.js';
 import { owners } from '../data/cohort.js';
+import { seedLabTrends } from '../data/labTrendDemo.js';
 
 export function initialWorkflowState(hospitalId: string, patients: Patient[], reports: Report[], histories: PatientHistory[]): WorkflowState {
   const state = workflowStateSchema.parse({ schema_version: 1, hospital_id: hospitalId, revision: 0,
@@ -63,6 +64,10 @@ export function dischargeBlockers(state: WorkflowState, record: Discharge) {
 
 export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowCommand): WorkflowState {
   const command = commandSchema.parse(rawCommand);
+  if (command.type === 'labs.seed') {
+    if (!input.patients.some(patient => patient.id === command.patient_id && patient.hospital_id === input.hospital_id)) throw new Error('Patient outside hospital scope.');
+    return seedLabTrends(input, command.at, command.actor);
+  }
   if (command.type === 'shift.seed') {
     if (!input.patients.some(patient => patient.id === command.patient_id && patient.hospital_id === input.hospital_id)) throw new Error('Patient outside hospital scope.');
     return seedShiftDemo(input, command.at);
