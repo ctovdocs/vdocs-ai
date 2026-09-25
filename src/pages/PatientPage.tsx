@@ -6,6 +6,7 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { patientService, labService, imagingService } from '../services/clinical';
 import type { Report } from '../domain/models';
 import { ReportList } from '../components/ReportList';
+import { LabTrends } from '../components/LabTrends';
 import { QueryState } from '../components/QueryState';
 import { PatientHistoryPanel } from '../components/PatientHistoryPanel';
 import { CareCoordinationCard } from '../components/CareCoordinationCard';
@@ -117,6 +118,7 @@ export function PatientPage() {
     <ClinicalSummaryCard patient={patient} history={history} abnormalCount={abnormalCount} activeCoordinationCount={activeCoordinationCount}
       pendingOrdersCount={pendingOrders.length} dischargeReady={dischargeReady} />
 
+    <LabTrends patientId={patientId} onOpenReport={id => { setReportFilter('Labs'); setParams(current => { const next = new URLSearchParams(current); next.set('report', id); return next; }, { replace: true }); }} />
     <div className="patient-dashboard">
       <div className="patient-dashboard-main surface">
         <div className="section-toolbar">
