@@ -1,15 +1,15 @@
 import { useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Button, Skeleton, Tag, Typography } from 'antd';
-import { MessageOutlined, ReloadOutlined, ThunderboltFilled } from '@ant-design/icons';
+import { ReloadOutlined, ThunderboltFilled } from '@ant-design/icons';
 import type { Patient, Report } from '../domain/models';
 import type { PatientHistory } from '../domain/longitudinal';
 import { summarizePatient, type AiOutcome, type AiSummaryResult } from '../services/aiAssistant';
 import { computeBriefFingerprint, loadCachedBrief, saveCachedBrief } from '../lib/aiBriefCache';
 import type { EvidenceRef } from './EvidenceDrawer';
 
-export function AiBriefCard({ patient, history, reports, onEvidence, onOpenChat }: {
-  patient: Patient; history?: PatientHistory | null; reports: Report[]; onEvidence: (evidence: EvidenceRef) => void; onOpenChat: () => void;
+export function AiBriefCard({ patient, history, reports, onEvidence }: {
+  patient: Patient; history?: PatientHistory | null; reports: Report[]; onEvidence: (evidence: EvidenceRef) => void;
 }) {
   const forceRef = useRef(false);
   const aiQuery = useQuery({
@@ -40,7 +40,6 @@ export function AiBriefCard({ patient, history, reports, onEvidence, onOpenChat 
       <span className="ai-brief-label"><ThunderboltFilled /> AI patient assistant</span>
       <div className="ai-brief-actions">
         {ai?.status === 'ok' && <Button size="small" type="text" icon={<ReloadOutlined />} onClick={regenerate}>Regenerate</Button>}
-        <Button size="small" type="primary" icon={<MessageOutlined />} onClick={onOpenChat}>Ask AI</Button>
       </div>
     </div>
     {!history && <Typography.Text type="secondary">Waiting on the chart to finish loading…</Typography.Text>}
@@ -58,7 +57,7 @@ export function AiBriefCard({ patient, history, reports, onEvidence, onOpenChat 
       {ai.data.pendingWork.length > 0 && <div className="ai-finding-group">
         <span className="ai-finding-group-label">Pending work</span>
         <div className="highlight-row">
-          {ai.data.pendingWork.map((item, index) => <Tag key={index} className="ai-citation-chip" onClick={() => onEvidence({ record_type: item.record_type, record_id: item.record_id })}>{item.text}</Tag>)}
+          {ai.data.pendingWork.slice(0, 3).map((item, index) => <Tag key={index} className="ai-citation-chip" onClick={() => onEvidence({ record_type: item.record_type, record_id: item.record_id })}>{item.text}</Tag>)}
         </div>
       </div>}
       <Typography.Text type="secondary" className="ai-brief-meta">Generated {new Date(ai.data.generatedAt).toLocaleTimeString('en-IN')} · AI-generated, verify against the chart</Typography.Text>

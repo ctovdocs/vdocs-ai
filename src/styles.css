@@ -61,22 +61,22 @@ a { color: #155c53; }
 /* Shared padding/rhythm for the stacked cards on the patient page. */
 .patient-page-card { padding: 16px 18px; margin-bottom: 16px; }
 
-.patient-header { padding: 16px 18px; margin-top: 0; margin-bottom: 16px; }
-.patient-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
-.patient-identity { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.patient-header { padding: 10px 14px; margin-top: 0; margin-bottom: 10px; }
+.patient-header-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.patient-identity { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; flex: 1; min-width: 0; }
 .patient-identity h4.ant-typography { margin: 0; font-weight: 600; letter-spacing: -.3px; }
 .patient-meta { font-size: 13px; color: #687774; }
 .patient-header-tags { display: flex; gap: 6px; align-items: center; }
-.patient-tags-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.patient-tags-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; }
 .workspace-tabs .ant-tabs-nav { padding: 0 24px; margin-bottom: 0; }
 .tab-padding { padding: 8px; }
 .table-link { padding-left: 0; }
 
-.lens-row { display: flex; align-items: center; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+.lens-row { display: flex; align-items: center; gap: 6px; margin-left: auto; flex-wrap: wrap; }
 .lens-label { font-size: 12px; color: #687774; font-weight: 600; }
 .lens-row-actions { margin-left: auto; }
 
-.clinical-summary { padding: 16px 18px; margin-bottom: 16px; }
+.clinical-summary { padding: 12px 14px; margin-bottom: 10px; }
 .clinical-summary-text { font-size: 13.5px; color: #33453f; margin-bottom: 10px !important; }
 .notes-save-actions { display: flex; align-items: center; gap: 8px; }
 .notes-saved-at { font-size: 11.5px; }
@@ -115,7 +115,7 @@ a { color: #155c53; }
 /* AI brand accent: violet, distinct from clinical tag colors (red/blue/gold) so the AI layer reads as its own surface. */
 :root { --ai-accent: #6a4ff2; --ai-accent-soft: #f2effe; --ai-accent-line: #ded4fc; }
 
-.ai-brief-card { position: relative; border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; background: linear-gradient(135deg, var(--ai-accent-soft), #fbfaff); border: 1px solid var(--ai-accent-line); overflow: hidden; }
+.ai-brief-card { position: relative; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; background: linear-gradient(135deg, var(--ai-accent-soft), #fbfaff); border: 1px solid var(--ai-accent-line); overflow: hidden; }
 .ai-brief-card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--ai-accent), #a78bfa); }
 .ai-brief-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; gap: 8px; }
 .ai-brief-label { font-size: 12.5px; font-weight: 700; color: var(--ai-accent); display: inline-flex; align-items: center; gap: 6px; letter-spacing: .2px; }
@@ -165,12 +165,13 @@ a { color: #155c53; }
 .ward-round-head { display: flex; justify-content: space-between; gap: 8px; font-size: 12.5px; }
 .ward-round-body { margin: 6px 0 0; font-size: 12.5px; color: #566b62; white-space: pre-wrap; }
 
-.patient-dashboard { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 16px; align-items: start; margin-bottom: 16px; }
-.patient-dashboard-main { padding: 16px 18px; }
-.patient-dashboard-side { display: flex; flex-direction: column; gap: 16px; }
+.patient-dashboard { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 10px; align-items: start; margin-bottom: 10px; }
+.patient-dashboard-column { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.patient-dashboard-main { padding: 12px 14px; }
+.patient-dashboard-side { display: flex; flex-direction: column; gap: 10px; }
 @media (max-width: 900px) { .patient-dashboard { grid-template-columns: 1fr; } }
 
-.side-card { background: #fff; border: 1px solid #e1e7e4; border-radius: 4px; padding: 14px 16px; }
+.side-card { background: #fff; border: 1px solid #e1e7e4; border-radius: 6px; padding: 12px 14px; }
 .side-card h5 { margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: .3px; text-transform: uppercase; color: #566b62; }
 
 .med-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
@@ -199,7 +200,8 @@ a { color: #155c53; }
 
 .report-grid-empty { padding: 24px 0; }
 .report-rows { display: flex; flex-direction: column; }
-.report-row { display: flex; align-items: center; gap: 10px; padding: 8px 4px; border: none; border-bottom: 1px solid #edf0ee; background: transparent; text-align: left; cursor: pointer; font: inherit; width: 100%; }
+.patient-dashboard-main .report-rows { max-height: 440px; overflow-y: auto; }
+.report-row { display: flex; align-items: center; gap: 10px; padding: 6px 4px; border: none; border-bottom: 1px solid #edf0ee; background: transparent; text-align: left; cursor: pointer; font: inherit; width: 100%; }
 .report-row:last-child { border-bottom: none; }
 .report-row:hover { background: #f7faf8; }
 .report-card-icon { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 5px; flex-shrink: 0; font-size: 12px; }
@@ -388,7 +390,7 @@ a { color: #155c53; }
 .doctor-note-context { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 9px; padding-top: 8px; border-top: 1px solid #eef1ef; font-size: 11px; color: #67786f; }
 .voice-processing-strip { display: flex; align-items: center; gap: 9px; padding: 8px 10px; margin-top: 5px; background: #f0f6f3; color: #245e4c; border-radius: 4px; font-size: 12px; }
 .voice-processing-strip small { display: block; color: #63786f; font-size: 11px; margin-top: 2px; }
-.lab-trends { margin-bottom: 12px; overflow: hidden; }
+.lab-trends { margin-bottom: 10px; overflow: hidden; }
 .lab-date-button { white-space: normal; height: auto; padding: 0; font-size: 11px; text-align: left; }
 .lab-value { border: 0; background: none; padding: 3px 0; cursor: pointer; text-align: left; color: inherit; font: inherit; }
 .lab-value small { display: block; font-size: 10px; color: #79867f; margin-top: 2px; }

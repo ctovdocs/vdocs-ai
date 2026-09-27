@@ -70,7 +70,7 @@ export function ClinicalSummaryCard({ patient, history, abnormalCount, activeCoo
       <span className={dirty ? 'note-draft-state' : 'muted'}>{busy ? 'Dictation in progress' : dirty ? 'Unsaved draft' : hasSaved ? 'Saved to chart' : 'New note'}</span>
     </div>
     {!ready ? <Typography.Text type="secondary">Loading notes…</Typography.Text>
-      : <VoiceTextArea key={editorVersion} aria-label="Doctor clinical note" className="clinical-summary-text" autoSize={{ minRows: 3, maxRows: 10 }}
+      : <VoiceTextArea key={editorVersion} aria-label="Doctor clinical note" className="clinical-summary-text" autoSize={{ minRows: 2, maxRows: 10 }}
         value={noteText} disabled={action.isPending || !activeEncounter} onVoiceStatusChange={setVoiceStatus}
         onChange={event => setNoteText(event.target.value)} placeholder="Assessment, findings and plan. Type here or use the microphone to dictate in English." />}
     {saveError && <Alert type="error" showIcon title="Note was not saved. Your draft is retained — try again." />}

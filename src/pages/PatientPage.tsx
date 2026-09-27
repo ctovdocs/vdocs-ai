@@ -27,6 +27,8 @@ const VITAL_STATS: { key: VitalKey; label: string }[] = [
   { key: 'spo2', label: 'SpO₂' }, { key: 'temperature_c', label: 'Temp' },
 ];
 
+const SHOW_SPECIALTY_LENS = false;
+
 export function PatientPage() {
   const { patientId = '' } = useParams();
   const [params, setParams] = useSearchParams();
@@ -102,24 +104,23 @@ export function PatientPage() {
         {patient.allergies.length
           ? patient.allergies.map(allergy => <Tag color="red" icon={<WarningOutlined />} key={allergy}>{allergy}</Tag>)
           : <Tag>No documented allergy</Tag>}
+        <div className="lens-row">
+          {/* Specialty lenses hidden for now; only General is offered. */}
+          <span className="lens-label">View as</span>
+          <Segmented size="small" value={lens} onChange={value => setLens(value as string)} options={SHOW_SPECIALTY_LENS ? lensOptions : [GENERAL_LENS]} />
+          {activeEncounter && <NewOrderMenu patient={patient} />}
+        </div>
       </div>
     </section>
 
-    <div className="lens-row">
-      <span className="lens-label">View as</span>
-      <Segmented size="small" value={lens} onChange={value => setLens(value as string)} options={lensOptions} />
-      {activeEncounter && <div className="lens-row-actions">
-        <NewOrderMenu patient={patient} />
-      </div>}
-    </div>
-
-    <AiBriefCard patient={patient} history={history} reports={allReports} onEvidence={setEvidence} onOpenChat={() => setChatOpen(true)} />
+    <AiBriefCard patient={patient} history={history} reports={allReports} onEvidence={setEvidence} />
 
     <ClinicalSummaryCard patient={patient} history={history} abnormalCount={abnormalCount} activeCoordinationCount={activeCoordinationCount}
       pendingOrdersCount={pendingOrders.length} dischargeReady={dischargeReady} />
 
     <LabTrends patientId={patientId} onOpenReport={id => { setReportFilter('Labs'); setParams(current => { const next = new URLSearchParams(current); next.set('report', id); return next; }, { replace: true }); }} />
     <div className="patient-dashboard">
+      <div className="patient-dashboard-column">
       <div className="patient-dashboard-main surface">
         <div className="section-toolbar">
           <Typography.Title level={5}>Reports</Typography.Title>
@@ -129,6 +130,8 @@ export function PatientPage() {
           {pendingOrders.map(order => <li key={order.id}><ClockCircleOutlined /><Link to={`/app/${order.kind === 'lab' ? 'lab-orders' : 'imaging-orders'}?id=${order.id}`}>{order.title}</Link><Tag color={order.kind === 'lab' ? 'default' : 'blue'}>{order.kind}</Tag><span className="pending-order-status">{order.status}</span></li>)}
         </ul>}
         <ReportList reports={sortedReports} focusReportId={focusReportId} onFocusHandled={() => setParams(current => { const next = new URLSearchParams(current); next.delete('report'); return next; }, { replace: true })} />
+      </div>
+      {isIPD && <WardRoundsCard patientId={patientId} rounds={wardRounds} onAddRound={async ({ findings, plan }) => { await action.mutateAsync({ type: 'round.create', patient_id: patientId, findings, plan }); }} />}
       </div>
 
       <aside className="patient-dashboard-side">
@@ -151,8 +154,6 @@ export function PatientPage() {
             </div>)}
           </div>
         </div>}
-
-        {isIPD && <WardRoundsCard patientId={patientId} rounds={wardRounds} onAddRound={async ({ findings, plan }) => { await action.mutateAsync({ type: 'round.create', patient_id: patientId, findings, plan }); }} />}
 
         {careTeam.size > 0 && <div className="side-card">
           <h5>Care team</h5>
