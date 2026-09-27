@@ -1,7 +1,6 @@
-import { Button, Layout, Space, Tag, Typography } from 'antd';
+import { Button, Layout, Typography } from 'antd';
 import { Link, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
-import { env } from '../lib/env';
 import { supabase } from '../lib/supabase';
 import { PatientsPage } from '../pages/PatientsPage';
 import { DashboardPage } from '../pages/DashboardPage';
@@ -14,20 +13,18 @@ import { CoordinationPage } from '../pages/CoordinationPage';
 import { InvestigationsPage } from '../pages/InvestigationsPage';
 import { ShiftHandoversPage as HandoversPage } from '../pages/ShiftHandoversPage';
 import { PatientDirectoryTable } from '../components/PatientDirectoryTable';
-import { VoiceModeToggle } from '../components/VoiceModeToggle';
 import { VoiceModeProvider } from '../lib/voiceMode';
 import { WorkflowSync } from './WorkflowSync';
 import { UpdatesPage } from '../pages/UpdatesPage';
-import { useActiveDoctor } from '../services/activeDoctor';
 
 function Shell() {
   const queryClient = useQueryClient();
-  const activeDoctor = useActiveDoctor();
   return <Layout className="app-shell">
     <WorkflowSync />
     <Sidebar />
     <Layout>
-      <Layout.Header className="topbar"><Typography.Text>Fortis / {activeDoctor.data.name} · {activeDoctor.data.department}</Typography.Text><Space><VoiceModeToggle /><Tag color={env.mode === 'mock' ? 'gold' : 'green'}>{env.mode === 'mock' ? 'Local preview' : 'Supabase'}</Tag>{supabase && <Button size="small" onClick={async () => { const { error } = await supabase!.auth.signOut(); if (!error) queryClient.clear(); }}>Sign out</Button>}</Space></Layout.Header>
+      {/* Doctor name, voice-mode toggle and data-source tag hidden for the demo; VoiceModeToggle still exists and voice mode keeps its stored setting. */}
+      <Layout.Header className="topbar">{supabase && <Button size="small" onClick={async () => { const { error } = await supabase!.auth.signOut(); if (!error) queryClient.clear(); }}>Sign out</Button>}</Layout.Header>
       <Layout.Content className="page-content page-content--tight"><Outlet /></Layout.Content>
     </Layout>
   </Layout>;
