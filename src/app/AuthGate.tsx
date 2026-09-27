@@ -32,7 +32,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
   }, [queryClient]);
   if (loading) return <div className="loading"><Spin /></div>;
   if (!supabase || session) return children;
-  return <main className="login-panel surface"><div className="brand">VDoc<span>CLINICAL WORKSPACE</span></div><Typography.Title level={3}>Sign in to the demo</Typography.Title><Typography.Paragraph type="secondary">Use the Supabase account provisioned for this internal demo.</Typography.Paragraph>
+  return <main className="login-panel surface"><div className="brand">VDocs<span>CLINICAL WORKSPACE</span></div><Typography.Title level={3}>Sign in to the demo</Typography.Title><Typography.Paragraph type="secondary">Use the Supabase account provisioned for this internal demo.</Typography.Paragraph>
     {error && <Alert type="error" title={error} className="section-gap" />}
     <Form layout="vertical" onFinish={async (values: { email: string; password: string }) => {
       setSubmitting(true); setError('');

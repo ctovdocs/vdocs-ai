@@ -53,7 +53,7 @@ export function Sidebar() {
   const toMenuItem = (item: NavigationItem) => ({
     key: item.path ?? item.label,
     icon: item.icon,
-    label: item.path ? <Link to={item.path}>{item.label}{item.path === '/app/updates' && <Badge className="sidebar-update-count" count={unread} overflowCount={99} size="small" />}</Link> : item.label,
+    label: item.path ? <Link to={item.path}>{item.label}{item.path === '/app/updates' && <Badge className="sidebar-update-count" count={unread} overflowCount={10} size="small" />}</Link> : item.label,
     title: item.path ? item.label : `${item.label} · planned`,
     onClick: item.path ? undefined : () => { void message.info({ content: `${item.label} is not connected yet.`, key: 'planned-navigation' }); },
   });
@@ -76,16 +76,16 @@ export function Sidebar() {
     <Layout.Sider width={184} collapsedWidth={52} collapsed={collapsed} trigger={null}
       collapsible breakpoint="lg" onBreakpoint={broken => { if (broken) setCollapsed(true); }}
       className="sidebar compact-sidebar">
-      <Link className="sidebar-brand" to="/app" aria-label="VDoc dashboard">
+      <Link className="sidebar-brand" to="/app" aria-label="VDocs dashboard">
         <span className="sidebar-mark">v</span>
-        {!collapsed && <span className="sidebar-wordmark">VDoc</span>}
+        {!collapsed && <span className="sidebar-wordmark">VDocs</span>}
       </Link>
       <nav className="sidebar-navigation" aria-label="Clinical navigation">
         {collapsed ? <div className="sidebar-rail">{clinicalSections.map(section =>
           <div className="sidebar-rail-group" key={section.label} role="group" aria-label={section.label}>
             {section.items.map(item => <Tooltip key={item.path ?? item.label} title={item.path ? item.label : `${item.label} · planned`} placement="right">
               {item.path ? <Link to={item.path} className={`sidebar-rail-item${selected === item.path ? ' is-selected' : ''}`}
-                aria-label={item.path === '/app/updates' ? `Updates, ${unread} unread` : item.label} aria-current={selected === item.path ? 'page' : undefined}>{item.path === '/app/updates' ? <Badge count={unread} size="small" overflowCount={99}>{item.icon}</Badge> : item.icon}</Link>
+                aria-label={item.path === '/app/updates' ? `Updates, ${unread} unread` : item.label} aria-current={selected === item.path ? 'page' : undefined}>{item.path === '/app/updates' ? <Badge count={unread} size="small" overflowCount={10}>{item.icon}</Badge> : item.icon}</Link>
                 : <button type="button" className="sidebar-rail-item is-planned" aria-label={`${item.label} · planned`}
                   onClick={() => { void message.info({ content: `${item.label} is not connected yet.`, key: 'planned-navigation' }); }}>{item.icon}</button>}
             </Tooltip>)}

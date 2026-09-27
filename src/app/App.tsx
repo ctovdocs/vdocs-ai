@@ -16,15 +16,17 @@ import { PatientDirectoryTable } from '../components/PatientDirectoryTable';
 import { VoiceModeProvider } from '../lib/voiceMode';
 import { WorkflowSync } from './WorkflowSync';
 import { UpdatesPage } from '../pages/UpdatesPage';
+import { useActiveDoctor } from '../services/activeDoctor';
 
 function Shell() {
   const queryClient = useQueryClient();
+  const activeDoctor = useActiveDoctor();
   return <Layout className="app-shell">
     <WorkflowSync />
     <Sidebar />
     <Layout>
-      {/* Doctor name, voice-mode toggle and data-source tag hidden for the demo; VoiceModeToggle still exists and voice mode keeps its stored setting. */}
-      <Layout.Header className="topbar">{supabase && <Button size="small" onClick={async () => { const { error } = await supabase!.auth.signOut(); if (!error) queryClient.clear(); }}>Sign out</Button>}</Layout.Header>
+      {/* Voice-mode toggle and data-source tag hidden for the demo; VoiceModeToggle still exists and voice mode keeps its stored setting. */}
+      <Layout.Header className="topbar"><Typography.Text>Hospital / {activeDoctor.data.name} · {activeDoctor.data.department}</Typography.Text>{supabase && <Button size="small" onClick={async () => { const { error } = await supabase!.auth.signOut(); if (!error) queryClient.clear(); }}>Sign out</Button>}</Layout.Header>
       <Layout.Content className="page-content page-content--tight"><Outlet /></Layout.Content>
     </Layout>
   </Layout>;
@@ -49,7 +51,7 @@ export function App() {
       <Route path="/app/results" element={<InvestigationsPage key="results" reviewOnly />} />
       <Route path="/app/handovers" element={<HandoversPage />} />
       <Route path="/" element={<Navigate to="/app" replace />} />
-      <Route path="*" element={<div><Typography.Title level={2}>Page not found</Typography.Title><Link to="/app">Return to VDoc</Link></div>} />
+      <Route path="*" element={<div><Typography.Title level={2}>Page not found</Typography.Title><Link to="/app">Return to VDocs</Link></div>} />
     </Route>
   </Routes></AuthGate></VoiceModeProvider>;
 }
