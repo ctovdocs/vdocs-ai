@@ -11,7 +11,7 @@ import { owners } from '../data/cohort';
 import { formatDate } from '../lib/format';
 import { toLocalDateTime } from '../lib/dateRange';
 import { HandoversPage as LegacyHandoversPage } from './HandoversPage';
-import { SHIFT_DEMO_MARKER, SHIFT_ENTRIES_MARKER } from '../data/shiftDemo';
+import { SHIFT_DEMO_MARKER } from '../data/shiftDemo';
 import { env } from '../lib/env';
 import { patchArchiveParams, shiftRoster } from '../services/shiftArchive';
 import { useActiveDoctor } from '../services/activeDoctor';
@@ -132,20 +132,14 @@ export function ShiftHandoversPage() {
   const setStatus = (value: string) => setFilter('status', value);
   const setFromDate = (value: string) => setFilter('from', value);
   const setToDate = (value: string) => setFilter('to', value);
-  const seedAction = useWorkflowAction();
-  const [seedSlow, setSeedSlow] = useState(false);
-  useEffect(() => {
-    if (!seedAction.isPending) return;
-    const timer = window.setTimeout(() => setSeedSlow(true), 15000);
-    return () => window.clearTimeout(timer);
-  }, [seedAction.isPending]);
+  // Supabase is seeded once with `npm run seed:shifts`. Only the browser-only mock mode builds the demo shifts itself.
+  const seed = useWorkflowAction().mutate;
   const attemptedSeed = useRef(false);
-  const seedNeeded = query.data && !(query.data.commands.includes(SHIFT_DEMO_MARKER) && query.data.commands.includes(SHIFT_ENTRIES_MARKER));
   const seedPatientId = query.data?.patients[0]?.id;
-  const seed = seedAction.mutate;
+  const mockSeedNeeded = env.mode === 'mock' && query.data && !query.data.commands.includes(SHIFT_DEMO_MARKER);
   useEffect(() => {
-    if (seedNeeded && seedPatientId && !attemptedSeed.current) { attemptedSeed.current = true; seed({ type: 'shift.seed', patient_id: seedPatientId }); }
-  }, [seedNeeded, seedPatientId, seed]);
+    if (mockSeedNeeded && seedPatientId && !attemptedSeed.current) { attemptedSeed.current = true; seed({ type: 'shift.seed', patient_id: seedPatientId }); }
+  }, [mockSeedNeeded, seedPatientId, seed]);
   const [adding, setAdding] = useState(false);
   const [dirty, setDirty] = useState(false);
   const [form] = Form.useForm();
@@ -166,10 +160,6 @@ export function ShiftHandoversPage() {
   const legacyId = params.get('id') && !selected;
   return <Tabs activeKey={selected ? 'shifts' : legacyId ? 'legacy' : params.get('tab') ?? 'shifts'} onChange={tab => updateParams({ tab, shift: null, id: null })} items={[
     { key: 'shifts', label: 'Shift handovers', children: <section className="surface workflow-page">
-      {seedNeeded && <Alert className="section-gap" showIcon type={seedAction.isError || query.error ? 'error' : seedSlow && seedAction.isPending ? 'warning' : 'info'}
-        title={seedAction.isError ? 'Demo import failed' : query.error ? 'Unable to refresh handover records' : seedAction.isSuccess ? 'Import finished — verifying saved records' : seedSlow ? 'Still waiting for the database' : 'Loading demo shifts for the first time…'}
-        description={seedAction.error?.message ?? query.error?.message ?? (seedSlow && seedAction.isPending ? 'The save or refresh has not finished. This is not a confirmed save; any database error will appear here. Please keep this page open.' : seedAction.isSuccess ? 'The import request completed, but the records are not visible yet. Refresh records to verify.' : `Saving 10 synthetic shift packets to ${env.mode === 'supabase' ? 'Supabase' : 'local preview'}. This runs once, not on every visit.`)}
-        action={seedAction.isError && seedPatientId ? <Button onClick={() => { setSeedSlow(false); seed({ type: 'shift.seed', patient_id: seedPatientId }); }}>Retry import</Button> : (query.error || seedAction.isSuccess) ? <Button onClick={() => { void query.refetch(); }}>Refresh records</Button> : undefined} />}
       <div className="workflow-toolbar"><strong>Doctor shift archive</strong>
         <Input.Search aria-label="Search shift packets" placeholder="Patient, UHID, note or action" value={search} onChange={event => setSearch(event.target.value)} style={{ width: 230 }} />
         <Select aria-label="Outgoing doctor" value={doctor} onChange={setDoctor} options={[{ value: '', label: 'All outgoing doctors' }, ...[...new Set(packets.map(packet => packet.from_doctor))].map(value => ({ value }))]} style={{ width: 190 }} />

@@ -115,3 +115,20 @@ describe('doctor and nurse handover entries', () => {
     expect(create().handovers.find(item => item.shift_id)!.source_snapshot!.every(source => source.role)).toBe(true);
   });
 });
+
+describe('demo nurse/doctor entries per shift', () => {
+  it('top-up adds mixed roles for one shift at a time and is idempotent', async () => {
+    const { shiftsMissingEntries, seedShiftDemo, entriesMarker } = await import('../data/shiftDemo');
+    const seeded = seedShiftDemo(initial(), at);
+    expect(shiftsMissingEntries(seeded)).toEqual([]);
+    const stripped = structuredClone(seeded);
+    stripped.commands = stripped.commands.filter(id => !id.startsWith('vdoc.shift-entries.v2'));
+    for (const record of stripped.handovers) record.source_snapshot = record.source_snapshot!.filter(source => !source.manual);
+    const [first] = shiftsMissingEntries(stripped);
+    const next = applyWorkflowCommand(stripped, { type: 'shift.seed_entries', id: crypto.randomUUID(), actor: 'Dr. Ananya Mehta', at, patient_id: stripped.handovers.find(record => record.shift_id === first)!.patient_id, shift_id: first } as WorkflowCommand);
+    expect(next.commands).toContain(entriesMarker(first));
+    const roles = new Set(next.handovers.filter(record => record.shift_id === first).flatMap(record => record.source_snapshot!.filter(source => source.manual).map(source => source.role)));
+    expect(roles).toEqual(new Set(['nurse', 'doctor']));
+    expect(shiftsMissingEntries(next)).toHaveLength(shiftsMissingEntries(stripped).length - 1);
+  });
+});

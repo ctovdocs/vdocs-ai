@@ -45,6 +45,7 @@ export const commandSchema = z.discriminatedUnion('type', [
   z.object({ ...base, type: z.literal('labs.seed') }),
   z.object({ ...base, type: z.literal('updates.read'), update_ids: z.array(z.string()).min(1).max(500), read: z.boolean() }),
   z.object({ ...base, type: z.literal('shift.seed') }),
+  z.object({ ...base, type: z.literal('shift.seed_entries'), shift_id: z.uuid() }),
   z.object({ ...base, type: z.literal('shift.create'), patient_ids: z.array(z.uuid()).min(1).max(50), to_doctor: z.string().trim().min(1), shift: z.string().trim().min(1), department: z.string().trim().min(1), starts_at: z.iso.datetime(), ends_at: z.iso.datetime(), created_by_role: z.enum(['doctor', 'nurse']).optional() }),
   z.object({ ...base, type: z.literal('shift.entry'), shift_id: z.uuid(), handover_id: z.uuid(), role: z.enum(['doctor', 'nurse']), op: z.enum(['add', 'edit', 'delete']), entry_id: z.string().optional(), title: z.string().trim().max(200).optional(), category: z.string().trim().max(60).optional(), body: z.string().trim().max(5000).optional() }),
   z.object({ ...base, type: z.literal('shift.refresh'), shift_id: z.uuid(), expected_revision: z.number().int() }),

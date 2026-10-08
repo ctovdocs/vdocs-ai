@@ -3,48 +3,62 @@ import { captureShift } from '../services/shiftHandover.js';
 import { nurses } from '../domain/roles.js';
 
 export const SHIFT_DEMO_MARKER = 'vdoc.shift-fixtures.v1';
-export const SHIFT_ENTRIES_MARKER = 'vdoc.shift-entries.v1';
+export const entriesMarker = (shiftId: string) => `vdoc.shift-entries.v2:${shiftId}`;
 const idFor = (category: number, sequence: number) => `${category}000000-0000-4000-8000-${String(sequence).padStart(12, '0')}`;
 const baseTime = Date.parse('2026-09-08T02:00:00.000Z');
 const departments = ['Internal Medicine', 'Cardiology', 'Nephrology'];
 const doctors = [['Dr. Ananya Mehta', 'Dr. Rohan Desai'], ['Dr. Vikram Sethi', 'Dr. Kavita Menon'], ['Dr. Nisha Rao', 'Dr. Aditya Shah']];
 
 const nurseEntries = [
-  ['Observation', 'Vitals stable overnight', 'Observations within the documented range at each round. Resting comfortably; call bell within reach.'],
+  ['Observation', 'Handover received at bedside', 'Patient identified with two identifiers, allergy band checked. Drips, lines and call bell checked at the start of the shift.'],
+  ['Observation', 'Vitals stable', 'Observations within the documented range at the scheduled check. Resting comfortably; no new complaints.'],
   ['Observation', 'Reduced oral intake', 'Took about half of meals and fluids this shift. Intake/output chart updated; please review at the next round.'],
+  ['Medication', 'Medicines given as charted', 'Morning medicines given and signed. One dose delayed about 30 minutes because the patient was at investigation.'],
   ['Concern', 'Falls risk / mobility', 'Needed assistance to mobilise. Bed rails and call bell checked; physiotherapy review not yet done.'],
+  ['Task', 'Sample sent to lab', 'Blood sample collected and sent as ordered. Result not yet back when I handed over; please chase.'],
+  ['Observation', 'Pain and sleep', 'Pain score settled after the prescribed analgesia. Slept in short stretches; settled again by the end of the shift.'],
   ['Family update', 'Family asked about plan', 'Relative visited and asked about discharge timing. Told the doctor will update them after the next round.'],
+  ['Concern', 'Slight breathlessness on walking', 'Mild breathlessness walking to the bathroom, settled with rest. Informed the doctor on the round; please reassess.'],
+  ['Task', 'Dressing / line care due', 'Dressing and line site checked, clean and dry. Next dressing change is due early next shift.'],
 ];
 const doctorEntries = [
   ['Task', 'Review pending result at next round', 'Correlate the pending investigation with bedside assessment and document the agreed plan.'],
   ['Medication', 'Medication plan unchanged', 'No changes to the medication list this shift. Confirm allergies before any new prescription.'],
+  ['Concern', 'Reassess after nursing concern', 'Reviewed the nursing concern at the bedside. Plan unchanged for now; recheck at the next round and escalate if worse.'],
 ];
+const nurseSlots = [0.4, 1.6, 2.9, 4.2, 5.4, 6.6, 7.4];
 
-/** Adds hand-written Doctor/Nurse entries to already-seeded packets (stamped directly as fixtures, even on locked packets). */
-export function seedShiftEntries(input: WorkflowState, bump = true): WorkflowState {
-  if (input.commands.includes(SHIFT_ENTRIES_MARKER)) return input;
+/** Adds hand-written Doctor/Nurse entries, interleaved by time with the charted rounds and results (stamped directly as fixtures, even on locked packets). */
+export function seedShiftEntries(input: WorkflowState, shiftId: string, bump = true): WorkflowState {
+  if (input.commands.includes(entriesMarker(shiftId))) return input;
   const state = structuredClone(input);
-  for (const [index, record] of state.handovers.filter(item => item.shift_id && item.source_snapshot).entries()) {
+  const offset = Number.parseInt(shiftId.slice(-12), 16) || 0;
+  for (const [position, record] of state.handovers.filter(item => item.shift_id === shiftId && item.source_snapshot).entries()) {
+    const index = offset * 5 + position;
+    const prefix = record.id.slice(0, 24);
+    const isFixture = (id: string) => id.startsWith(prefix) && parseInt(id.slice(24), 16) >= 0xe000 && parseInt(id.slice(24), 16) < 0xf000;
+    record.source_snapshot = record.source_snapshot!.filter(source => !(source.manual && isFixture(source.id)));
+    record.source_ids = record.source_ids.filter(id => !isFixture(id));
     const start = Date.parse(record.shift_start!);
+    const count = 4 + (index % 3);
     const picks = [
-      { role: 'nurse' as const, author: nurses[index % nurses.length], entry: nurseEntries[index % nurseEntries.length], hours: 3 },
+      ...Array.from({ length: count }, (_, n) => ({ role: 'nurse' as const, author: nurses[(index + n) % nurses.length], entry: nurseEntries[(index * 3 + n * 2) % nurseEntries.length], hours: nurseSlots[(n * 2 + index) % nurseSlots.length] })),
       { role: 'doctor' as const, author: record.from_doctor, entry: doctorEntries[index % doctorEntries.length], hours: 5 },
-      ...(index % 2 ? [{ role: 'nurse' as const, author: nurses[(index + 1) % nurses.length], entry: nurseEntries[(index + 2) % nurseEntries.length], hours: 6 }] : []),
     ];
     for (const [position, pick] of picks.entries()) {
-      const id = `${record.id.slice(0, 24)}${(0xe000 + position).toString(16).padStart(12, '0')}`;
-      if (record.source_snapshot!.some(source => source.id === id)) continue;
-      record.source_snapshot!.unshift({ id, type: 'manual', title: pick.entry[1], body: pick.entry[2], author: pick.author, at: new Date(start + pick.hours * 3600000).toISOString(), scope: 'shift', role: pick.role, manual: true, category: pick.entry[0] });
+      const id = `${prefix}${(0xe000 + position).toString(16).padStart(12, '0')}`;
+      record.source_snapshot.push({ id, type: 'manual', title: pick.entry[1], body: pick.entry[2], author: pick.author, at: new Date(start + pick.hours * 3600000).toISOString(), scope: 'shift', role: pick.role, manual: true, category: pick.entry[0] });
       record.source_ids.push(id);
     }
+    record.source_snapshot.sort((first, second) => second.at.localeCompare(first.at) || first.id.localeCompare(second.id));
     record.created_by_role = index % 3 === 0 ? 'nurse' : 'doctor';
   }
-  state.commands.push(SHIFT_ENTRIES_MARKER); if (bump) state.revision++;
+  state.commands.push(entriesMarker(shiftId)); if (bump) state.revision++;
   return workflowStateSchema.parse(state);
 }
 
 export function seedShiftDemo(input: WorkflowState, at: string): WorkflowState {
-  if (input.commands.includes(SHIFT_DEMO_MARKER)) return seedShiftEntries(input);
+  if (input.commands.includes(SHIFT_DEMO_MARKER)) return input;
   const state = structuredClone(input);
   for (let shiftIndex = 0; shiftIndex < 10; shiftIndex++) {
     const departmentIndex = shiftIndex % 3;
@@ -115,5 +129,13 @@ export function seedShiftDemo(input: WorkflowState, at: string): WorkflowState {
   }
   state.commands.push(SHIFT_DEMO_MARKER); state.revision++;
   state.audit.push({ id: idFor(70, 1), at, actor: 'Synthetic shift fixture importer', action: 'shift.seed', patient_id: state.handovers.find(record => record.shift_id === idFor(71, 1))!.patient_id, entity_id: idFor(71, 1) });
-  return seedShiftEntries(workflowStateSchema.parse(state), false);
+  let seeded = workflowStateSchema.parse(state);
+  for (let shiftIndex = 0; shiftIndex < 10; shiftIndex++) seeded = seedShiftEntries(seeded, idFor(71, shiftIndex + 1), false);
+  return seeded;
+}
+
+/** Shift ids that have the demo packets but not yet their nurse/doctor entries. */
+export function shiftsMissingEntries(state: WorkflowState): string[] {
+  if (!state.commands.includes(SHIFT_DEMO_MARKER)) return [];
+  return Array.from({ length: 10 }, (_, index) => idFor(71, index + 1)).filter(id => state.handovers.some(record => record.shift_id === id) && !state.commands.includes(entriesMarker(id)));
 }

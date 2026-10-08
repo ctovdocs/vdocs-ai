@@ -4,7 +4,7 @@ import type { PatientHistory } from '../domain/longitudinal';
 import { buildExpansionWorkflow } from '../data/expansionWorkflow.js';
 import { orderCatalog, referralDepartments } from '../data/orderCatalog.js';
 import { applyShiftCommand, shiftChanged } from './shiftHandover.js';
-import { seedShiftDemo } from '../data/shiftDemo.js';
+import { seedShiftDemo, seedShiftEntries } from '../data/shiftDemo.js';
 import { doctorUpdates } from './doctorUpdates.js';
 import { owners } from '../data/cohort.js';
 import { seedLabTrends } from '../data/labTrendDemo.js';
@@ -71,6 +71,10 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
   if (command.type === 'shift.seed') {
     if (!input.patients.some(patient => patient.id === command.patient_id && patient.hospital_id === input.hospital_id)) throw new Error('Patient outside hospital scope.');
     return seedShiftDemo(input, command.at);
+  }
+  if (command.type === 'shift.seed_entries') {
+    if (!input.handovers.some(record => record.shift_id === command.shift_id && record.hospital_id === input.hospital_id)) throw new Error('Shift not found.');
+    return seedShiftEntries(input, command.shift_id);
   }
   if (command.type === 'shift.create' || command.type === 'shift.entry' || command.type === 'shift.refresh' || command.type === 'shift.approve' || command.type === 'shift.receive') return applyShiftCommand(input, command);
   if (input.commands.includes(command.id)) return input;
