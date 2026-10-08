@@ -132,3 +132,15 @@ describe('demo nurse/doctor entries per shift', () => {
     expect(shiftsMissingEntries(next)).toHaveLength(shiftsMissingEntries(stripped).length - 1);
   });
 });
+
+describe('saving an entry through the Supabase patch path', () => {
+  it('round-trips an added entry via diff and apply', async () => {
+    const { diffWorkflowState, applyWorkflowPatch } = await import('./workflowDiff');
+    const before = create();
+    const record = before.handovers.find(item => item.shift_id)!;
+    const after = execute(before, { type: 'shift.entry', patient_id: record.patient_id, shift_id: record.shift_id!, handover_id: record.id, role: 'nurse', actor: 'Nurse Priya Nair', op: 'add', title: 'Falls risk', body: 'Needs assistance' } as CommandInput);
+    const rebuilt = applyWorkflowPatch(before, diffWorkflowState(before, after));
+    expect(rebuilt.handovers.find(item => item.id === record.id)!.source_snapshot!.filter(source => source.manual)).toHaveLength(1);
+    expect(rebuilt.revision).toBe(after.revision);
+  });
+});

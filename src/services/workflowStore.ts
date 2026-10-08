@@ -15,6 +15,12 @@ const expansionSeed = buildExpansionWorkflow(cohort.patients, cohort.reports, co
 export const WORKFLOW_CHANGED = 'vdoc:workflow-changed';
 let remoteRead: Promise<WorkflowState> | null = null;
 let remoteReadAt = 0;
+/** Cheap change check for polling: reads only the `revision` column, not the multi-megabyte state. */
+export async function fetchRemoteRevision(): Promise<number | null> {
+  if (!supabase) return null;
+  const { data, error } = await supabase.from('demo_workflow_state').select('revision').eq('hospital_id', DEMO_HOSPITAL_ID).maybeSingle();
+  return error || !data ? null : Number(data.revision);
+}
 export function clearWorkflowCache() {
   remoteRead = null;
   remoteReadAt = 0;
@@ -111,7 +117,8 @@ export async function dispatchWorkflow(input: CommandInput) {
     });
   } else {
     for (let attempt = 0; attempt < 3; attempt++) {
-      const current = await readRemote();
+      // First attempt reuses the state this tab already holds (saves are guarded by expected_revision, so a stale copy is rejected, not applied); a conflict re-reads fresh.
+      const current = attempt === 0 && remoteRead ? await remoteRead.catch(() => readRemote()) : await readRemote();
       const next = applyWorkflowCommand(current, command);
       if (next === current) { committed = current; break; }
       const patch = diffWorkflowState(current, next);
@@ -121,9 +128,11 @@ export async function dispatchWorkflow(input: CommandInput) {
         const fallback = await supabase!.rpc('save_demo_workflow', { target_hospital: DEMO_HOSPITAL_ID, expected_revision: current.revision, next_state: next });
         if (!fallback.error) { committed = next; break; }
         if (fallback.error.code !== '40001' || attempt === 2) throw new Error(fallback.error.message);
+        remoteRead = null;
         continue;
       }
       if (error.code !== '40001' || attempt === 2) throw new Error(error.message);
+      remoteRead = null;
     }
   }
   notifyChange(committed);
