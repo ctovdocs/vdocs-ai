@@ -22,23 +22,26 @@ import { useWorkingAs, type WorkingAs } from '../services/workingAs';
 type Source = NonNullable<Handover['source_snapshot']>[number];
 const roleOf = (source: Source): AuthorRole => source.role ?? inferRole(source.author);
 
-function WorkingAsBar({ who, doctors }: { who: ReturnType<typeof useWorkingAs>; doctors: string[] }) {
+function WorkingAsBar({ who, doctors }: { who: WorkingAs & { set: (next: WorkingAs) => void }; doctors: string[] }) {
   const names = who.role === 'nurse' ? nurses : doctors;
   return <div className="working-as" role="group" aria-label="Working as">
     <span className="working-as-label">Working as</span>
     <Segmented<ClinicianRole> value={who.role} options={[{ value: 'doctor', label: 'Doctor' }, { value: 'nurse', label: 'Nurse' }]} onChange={role => who.set({ role, name: role === 'nurse' ? nurses[0] : doctors[0] })} />
     <Select aria-label="Your name" showSearch style={{ minWidth: 220 }} value={who.name} options={names.map(value => ({ value }))} onChange={name => who.set({ role: who.role, name } satisfies WorkingAs)} />
     <RoleTag role={who.role} />
-    <small className="history-small">Entries you add are stamped with this role and name. The demo does not verify identity.</small>
+    <small className="history-small">Entries are stamped with this role and name. The demo does not verify identity.</small>
   </div>;
 }
 
-function EntryModal({ record, entry, who, open, onClose }: { record: Handover; entry?: Source; who: WorkingAs; open: boolean; onClose: () => void }) {
+function EntryModal({ record, entry, who, doctors, open, onClose }: { record: Handover; entry?: Source; who: WorkingAs & { set: (next: WorkingAs) => void }; doctors: string[]; open: boolean; onClose: () => void }) {
   const [form] = Form.useForm();
+  const [picked, setPicked] = useState<WorkingAs>(who);
+  const by = entry ? { role: (entry.role === 'nurse' ? 'nurse' : 'doctor') as ClinicianRole, name: entry.author } : picked;
   const action = useWorkflowAction();
-  return <ClinicalModal width={600} title={entry ? 'Edit entry' : 'Add handover entry'} description={`Written by ${who.name} as ${who.role}.`} open={open} destroyOnHidden afterOpenChange={visible => { if (visible) form.setFieldsValue(entry ? { title: entry.title, category: entry.category ?? 'Other', body: entry.body } : { category: 'Observation', title: '', body: '' }); }} onCancel={onClose} confirmLoading={action.isPending} okText={entry ? 'Save entry' : 'Add entry'} onOk={async () => {
-    try { const values = await form.validateFields(); await action.mutateAsync({ type: 'shift.entry', patient_id: record.patient_id, shift_id: record.shift_id!, handover_id: record.id, role: who.role, actor: who.name, op: entry ? 'edit' : 'add', entry_id: entry?.id, ...values }); onClose(); } catch { return; }
+  return <ClinicalModal width={600} title={entry ? 'Edit entry' : 'Add handover entry'} description={entry ? `Written by ${entry.author}. Only the author can edit this entry.` : 'Choose who is writing this entry.'} open={open} destroyOnHidden afterOpenChange={visible => { if (visible) setPicked({ role: who.role, name: who.name }); if (visible) form.setFieldsValue(entry ? { title: entry.title, category: entry.category ?? 'Other', body: entry.body } : { category: 'Observation', title: '', body: '' }); }} onCancel={onClose} confirmLoading={action.isPending} okText={entry ? 'Save entry' : 'Add entry'} onOk={async () => {
+    try { const values = await form.validateFields(); await action.mutateAsync({ type: 'shift.entry', patient_id: record.patient_id, shift_id: record.shift_id!, handover_id: record.id, role: by.role, actor: by.name, op: entry ? 'edit' : 'add', entry_id: entry?.id, ...values }); if (!entry) who.set(picked); onClose(); } catch { return; }
   }}><Form form={form} layout="vertical" disabled={action.isPending}>
+    {!entry && <WorkingAsBar who={{ ...picked, set: setPicked }} doctors={doctors} />}
     <Form.Item name="category" label="Type"><Select options={entryCategories.map(value => ({ value }))} /></Form.Item>
     <Form.Item name="title" label="Title" rules={[{ required: true, whitespace: true }]}><Input maxLength={200} placeholder="e.g. Reduced oral intake this shift" /></Form.Item>
     <Form.Item name="body" label="Details" rules={[{ required: true, whitespace: true }]}><VoiceTextArea rows={4} /></Form.Item>
@@ -100,12 +103,12 @@ function ShiftPacket({ records, state, dirty, onDirty }: { records: Handover[]; 
         { key: 'sources', label: `Captured records · ${selected.source_snapshot?.length ?? 0}`, children: <>
           <div className="workflow-toolbar"><Select aria-label="Source record type" value={sourceType} onChange={setSourceType} options={[{ value: 'all', label: 'All records' }, ...[...new Set((selected.source_snapshot ?? []).map(source => source.type))].map(value => ({ value, label: value === 'manual' ? 'Handover entries' : value }))]} />
             <Select aria-label="Written by" value={roleFilter} onChange={setRoleFilter} style={{ width: 150 }} options={[{ value: 'all', label: 'All authors' }, { value: 'doctor', label: 'Doctor' }, { value: 'nurse', label: 'Nurse' }, { value: 'system', label: 'Lab / system' }]} />
-            {head.status === 'draft' && <Button type="primary" onClick={() => setEditing('new')}>+ Add entry as {who.role}</Button>}</div>
+            {head.status === 'draft' && <Button type="primary" onClick={() => setEditing('new')}>+ Add entry</Button>}</div>
           <Input.Search className="section-gap" value={sourceSearch} onChange={event => setSourceSearch(event.target.value)} placeholder="Search rounds, notes, clinician or result" aria-label="Search captured sources" allowClear />
           <Collapse className="section-gap" items={sources.map((source, index) => ({ key: `${source.type}-${source.id}-${index}`, label: <span><RoleTag role={roleOf(source)} />{source.title}<small className="shift-source-meta">{source.author} · {formatDate(source.at)} · {source.manual ? `${source.category ?? 'Entry'} · Manual entry${source.edited_at ? ` · edited ${formatDate(source.edited_at)}` : ''}` : source.scope === 'shift' ? 'During shift' : 'Carry-forward context'}</small></span>, children: <><p style={{ whiteSpace: 'pre-wrap' }}>{source.body}</p>
             {source.manual && head.status === 'draft' && source.author === who.name && source.role === who.role && <div className="entry-actions"><Button size="small" onClick={() => setEditing(source)}>Edit</Button><Button size="small" danger loading={action.isPending} onClick={() => modal.confirm({ title: 'Delete this entry?', okText: 'Delete', okButtonProps: { danger: true }, onOk: () => action.mutateAsync({ type: 'shift.entry', patient_id: selected.patient_id, shift_id: selected.shift_id!, handover_id: selected.id, role: who.role, actor: who.name, op: 'delete', entry_id: source.id }) })}>Delete</Button></div>}
             <small className="history-small">{source.manual ? `Entry ID: ${source.id} · Written in this handover` : `Source ID: ${source.id} · Captured snapshot`}</small></> }))} />
-          <EntryModal key={`${selected.id}-${typeof editing === 'object' && editing ? editing.id : 'new'}`} record={selected} entry={typeof editing === 'object' && editing ? editing : undefined} who={who} open={editing !== null} onClose={() => setEditing(null)} />
+          <EntryModal doctors={[...new Set([head.from_doctor, head.to_doctor, ...Object.values(owners)])]} key={`${selected.id}-${typeof editing === 'object' && editing ? editing.id : 'new'}`} record={selected} entry={typeof editing === 'object' && editing ? editing : undefined} who={who} open={editing !== null} onClose={() => setEditing(null)} />
         </> },
       ]} />
     </div></div>
