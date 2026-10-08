@@ -3,8 +3,8 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync
 import { join } from 'node:path';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import {
-  queryRequestSchema, REQUIRED_DOCUMENT_KINDS, REQUIRED_FIELD_KEYS, submissionRequestSchema,
-  type InsurerClaimRecord, type InsurerReceipt, type StoredSubmission, type SubmissionRequest, type ValidationCheck,
+  eventRequestSchema, queryRequestSchema, REQUIRED_DOCUMENT_KINDS, REQUIRED_FIELD_KEYS, submissionRequestSchema,
+  type InsurerClaimRecord, type InsurerEvent, type InsurerReceipt, type StoredSubmission, type SubmissionRequest, type ValidationCheck,
 } from '../src/domain/insurer.js';
 
 const MAX_FILE_BYTES = 5 * 1024 * 1024;
@@ -39,6 +39,11 @@ export function validatePacket(request: SubmissionRequest, stage: 'initial' | 'r
     checks.push({ name: `File · ${doc.filename}`, ok: !problems.length, detail: problems.length ? problems.join('; ') : `PDF · ${bytes.length} bytes · sha256 ${hash.slice(0, 12)}…` });
   }
   return checks;
+}
+
+function addEvent(record: InsurerClaimRecord, at: string, event: Omit<InsurerEvent, 'id' | 'at'>) {
+  record.events = record.events ?? [];
+  record.events.push({ id: `E${record.events.length + 1}`, at, ...event });
 }
 
 const safeSegment = (value: string) => /^[A-Za-z0-9._-]+$/.test(value) && !value.includes('..');
@@ -93,7 +98,7 @@ export function createInsurerStore(backend: InsurerBackend = fileBackend()) {
     if (checks.some(check => !check.ok)) throw new InsurerHttpError(422, 'Packet failed insurer validation', checks);
     const ref = existing?.ref ?? `INS-${now.slice(0, 4)}-${String((await backend.list()).length + 1).padStart(4, '0')}`;
     const reference = stage === 'initial' ? ref : `${ref}-R1`;
-    const record: InsurerClaimRecord = existing ?? { ref, claim_id: request.claim_id, hospital: request.hospital, status: 'received', submissions: [], queries: [] };
+    const record: InsurerClaimRecord = existing ?? { ref, claim_id: request.claim_id, hospital: request.hospital, status: 'received', submissions: [], queries: [], events: [] };
     const documents = await Promise.all(request.documents.map(async doc => {
       const filename = `${stage}-${doc.id}.pdf`;
       await backend.writeFile(ref, filename, Buffer.from(doc.content_base64, 'base64'));
@@ -101,6 +106,9 @@ export function createInsurerStore(backend: InsurerBackend = fileBackend()) {
     }));
     const submission: StoredSubmission = { stage, reference, claim_version: request.version, received_at: now, narrative: request.narrative, fields: request.fields, documents, checks };
     record.submissions.push(submission);
+    addEvent(record, now, stage === 'initial'
+      ? { kind: 'received', title: 'Claim received and validated', detail: `${documents.length} PDFs and ${request.fields.length} fields passed intake checks. Reference ${reference} issued.`, reference }
+      : { kind: 'response', title: 'Hospital responded to query', detail: `${documents.map(doc => doc.title).join(', ')} received against ${ref}.`, reference });
     if (stage === 'response') { record.queries.forEach(query => { query.status = 'answered'; }); record.status = 'response_received'; }
     await backend.write(record);
     return receiptFor(submission, ref);
@@ -127,7 +135,21 @@ export function createInsurerStore(backend: InsurerBackend = fileBackend()) {
       const { kind, note } = queryRequestSchema.parse(input);
       if (record.queries.some(query => query.status === 'open')) throw new InsurerHttpError(409, 'A query is already open on this claim');
       record.queries.push({ id: `Q${record.queries.length + 1}`, at: now, kind, note, status: 'open' });
+      addEvent(record, now, { kind: 'query', title: 'Additional document requested', detail: note });
       record.status = 'query'; await backend.write(record); return record;
+    },
+    async event(ref: string, input: unknown, now = new Date().toISOString()): Promise<InsurerClaimRecord> {
+      const record = await read(ref);
+      if (!record) throw new InsurerHttpError(404, 'Claim not found');
+      const { kind, detail, amount, reference } = eventRequestSchema.parse(input);
+      const seen = (...kinds: string[]) => (record.events ?? []).some(event => kinds.includes(event.kind));
+      const order = { authorisation: [] as string[], settlement: ['authorisation'], payment: ['settlement'], reconciliation: ['payment'] }[kind];
+      if (seen(kind)) return record; // idempotent: the hospital may retry
+      if (order.some(previous => !seen(previous))) throw new InsurerHttpError(409, `Cannot record ${kind} before ${order.join(', ')}`);
+      const titles = { authorisation: 'Final authorisation issued', settlement: 'Settlement packet received', payment: 'Payment released', reconciliation: 'Claim closed after reconciliation' };
+      addEvent(record, now, { kind, title: titles[kind], detail, amount, reference });
+      record.status = { authorisation: 'authorised', settlement: 'settlement_received', payment: 'paid', reconciliation: 'closed' }[kind] as InsurerClaimRecord['status'];
+      await backend.write(record); return record;
     },
     get: read,
     async list() { return (await backend.list()).reverse(); },
@@ -167,6 +189,7 @@ export async function handleInsurerRequest(req: IncomingMessage & { body?: unkno
     const ref = parts[1];
     if (parts.length === 2 && method === 'GET') { const record = await store.get(ref); return record ? json(200, record) : json(404, { error: 'Claim not found' }); }
     if (parts[2] === 'query' && method === 'POST') return json(201, await store.query(ref, await readBody(req)));
+    if (parts[2] === 'events' && method === 'POST') return json(201, await store.event(ref, await readBody(req)));
     if (parts[2] === 'response' && method === 'POST') return json(201, await store.respond(ref, await readBody(req)));
     if (parts[2] === 'files' && parts[3] && method === 'GET') {
       const bytes = await store.file(ref, parts[3]);

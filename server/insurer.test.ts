@@ -65,6 +65,31 @@ describe.each(backends)('demo insurer service · %s', (_name, make) => {
     expect(record.submissions.map(item => item.stage)).toEqual(['initial', 'response']);
   });
 
+  it('keeps a full insurer-side history, in order, across the whole claim', async () => {
+    const store = createInsurerStore(make());
+    const { claim_ref } = await store.submit(request(), '2026-10-08T06:00:00.000Z');
+    await store.query(claim_ref, { kind: 'pharmacy', note: 'Send the pharmacy bill' }, '2026-10-08T06:05:00.000Z');
+    await store.respond(claim_ref, request({ version: 8, fields: [], documents: [doc('pharmacy')] }), '2026-10-08T06:10:00.000Z');
+    await expect(store.event(claim_ref, { kind: 'payment', detail: 'too early' })).rejects.toThrow(/before settlement/);
+    await store.event(claim_ref, { kind: 'authorisation', detail: 'Authorised', amount: 64400 }, '2026-10-08T06:15:00.000Z');
+    await store.event(claim_ref, { kind: 'settlement', detail: 'Packet received', reference: 'DEMO-SET-0090' }, '2026-10-08T06:20:00.000Z');
+    await store.event(claim_ref, { kind: 'payment', detail: 'Remitted', amount: 64400, reference: 'UTR1' }, '2026-10-08T06:25:00.000Z');
+    const again = await store.event(claim_ref, { kind: 'payment', detail: 'Remitted', amount: 64400 }); // retry is a no-op
+    expect(again.events).toHaveLength(6);
+    const closed = await store.event(claim_ref, { kind: 'reconciliation', detail: 'Closed' }, '2026-10-08T06:30:00.000Z');
+    expect(closed.status).toBe('closed');
+    expect(closed.events?.map(event => event.kind)).toEqual(['received', 'query', 'response', 'authorisation', 'settlement', 'payment', 'reconciliation']);
+    expect(closed.events?.find(event => event.kind === 'authorisation')?.amount).toBe(64400);
+    expect((await store.get(claim_ref))?.events).toHaveLength(7); // persisted, not recomputed
+  });
+
+  it('rejects unknown event kinds and unknown claims', async () => {
+    const store = createInsurerStore(make());
+    const { claim_ref } = await store.submit(request());
+    await expect(store.event(claim_ref, { kind: 'refund', detail: 'x' })).rejects.toThrow();
+    await expect(store.event('INS-2026-9999', { kind: 'authorisation', detail: 'x' })).rejects.toThrow(/not found/);
+  });
+
   it('does not serve files outside a claim folder', async () => {
     const store = createInsurerStore(make());
     const { claim_ref } = await store.submit(request());

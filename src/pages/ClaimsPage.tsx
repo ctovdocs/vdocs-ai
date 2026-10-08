@@ -4,7 +4,7 @@ import { Alert, App, Button, Checkbox, Collapse, Descriptions, Empty, Form, Inpu
 import { ArrowRightOutlined, CheckCircleFilled, FileTextOutlined, ReloadOutlined, SafetyCertificateOutlined, SendOutlined } from '@ant-design/icons';
 import { Link, useSearchParams } from 'react-router-dom';
 import type { ClaimAction, ClaimCase, ClaimForm } from '../domain/claims';
-import { buildPacketFields, buildSubmission, fetchInsurerClaim, isInsurerReference, sendClaimToInsurer, sendResponseToInsurer } from '../services/claimsExport';
+import { buildPacketFields, buildSubmission, fetchInsurerClaim, isInsurerReference, sendClaimToInsurer, sendInsurerEvent, sendResponseToInsurer } from '../services/claimsExport';
 import { claimBlockers, claimStatusLabels, claimStorageKey, money, readClaims, resetClaims, saveClaimAction, transitionClaim } from '../services/claimsDemo';
 import { useWorkflow } from '../services/useWorkflow';
 import { readWorkflow } from '../services/workflowStore';
@@ -125,7 +125,18 @@ export function ClaimsPage() {
           transitionClaim(current, action, state);
           await sendResponseToInsurer(current.submission!.reference, await buildSubmission(current, state, 'response'));
         }
-        return saveClaimAction(state, toSave, current.version, localStorage, current.id);
+        const saved = saveClaimAction(state, toSave, current.version, localStorage, current.id);
+        const ref = current.submission?.reference;
+        if (isInsurerReference(ref)) {
+          // Record the insurer-side decision in the insurer's own history. The hospital action is already saved, so a failure here only warns.
+          const event = action.type === 'authorise' ? { kind: 'authorisation' as const, detail: `Authorised ${money(saved.authorised_amount ?? 0)}; patient payable ${money(saved.patient_payable ?? 0)}`, amount: saved.authorised_amount ?? 0 }
+            : action.type === 'submit_settlement' ? { kind: 'settlement' as const, detail: `Settlement packet ${saved.settlement_submission?.reference ?? ''} with ${saved.settlement_submission?.documents.length ?? 0} documents`, reference: saved.settlement_submission?.reference }
+            : action.type === 'receive_payment' ? { kind: 'payment' as const, detail: `Remitted to ${saved.bank_name}, UTR ${saved.utr}`, amount: saved.paid_amount ?? 0, reference: saved.utr ?? undefined }
+            : action.type === 'reconcile' ? { kind: 'reconciliation' as const, detail: 'Hospital accounts reconciled payment against the final bill; outstanding balance zero' }
+            : null;
+          if (event) await sendInsurerEvent(ref!, event).catch(error => { void message.warning(`Saved here, but the insurer portal was not updated: ${error.message}`); });
+        }
+        return saved;
       };
       return navigator.locks ? navigator.locks.request('vdoc-claims-demo', write) : write();
     },

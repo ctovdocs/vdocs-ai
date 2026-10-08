@@ -117,6 +117,8 @@ export const sendResponseToInsurer = (ref: string, request: SubmissionRequest) =
 export const fetchInsurerClaim = (ref: string) => call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}`);
 export const fetchInsurerClaims = () => call<{ claims: InsurerClaimRecord[] }>('/claims');
 export const requestInsurerDocument = (ref: string, kind: string, note: string) => call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}/query`, { method: 'POST', body: JSON.stringify({ kind, note }) });
+export const sendInsurerEvent = (ref: string, event: { kind: 'authorisation' | 'settlement' | 'payment' | 'reconciliation'; detail: string; amount?: number; reference?: string }) =>
+  call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}/events`, { method: 'POST', body: JSON.stringify(event) });
 export const resetInsurerInbox = () => call<{ ok: true }>('/reset', { method: 'POST' });
 
 /** A claim submitted through the real transfer has a reference issued by the insurer service. */

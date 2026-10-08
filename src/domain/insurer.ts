@@ -14,6 +14,8 @@ export const submissionRequestSchema = z.object({
   claim_id: z.string().min(1), version: z.number().int().nonnegative(), hospital: z.string(),
   narrative: z.string(), fields: z.array(packetFieldSchema), documents: z.array(packetDocumentSchema),
 });
+export const EVENT_KINDS = ['authorisation', 'settlement', 'payment', 'reconciliation'] as const;
+export const eventRequestSchema = z.object({ kind: z.enum(EVENT_KINDS), detail: z.string().trim().min(1).max(1000), amount: z.number().nonnegative().optional(), reference: z.string().max(80).optional() });
 export const queryRequestSchema = z.object({ kind: z.string().min(1), note: z.string().trim().min(1).max(1000) });
 
 export type PacketField = z.infer<typeof packetFieldSchema>;
@@ -27,8 +29,11 @@ export interface StoredSubmission {
   fields: PacketField[]; documents: StoredFile[]; checks: ValidationCheck[];
 }
 export interface InsurerQuery { id: string; at: string; kind: string; note: string; status: 'open' | 'answered' }
+export type InsurerStatus = 'received' | 'query' | 'response_received' | 'authorised' | 'settlement_received' | 'paid' | 'closed';
+/** One line of the insurer's own history for a claim. Recorded when it happens, never recomputed. */
+export interface InsurerEvent { id: string; at: string; kind: 'received' | 'query' | 'response' | (typeof EVENT_KINDS)[number]; title: string; detail: string; amount?: number; reference?: string }
 export interface InsurerClaimRecord {
-  ref: string; claim_id: string; hospital: string; status: 'received' | 'query' | 'response_received';
+  ref: string; claim_id: string; hospital: string; status: InsurerStatus; events?: InsurerEvent[];
   submissions: StoredSubmission[]; queries: InsurerQuery[];
 }
 export interface InsurerReceipt { claim_ref: string; reference: string; received_at: string; stage: 'initial' | 'response'; files: Array<{ filename: string; sha256: string; bytes: number }> }

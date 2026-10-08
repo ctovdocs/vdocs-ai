@@ -2,12 +2,20 @@ import { useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Alert, Button, Input, Table, Tag } from 'antd';
 import { FileProtectOutlined, InboxOutlined, SafetyCertificateOutlined, UnorderedListOutlined } from '@ant-design/icons';
-import type { InsurerClaimRecord, StoredSubmission } from '../domain/insurer';
+import type { InsurerClaimRecord, InsurerEvent, StoredSubmission } from '../domain/insurer';
 import { fetchInsurerClaims, requestInsurerDocument } from '../services/claimsExport';
 
 const defaultNote = 'Please provide the itemised pharmacy bill supporting the pharmacy charge in the final bill.';
 const time = (at: string) => new Date(at).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
-const statusLabel: Record<InsurerClaimRecord['status'], string> = { received: 'Received · under review', query: 'Query raised · awaiting hospital', response_received: 'Response received' };
+const statusLabel: Record<InsurerClaimRecord['status'], string> = { received: 'Received · under review', query: 'Query raised · awaiting hospital', response_received: 'Response received', authorised: 'Authorised · awaiting settlement', settlement_received: 'Settlement received · payment pending', paid: 'Paid · awaiting closure', closed: 'Closed' };
+const tagColor = (status: InsurerClaimRecord['status']) => status === 'query' ? 'orange' : status === 'closed' || status === 'paid' ? 'green' : 'blue';
+
+function History({ record }: { record: InsurerClaimRecord }) {
+  const events: InsurerEvent[] = record.events ?? [];
+  return <section className="ins-card"><header><h3>Claim history <small>{events.length} events · stored by the insurer</small></h3></header>
+    {events.length === 0 ? <p className="muted">No history recorded for this claim.</p> : <ol className="ins-timeline">{[...events].reverse().map(event => <li key={event.id} className={`ins-ev-${event.kind}`}><time>{time(event.at)} IST</time><strong>{event.title}</strong><p>{event.detail}</p>{event.amount !== undefined && <Tag color="blue">₹{event.amount.toLocaleString('en-IN')}</Tag>}{event.reference && <small> Ref {event.reference}</small>}</li>)}</ol>}
+  </section>;
+}
 
 function Submission({ record, submission }: { record: InsurerClaimRecord; submission: StoredSubmission }) {
   const [openFile, setOpenFile] = useState(submission.documents[0]?.filename ?? '');
@@ -38,7 +46,7 @@ export function InsurerPortalPage() {
   const openQuery = record?.queries.find(query => query.status === 'open');
   return <div className="ins-shell">
     <header className="ins-top"><div><strong>Northwind Assurance</strong><span>Provider claims portal · demo</span></div><span className="ins-note">Fictional insurer. Everything received here was transferred from VDoc.</span></header>
-    <div className="ins-stats"><span><strong>{claims.length}</strong> received</span><span><strong>{claims.filter(item => item.status === 'received').length}</strong> under review</span><span><strong>{claims.filter(item => item.status === 'query').length}</strong> awaiting hospital reply</span><span><strong>{claims.filter(item => item.status === 'response_received').length}</strong> response received</span></div>
+    <div className="ins-stats"><span><strong>{claims.length}</strong> received</span><span><strong>{claims.filter(item => item.status !== 'closed').length}</strong> in progress</span><span><strong>{claims.filter(item => item.status === 'query').length}</strong> awaiting hospital reply</span><span><strong>{claims.filter(item => item.status === 'closed').length}</strong> closed</span></div>
     {inbox.error && <Alert type="error" showIcon title="Insurer service unreachable" description="Start VDoc with `npm run dev`; the intake service runs inside the dev server." />}
     <div className="ins-body">
       <aside className="ins-inbox"><h3>Inbox ({claims.length})</h3>
@@ -55,12 +63,12 @@ export function InsurerPortalPage() {
             <div><SafetyCertificateOutlined /><strong>Automatic validation</strong><span>Required fields, document types and file integrity are checked on arrival.</span></div>
           </div>
         </section> : <>
-          <div className="ins-receipt"><div><small>Claim reference issued</small><h2>{record.ref}</h2></div><Tag color={record.status === 'query' ? 'orange' : 'blue'}>{statusLabel[record.status]}</Tag><span>Hospital claim: {record.claim_id}</span></div>
-          <section className="ins-card"><header><h3>Request additional document</h3></header>
+          <div className="ins-receipt"><div><small>Claim reference issued</small><h2>{record.ref}</h2></div><Tag color={tagColor(record.status)}>{statusLabel[record.status]}</Tag><span>Hospital claim: {record.claim_id}</span></div>
+          {(record.status === 'received' || record.status === 'query') && <section className="ins-card"><header><h3>Request additional document</h3></header>
             {openQuery ? <Alert type="warning" showIcon title={`Query ${openQuery.id} sent ${time(openQuery.at)} IST`} description={`${openQuery.note} Waiting for the hospital to reply.`} />
-              : <><Input.TextArea rows={2} value={note} onChange={event => setNote(event.target.value)} aria-label="Query note" /><Button type="primary" className="section-gap" loading={ask.isPending} disabled={!note.trim() || record.status === 'response_received'} onClick={() => ask.mutate()}>Request itemised pharmacy bill</Button>{ask.error && <Alert type="error" title={ask.error.message} />}</>}
-            {record.status === 'response_received' && <Alert className="section-gap" type="success" showIcon title="Response received against this claim" />}
-          </section>
+              : <><Input.TextArea rows={2} value={note} onChange={event => setNote(event.target.value)} aria-label="Query note" /><Button type="primary" className="section-gap" loading={ask.isPending} disabled={!note.trim() || record.status !== 'received'} onClick={() => ask.mutate()}>Request itemised pharmacy bill</Button>{ask.error && <Alert type="error" title={ask.error.message} />}</>}
+          </section>}
+          <History record={record} />
           {[...record.submissions].reverse().map(submission => <Submission key={submission.reference} record={record} submission={submission} />)}
         </>}
       </main>
