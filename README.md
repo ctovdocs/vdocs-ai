@@ -52,6 +52,7 @@ This foundation intentionally supersedes the original plan's Next.js/shadcn fron
 | `/app/schedule` | Compact synthetic weekly roster |
 | `/app/opd`, `/app/rounds` | Patient directory initially filtered to OPD / IPD |
 | `/app/discharges` | Persistent discharge working list, checklist and history |
+| `/app/claims` | 10-case cashless claims worklist with reviews, queries, settlement and 5 completed examples |
 | `/app/requests`, `/app/referrals` | Request/referral queues, assignment, response and review |
 | `/app/lab-orders`, `/app/imaging-orders` | Orders, processing status and linked reports |
 | `/app/results` | Published results awaiting clinician review |
@@ -60,6 +61,8 @@ This foundation intentionally supersedes the original plan's Next.js/shadcn fron
 The embedded demo launcher and source-system portal routes have been removed. HIS, laboratory and advanced-imaging simulators are planned as separate repositories; they are not connected yet. Shared synthetic data, workflow services and adapters remain available for that work.
 
 Start in VDoc at `/app`, search `F-DEMO-0001`, and open Rahul's workspace to review the linked patient history and reports.
+
+For the insurance-desk pitch, open **Cashless claims**. It starts with 10 patient claims, including 5 completed and reconciled examples. Open Mohan (`F-DEMO-0090`) to demonstrate the full flow. Claims save separately in local storage; no additional hosting or AI service is needed. Insurer responses, billing and payments are explicitly synthetic. See [the claims demo walkthrough](CLAIMS_DEMO.md). The clinical workflow architecture below is unchanged; claims use the separate `services/claimsDemo.ts` service.
 
 All active screens read through `services/clinical.ts` and `services/workflowStore.ts`. Writes use the validated workflow command engine. In local mode, the shared browser snapshot is serialized with Web Locks; storage failures are surfaced rather than reported as successful saves. In Supabase mode, a hospital-scoped shared snapshot is saved through an atomic compare-and-swap RPC. See [workflow implementation and demo walkthrough](WORKFLOW_IMPLEMENTATION.md).
 

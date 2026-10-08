@@ -4,11 +4,14 @@ import react from '@vitejs/plugin-react';
 import { handlePatientAiRequest, resolveProviderEnv } from './server/patientAi.ts';
 import { handleStreamingTokenRequest, handleTranscribeRequest, resolveTranscribeEnv } from './server/transcribe.ts';
 import { handleVoiceCleanup } from './server/voiceCleanup.ts';
+import { createInsurerStore, handleInsurerRequest } from './server/insurer.ts';
 
 function patientAiProxyPlugin(env: Record<string, string | undefined>): Plugin {
   return {
     name: 'patient-ai-proxy',
     configureServer(server) {
+      const insurerStore = createInsurerStore();
+      server.middlewares.use('/api/insurer', (req, res) => { void handleInsurerRequest(req, res, insurerStore); });
       server.middlewares.use('/api/voice-cleanup', (req, res) => { void handleVoiceCleanup(req, res, env); });
       server.middlewares.use('/api/patient-ai', async (req, res) => {
         if (req.method !== 'POST') { res.statusCode = 405; res.end('Method not allowed'); return; }
@@ -57,6 +60,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), patientAiProxyPlugin(env)],
     server: { port: 5173, strictPort: true },
-    test: { include: ['src/**/*.test.ts'] },
+    test: { include: ['src/**/*.test.ts', 'server/**/*.test.ts'] },
   };
 });

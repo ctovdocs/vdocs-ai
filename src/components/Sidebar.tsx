@@ -34,6 +34,7 @@ const clinicalSections: { label: string; items: NavigationItem[] }[] = [
   { label: 'Continuity', items: [
     { label: 'Prescriptions', icon: <FileTextOutlined /> },
     { label: 'Discharge list', icon: <FileDoneOutlined />, path: '/app/discharges' },
+    { label: 'Cashless claims', icon: <SolutionOutlined />, path: '/app/claims' },
     { label: 'Handovers', icon: <TeamOutlined />, path: '/app/handovers' },
     { label: 'Follow-ups', icon: <ClockCircleOutlined /> },
   ] },

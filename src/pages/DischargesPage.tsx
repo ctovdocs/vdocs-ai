@@ -11,6 +11,7 @@ import { dateRangeOptions, withinDateRange } from '../lib/dateRange';
 import { owners } from '../data/cohort';
 import { VoiceTextArea } from '../components/VoiceField';
 import { dischargeViewRecords } from '../services/worklistSelectors';
+import { CLAIM_DEMO_NUMBERS } from '../services/claimsDemo';
 
 function DischargeEditor({ record, state }: { record: Discharge; state: WorkflowState }) {
   const { modal } = App.useApp();
@@ -26,7 +27,7 @@ function DischargeEditor({ record, state }: { record: Discharge; state: Workflow
     } catch (error) { if (status === 'discharged') throw error; }
   };
   return <>
-    <Space wrap><Tag>{record.status.replaceAll('_', ' ')}</Tag><Link to={`/app/patients/${record.patient_id}`}>Open patient</Link></Space>
+    <Space wrap><Tag>{record.status.replaceAll('_', ' ')}</Tag><Link to={`/app/patients/${record.patient_id}`}>Open patient</Link>{CLAIM_DEMO_NUMBERS.includes(Number(state.patients.find(patient => patient.id === record.patient_id)?.uhid.slice(-4))) && <Link to={`/app/claims?id=cashless-${state.patients.find(patient => patient.id === record.patient_id)?.uhid.slice(-4)}`}>Open claim</Link>}</Space>
     {!closed && blockers.length > 0 && <Alert className="section-gap" type="warning" title={`${blockers.length} items need attention before discharge`} description={<><ul className="compact-list">{blockers.map((item, index) => <li key={`${index}-${item}`}>{item}</li>)}</ul><Space><Link to="/app/results">Review results</Link><Link to="/app/requests">Requests</Link></Space></>} />}
     <Form form={form} layout="vertical" size="small" initialValues={record} disabled={closed} className="section-gap">
       <Space align="start"><Form.Item name="owner" label="Owner" rules={[{ required: true }]}><Select style={{ width: 210 }} options={Object.values(owners).map(value => ({ value }))} /></Form.Item>

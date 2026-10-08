@@ -16,6 +16,8 @@ import { PatientDirectoryTable } from '../components/PatientDirectoryTable';
 import { VoiceModeProvider } from '../lib/voiceMode';
 import { WorkflowSync } from './WorkflowSync';
 import { UpdatesPage } from '../pages/UpdatesPage';
+import { ClaimsPage } from '../pages/ClaimsPage';
+import { InsurerPortalPage } from '../pages/InsurerPortalPage';
 import { useActiveDoctor } from '../services/activeDoctor';
 
 function Shell() {
@@ -34,6 +36,7 @@ function Shell() {
 
 export function App() {
   const location = useLocation();
+  if (location.pathname.startsWith('/insurer')) return <Routes><Route path="/insurer" element={<InsurerPortalPage />} /></Routes>;
   return <VoiceModeProvider><AuthGate><Routes>
     <Route element={<Shell />}>
       <Route path="/app" element={<DashboardPage />} />
@@ -44,6 +47,7 @@ export function App() {
       <Route path="/app/opd" element={<PatientDirectoryTable key="opd" initialEncounterType="OPD" />} />
       <Route path="/app/rounds" element={<PatientDirectoryTable key="ipd" initialEncounterType="IPD" />} />
       <Route path="/app/discharges" element={<DischargesPage />} />
+      <Route path="/app/claims" element={<ClaimsPage />} />
       <Route path="/app/requests" element={<CoordinationPage key="requests" kind="request" />} />
       <Route path="/app/referrals" element={<CoordinationPage key="referrals" kind="referral" />} />
       <Route path="/app/lab-orders" element={<InvestigationsPage key="lab" kind="lab" />} />
