@@ -555,36 +555,8 @@ a { color: #155c53; }
 .claim-evidence-audit li > div { color: #728278; font-size: 10px; margin-top: 3px; }
 .claim-evidence-audit p { margin: 4px 0; font-size: 10px; }
 
-/* Fictional insurer portal (/insurer) — deliberately a different visual identity from VDoc */
+
 .claim-field-value { white-space: pre-wrap; word-break: break-word; }
-.ins-shell { min-height: 100vh; background: #eef1f8; color: #17233d; font-size: 13px; }
-.ins-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 24px; background: #1d2f6f; color: #fff; }
-.ins-top strong { font-size: 16px; margin-right: 10px; }
-.ins-top span { font-size: 12px; opacity: .85; }
-.ins-body { display: grid; grid-template-columns: 260px 1fr; gap: 16px; padding: 16px 24px; align-items: start; }
-.ins-inbox, .ins-card, .ins-receipt { background: #fff; border: 1px solid #d9deec; border-radius: 6px; padding: 12px; }
-.ins-inbox h3, .ins-card h3 { margin: 0 0 8px; font-size: 13px; }
-.ins-inbox ul { list-style: none; margin: 0; padding: 0; }
-.ins-inbox button { width: 100%; text-align: left; border: 1px solid #d9deec; background: #fff; border-radius: 4px; padding: 8px; display: grid; gap: 2px; cursor: pointer; margin-bottom: 6px; }
-.ins-inbox button.active { border-color: #1d2f6f; background: #eef1fb; }
-.ins-main { display: grid; gap: 12px; min-width: 0; }
-.ins-receipt { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.ins-receipt h2 { margin: 0; font-size: 20px; color: #1d2f6f; }
-.ins-card header { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
-.ins-card header small { color: #5b6786; margin-left: 6px; }
-.ins-checks { display: grid; gap: 4px; margin-bottom: 10px; }
-.ins-checks div { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.ins-checks span { color: #5b6786; }
-.ins-value { white-space: pre-wrap; word-break: break-word; }
-.ins-narrative { white-space: pre-wrap; background: #f6f7fb; padding: 8px; border-radius: 4px; font-size: 12px; }
-.ins-files { display: grid; grid-template-columns: 300px 1fr; gap: 10px; }
-.ins-files ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; align-content: start; }
-.ins-files li { border: 1px solid #d9deec; border-radius: 4px; padding: 6px 8px; display: grid; gap: 2px; }
-.ins-files li.active { border-color: #1d2f6f; background: #eef1fb; }
-.ins-files li button { background: none; border: 0; padding: 0; text-align: left; font-weight: 600; color: #1d2f6f; cursor: pointer; }
-.ins-files small { color: #5b6786; }
-.ins-files iframe { width: 100%; height: 520px; border: 1px solid #d9deec; border-radius: 4px; background: #fff; }
-@media (max-width: 900px) { .ins-body, .ins-files { grid-template-columns: 1fr; } }
 
 /* Hospital-side transfer receipt */
 .claim-transfer { border: 1px solid #cfe3dc; background: linear-gradient(180deg, #f3faf7, #fff); border-radius: 8px; padding: 14px 16px; margin: 10px 0; }
@@ -603,30 +575,81 @@ a { color: #155c53; }
 .claim-transfer-steps small { color: #6b7c77; font-size: 11px; }
 @keyframes claim-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(217,154,43,.45); } 50% { box-shadow: 0 0 0 5px rgba(217,154,43,0); } }
 
-/* Insurer portal: stats strip and empty states */
-.ins-stats { display: flex; gap: 22px; flex-wrap: wrap; padding: 10px 24px; background: #fff; border-bottom: 1px solid #d9deec; color: #5b6786; font-size: 12px; }
-.ins-stats strong { color: #1d2f6f; font-size: 15px; margin-right: 4px; }
-.ins-inbox-empty { display: grid; gap: 6px; justify-items: center; text-align: center; padding: 28px 10px; color: #5b6786; }
-.ins-inbox-empty .anticon { font-size: 30px; color: #aab3d0; }
-.ins-inbox-empty strong { color: #1d2f6f; }
-.ins-inbox-empty span:last-child { font-size: 12px; }
-.ins-empty { background: #fff; border: 1px dashed #b9c2de; border-radius: 10px; padding: 48px 32px; text-align: center; display: grid; justify-items: center; gap: 12px; }
-.ins-empty h2 { margin: 0; font-size: 22px; color: #1d2f6f; }
-.ins-empty p { margin: 0; max-width: 520px; color: #5b6786; font-size: 13px; line-height: 1.5; }
-.ins-live { display: inline-flex; align-items: center; gap: 8px; background: #eef1fb; color: #1d2f6f; padding: 4px 12px; border-radius: 999px; font-size: 11px; }
-.ins-live i { width: 8px; height: 8px; border-radius: 50%; background: #1f9d6b; animation: claim-pulse 1.6s ease-in-out infinite; }
-.ins-empty-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; width: 100%; max-width: 760px; text-align: left; }
-.ins-empty-cards div { background: #f6f7fb; border: 1px solid #e1e5f2; border-radius: 8px; padding: 14px; display: grid; gap: 6px; align-content: start; }
-.ins-empty-cards .anticon { font-size: 20px; color: #1d2f6f; }
-.ins-empty-cards strong { color: #1d2f6f; }
-.ins-empty-cards span { color: #5b6786; font-size: 12px; }
-@media (max-width: 900px) { .ins-empty-cards { grid-template-columns: 1fr; } }
-.ins-timeline { list-style: none; margin: 0; padding: 0 0 0 14px; border-left: 2px solid #d9deec; display: grid; gap: 12px; }
-.ins-timeline li { position: relative; }
-.ins-timeline li::before { content: ''; position: absolute; left: -20px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: #1d2f6f; border: 2px solid #fff; }
-.ins-timeline li.ins-ev-query::before { background: #d99a2b; }
-.ins-timeline li.ins-ev-payment::before, .ins-timeline li.ins-ev-reconciliation::before { background: #1f9d6b; }
-.ins-timeline time { display: block; font-size: 11px; color: #5b6786; }
-.ins-timeline strong { color: #17233d; }
-.ins-timeline p { margin: 2px 0; color: #3d4a6b; font-size: 12px; }
-.ins-timeline small { color: #5b6786; }
+
+
+/* Fictional insurer portal (/insurer): a different visual identity from VDoc on purpose */
+.np-shell { min-height: 100vh; display: flex; flex-direction: column; background: #f3f5fa; color: #14213d; font-size: 13px; font-family: Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+.np-top { display: flex; align-items: center; gap: 22px; padding: 0 28px; height: 60px; background: linear-gradient(90deg, #0b1f4d, #153a7a); color: #fff; position: sticky; top: 0; z-index: 10; }
+.np-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 20px; }
+.np-brand:hover { color: #fff; }
+.np-brand > span { display: grid; line-height: 1.1; font-size: 15px; font-weight: 400; white-space: nowrap; }
+.np-brand strong { font-weight: 700; letter-spacing: .3px; }
+.np-brand small { font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; opacity: .7; margin-top: 2px; }
+.np-top nav { display: flex; gap: 18px; }
+.np-top nav a { color: rgba(255,255,255,.82); font-weight: 500; }
+.np-top nav a:hover { color: #fff; }
+.np-search { max-width: 380px; margin-left: auto; border-radius: 20px; }
+.np-user { font-size: 12px; opacity: .85; white-space: nowrap; }
+.np-main { flex: 1; width: 100%; max-width: 1400px; margin: 0 auto; padding: 22px 28px 36px; display: grid; gap: 14px; align-content: start; }
+.np-foot { padding: 14px 28px; text-align: center; color: #6b7794; font-size: 11px; border-top: 1px solid #dde3f0; background: #fff; }
+.np-hero { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.np-hero h1 { margin: 0; font-size: 24px; color: #0b1f4d; }
+.np-hero p { margin: 4px 0 0; color: #5b6786; max-width: 620px; }
+.np-live { display: inline-flex; align-items: center; gap: 8px; background: #e8f5ee; color: #17613f; padding: 4px 12px; border-radius: 999px; font-size: 11px; }
+.np-live i { width: 8px; height: 8px; border-radius: 50%; background: #1f9d6b; animation: claim-pulse 1.6s ease-in-out infinite; }
+.np-kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.np-kpis div { background: #fff; border: 1px solid #dde3f0; border-radius: 10px; padding: 14px 16px; display: grid; gap: 4px; border-top: 3px solid #153a7a; }
+.np-kpis small { color: #6b7794; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+.np-kpis strong { font-size: 22px; color: #0b1f4d; }
+.np-card { background: #fff; border: 1px solid #dde3f0; border-radius: 10px; padding: 16px; box-shadow: 0 1px 2px rgba(11,31,77,.04); }
+.np-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+.np-card-head h3 { margin: 0; font-size: 14px; color: #0b1f4d; }
+.np-card-head small { color: #6b7794; font-weight: 400; margin-left: 6px; }
+.np-filters { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.np-ref { font-weight: 700; color: #153a7a; }
+.np-status { margin: 0; font-weight: 600; }
+.np-empty { display: grid; justify-items: center; gap: 6px; padding: 36px 12px; color: #5b6786; }
+.np-empty .anticon { font-size: 38px; color: #b7c3e0; }
+.np-empty h3 { margin: 0; color: #0b1f4d; }
+.np-empty p { margin: 0; max-width: 420px; }
+.np-crumbs { color: #6b7794; font-size: 12px; }
+.np-claim-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.np-avatar { width: 52px; height: 52px; border-radius: 50%; background: #153a7a; color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 17px; }
+.np-claim-title { flex: 1; min-width: 220px; display: grid; gap: 2px; }
+.np-claim-title small, .np-claim-amount small { color: #6b7794; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+.np-claim-title h1 { margin: 0; font-size: 22px; color: #0b1f4d; }
+.np-claim-amount { display: grid; gap: 4px; justify-items: end; }
+.np-claim-amount strong { font-size: 24px; color: #0b1f4d; }
+.np-two { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 14px; align-items: start; }
+.np-col { min-width: 0; }
+aside.np-col { display: grid; gap: 14px; }
+.np-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; margin: 0 0 12px; }
+.np-facts-one { grid-template-columns: 1fr; gap: 10px; margin: 0; }
+.np-facts dt { color: #6b7794; font-size: 11px; text-transform: uppercase; letter-spacing: .4px; }
+.np-facts dd { margin: 2px 0 0; font-weight: 500; word-break: break-word; }
+.np-pre { white-space: pre-wrap; background: #f6f8fc; border: 1px solid #e5eaf4; padding: 10px; border-radius: 6px; font-size: 12px; font-family: inherit; }
+.np-stack { display: grid; gap: 14px; }
+.np-subcard { border: 1px solid #e5eaf4; border-radius: 8px; padding: 12px; }
+.np-checks { display: grid; gap: 4px; margin-bottom: 10px; }
+.np-checks div { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.np-checks span { color: #5b6786; }
+.np-checks .ok { color: #1f9d6b; }
+.np-checks .bad { color: #d99a2b; }
+.np-docs { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 10px; }
+.np-docs ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; align-content: start; }
+.np-docs li { border: 1px solid #e5eaf4; border-radius: 6px; padding: 6px 8px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.np-docs li.active { border-color: #153a7a; background: #eef3fc; }
+.np-docs li button { background: none; border: 0; padding: 0; display: flex; gap: 8px; align-items: center; text-align: left; cursor: pointer; color: #0b1f4d; }
+.np-docs li button .anticon { font-size: 18px; color: #c0392b; }
+.np-docs li button span { display: grid; }
+.np-docs small { color: #6b7794; font-size: 10px; }
+.np-docs iframe { width: 100%; height: 480px; border: 1px solid #dde3f0; border-radius: 6px; background: #fff; }
+.np-timeline { list-style: none; margin: 0; padding: 0 0 0 14px; border-left: 2px solid #dde3f0; display: grid; gap: 14px; }
+.np-timeline li { position: relative; }
+.np-timeline li::before { content: ''; position: absolute; left: -20px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: #153a7a; border: 2px solid #fff; }
+.np-timeline li.np-ev-query::before { background: #d99a2b; }
+.np-timeline li.np-ev-payment::before, .np-timeline li.np-ev-reconciliation::before { background: #1f9d6b; }
+.np-timeline time { display: block; font-size: 11px; color: #6b7794; }
+.np-timeline p { margin: 2px 0; color: #3d4a6b; }
+.np-timeline small { color: #6b7794; }
+@media (max-width: 1000px) { .np-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .np-two, .np-docs { grid-template-columns: 1fr; } .np-top { flex-wrap: wrap; height: auto; padding: 10px 16px; } .np-search { max-width: none; width: 100%; margin: 0; } .np-user { display: none; } }

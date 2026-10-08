@@ -1,5 +1,5 @@
 import { PDFDocument, StandardFonts, rgb, type PDFFont } from 'pdf-lib';
-import type { ClaimCase, ClaimDocument } from '../domain/claims';
+import type { ClaimAction, ClaimCase, ClaimDocument } from '../domain/claims';
 import type { InsurerClaimRecord, InsurerReceipt, PacketDocument, PacketField, SubmissionRequest, ValidationCheck } from '../domain/insurer';
 import type { WorkflowState } from '../domain/workflow';
 
@@ -119,6 +119,17 @@ export const fetchInsurerClaims = () => call<{ claims: InsurerClaimRecord[] }>('
 export const requestInsurerDocument = (ref: string, kind: string, note: string) => call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}/query`, { method: 'POST', body: JSON.stringify({ kind, note }) });
 export const sendInsurerEvent = (ref: string, event: { kind: 'authorisation' | 'settlement' | 'payment' | 'reconciliation'; detail: string; amount?: number; reference?: string }) =>
   call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}/events`, { method: 'POST', body: JSON.stringify(event) });
+const rupees = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
+/** The insurer-side event that a hospital action produces, or null when the action is internal to the hospital. */
+export function insurerEventFor(action: ClaimAction['type'] | 'reset', saved: ClaimCase) {
+  switch (action) {
+    case 'authorise': return { kind: 'authorisation' as const, detail: `Authorised ${rupees(saved.authorised_amount ?? 0)}; patient payable ${rupees(saved.patient_payable ?? 0)}`, amount: saved.authorised_amount ?? 0 };
+    case 'submit_settlement': return { kind: 'settlement' as const, detail: `Settlement packet ${saved.settlement_submission?.reference ?? ''} with ${saved.settlement_submission?.documents.length ?? 0} documents`, reference: saved.settlement_submission?.reference };
+    case 'receive_payment': return { kind: 'payment' as const, detail: `Remitted to ${saved.bank_name}, UTR ${saved.utr}`, amount: saved.paid_amount ?? 0, reference: saved.utr ?? undefined };
+    case 'reconcile': return { kind: 'reconciliation' as const, detail: 'Hospital accounts reconciled payment against the final bill; outstanding balance zero' };
+    default: return null;
+  }
+}
 export const resetInsurerInbox = () => call<{ ok: true }>('/reset', { method: 'POST' });
 
 /** A claim submitted through the real transfer has a reference issued by the insurer service. */

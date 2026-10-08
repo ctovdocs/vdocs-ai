@@ -4,7 +4,7 @@ import { Alert, App, Button, Checkbox, Collapse, Descriptions, Empty, Form, Inpu
 import { ArrowRightOutlined, CheckCircleFilled, FileTextOutlined, ReloadOutlined, SafetyCertificateOutlined, SendOutlined } from '@ant-design/icons';
 import { Link, useSearchParams } from 'react-router-dom';
 import type { ClaimAction, ClaimCase, ClaimForm } from '../domain/claims';
-import { buildPacketFields, buildSubmission, fetchInsurerClaim, isInsurerReference, sendClaimToInsurer, sendInsurerEvent, sendResponseToInsurer } from '../services/claimsExport';
+import { buildPacketFields, buildSubmission, fetchInsurerClaim, insurerEventFor, isInsurerReference, sendClaimToInsurer, sendInsurerEvent, sendResponseToInsurer } from '../services/claimsExport';
 import { claimBlockers, claimStatusLabels, claimStorageKey, money, readClaims, resetClaims, saveClaimAction, transitionClaim } from '../services/claimsDemo';
 import { useWorkflow } from '../services/useWorkflow';
 import { readWorkflow } from '../services/workflowStore';
@@ -37,7 +37,7 @@ function TransferReceipt({ claim, fieldCount }: { claim: ClaimCase; fieldCount: 
       <span className="claim-transfer-icon"><SendOutlined /></span>
       <div><small>Received by Northwind Assurance</small><h3>{sent.reference}</h3></div>
       <Tag color="gold">Insurer review</Tag>
-      <Button size="small" href={`/insurer?ref=${encodeURIComponent(sent.reference)}`} target="_blank" rel="noreferrer">View in insurer portal ↗</Button>
+      <Button size="small" href={`/insurer/claims/${encodeURIComponent(sent.reference)}`} target="_blank" rel="noreferrer">View in insurer portal ↗</Button>
     </div>
     <ol className="claim-transfer-steps">
       <li className="done"><span><CheckCircleFilled /></span><div><strong>Packet sent</strong><small>{claimTime(sent.at)} IST</small></div></li>
@@ -129,11 +129,7 @@ export function ClaimsPage() {
         const ref = current.submission?.reference;
         if (isInsurerReference(ref)) {
           // Record the insurer-side decision in the insurer's own history. The hospital action is already saved, so a failure here only warns.
-          const event = action.type === 'authorise' ? { kind: 'authorisation' as const, detail: `Authorised ${money(saved.authorised_amount ?? 0)}; patient payable ${money(saved.patient_payable ?? 0)}`, amount: saved.authorised_amount ?? 0 }
-            : action.type === 'submit_settlement' ? { kind: 'settlement' as const, detail: `Settlement packet ${saved.settlement_submission?.reference ?? ''} with ${saved.settlement_submission?.documents.length ?? 0} documents`, reference: saved.settlement_submission?.reference }
-            : action.type === 'receive_payment' ? { kind: 'payment' as const, detail: `Remitted to ${saved.bank_name}, UTR ${saved.utr}`, amount: saved.paid_amount ?? 0, reference: saved.utr ?? undefined }
-            : action.type === 'reconcile' ? { kind: 'reconciliation' as const, detail: 'Hospital accounts reconciled payment against the final bill; outstanding balance zero' }
-            : null;
+          const event = insurerEventFor(action.type, saved);
           if (event) await sendInsurerEvent(ref!, event).catch(error => { void message.warning(`Saved here, but the insurer portal was not updated: ${error.message}`); });
         }
         return saved;
@@ -209,7 +205,7 @@ export function ClaimsPage() {
   const stage = stageFor(claim.status);
   const evidenceLabel = (id: string) => claim.documents.find(doc => doc.id === id)?.title ?? claim.messages.find(item => item.id === id)?.title ?? (id === 'packet' ? 'Claim packet' : id === 'settlement_packet' ? 'Settlement packet' : 'Query response');
   return <section className="claims-page">
-    <div className="workflow-toolbar claims-detail-toolbar"><Button size="small" type="text" disabled={busy} onClick={() => setParams({})}>← Claims</Button><strong>{claim.id}</strong><span className="muted">{claim.owner}</span><Tooltip title="Synthetic insurer decisions and payments; no bank or payer connection."><Tag className="claim-demo-inline">Demo</Tag></Tooltip><Button size="small" href="/insurer" target="_blank" rel="noreferrer" style={{ marginLeft: 'auto' }}>Open insurer portal ↗</Button></div>
+    <div className="workflow-toolbar claims-detail-toolbar"><Button size="small" type="text" disabled={busy} onClick={() => setParams({})}>← Claims</Button><strong>{claim.id}</strong><span className="muted">{claim.owner}</span><Tooltip title="Synthetic insurer decisions and payments; no bank or payer connection."><Tag className="claim-demo-inline">Demo</Tag></Tooltip><Button size="small" href={realInsurer ? `/insurer/claims/${encodeURIComponent(claim.submission!.reference)}` : `/insurer/members/${encodeURIComponent(claim.uhid)}`} target="_blank" rel="noreferrer" style={{ marginLeft: 'auto' }}>Open insurer portal ↗</Button></div>
     <div className="claim-patient-bar"><div className="claim-patient-avatar">{claim.patient_name.split(' ').map(word => word[0]).slice(0, 2).join('')}</div><div><h2>{claim.patient_name}</h2><span className="muted">{claim.uhid} · {claim.diagnosis}</span><div className="muted">{claim.episode_label}</div></div><div className="claim-patient-links"><Tag color={['authorised', 'completed'].includes(claim.status) ? 'green' : 'blue'}>{claimStatusLabels[claim.status]}</Tag><Space><Link to={`/app/patients/${claim.patient_id}`}>Patient records</Link>{claim.discharge_id && <Link to={`/app/discharges?id=${claim.discharge_id}`}>Discharge workspace</Link>}</Space></div></div>
     <div className="claim-money-strip"><span>Bill <strong>{money(claim.bill_total)}</strong></span><span>Pre-auth <strong>{money(claim.preauth_amount)}</strong></span><span>Authorised <strong>{claim.authorised_amount === null ? 'Pending' : money(claim.authorised_amount)}</strong></span><span>Patient share <strong>{claim.patient_payable === null ? 'Pending' : money(claim.patient_payable)}</strong></span><span>Insurer paid <strong>{claim.paid_amount === null ? 'Pending' : money(claim.paid_amount)}</strong></span><Tag color={claim.settlement === 'reconciled' ? 'green' : 'default'}>Settlement: {claim.settlement}</Tag></div>
     <ol className="claim-progress" aria-label="Claim progress">{steps.map((step, index) => <li key={step} className={index < stage || claim.status === 'completed' ? 'complete' : index === stage ? 'current' : ''} aria-current={index === stage ? 'step' : undefined}><span>{index < stage || claim.status === 'completed' ? <CheckCircleFilled /> : index + 1}</span>{step}</li>)}</ol>

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { cohort } from '../data/cohort';
 import { buildExpansionWorkflow } from '../data/expansionWorkflow';
-import { buildPacketFields, buildSubmission, isInsurerReference, pdfSafe } from './claimsExport';
+import { buildPacketFields, buildSubmission, insurerEventFor, isInsurerReference, pdfSafe } from './claimsExport';
 import { seedClaim, transitionClaim } from './claimsDemo';
 import { StandardFonts, PDFDocument } from 'pdf-lib';
 
@@ -44,5 +44,21 @@ describe('claims export adapter', () => {
   it('recognises insurer-issued references only', () => {
     expect(isInsurerReference('INS-2026-0001')).toBe(true);
     expect(isInsurerReference('DEMO-CLM-0090-5')).toBe(false);
+  });
+
+  it('maps presenter actions to insurer-side events with the saved amounts', () => {
+    let claim = prepared();
+    claim = transitionClaim(claim, { type: 'review_clinical', reviewed_version: claim.version }, state, at);
+    claim = transitionClaim(claim, { type: 'review_billing', reviewed_version: claim.version }, state, at);
+    claim = transitionClaim(claim, { type: 'submit', reviewed_version: claim.version }, state, at);
+    expect(insurerEventFor('submit', claim)).toBeNull();
+    claim = transitionClaim(claim, { type: 'authorise' }, state, at);
+    expect(insurerEventFor('authorise', claim)).toMatchObject({ kind: 'authorisation', amount: claim.authorised_amount });
+    claim = transitionClaim(claim, { type: 'submit_settlement' }, state, at);
+    expect(insurerEventFor('submit_settlement', claim)).toMatchObject({ kind: 'settlement', reference: claim.settlement_submission?.reference });
+    claim = transitionClaim(claim, { type: 'receive_payment' }, state, at);
+    expect(insurerEventFor('receive_payment', claim)).toMatchObject({ kind: 'payment', amount: claim.paid_amount, reference: claim.utr });
+    claim = transitionClaim(claim, { type: 'reconcile' }, state, at);
+    expect(insurerEventFor('reconcile', claim)?.kind).toBe('reconciliation');
   });
 });

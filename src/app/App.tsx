@@ -36,7 +36,7 @@ function Shell() {
 
 export function App() {
   const location = useLocation();
-  if (location.pathname.startsWith('/insurer')) return <Routes><Route path="/insurer" element={<InsurerPortalPage />} /></Routes>;
+  if (location.pathname.startsWith('/insurer')) return <Routes><Route path="/insurer/*" element={<InsurerPortalPage />} /></Routes>;
   return <VoiceModeProvider><AuthGate><Routes>
     <Route element={<Shell />}>
       <Route path="/app" element={<DashboardPage />} />
