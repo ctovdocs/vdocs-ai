@@ -72,7 +72,7 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
     if (!input.patients.some(patient => patient.id === command.patient_id && patient.hospital_id === input.hospital_id)) throw new Error('Patient outside hospital scope.');
     return seedShiftDemo(input, command.at);
   }
-  if (command.type === 'shift.create' || command.type === 'shift.refresh' || command.type === 'shift.approve' || command.type === 'shift.receive') return applyShiftCommand(input, command);
+  if (command.type === 'shift.create' || command.type === 'shift.entry' || command.type === 'shift.refresh' || command.type === 'shift.approve' || command.type === 'shift.receive') return applyShiftCommand(input, command);
   if (input.commands.includes(command.id)) return input;
   if (command.type === 'updates.read') {
     const updates = doctorUpdates(input, command.actor);

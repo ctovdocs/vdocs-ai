@@ -1,8 +1,9 @@
 import { workflowStateSchema, type Handover, type WorkflowCommand, type WorkflowState } from '../domain/workflow.js';
 import { shiftRoster } from './shiftArchive.js';
+import { inferRole } from '../domain/roles.js';
 
 type Source = NonNullable<Handover['source_snapshot']>[number];
-type ShiftCommand = Extract<WorkflowCommand, { type: 'shift.create' | 'shift.refresh' | 'shift.approve' | 'shift.receive' }>;
+type ShiftCommand = Extract<WorkflowCommand, { type: 'shift.create' | 'shift.entry' | 'shift.refresh' | 'shift.approve' | 'shift.receive' }>;
 
 export function captureShift(state: WorkflowState, patientId: string, encounterId: string, start: string, end: string, at: string): Source[] {
   const history = state.histories.find(history => history.context.patient_id === patientId)!;
@@ -11,10 +12,10 @@ export function captureShift(state: WorkflowState, patientId: string, encounterI
   const sources: Source[] = [];
   const encounter = history.encounters.find(encounter => encounter.id === encounterId)!;
   const patient = state.patients.find(patient => patient.id === patientId)!;
-  sources.push({ id: encounter.id, type: 'encounter', title: 'Encounter and patient context', body: `${encounter.status} · ${encounter.location}\n${encounter.assessment}\nRecorded acuity: ${patient.acuity}\nAllergies: ${patient.allergies.join(', ') || 'Not documented'}`, author: encounter.owner, at: encounter.started_at, scope: 'carry_forward' });
+  sources.push({ id: encounter.id, type: 'encounter', title: 'Encounter and patient context', body: `${encounter.status} · ${encounter.location}\n${encounter.assessment}\nRecorded acuity: ${patient.acuity}\nAllergies: ${patient.allergies.join(', ') || 'Not documented'}`, author: encounter.owner, at: encounter.started_at, scope: 'carry_forward', role: inferRole(encounter.owner) });
   const add = (id: string, type: string, title: string, body: string, author: string, date: string, carry = false) => {
     if (date > at || (!inShift(date) && !carry)) return;
-    sources.push({ id, type, title, body, author, at: date, scope: inShift(date) ? 'shift' : 'carry_forward' });
+    sources.push({ id, type, title, body, author, at: date, scope: inShift(date) ? 'shift' : 'carry_forward', role: inferRole(author) });
   };
   const notes = history.notes.filter(note => note.encounter_id === encounterId && note.kind !== 'handover');
   const previous = [...notes].filter(note => note.recorded_at <= at && !inShift(note.recorded_at)).sort((first, second) => second.recorded_at.localeCompare(first.recorded_at)).slice(0, 2);
@@ -37,7 +38,7 @@ export function captureShift(state: WorkflowState, patientId: string, encounterI
 }
 
 export function shiftChanged(state: WorkflowState, record: Handover, at = new Date().toISOString()) {
-  return Boolean(record.shift_id && JSON.stringify(record.source_snapshot) !== JSON.stringify(captureShift(state, record.patient_id, record.encounter_id, record.shift_start!, record.shift_end!, at)));
+  return Boolean(record.shift_id && JSON.stringify(record.source_snapshot?.filter(source => !source.manual)) !== JSON.stringify(captureShift(state, record.patient_id, record.encounter_id, record.shift_start!, record.shift_end!, at)));
 }
 
 export function applyShiftCommand(input: WorkflowState, command: ShiftCommand): WorkflowState {
@@ -56,7 +57,7 @@ export function applyShiftCommand(input: WorkflowState, command: ShiftCommand): 
       if (!patient || !history || !encounter || encounter.started_at >= command.ends_at || !shiftRoster(state, command.department).some(patient => patient.id === patientId)) throw new Error('Each patient needs an active IPD encounter and must belong to the department or have an open incoming referral/request.');
       const sources = captureShift(state, patientId, encounter.id, command.starts_at, command.ends_at, command.at);
       return { id: `${command.id.slice(0, 24)}${(index + 1).toString(16).padStart(12, '0')}`, shift_id: command.id, hospital_id: state.hospital_id, patient_id: patientId, encounter_id: encounter.id,
-        from_doctor: command.actor, to_doctor: command.to_doctor, shift: command.shift, shift_at: command.ends_at, shift_start: command.starts_at, shift_end: command.ends_at, department: command.department,
+        from_doctor: command.actor, created_by_role: command.created_by_role, to_doctor: command.to_doctor, shift: command.shift, shift_at: command.ends_at, shift_start: command.starts_at, shift_end: command.ends_at, department: command.department,
         status: 'draft', shift_reviewed: false, escalation: '', captured_at: command.at, source_snapshot: sources,
         sections: { situation: `${patient.name} · Recorded acuity: ${patient.acuity}\n${history.context.presenting_complaint}`, background: `${history.context.history}\nAllergies: ${patient.allergies.join(', ') || 'Not documented'}`,
           recent_events: sources.filter(source => source.scope === 'shift').map(source => `${source.title} · ${source.author} · ${source.at}`).join('\n'),
@@ -65,6 +66,24 @@ export function applyShiftCommand(input: WorkflowState, command: ShiftCommand): 
         source_ids: sources.map(source => source.id), based_on_revision: state.revision, created_at: command.at, updated_at: command.at, approved_at: null, received_at: null, version: 0 };
     });
     state.handovers.push(...records);
+  } else if (command.type === 'shift.entry') {
+    const record = state.handovers.find(item => item.id === command.handover_id && item.shift_id === command.shift_id && item.patient_id === command.patient_id && item.hospital_id === state.hospital_id);
+    if (!record) throw new Error('Patient handover not found.');
+    if (record.status !== 'draft') throw new Error('Entries can only be changed while the packet is a draft.');
+    const snapshot = record.source_snapshot ??= [];
+    if (command.op === 'add') {
+      if (!command.title || !command.body) throw new Error('Add a title and details for the entry.');
+      snapshot.unshift({ id: command.id, type: 'manual', title: command.title, body: command.body, author: command.actor, at: command.at, scope: 'shift', role: command.role, manual: true, category: command.category });
+      record.source_ids.push(command.id);
+    } else {
+      const entry = snapshot.find(item => item.manual && item.id === command.entry_id);
+      if (!entry) throw new Error('Entry not found.');
+      if (entry.author !== command.actor || entry.role !== command.role) throw new Error('You can only change entries you wrote. Switch "Working as" to the author.');
+      if (command.op === 'delete') { snapshot.splice(snapshot.indexOf(entry), 1); record.source_ids = record.source_ids.filter(id => id !== entry.id); }
+      else { if (!command.title || !command.body) throw new Error('Add a title and details for the entry.'); Object.assign(entry, { title: command.title, body: command.body, category: command.category, edited_at: command.at }); }
+    }
+    records = [record];
+    record.version++; record.updated_at = command.at;
   } else {
     if (command.expected_revision !== state.revision) throw new Error('The chart changed. Reload the shift before continuing.');
     records = state.handovers.filter(record => record.shift_id === command.shift_id && record.hospital_id === state.hospital_id);
@@ -76,7 +95,7 @@ export function applyShiftCommand(input: WorkflowState, command: ShiftCommand): 
       } else {
         if (record.status !== 'draft' || record.from_doctor !== command.actor) throw new Error('Only the outgoing doctor can change this draft packet.');
         if (command.type === 'shift.refresh') {
-          record.source_snapshot = captureShift(state, record.patient_id, record.encounter_id, record.shift_start!, record.shift_end!, command.at);
+          record.source_snapshot = [...record.source_snapshot!.filter(source => source.manual), ...captureShift(state, record.patient_id, record.encounter_id, record.shift_start!, record.shift_end!, command.at)];
           record.source_ids = record.source_snapshot.map(source => source.id); record.captured_at = command.at; record.shift_reviewed = false; record.based_on_revision = state.revision;
         } else {
           if (record.shift_end! > command.at) throw new Error('The shift has not ended. Save drafts now and approve after the shift ends.');

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Alert, App, Button, Checkbox, Collapse, Form, Input, Select, Table, Tabs, Tag } from 'antd';
+import { Alert, App, Button, Checkbox, Collapse, Form, Input, Segmented, Select, Table, Tabs, Tag } from 'antd';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ClinicalDrawer, ClinicalModal } from '../components/ClinicalOverlay';
 import { VoiceTextArea } from '../components/VoiceField';
@@ -11,10 +11,39 @@ import { owners } from '../data/cohort';
 import { formatDate } from '../lib/format';
 import { toLocalDateTime } from '../lib/dateRange';
 import { HandoversPage as LegacyHandoversPage } from './HandoversPage';
-import { SHIFT_DEMO_MARKER } from '../data/shiftDemo';
+import { SHIFT_DEMO_MARKER, SHIFT_ENTRIES_MARKER } from '../data/shiftDemo';
 import { env } from '../lib/env';
 import { patchArchiveParams, shiftRoster } from '../services/shiftArchive';
 import { useActiveDoctor } from '../services/activeDoctor';
+import { RoleTag } from '../components/RoleTag';
+import { entryCategories, inferRole, nurses, type AuthorRole, type ClinicianRole } from '../domain/roles';
+import { useWorkingAs, type WorkingAs } from '../services/workingAs';
+
+type Source = NonNullable<Handover['source_snapshot']>[number];
+const roleOf = (source: Source): AuthorRole => source.role ?? inferRole(source.author);
+
+function WorkingAsBar({ who, doctors }: { who: ReturnType<typeof useWorkingAs>; doctors: string[] }) {
+  const names = who.role === 'nurse' ? nurses : doctors;
+  return <div className="working-as" role="group" aria-label="Working as">
+    <span className="working-as-label">Working as</span>
+    <Segmented<ClinicianRole> value={who.role} options={[{ value: 'doctor', label: 'Doctor' }, { value: 'nurse', label: 'Nurse' }]} onChange={role => who.set({ role, name: role === 'nurse' ? nurses[0] : doctors[0] })} />
+    <Select aria-label="Your name" showSearch style={{ minWidth: 220 }} value={who.name} options={names.map(value => ({ value }))} onChange={name => who.set({ role: who.role, name } satisfies WorkingAs)} />
+    <RoleTag role={who.role} />
+    <small className="history-small">Entries you add are stamped with this role and name. The demo does not verify identity.</small>
+  </div>;
+}
+
+function EntryModal({ record, entry, who, open, onClose }: { record: Handover; entry?: Source; who: WorkingAs; open: boolean; onClose: () => void }) {
+  const [form] = Form.useForm();
+  const action = useWorkflowAction();
+  return <ClinicalModal width={600} title={entry ? 'Edit entry' : 'Add handover entry'} description={`Written by ${who.name} as ${who.role}.`} open={open} destroyOnHidden afterOpenChange={visible => { if (visible) form.setFieldsValue(entry ? { title: entry.title, category: entry.category ?? 'Other', body: entry.body } : { category: 'Observation', title: '', body: '' }); }} onCancel={onClose} confirmLoading={action.isPending} okText={entry ? 'Save entry' : 'Add entry'} onOk={async () => {
+    try { const values = await form.validateFields(); await action.mutateAsync({ type: 'shift.entry', patient_id: record.patient_id, shift_id: record.shift_id!, handover_id: record.id, role: who.role, actor: who.name, op: entry ? 'edit' : 'add', entry_id: entry?.id, ...values }); onClose(); } catch { return; }
+  }}><Form form={form} layout="vertical" disabled={action.isPending}>
+    <Form.Item name="category" label="Type"><Select options={entryCategories.map(value => ({ value }))} /></Form.Item>
+    <Form.Item name="title" label="Title" rules={[{ required: true, whitespace: true }]}><Input maxLength={200} placeholder="e.g. Reduced oral intake this shift" /></Form.Item>
+    <Form.Item name="body" label="Details" rules={[{ required: true, whitespace: true }]}><VoiceTextArea rows={4} /></Form.Item>
+  </Form></ClinicalModal>;
+}
 
 const labels = { situation: 'Current situation & recorded severity', background: 'Important history & allergies', recent_events: 'Shift events / rounds', completed_actions: 'Completed actions / assessments', pending_items: 'Pending work & responses', next_actions: 'Next actions — owner and timing' };
 
@@ -38,6 +67,9 @@ function ShiftPacket({ records, state, dirty, onDirty }: { records: Handover[]; 
   const [sourceType, setSourceType] = useState('all');
   const [sourceSearch, setSourceSearch] = useState('');
   const [readback, setReadback] = useState('');
+  const [roleFilter, setRoleFilter] = useState('all');
+  const [editing, setEditing] = useState<Source | 'new' | null>(null);
+  const who = useWorkingAs();
   const { modal } = App.useApp();
   const action = useWorkflowAction();
   const head = records[0];
@@ -48,9 +80,10 @@ function ShiftPacket({ records, state, dirty, onDirty }: { records: Handover[]; 
     const patient = state.patients.find(patient => patient.id === record.patient_id)!;
     return `${patient.name} ${patient.uhid} ${record.sections.situation}`.toLowerCase().includes(search.toLowerCase());
   });
-  const sources = (selected.source_snapshot ?? []).filter(source => (sourceType === 'all' || source.type === sourceType) && `${source.title} ${source.author} ${source.body}`.toLowerCase().includes(sourceSearch.toLowerCase()));
+  const sources = (selected.source_snapshot ?? []).filter(source => (sourceType === 'all' || source.type === sourceType) && (roleFilter === 'all' || roleOf(source) === roleFilter) && `${source.title} ${source.author} ${source.body}`.toLowerCase().includes(sourceSearch.toLowerCase()));
   return <>
-    <div className="shift-packet-meta"><strong>{head.from_doctor} → {head.to_doctor}</strong><span>{head.department} · {head.shift}</span><span>{formatDate(head.shift_start!)} → {formatDate(head.shift_end!)}</span><Tag>{head.status}</Tag></div>
+    {head.status === 'draft' && <WorkingAsBar who={who} doctors={[...new Set([head.from_doctor, head.to_doctor, ...Object.values(owners)])]} />}
+    <div className="shift-packet-meta"><strong>{head.from_doctor} → {head.to_doctor}</strong><span>{head.department} · {head.shift}{head.created_by_role && <> · prepared by <RoleTag role={head.created_by_role} /></>}</span><span>{formatDate(head.shift_start!)} → {formatDate(head.shift_end!)}</span><Tag>{head.status}</Tag></div>
     {changed && <Alert type="warning" showIcon title="Patient records changed since capture" description="Refresh the sources, then review every patient again. Your edited summaries are kept; reconcile them with the refreshed records." />}
     <div className="workflow-toolbar">
       <span>{records.filter(record => record.shift_reviewed).length}/{records.length} patients reviewed</span>
@@ -65,9 +98,14 @@ function ShiftPacket({ records, state, dirty, onDirty }: { records: Handover[]; 
       <Tabs items={[
         { key: 'summary', label: 'Editable handover', children: <PatientHandoverEditor key={`${selected.id}-${selected.version}`} record={selected} onDirty={onDirty} /> },
         { key: 'sources', label: `Captured records · ${selected.source_snapshot?.length ?? 0}`, children: <>
-          <Select aria-label="Source record type" value={sourceType} onChange={setSourceType} options={[{ value: 'all', label: 'All records' }, ...[...new Set((selected.source_snapshot ?? []).map(source => source.type))].map(value => ({ value }))]} />
+          <div className="workflow-toolbar"><Select aria-label="Source record type" value={sourceType} onChange={setSourceType} options={[{ value: 'all', label: 'All records' }, ...[...new Set((selected.source_snapshot ?? []).map(source => source.type))].map(value => ({ value, label: value === 'manual' ? 'Handover entries' : value }))]} />
+            <Select aria-label="Written by" value={roleFilter} onChange={setRoleFilter} style={{ width: 150 }} options={[{ value: 'all', label: 'All authors' }, { value: 'doctor', label: 'Doctor' }, { value: 'nurse', label: 'Nurse' }, { value: 'system', label: 'Lab / system' }]} />
+            {head.status === 'draft' && <Button type="primary" onClick={() => setEditing('new')}>+ Add entry as {who.role}</Button>}</div>
           <Input.Search className="section-gap" value={sourceSearch} onChange={event => setSourceSearch(event.target.value)} placeholder="Search rounds, notes, clinician or result" aria-label="Search captured sources" allowClear />
-          <Collapse className="section-gap" items={sources.map((source, index) => ({ key: `${source.type}-${source.id}-${index}`, label: <span>{source.title}<small className="shift-source-meta">{source.author} · {formatDate(source.at)} · {source.scope === 'shift' ? 'During shift' : 'Carry-forward context'}</small></span>, children: <><p style={{ whiteSpace: 'pre-wrap' }}>{source.body}</p><small className="history-small">Source ID: {source.id} · Captured snapshot</small></> }))} />
+          <Collapse className="section-gap" items={sources.map((source, index) => ({ key: `${source.type}-${source.id}-${index}`, label: <span><RoleTag role={roleOf(source)} />{source.title}<small className="shift-source-meta">{source.author} · {formatDate(source.at)} · {source.manual ? `${source.category ?? 'Entry'} · Manual entry${source.edited_at ? ` · edited ${formatDate(source.edited_at)}` : ''}` : source.scope === 'shift' ? 'During shift' : 'Carry-forward context'}</small></span>, children: <><p style={{ whiteSpace: 'pre-wrap' }}>{source.body}</p>
+            {source.manual && head.status === 'draft' && source.author === who.name && source.role === who.role && <div className="entry-actions"><Button size="small" onClick={() => setEditing(source)}>Edit</Button><Button size="small" danger loading={action.isPending} onClick={() => modal.confirm({ title: 'Delete this entry?', okText: 'Delete', okButtonProps: { danger: true }, onOk: () => action.mutateAsync({ type: 'shift.entry', patient_id: selected.patient_id, shift_id: selected.shift_id!, handover_id: selected.id, role: who.role, actor: who.name, op: 'delete', entry_id: source.id }) })}>Delete</Button></div>}
+            <small className="history-small">{source.manual ? `Entry ID: ${source.id} · Written in this handover` : `Source ID: ${source.id} · Captured snapshot`}</small></> }))} />
+          <EntryModal key={`${selected.id}-${typeof editing === 'object' && editing ? editing.id : 'new'}`} record={selected} entry={typeof editing === 'object' && editing ? editing : undefined} who={who} open={editing !== null} onClose={() => setEditing(null)} />
         </> },
       ]} />
     </div></div>
@@ -81,6 +119,7 @@ export function ShiftHandoversPage() {
   const query = useWorkflow();
   const action = useWorkflowAction();
   const activeDoctor = useActiveDoctor();
+  const who = useWorkingAs();
   const { modal } = App.useApp();
   const [params, setParams] = useSearchParams();
   const updateParams = (updates: Record<string, string | null>, replace = false) => setParams(current => patchArchiveParams(current, updates), { replace });
@@ -101,7 +140,7 @@ export function ShiftHandoversPage() {
     return () => window.clearTimeout(timer);
   }, [seedAction.isPending]);
   const attemptedSeed = useRef(false);
-  const seedNeeded = query.data && !query.data.commands.includes(SHIFT_DEMO_MARKER);
+  const seedNeeded = query.data && !(query.data.commands.includes(SHIFT_DEMO_MARKER) && query.data.commands.includes(SHIFT_ENTRIES_MARKER));
   const seedPatientId = query.data?.patients[0]?.id;
   const seed = seedAction.mutate;
   useEffect(() => {
@@ -145,6 +184,7 @@ export function ShiftHandoversPage() {
       <Table size="small" rowKey="shift_id" dataSource={rows} pagination={{ current: Math.min(Math.max(1, Number(params.get('page')) || 1), Math.max(1, Math.ceil(rows.length / ([5, 10, 20].includes(Number(params.get('size'))) ? Number(params.get('size')) : 10)))), pageSize: [5, 10, 20].includes(Number(params.get('size'))) ? Number(params.get('size')) : 10, showTotal: total => `${total} shifts`, showSizeChanger: true, pageSizeOptions: [5, 10, 20], onChange: (page, size) => updateParams({ page: String(page), size: String(size) }, true) }} scroll={{ x: 900 }} columns={[
         { title: 'Shift · IST', render: (_, packet) => <><strong>{packet.shift}</strong><div className="history-small">{formatDate(packet.shift_start!)} → {formatDate(packet.shift_end!)}</div></> },
         { title: 'Outgoing → incoming', render: (_, packet) => `${packet.from_doctor} → ${packet.to_doctor}` }, { title: 'Department', dataIndex: 'department' }, { title: 'Patients', render: (_, packet) => packet.records.length },
+        { title: 'Contributors', render: (_, packet) => { const roles = new Set(packet.records.flatMap(record => (record.source_snapshot ?? []).filter(source => source.manual).map(roleOf))); return roles.size ? [...roles].map(role => <RoleTag key={role} role={role} />) : <span className="history-small">No manual entries</span>; } },
         { title: 'Reviewed', render: (_, packet) => `${packet.records.filter(record => record.shift_reviewed).length}/${packet.records.length}` }, { title: 'Status', dataIndex: 'status', render: value => <Tag>{value}</Tag> },
         { title: 'Action', render: (_, packet) => <Button onClick={() => updateParams({ shift: packet.shift_id!, id: null })}>Open packet</Button> },
       ]} />
@@ -152,9 +192,10 @@ export function ShiftHandoversPage() {
         {selected && <ShiftPacket key={selected.shift_id} records={selected.records} state={state} dirty={dirty} onDirty={setDirty} />}
       </ClinicalDrawer>
       <ClinicalModal width={700} title="Create doctor shift packet" description="Choose the actual shift window and patients covered. Times use your browser’s local timezone." open={adding} onCancel={() => setAdding(false)} confirmLoading={action.isPending} okText="Prepare patient drafts" onOk={async () => {
-        try { const values = await form.validateFields(); const id = await action.mutateAsync({ type: 'shift.create', patient_id: values.patient_ids[0], patient_ids: values.patient_ids, actor: values.from_doctor, to_doctor: values.to_doctor, department: values.department, shift: values.shift, starts_at: new Date(values.starts_at).toISOString(), ends_at: new Date(values.ends_at).toISOString() }); setAdding(false); updateParams({ shift: id, id: null }); } catch { return; }
+        try { const values = await form.validateFields(); const id = await action.mutateAsync({ type: 'shift.create', patient_id: values.patient_ids[0], patient_ids: values.patient_ids, actor: values.from_doctor, created_by_role: who.role, to_doctor: values.to_doctor, department: values.department, shift: values.shift, starts_at: new Date(values.starts_at).toISOString(), ends_at: new Date(values.ends_at).toISOString() }); setAdding(false); updateParams({ shift: id, id: null }); } catch { return; }
       }}><Form form={form} layout="vertical" disabled={action.isPending}>
-        <div className="order-form-grid"><Form.Item name="from_doctor" label="Outgoing doctor" rules={[{ required: true, whitespace: true }]}><Input /></Form.Item><Form.Item name="to_doctor" label="Incoming doctor" rules={[{ required: true, whitespace: true }]}><Input placeholder="Named receiving clinician" /></Form.Item></div>
+        <WorkingAsBar who={who} doctors={[...new Set([activeDoctor.data.name, ...Object.values(owners)])]} />
+        <div className="order-form-grid"><Form.Item name="from_doctor" label="Outgoing doctor (approves the packet)" rules={[{ required: true, whitespace: true }]}><Input /></Form.Item><Form.Item name="to_doctor" label="Incoming doctor" rules={[{ required: true, whitespace: true }]}><Input placeholder="Named receiving clinician" /></Form.Item></div>
         <Form.Item name="department" label="Department" rules={[{ required: true }]}><Select onChange={() => form.setFieldValue('patient_ids', [])} options={Object.keys(owners).map(value => ({ value }))} /></Form.Item>
         <div className="order-form-grid"><Form.Item name="starts_at" label="Outgoing shift starts" rules={[{ required: true }]}><Input type="datetime-local" /></Form.Item><Form.Item name="ends_at" label="Outgoing shift ends" rules={[{ required: true }]}><Input type="datetime-local" /></Form.Item></div>
         <Form.Item name="shift" label="Shift label" rules={[{ required: true }]}><Select options={['Day', 'Evening', 'Night', 'On call'].map(value => ({ value }))} /></Form.Item>

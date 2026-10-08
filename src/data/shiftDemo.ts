@@ -1,14 +1,50 @@
 import { workflowStateSchema, type Handover, type WorkflowState } from '../domain/workflow.js';
 import { captureShift } from '../services/shiftHandover.js';
+import { nurses } from '../domain/roles.js';
 
 export const SHIFT_DEMO_MARKER = 'vdoc.shift-fixtures.v1';
+export const SHIFT_ENTRIES_MARKER = 'vdoc.shift-entries.v1';
 const idFor = (category: number, sequence: number) => `${category}000000-0000-4000-8000-${String(sequence).padStart(12, '0')}`;
 const baseTime = Date.parse('2026-09-08T02:00:00.000Z');
 const departments = ['Internal Medicine', 'Cardiology', 'Nephrology'];
 const doctors = [['Dr. Ananya Mehta', 'Dr. Rohan Desai'], ['Dr. Vikram Sethi', 'Dr. Kavita Menon'], ['Dr. Nisha Rao', 'Dr. Aditya Shah']];
 
+const nurseEntries = [
+  ['Observation', 'Vitals stable overnight', 'Observations within the documented range at each round. Resting comfortably; call bell within reach.'],
+  ['Observation', 'Reduced oral intake', 'Took about half of meals and fluids this shift. Intake/output chart updated; please review at the next round.'],
+  ['Concern', 'Falls risk / mobility', 'Needed assistance to mobilise. Bed rails and call bell checked; physiotherapy review not yet done.'],
+  ['Family update', 'Family asked about plan', 'Relative visited and asked about discharge timing. Told the doctor will update them after the next round.'],
+];
+const doctorEntries = [
+  ['Task', 'Review pending result at next round', 'Correlate the pending investigation with bedside assessment and document the agreed plan.'],
+  ['Medication', 'Medication plan unchanged', 'No changes to the medication list this shift. Confirm allergies before any new prescription.'],
+];
+
+/** Adds hand-written Doctor/Nurse entries to already-seeded packets (stamped directly as fixtures, even on locked packets). */
+export function seedShiftEntries(input: WorkflowState, bump = true): WorkflowState {
+  if (input.commands.includes(SHIFT_ENTRIES_MARKER)) return input;
+  const state = structuredClone(input);
+  for (const [index, record] of state.handovers.filter(item => item.shift_id && item.source_snapshot).entries()) {
+    const start = Date.parse(record.shift_start!);
+    const picks = [
+      { role: 'nurse' as const, author: nurses[index % nurses.length], entry: nurseEntries[index % nurseEntries.length], hours: 3 },
+      { role: 'doctor' as const, author: record.from_doctor, entry: doctorEntries[index % doctorEntries.length], hours: 5 },
+      ...(index % 2 ? [{ role: 'nurse' as const, author: nurses[(index + 1) % nurses.length], entry: nurseEntries[(index + 2) % nurseEntries.length], hours: 6 }] : []),
+    ];
+    for (const [position, pick] of picks.entries()) {
+      const id = `${record.id.slice(0, 24)}${(0xe000 + position).toString(16).padStart(12, '0')}`;
+      if (record.source_snapshot!.some(source => source.id === id)) continue;
+      record.source_snapshot!.unshift({ id, type: 'manual', title: pick.entry[1], body: pick.entry[2], author: pick.author, at: new Date(start + pick.hours * 3600000).toISOString(), scope: 'shift', role: pick.role, manual: true, category: pick.entry[0] });
+      record.source_ids.push(id);
+    }
+    record.created_by_role = index % 3 === 0 ? 'nurse' : 'doctor';
+  }
+  state.commands.push(SHIFT_ENTRIES_MARKER); if (bump) state.revision++;
+  return workflowStateSchema.parse(state);
+}
+
 export function seedShiftDemo(input: WorkflowState, at: string): WorkflowState {
-  if (input.commands.includes(SHIFT_DEMO_MARKER)) return input;
+  if (input.commands.includes(SHIFT_DEMO_MARKER)) return seedShiftEntries(input);
   const state = structuredClone(input);
   for (let shiftIndex = 0; shiftIndex < 10; shiftIndex++) {
     const departmentIndex = shiftIndex % 3;
@@ -79,5 +115,5 @@ export function seedShiftDemo(input: WorkflowState, at: string): WorkflowState {
   }
   state.commands.push(SHIFT_DEMO_MARKER); state.revision++;
   state.audit.push({ id: idFor(70, 1), at, actor: 'Synthetic shift fixture importer', action: 'shift.seed', patient_id: state.handovers.find(record => record.shift_id === idFor(71, 1))!.patient_id, entity_id: idFor(71, 1) });
-  return workflowStateSchema.parse(state);
+  return seedShiftEntries(workflowStateSchema.parse(state), false);
 }

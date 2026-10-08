@@ -85,3 +85,33 @@ describe('multi-patient shift handover', () => {
     expect(captureShift(state, record.patient_id, record.encounter_id, record.shift_start!, at, at).some(source => source.id === note.id)).toBe(false);
   });
 });
+
+describe('doctor and nurse handover entries', () => {
+  const entry = (state: WorkflowState, extra: Record<string, unknown>) => {
+    const record = state.handovers.find(item => item.shift_id)!;
+    return execute(state, { type: 'shift.entry', patient_id: record.patient_id, shift_id: record.shift_id!, handover_id: record.id, role: 'nurse', actor: 'Nurse Priya Nair', op: 'add', title: 'Reduced intake', body: 'Half meals', ...extra } as CommandInput);
+  };
+  it('stamps role and author, lets only the author edit or delete, and does not look like a chart change', () => {
+    let state = entry(create(), {});
+    const record = () => state.handovers.find(item => item.shift_id)!;
+    const added = record().source_snapshot!.find(source => source.manual)!;
+    expect(added).toMatchObject({ role: 'nurse', author: 'Nurse Priya Nair', manual: true });
+    expect(shiftChanged(state, record(), at)).toBe(false);
+    expect(() => entry(state, { op: 'edit', entry_id: added.id, role: 'doctor', actor: 'Dr. Ananya Mehta' })).toThrow('only change entries you wrote');
+    state = entry(state, { op: 'edit', entry_id: added.id, title: 'Updated' });
+    expect(record().source_snapshot!.find(source => source.id === added.id)).toMatchObject({ title: 'Updated' });
+    expect(record().source_snapshot!.find(source => source.id === added.id)!.edited_at).toBeTruthy();
+    state = execute(state, { type: 'shift.refresh', patient_id: record().patient_id, shift_id: record().shift_id!, expected_revision: state.revision, actor: record().from_doctor });
+    expect(record().source_snapshot!.some(source => source.id === added.id)).toBe(true);
+    state = entry(state, { op: 'delete', entry_id: added.id });
+    expect(record().source_snapshot!.some(source => source.id === added.id)).toBe(false);
+  });
+  it('rejects entries once the packet is approved', () => {
+    const state = reviewed();
+    const approved = execute(state, { type: 'shift.approve', patient_id: state.handovers.find(item => item.shift_id)!.patient_id, shift_id: state.handovers.find(item => item.shift_id)!.shift_id!, expected_revision: state.revision, actor: 'Dr. Ananya Mehta' });
+    expect(() => entry(approved, {})).toThrow('draft');
+  });
+  it('infers roles for older records', () => {
+    expect(create().handovers.find(item => item.shift_id)!.source_snapshot!.every(source => source.role)).toBe(true);
+  });
+});

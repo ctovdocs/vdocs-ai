@@ -447,3 +447,11 @@ a { color: #155c53; }
 .lab-combined-legend button.off { opacity: 0.45; text-decoration: line-through; }
 .lab-combined-legend button:focus-visible { outline: 2px solid #426e64; outline-offset: 1px; }
 @media (max-width: 750px) { .lab-graph-content { flex-direction: column; } .lab-graph-canvas { min-width: 0; width: 100%; } .lab-graph-source { width: 100%; border-left: 0; border-top: 1px solid #edf1ee; padding: 10px 0 0; } .lab-graph-header { flex-wrap: wrap; } }
+
+.role-tag { font-weight: 600; margin-inline-end: 6px; border: 1px solid transparent; }
+.role-tag-doctor { background: #e6efff; color: #1e4fa3; border-color: #bcd2f7; }
+.role-tag-nurse { background: #fff1d6; color: #8a5200; border-color: #f2d391; }
+.role-tag-system { background: #eef1f0; color: #55625f; border-color: #d5dcda; }
+.working-as { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 8px 12px; margin-bottom: 10px; border: 1px solid #dae6df; border-radius: 5px; background: #f8faf9; }
+.working-as-label { font-size: 12px; color: #687774; }
+.entry-actions { display: flex; gap: 8px; margin-top: 8px; }
