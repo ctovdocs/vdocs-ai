@@ -5,6 +5,7 @@ import { ArrowRightOutlined, CheckCircleFilled, FileTextOutlined, ReloadOutlined
 import { Link, useSearchParams } from 'react-router-dom';
 import type { ClaimAction, ClaimCase, ClaimForm } from '../domain/claims';
 import { buildPacketFields, buildSubmission, fetchInsurerClaim, insurerEventFor, isInsurerReference, sendClaimToInsurer, sendInsurerEvent, sendResponseToInsurer } from '../services/claimsExport';
+import { httpInsurerClient, needsInsurerSeed, replayClaimToInsurer } from '../services/claimsInsurerSeed';
 import { claimBlockers, claimStatusLabels, claimStorageKey, money, readClaims, resetClaims, saveClaimAction, transitionClaim } from '../services/claimsDemo';
 import { useWorkflow } from '../services/useWorkflow';
 import { readWorkflow } from '../services/workflowStore';
@@ -139,7 +140,7 @@ export function ClaimsPage() {
     onSuccess: (next, action) => {
       setDirtyForm(null);
       if (next) client.setQueryData(['claims-demo', hospitalId, workflow.data?.revision], { ...query.data!, revision: query.data!.revision + 1, claims: query.data!.claims.map(item => item.id === next.id ? next : item) });
-      if (action.type === 'reset_all') { setRestoreOpen(false); setParams({}); }
+      if (action.type === 'reset_all') { setRestoreOpen(false); setParams({}); seedRan.current = false; }
       if (action.type === 'submit_settlement') setSelected('message-settlement_receipt');
       if (action.type === 'receive_payment') setSelected('message-remittance');
       if (action.type === 'reconcile') setSelected('message-reconciliation');
@@ -158,6 +159,23 @@ export function ClaimsPage() {
   const insurerRef = openClaim && ['submitted', 'query', 'response_submitted'].includes(openClaim.status) && isInsurerReference(openClaim.submission?.reference) ? openClaim.submission!.reference : null;
   const insurerRecord = useQuery({ queryKey: ['insurer-claim', insurerRef], enabled: Boolean(insurerRef), refetchInterval: 2000, refetchIntervalInBackground: true, queryFn: () => fetchInsurerClaim(insurerRef!) });
   const handledQueries = useRef(new Set<string>());
+  // Seeded in-flight claims were never sent to the insurer. Replay each one once so it exists in the portal with real PDFs and
+  // history, then adopt the insurer's reference. Failures (service down) are retried on the next load; claims keep demo refs meanwhile.
+  const seedRan = useRef(false);
+  useEffect(() => {
+    const list = query.data?.claims;
+    if (!list || !workflow.data || seedRan.current || !list.some(needsInsurerSeed)) return;
+    seedRan.current = true;
+    const work = async () => {
+      const fresh = await readWorkflow();
+      for (const claim of readClaims(fresh).claims.filter(needsInsurerSeed)) {
+        const reference = await replayClaimToInsurer(claim, fresh, httpInsurerClient);
+        const link = async () => { const current = readClaims(fresh).claims.find(item => item.id === claim.id); if (current && needsInsurerSeed(current)) saveClaimAction(fresh, { type: 'link_insurer', reference }, current.version, localStorage, claim.id); };
+        await (navigator.locks ? navigator.locks.request('vdoc-claims-demo', link) : link());
+      }
+    };
+    void (navigator.locks ? navigator.locks.request('vdoc-claims-seed', work) : work()).catch(() => undefined).finally(() => { void client.invalidateQueries({ queryKey: ['claims-demo'] }); });
+  }, [query.data, workflow.data, client]);
   useEffect(() => {
     const open = insurerRecord.data?.queries.find(item => item.status === 'open');
     if (!open || openClaim?.status !== 'submitted' || handledQueries.current.has(`${insurerRef}-${open.id}`)) return;
@@ -193,7 +211,7 @@ export function ClaimsPage() {
           { title: '', render: (_, row: ClaimCase) => <Button size="small" disabled={busy} onClick={() => { setSelected(row.status === 'completed' ? 'message-reconciliation' : 'summary'); setParams({ id: row.id }); }}>{row.status === 'completed' ? 'View history' : 'Open claim'}</Button> },
         ]} />
       </section>
-      <Collapse className="claim-presenter" items={[{ key: 'reset', label: 'Presenter controls', children: <Space wrap><span>Restore the starting scenario: 10 claims, with 5 completed and 5 active.</span><Button danger disabled={busy} onClick={() => setRestoreOpen(true)}>Restore 10 demo records</Button></Space> }]} />
+      <Collapse className="claim-presenter" items={[{ key: 'reset', label: 'Presenter controls', children: <Space wrap><span>Restore the starting scenario: 10 claims — 3 early, 5 in progress and 2 completed.</span><Button danger disabled={busy} onClick={() => setRestoreOpen(true)}>Restore 10 demo records</Button></Space> }]} />
       <Modal title="Restore the 10-case demo?" open={restoreOpen} confirmLoading={busy} okText="Restore demo records" okButtonProps={{ danger: true }} onCancel={() => setRestoreOpen(false)} onOk={() => mutation.mutate({ type: 'reset_all' })}>This replaces only the claims demo worklist with its starting records. Clinical charts and discharge records are preserved.</Modal>
     </section>;
   }

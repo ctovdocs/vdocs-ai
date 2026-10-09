@@ -91,11 +91,14 @@ export async function buildPacketDocuments(claim: ClaimCase, documents: ClaimDoc
   }));
 }
 
-export async function buildSubmission(claim: ClaimCase, state: WorkflowState, stage: 'initial' | 'response'): Promise<SubmissionRequest> {
-  const documents = stage === 'initial' ? claim.documents.filter(doc => doc.attached) : claim.documents.filter(doc => doc.kind === 'pharmacy' && doc.attached);
+/** A saved, already-submitted packet (claim.submission / response_submission). Lets history be replayed exactly as it was sent. */
+export interface SavedPacket { version: number; documents: ClaimDocument[]; narrative: string; at: string }
+
+export async function buildSubmission(claim: ClaimCase, state: WorkflowState, stage: 'initial' | 'response', saved?: SavedPacket): Promise<SubmissionRequest> {
+  const documents = saved?.documents ?? (stage === 'initial' ? claim.documents.filter(doc => doc.attached) : claim.documents.filter(doc => doc.kind === 'pharmacy' && doc.attached));
   return {
-    claim_id: claim.id, version: claim.version, hospital: 'Demo Hospital', narrative: stage === 'initial' ? claim.narrative : claim.response,
-    fields: buildPacketFields(claim, state), documents: await buildPacketDocuments(claim, documents),
+    claim_id: claim.id, version: saved?.version ?? claim.version, hospital: 'Demo Hospital', narrative: saved?.narrative ?? (stage === 'initial' ? claim.narrative : claim.response),
+    fields: buildPacketFields(claim, state), documents: await buildPacketDocuments(claim, documents), ...(saved ? { at: saved.at } : {}),
   };
 }
 
@@ -116,8 +119,8 @@ export const sendClaimToInsurer = (request: SubmissionRequest) => call<InsurerRe
 export const sendResponseToInsurer = (ref: string, request: SubmissionRequest) => call<InsurerReceipt>(`/claims/${encodeURIComponent(ref)}/response`, { method: 'POST', body: JSON.stringify(request) });
 export const fetchInsurerClaim = (ref: string) => call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}`);
 export const fetchInsurerClaims = () => call<{ claims: InsurerClaimRecord[] }>('/claims');
-export const requestInsurerDocument = (ref: string, kind: string, note: string) => call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}/query`, { method: 'POST', body: JSON.stringify({ kind, note }) });
-export const sendInsurerEvent = (ref: string, event: { kind: 'authorisation' | 'settlement' | 'payment' | 'reconciliation'; detail: string; amount?: number; reference?: string }) =>
+export const requestInsurerDocument = (ref: string, kind: string, note: string, at?: string) => call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}/query`, { method: 'POST', body: JSON.stringify({ kind, note, ...(at ? { at } : {}) }) });
+export const sendInsurerEvent = (ref: string, event: { kind: 'authorisation' | 'settlement' | 'payment' | 'reconciliation'; detail: string; amount?: number; reference?: string; at?: string }) =>
   call<InsurerClaimRecord>(`/claims/${encodeURIComponent(ref)}/events`, { method: 'POST', body: JSON.stringify(event) });
 const rupees = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
 /** The insurer-side event that a hospital action produces, or null when the action is internal to the hospital. */

@@ -13,10 +13,12 @@ export const packetDocumentSchema = z.object({
 export const submissionRequestSchema = z.object({
   claim_id: z.string().min(1), version: z.number().int().nonnegative(), hospital: z.string(),
   narrative: z.string(), fields: z.array(packetFieldSchema), documents: z.array(packetDocumentSchema),
+  /** Optional event time, used when replaying history so the insurer's dates match the hospital timeline. */
+  at: z.iso.datetime().optional(),
 });
 export const EVENT_KINDS = ['authorisation', 'settlement', 'payment', 'reconciliation'] as const;
-export const eventRequestSchema = z.object({ kind: z.enum(EVENT_KINDS), detail: z.string().trim().min(1).max(1000), amount: z.number().nonnegative().optional(), reference: z.string().max(80).optional() });
-export const queryRequestSchema = z.object({ kind: z.string().min(1), note: z.string().trim().min(1).max(1000) });
+export const eventRequestSchema = z.object({ kind: z.enum(EVENT_KINDS), detail: z.string().trim().min(1).max(1000), amount: z.number().nonnegative().optional(), reference: z.string().max(80).optional(), at: z.iso.datetime().optional() });
+export const queryRequestSchema = z.object({ kind: z.string().min(1), note: z.string().trim().min(1).max(1000), at: z.iso.datetime().optional() });
 
 export type PacketField = z.infer<typeof packetFieldSchema>;
 export type PacketDocument = z.infer<typeof packetDocumentSchema>;

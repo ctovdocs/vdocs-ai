@@ -116,38 +116,38 @@ export function createInsurerStore(backend: InsurerBackend = fileBackend()) {
 
   return {
     async submit(input: unknown, now = new Date().toISOString()): Promise<InsurerReceipt> {
-      const request = submissionRequestSchema.parse(input);
+      const request = submissionRequestSchema.parse(input); const when = request.at ?? now;
       const duplicate = (await backend.list()).find(item => item.claim_id === request.claim_id && item.submissions.some(s => s.stage === 'initial' && s.claim_version === request.version));
       if (duplicate) return receiptFor(duplicate.submissions.find(s => s.stage === 'initial')!, duplicate.ref);
-      return accept(request, 'initial', null, now);
+      return accept(request, 'initial', null, when);
     },
     async respond(ref: string, input: unknown, now = new Date().toISOString()): Promise<InsurerReceipt> {
       const record = await read(ref);
       if (!record) throw new InsurerHttpError(404, 'Claim not found');
-      const request = submissionRequestSchema.parse(input);
+      const request = submissionRequestSchema.parse(input); const when = request.at ?? now;
       const duplicate = record.submissions.find(s => s.stage === 'response' && s.claim_version === request.version);
       if (duplicate) return receiptFor(duplicate, ref);
-      return accept(request, 'response', record, now);
+      return accept(request, 'response', record, when);
     },
     async query(ref: string, input: unknown, now = new Date().toISOString()): Promise<InsurerClaimRecord> {
       const record = await read(ref);
       if (!record) throw new InsurerHttpError(404, 'Claim not found');
-      const { kind, note } = queryRequestSchema.parse(input);
+      const { kind, note, at } = queryRequestSchema.parse(input); const when = at ?? now;
       if (record.queries.some(query => query.status === 'open')) throw new InsurerHttpError(409, 'A query is already open on this claim');
-      record.queries.push({ id: `Q${record.queries.length + 1}`, at: now, kind, note, status: 'open' });
-      addEvent(record, now, { kind: 'query', title: 'Additional document requested', detail: note });
+      record.queries.push({ id: `Q${record.queries.length + 1}`, at: when, kind, note, status: 'open' });
+      addEvent(record, when, { kind: 'query', title: 'Additional document requested', detail: note });
       record.status = 'query'; await backend.write(record); return record;
     },
     async event(ref: string, input: unknown, now = new Date().toISOString()): Promise<InsurerClaimRecord> {
       const record = await read(ref);
       if (!record) throw new InsurerHttpError(404, 'Claim not found');
-      const { kind, detail, amount, reference } = eventRequestSchema.parse(input);
+      const { kind, detail, amount, reference, at } = eventRequestSchema.parse(input); const when = at ?? now;
       const seen = (...kinds: string[]) => (record.events ?? []).some(event => kinds.includes(event.kind));
       const order = { authorisation: [] as string[], settlement: ['authorisation'], payment: ['settlement'], reconciliation: ['payment'] }[kind];
       if (seen(kind)) return record; // idempotent: the hospital may retry
       if (order.some(previous => !seen(previous))) throw new InsurerHttpError(409, `Cannot record ${kind} before ${order.join(', ')}`);
       const titles = { authorisation: 'Final authorisation issued', settlement: 'Settlement packet received', payment: 'Payment released', reconciliation: 'Claim closed after reconciliation' };
-      addEvent(record, now, { kind, title: titles[kind], detail, amount, reference });
+      addEvent(record, when, { kind, title: titles[kind], detail, amount, reference });
       record.status = { authorisation: 'authorised', settlement: 'settlement_received', payment: 'paid', reconciliation: 'closed' }[kind] as InsurerClaimRecord['status'];
       await backend.write(record); return record;
     },
