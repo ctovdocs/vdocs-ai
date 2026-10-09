@@ -14,7 +14,7 @@ import { dischargeViewRecords } from '../services/worklistSelectors';
 import { CLAIM_DEMO_NUMBERS } from '../services/claimsDemo';
 import { summarySignGaps } from '../domain/dischargeSummary';
 
-function DischargeEditor({ record, state }: { record: Discharge; state: WorkflowState }) {
+function DischargeEditor({ record, state, onReopen }: { record: Discharge; state: WorkflowState; onReopen: (record: Discharge) => void }) {
   const { modal } = App.useApp();
   const action = useWorkflowAction();
   const [form] = Form.useForm();
@@ -32,6 +32,7 @@ function DischargeEditor({ record, state }: { record: Discharge; state: Workflow
   };
   return <>
     <Space wrap><Tag>{record.status.replaceAll('_', ' ')}</Tag><Link to={`/app/patients/${record.patient_id}`}>Open patient</Link>{CLAIM_DEMO_NUMBERS.includes(Number(state.patients.find(patient => patient.id === record.patient_id)?.uhid.slice(-4))) && <Link to={`/app/claims?id=cashless-${state.patients.find(patient => patient.id === record.patient_id)?.uhid.slice(-4)}`}>Open claim</Link>}</Space>
+    {record.status === 'discharged' && <Alert className="section-gap" type="info" showIcon title="This patient has been discharged." description="If this was done by mistake, or the patient has returned, reopen the admission. The discharge record is cancelled and the patient goes back to the inpatient lists." action={<Button size="small" onClick={() => onReopen(record)}>Reopen discharge</Button>} />}
     {!closed && blockers.length > 0 && <Alert className="section-gap" type="warning" title={`${blockers.length} items need attention before discharge`} description={<><ul className="compact-list">{blockers.map((item, index) => <li key={`${index}-${item}`}>{item}</li>)}</ul><Space><Link to="/app/results">Review results</Link><Link to="/app/requests">Requests</Link></Space></>} />}
     <Form form={form} layout="vertical" size="small" initialValues={record} disabled={closed} className="section-gap">
       <Space align="start"><Form.Item name="owner" label="Owner" rules={[{ required: true }]}><Select style={{ width: 210 }} options={Object.values(owners).map(value => ({ value }))} /></Form.Item>
@@ -77,6 +78,8 @@ export function DischargesPage() {
   const [pageSize, setPageSize] = useState(10);
   const [adding, setAdding] = useState(false);
   const [patientId, setPatientId] = useState<string>();
+  const [reopening, setReopening] = useState<Discharge | null>(null);
+  const [reason, setReason] = useState('');
   if (!query.data) return <QueryState pending={query.isPending} error={query.error} />;
   const state = query.data;
   const selected = state.discharges.find(record => record.id === params.get('id'));
@@ -108,11 +111,16 @@ export function DischargesPage() {
       { title: 'Priority', dataIndex: 'priority' }, { title: 'Status', dataIndex: 'status', render: value => <Tag>{value.replaceAll('_', ' ')}</Tag> },
       { title: 'Pending', render: (_, row) => ['discharged', 'cancelled'].includes(row.status) ? '—' : row.blockers.length },
       { title: 'Summary', render: (_, row) => <Link to={`/app/discharges/${row.id}/summary`}>{row.summary_doc?.status === 'signed' ? <Tag color="green">Signed</Tag> : row.summary_doc ? <Tag color="gold">Draft</Tag> : row.status === 'discharged' ? 'View' : 'Prepare'}</Link> },
-      { title: 'Action', render: (_, row) => <Button size="small" onClick={() => setParams({ id: row.id })}>Open</Button> },
+      { title: 'Action', render: (_, row) => <Space size={4}><Button size="small" onClick={() => setParams({ id: row.id })}>Open</Button>{row.status === 'discharged' && <Button size="small" onClick={() => { setReason(''); setReopening(row); }}>Reopen</Button>}</Space> },
     ]} />
     <Drawer patientId={selected?.patient_id} description="Review outstanding work, clinical clearance and discharge documentation." open={Boolean(selected)} title="Discharge process" size="large" onClose={() => setParams({})}>
-      {selected && <DischargeEditor key={`${selected.id}-${selected.version}`} record={selected} state={state} />}
+      {selected && <DischargeEditor key={`${selected.id}-${selected.version}`} record={selected} state={state} onReopen={record => { setReason(''); setReopening(record); }} />}
     </Drawer>
+    <Modal title="Reopen discharge" patientId={reopening?.patient_id} description="Reverse a completed discharge. The patient becomes an inpatient again." okText="Reopen admission" open={Boolean(reopening)} onCancel={() => setReopening(null)} confirmLoading={action.isPending} okButtonProps={{ disabled: reason.trim().length < 5 }}
+      onOk={async () => { if (!reopening) return; try { await action.mutateAsync({ type: 'discharge.reopen', patient_id: reopening.patient_id, entity_id: reopening.id, expected_version: reopening.version, reason }); setReopening(null); setParams({}); } catch { return; } }}>
+      <Input.TextArea rows={3} aria-label="Reason for reopening" placeholder="Why is the discharge being reversed? (for example: discharged by mistake, patient returned)" value={reason} onChange={event => setReason(event.target.value)} />
+      <p className="muted">The reason is recorded in the patient's notes and audit trail.</p>
+    </Modal>
     <Modal title="Start discharge process" patientId={patientId} description="Start a working list entry—not a clinical clearance or completed discharge." okText="Send to discharge" open={adding} onCancel={() => setAdding(false)} confirmLoading={action.isPending} onOk={async () => {
       if (!patientId) return;
       try { const id = await action.mutateAsync({ type: 'discharge.create', patient_id: patientId }); setAdding(false); setParams({ id }); } catch { return; }

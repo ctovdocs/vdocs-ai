@@ -54,6 +54,7 @@ export const commandSchema = z.discriminatedUnion('type', [
   z.object({ ...base, type: z.literal('shift.receive'), shift_id: z.uuid(), expected_revision: z.number().int(), readback: z.string().trim().min(1).max(5000) }),
   z.object({ ...base, type: z.literal('discharge.create') }),
   z.object({ ...base, ...expected, type: z.literal('discharge.update'), fields: dischargeSchema.pick({ owner: true, priority: true, target_date: true, summary: true, clinical_clearance: true, clearance_note: true, medications_checked: true, follow_up_checked: true, documents_checked: true }).partial(), status: z.enum(['planned', 'in_progress', 'ready', 'discharged', 'cancelled']).optional() }),
+  z.object({ ...base, ...expected, type: z.literal('discharge.reopen'), reason: z.string().trim().min(5, 'Give a short reason.').max(500) }),
   z.object({ ...base, ...expected, type: z.literal('discharge.summary.save'), role: z.enum(['doctor', 'nurse']), note: z.string().trim().max(200).optional(), doc: dischargeSummaryDocSchema }),
   z.object({ ...base, ...expected, type: z.literal('discharge.summary.sign'), role: z.enum(['doctor', 'nurse']), qualification: z.string().trim().min(1).max(120), reg_no: z.string().trim().min(1).max(60) }),
   z.object({ ...base, type: z.literal('order.create'), title: z.string().trim().min(1), kind: z.enum(['lab', 'imaging']), indication: z.string().trim().min(1), priority: z.enum(['routine', 'urgent']) }),

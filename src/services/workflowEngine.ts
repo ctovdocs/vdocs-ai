@@ -173,6 +173,20 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
       } else addNote(`Discharge: ${status}`, record.clearance_note || 'Working-list status updated.', 'progress');
       break;
     }
+    case 'discharge.reopen': {
+      // Undo for a completed discharge: the patient returns to the inpatient lists and the old discharge record is cancelled.
+      const record = state.discharges.find(item => item.id === command.entity_id && item.patient_id === patient.id);
+      expectVersion(record);
+      if (!record || record.status !== 'discharged') throw new Error('Only a completed discharge can be reopened.');
+      if (active) throw new Error('This patient already has an active encounter.');
+      const encounter = history.encounters.find(item => item.id === record.encounter_id);
+      if (!encounter || history.encounters.some(item => item.started_at > encounter.started_at)) throw new Error('Only the latest admission can be reopened.');
+      encounter.status = 'active'; encounter.ended_at = null;
+      patient.encounter = `${encounter.kind} · ${encounter.location}`; history.context.current_encounter_id = encounter.id;
+      record.status = 'cancelled'; record.version++; record.updated_at = command.at; entityId = record.id; encounterId = encounter.id;
+      addNote(`Discharge reversed — ${command.reason}`, `The completed discharge was reopened and the patient is an inpatient again. Reason: ${command.reason}`, 'progress');
+      break;
+    }
     case 'discharge.summary.save': {
       const record = state.discharges.find(item => item.id === command.entity_id && item.patient_id === patient.id);
       expectVersion(record);
