@@ -9,6 +9,7 @@ import { applyWorkflowCommand, initialWorkflowState } from './workflowEngine';
 import { diffWorkflowState } from './workflowDiff';
 import { decodeWorkflow, encodeWorkflow } from './workflowStorageCodec';
 import { removeLegacyInferredDischarges } from './dischargeMigration';
+import { seedDischargeSummaries } from './dischargeSummarySeed';
 
 export const WORKFLOW_STORAGE_KEY = 'vdoc.workflow.india-high-acuity-50-v2.v1';
 const expansionSeed = buildExpansionWorkflow(cohort.patients, cohort.reports, cohort.histories);
@@ -29,10 +30,10 @@ export function clearWorkflowCache() {
 async function localState() {
   const saved = localStorage.getItem(WORKFLOW_STORAGE_KEY);
   if (saved) {
-    try { return removeLegacyInferredDischarges(mergeNewPatients(await decodeWorkflow(saved), expansionSeed)); }
+    try { return seedDischargeSummaries(removeLegacyInferredDischarges(mergeNewPatients(await decodeWorkflow(saved), expansionSeed))); }
     catch { throw new Error('Saved workflow data could not be read. Export or clear this demo’s saved data before resetting; it has not been overwritten.'); }
   }
-  return initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories);
+  return seedDischargeSummaries(initialWorkflowState(DEMO_HOSPITAL_ID, cohort.patients, cohort.reports, cohort.histories));
 }
 
 async function readRemote() {
@@ -47,7 +48,7 @@ async function readRemote() {
       if (result.error?.code === '40001') return readRemote();
       if (result.error) throw result.error;
     }
-    return next;
+    return seedDischargeSummaries(next); // in-memory overlay; persisted only when a record is edited
   }
   const names = ['patients', 'reports', 'contexts', 'encounters', 'notes', 'vitals', 'medications', 'orders', 'requests', 'work_items', 'timeline', 'immunizations'] as const;
   const entries = await Promise.all(names.map(async name => {

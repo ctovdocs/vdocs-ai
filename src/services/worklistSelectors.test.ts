@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { signSummary } from '../test/signSummary';
 import { cohort, DEMO_HOSPITAL_ID } from '../data/cohort';
 import { applyWorkflowCommand, initialWorkflowState } from './workflowEngine';
 import { dischargeViewRecords, normalWorklistPatients } from './worklistSelectors';
@@ -66,8 +67,10 @@ describe('explicit discharge routing', () => {
     const ready = state.discharges.find(record => record.status === 'ready')!;
     expect(dischargeViewRecords(state, 'Active')).toContain(ready);
     expect(normalWorklistPatients(state).some(patient => patient.id === ready.patient_id)).toBe(false);
-    const completed = applyWorkflowCommand(state, { type: 'discharge.update', id: crypto.randomUUID(), patient_id: ready.patient_id, entity_id: ready.id,
-      expected_version: ready.version, status: 'discharged', fields: {}, actor: ready.owner, at: '2026-09-08T09:00:00.000Z' });
+    const signed = signSummary(state, ready);
+    const signedReady = signed.discharges.find(record => record.id === ready.id)!;
+    const completed = applyWorkflowCommand(signed, { type: 'discharge.update', id: crypto.randomUUID(), patient_id: ready.patient_id, entity_id: ready.id,
+      expected_version: signedReady.version, status: 'discharged', fields: {}, actor: ready.owner, at: '2026-09-08T09:00:00.000Z' });
     expect(dischargeViewRecords(completed, 'Discharged').some(record => record.id === ready.id)).toBe(true);
     expect(dischargeViewRecords(completed, 'Active').some(record => record.id === ready.id)).toBe(false);
     expect(normalWorklistPatients(completed).some(patient => patient.id === ready.patient_id)).toBe(false);

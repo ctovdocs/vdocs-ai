@@ -8,6 +8,7 @@ import { seedShiftDemo, seedShiftEntries } from '../data/shiftDemo.js';
 import { doctorUpdates } from './doctorUpdates.js';
 import { owners } from '../data/cohort.js';
 import { seedLabTrends } from '../data/labTrendDemo.js';
+import { dischargeSummaryText, summarySignGaps } from '../domain/dischargeSummary.js';
 
 export function initialWorkflowState(hospitalId: string, patients: Patient[], reports: Report[], histories: PatientHistory[]): WorkflowState {
   const state = workflowStateSchema.parse({ schema_version: 1, hospital_id: hospitalId, revision: 0,
@@ -156,6 +157,7 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
       Object.assign(record, command.fields);
       const status = command.status ?? record.status;
       if (status === 'discharged' && previous !== 'ready') throw new Error('Save clinical readiness before completing discharge.');
+      if (status === 'discharged' && record.summary_doc?.status !== 'signed') throw new Error('The discharge summary must be signed by a doctor before completing discharge.');
       if (['ready', 'discharged'].includes(status)) {
         const blockers = dischargeBlockers(state, record);
         if (blockers.length) throw new Error(`Discharge still needs attention: ${blockers.join('; ')}`);
@@ -169,6 +171,34 @@ export function applyWorkflowCommand(input: WorkflowState, rawCommand: WorkflowC
         history.work_items.filter(item => item.encounter_id === encounter.id && item.kind === 'discharge').forEach(item => { item.status = 'completed'; item.completed_at = command.at; });
         addNote('Discharge completed', record.summary, 'discharge');
       } else addNote(`Discharge: ${status}`, record.clearance_note || 'Working-list status updated.', 'progress');
+      break;
+    }
+    case 'discharge.summary.save': {
+      const record = state.discharges.find(item => item.id === command.entity_id && item.patient_id === patient.id);
+      expectVersion(record);
+      if (!record || ['discharged', 'cancelled'].includes(record.status)) throw new Error('This discharge record is closed.');
+      if (requireActive(true).id !== record.encounter_id) throw new Error('This discharge belongs to a different encounter.');
+      const previous = record.summary_doc;
+      const edits = [...(previous?.edits ?? []), { at: command.at, by: command.actor, role: command.role, note: command.note ?? (previous?.status === 'signed' ? 'Edited after sign-off; signature cleared' : 'Saved') }].slice(-40);
+      // Any edit returns the document to draft: a doctor must sign the final wording.
+      record.summary_doc = { ...command.doc, status: 'draft', signed_by: null, signed_qualification: null, signed_reg_no: null, signed_at: null,
+        prepared_by: previous?.prepared_by ?? command.doc.prepared_by, prepared_role: previous?.prepared_role ?? command.doc.prepared_role, edits };
+      record.summary = dischargeSummaryText(record.summary_doc);
+      record.version++; record.updated_at = command.at; entityId = record.id;
+      break;
+    }
+    case 'discharge.summary.sign': {
+      const record = state.discharges.find(item => item.id === command.entity_id && item.patient_id === patient.id);
+      expectVersion(record);
+      if (!record || ['discharged', 'cancelled'].includes(record.status)) throw new Error('This discharge record is closed.');
+      if (command.role !== 'doctor') throw new Error('Only a doctor can sign off the discharge summary.');
+      if (!record.summary_doc) throw new Error('Save the discharge summary before signing.');
+      const gaps = summarySignGaps(record.summary_doc);
+      if (gaps.length) throw new Error(`The summary is incomplete: ${gaps.join(', ')}.`);
+      record.summary_doc = { ...record.summary_doc, status: 'signed', signed_by: command.actor, signed_qualification: command.qualification, signed_reg_no: command.reg_no, signed_at: command.at,
+        edits: [...record.summary_doc.edits, { at: command.at, by: command.actor, role: 'doctor' as const, note: 'Signed off' }].slice(-40) };
+      record.version++; record.updated_at = command.at; entityId = record.id;
+      addNote('Discharge summary signed', `Signed by ${command.actor} (${command.qualification}, Reg. ${command.reg_no}).`, 'progress');
       break;
     }
     case 'order.place': {

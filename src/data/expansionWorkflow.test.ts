@@ -4,6 +4,7 @@ import { expandedScenarios } from './expandedScenarios';
 import { buildExpansionWorkflow, mergeNewPatients } from './expansionWorkflow';
 import { initialWorkflowState, dischargeBlockers, applyWorkflowCommand } from '../services/workflowEngine';
 import { encodeWorkflow, decodeWorkflow } from '../services/workflowStorageCodec';
+import { signSummary } from '../test/signSummary';
 
 const expansion = () => buildExpansionWorkflow(cohort.patients, cohort.reports, cohort.histories);
 
@@ -81,7 +82,9 @@ describe('additional 50 synthetic patients', () => {
 
   it('allows ready stable fixtures to complete and retain their discharge records', () => {
     let state = expansion();
-    for (const record of state.discharges.filter(record => record.status === 'ready')) {
+    for (const ready of state.discharges.filter(record => record.status === 'ready')) {
+      state = signSummary(state, ready);
+      const record = state.discharges.find(item => item.id === ready.id)!;
       state = applyWorkflowCommand(state, { type: 'discharge.update', id: crypto.randomUUID(), at: '2026-09-08T08:00:00.000Z', actor: record.owner,
         patient_id: record.patient_id, entity_id: record.id, expected_version: record.version, fields: {}, status: 'discharged' });
       expect(state.patients.find(patient => patient.id === record.patient_id)?.encounter).toMatch(/^Discharged/);

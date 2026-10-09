@@ -42,7 +42,7 @@ export function pdfSafe(text: string, font: PDFFont): string {
     .map(char => char === '\n' || allowed.has(char.codePointAt(0)!) ? char : '?').join('');
 }
 
-function wrap(text: string, font: PDFFont, size: number, width: number): string[] {
+export function wrap(text: string, font: PDFFont, size: number, width: number): string[] {
   const lines: string[] = [];
   for (const paragraph of text.split('\n')) {
     let line = '';

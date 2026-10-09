@@ -4,6 +4,7 @@ import { validateCohort } from '../data/validateCohort';
 import type { CommandInput, WorkflowCommand, WorkflowState } from '../domain/workflow';
 import { applyWorkflowCommand, dischargeBlockers, initialWorkflowState } from './workflowEngine';
 import { withinDateRange } from '../lib/dateRange';
+import { buildDischargeSummary } from './dischargeSummaryBuilder';
 
 const patientId = cohort.patients[0].id;
 const at = '2026-09-07T08:00:00.000Z';
@@ -33,6 +34,14 @@ function readyState() {
   return execute(state, { type: 'discharge.update', patient_id: patientId, entity_id: record.id, expected_version: record.version, status: 'ready', fields: {
     summary: 'Clinician-authored test discharge record.', clinical_clearance: true, clearance_note: 'Reviewed for this synthetic test.', medications_checked: true, follow_up_checked: true, documents_checked: true,
   } });
+}
+
+function signedSummary(input: WorkflowState) {
+  const record = dischargeFor(input);
+  const doc = buildDischargeSummary(input, record, { name: 'Nurse Priya Nair', role: 'nurse' }, at);
+  let state = execute(input, { type: 'discharge.summary.save', patient_id: patientId, entity_id: record.id, expected_version: record.version, role: 'nurse', actor: 'Nurse Priya Nair', doc });
+  state = execute(state, { type: 'discharge.summary.sign', patient_id: patientId, entity_id: record.id, expected_version: record.version + 1, role: 'doctor', qualification: 'MBBS, MD', reg_no: 'TEST-1' });
+  return state;
 }
 
 describe('connected clinical workflows', () => {
@@ -92,7 +101,10 @@ describe('connected clinical workflows', () => {
     state = readyState();
     const ready = dischargeFor(state);
     expect(dischargeBlockers(state, ready)).toEqual([]);
-    state = execute(state, { type: 'discharge.update', patient_id: patientId, entity_id: ready.id, expected_version: ready.version, fields: {}, status: 'discharged' });
+    expect(() => execute(state, { type: 'discharge.update', patient_id: patientId, entity_id: ready.id, expected_version: ready.version, fields: {}, status: 'discharged' })).toThrow('signed');
+    state = signedSummary(state);
+    const signedRecord = dischargeFor(state);
+    state = execute(state, { type: 'discharge.update', patient_id: patientId, entity_id: signedRecord.id, expected_version: signedRecord.version, fields: {}, status: 'discharged' });
     expect(state.patients[0].encounter).toMatch(/^Discharged/);
     expect(historyFor(state).encounters.some(encounter => encounter.status === 'active')).toBe(false);
     expect(state.discharges.find(item => item.id === ready.id)).toMatchObject({ status: 'discharged', discharged_at: at });

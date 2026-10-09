@@ -1,12 +1,13 @@
 import { z } from 'zod';
 import { patientSchema, reportSchema } from './models.js';
 import { historySchema } from './longitudinal.js';
+import { dischargeSummaryDocSchema } from './dischargeSummary.js';
 
 export const dischargeSchema = z.object({
   id: z.uuid(), patient_id: z.uuid(), encounter_id: z.uuid(), hospital_id: z.uuid(),
   owner: z.string().trim().min(1), priority: z.enum(['routine', 'urgent']), target_date: z.iso.date(),
   status: z.enum(['planned', 'in_progress', 'ready', 'discharged', 'cancelled']),
-  summary: z.string(), clinical_clearance: z.boolean(), clearance_note: z.string(),
+  summary: z.string(), summary_doc: dischargeSummaryDocSchema.optional(), clinical_clearance: z.boolean(), clearance_note: z.string(),
   medications_checked: z.boolean(), follow_up_checked: z.boolean(), documents_checked: z.boolean(),
   created_at: z.string(), updated_at: z.string(), discharged_at: z.string().nullable(), version: z.number().int(),
 });
@@ -53,6 +54,8 @@ export const commandSchema = z.discriminatedUnion('type', [
   z.object({ ...base, type: z.literal('shift.receive'), shift_id: z.uuid(), expected_revision: z.number().int(), readback: z.string().trim().min(1).max(5000) }),
   z.object({ ...base, type: z.literal('discharge.create') }),
   z.object({ ...base, ...expected, type: z.literal('discharge.update'), fields: dischargeSchema.pick({ owner: true, priority: true, target_date: true, summary: true, clinical_clearance: true, clearance_note: true, medications_checked: true, follow_up_checked: true, documents_checked: true }).partial(), status: z.enum(['planned', 'in_progress', 'ready', 'discharged', 'cancelled']).optional() }),
+  z.object({ ...base, ...expected, type: z.literal('discharge.summary.save'), role: z.enum(['doctor', 'nurse']), note: z.string().trim().max(200).optional(), doc: dischargeSummaryDocSchema }),
+  z.object({ ...base, ...expected, type: z.literal('discharge.summary.sign'), role: z.enum(['doctor', 'nurse']), qualification: z.string().trim().min(1).max(120), reg_no: z.string().trim().min(1).max(60) }),
   z.object({ ...base, type: z.literal('order.create'), title: z.string().trim().min(1), kind: z.enum(['lab', 'imaging']), indication: z.string().trim().min(1), priority: z.enum(['routine', 'urgent']) }),
   z.object({ ...base, type: z.literal('order.place'), kind: z.enum(['lab', 'imaging']), indication: z.string().trim().min(1), priority: z.enum(['routine', 'urgent']),
     items: z.array(z.object({ catalog_id: z.string().optional(), title: z.string().trim().min(1).max(200), specimen: z.string().trim().max(200).optional(), modality: z.string().trim().max(100).optional(), site: z.string().trim().max(200).optional(), instructions: z.string().trim().max(2000).optional() })).min(1).max(30) }),
