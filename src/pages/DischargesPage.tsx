@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Alert, App, Button, Checkbox, Form, Input, Segmented, Select, Space, Table, Tag, Typography } from 'antd';
+import { Alert, App, Button, Checkbox, Form, Input, Segmented, Select, Space, Table, Tag, Tooltip, Typography } from 'antd';
 import { ClinicalDrawer as Drawer, ClinicalModal as Modal } from '../components/ClinicalOverlay';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useWorkflow, useWorkflowAction } from '../services/useWorkflow';
 import { dischargeBlockers } from '../services/workflowEngine';
 import type { Discharge, WorkflowState } from '../domain/workflow';
@@ -12,12 +12,16 @@ import { owners } from '../data/cohort';
 import { VoiceTextArea } from '../components/VoiceField';
 import { dischargeViewRecords } from '../services/worklistSelectors';
 import { CLAIM_DEMO_NUMBERS } from '../services/claimsDemo';
+import { summarySignGaps } from '../domain/dischargeSummary';
 
 function DischargeEditor({ record, state }: { record: Discharge; state: WorkflowState }) {
   const { modal } = App.useApp();
   const action = useWorkflowAction();
   const [form] = Form.useForm();
+  const navigate = useNavigate();
   const history = state.histories.find(item => item.context.patient_id === record.patient_id)!;
+  const doc = record.summary_doc;
+  const signed = doc?.status === 'signed';
   const blockers = dischargeBlockers(state, record);
   const closed = ['discharged', 'cancelled'].includes(record.status);
   const save = async (status?: Discharge['status']) => {
@@ -33,7 +37,12 @@ function DischargeEditor({ record, state }: { record: Discharge; state: Workflow
       <Space align="start"><Form.Item name="owner" label="Owner" rules={[{ required: true }]}><Select style={{ width: 210 }} options={Object.values(owners).map(value => ({ value }))} /></Form.Item>
         <Form.Item name="priority" label="Priority"><Select style={{ width: 110 }} options={['routine', 'urgent'].map(value => ({ value }))} /></Form.Item>
         <Form.Item name="target_date" label="Target date" rules={[{ required: true }]}><Input type="date" /></Form.Item></Space>
-      <Form.Item name="summary" label="Discharge summary / working draft"><VoiceTextArea rows={5} placeholder="Clinician-authored summary" /></Form.Item>
+      <div className="ds-drawer-card">
+        <div className="ds-drawer-head"><strong>Discharge summary</strong>{doc ? <Tag color={signed ? 'green' : 'gold'}>{signed ? `Signed by ${doc.signed_by}` : 'Draft · awaiting doctor sign-off'}</Tag> : <Tag>Not started</Tag>}</div>
+        {doc ? <p className="muted">{doc.primary_diagnosis || 'No diagnosis entered'} · last edited by {doc.edits.at(-1)?.by ?? doc.prepared_by}{summarySignGaps(doc).length > 0 && !signed ? ` · missing: ${summarySignGaps(doc).join(', ')}` : ''}</p>
+          : <p className="muted">The structured discharge summary is pre-filled from the chart, edited by the care team and signed by the doctor before discharge.</p>}
+        <Button type={doc ? 'default' : 'primary'} onClick={() => navigate(`/app/discharges/${record.id}/summary`)}>{closed ? 'View discharge summary' : doc ? 'Open discharge summary' : 'Prepare discharge summary'}</Button>
+      </div>
       <Form.Item name="clinical_clearance" valuePropName="checked"><Checkbox>I have reviewed the patient and documented clinical suitability for discharge.</Checkbox></Form.Item>
       <Form.Item name="clearance_note" label="Clinical clearance rationale"><VoiceTextArea rows={2} /></Form.Item>
       <Form.Item name="medications_checked" valuePropName="checked"><Checkbox>Medication reconciliation reviewed</Checkbox></Form.Item>
@@ -46,7 +55,7 @@ function DischargeEditor({ record, state }: { record: Discharge; state: Workflow
       <Space wrap className="section-gap">
         <Button loading={action.isPending} onClick={() => save('in_progress')}>Save working draft</Button>
         <Button loading={action.isPending} onClick={() => save('ready')}>Mark ready</Button>
-        {record.status === 'ready' && <Button type="primary" loading={action.isPending} onClick={() => modal.confirm({ className: 'clinical-modal', centered: true, title: `Complete discharge for ${state.patients.find(patient => patient.id === record.patient_id)?.name}?`, content: 'This closes the current IPD encounter and moves the record to discharged history. Confirm that the patient’s clearance and documents have been reviewed.', okText: 'Complete discharge', cancelText: 'Keep in process', onOk: () => save('discharged') })}>Complete discharge</Button>}
+        {record.status === 'ready' && <Tooltip title={signed ? '' : 'A doctor must sign the discharge summary first'}><span><Button type="primary" disabled={!signed} loading={action.isPending} onClick={() => modal.confirm({ className: 'clinical-modal', centered: true, title: `Complete discharge for ${state.patients.find(patient => patient.id === record.patient_id)?.name}?`, content: 'This closes the current IPD encounter and moves the record to discharged history. Confirm that the patient’s clearance and documents have been reviewed.', okText: 'Complete discharge', cancelText: 'Keep in process', onOk: () => save('discharged') })}>Complete discharge</Button></span></Tooltip>}
         <Button danger loading={action.isPending} onClick={() => save('cancelled')}>Cancel planning</Button>
       </Space>
     </>}
@@ -98,6 +107,7 @@ export function DischargesPage() {
       { title: 'Target', dataIndex: 'target_date', sorter: (first, second) => first.target_date.localeCompare(second.target_date) },
       { title: 'Priority', dataIndex: 'priority' }, { title: 'Status', dataIndex: 'status', render: value => <Tag>{value.replaceAll('_', ' ')}</Tag> },
       { title: 'Pending', render: (_, row) => ['discharged', 'cancelled'].includes(row.status) ? '—' : row.blockers.length },
+      { title: 'Summary', render: (_, row) => <Link to={`/app/discharges/${row.id}/summary`}>{row.summary_doc?.status === 'signed' ? <Tag color="green">Signed</Tag> : row.summary_doc ? <Tag color="gold">Draft</Tag> : row.status === 'discharged' ? 'View' : 'Prepare'}</Link> },
       { title: 'Action', render: (_, row) => <Button size="small" onClick={() => setParams({ id: row.id })}>Open</Button> },
     ]} />
     <Drawer patientId={selected?.patient_id} description="Review outstanding work, clinical clearance and discharge documentation." open={Boolean(selected)} title="Discharge process" size="large" onClose={() => setParams({})}>

@@ -18,6 +18,7 @@ import { WorkflowSync } from './WorkflowSync';
 import { UpdatesPage } from '../pages/UpdatesPage';
 import { ClaimsPage } from '../pages/ClaimsPage';
 import { InsurerPortalPage } from '../pages/InsurerPortalPage';
+import { DischargeSummaryPage } from '../pages/DischargeSummaryPage';
 import { useActiveDoctor } from '../services/activeDoctor';
 
 function Shell() {
@@ -47,6 +48,7 @@ export function App() {
       <Route path="/app/opd" element={<PatientDirectoryTable key="opd" initialEncounterType="OPD" />} />
       <Route path="/app/rounds" element={<PatientDirectoryTable key="ipd" initialEncounterType="IPD" />} />
       <Route path="/app/discharges" element={<DischargesPage />} />
+      <Route path="/app/discharges/:id/summary" element={<DischargeSummaryPage />} />
       <Route path="/app/claims" element={<ClaimsPage />} />
       <Route path="/app/requests" element={<CoordinationPage key="requests" kind="request" />} />
       <Route path="/app/referrals" element={<CoordinationPage key="referrals" kind="referral" />} />
