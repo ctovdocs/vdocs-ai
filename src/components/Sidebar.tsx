@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import {
-  AppstoreOutlined, BellOutlined, CalendarOutlined, CheckSquareOutlined, ClockCircleOutlined,
-  ExperimentOutlined, FileDoneOutlined, FileTextOutlined,
+  AppstoreOutlined, BellOutlined, CalendarOutlined, CheckSquareOutlined,
+  ExperimentOutlined, FileDoneOutlined,
   MedicineBoxOutlined, MenuFoldOutlined, MenuUnfoldOutlined, RetweetOutlined,
   ScanOutlined, SolutionOutlined, TeamOutlined, UnorderedListOutlined,
 } from '@ant-design/icons';
@@ -32,11 +32,9 @@ const clinicalSections: { label: string; items: NavigationItem[] }[] = [
     { label: 'Results to review', icon: <CheckSquareOutlined />, path: '/app/results' },
   ] },
   { label: 'Continuity', items: [
-    { label: 'Prescriptions', icon: <FileTextOutlined /> },
     { label: 'Discharge list', icon: <FileDoneOutlined />, path: '/app/discharges' },
     { label: 'Cashless claims', icon: <SolutionOutlined />, path: '/app/claims' },
     { label: 'Handovers', icon: <TeamOutlined />, path: '/app/handovers' },
-    { label: 'Follow-ups', icon: <ClockCircleOutlined /> },
   ] },
 ];
 
