@@ -1,6 +1,6 @@
 # Cashless claims worklist demo
 
-Open **Cashless claims** or `/app/claims`. The starting worklist contains **10 distinct patients: 5 active and 5 completed claims**. Search by patient, UHID, claim or insurer; use the In progress / Completed tabs and stage filter. Every record opens its own documents, editable form, review trail and next action. The compact toolbar shows counts inline; the next responsible team is listed per record. The audit timeline supports newest/oldest order and shows full IST timestamps, actor names and evidence links. Each link opens a document drawer with the source, saved contents and related audit events. Payment views include the simulated receiving bank and UTR. Documents, correspondence and immutable submitted packets are organised in separate tabs.
+Open **Cashless claims** or `/app/claims`. The starting worklist contains **10 distinct patients: 3 early, 5 in progress and 2 completed claims**. Search by patient, UHID, claim or insurer; use the In progress / Completed tabs and stage filter. Every record opens its own documents, editable form, review trail and next action. The compact toolbar shows counts inline; the next responsible team is listed per record. The audit timeline supports newest/oldest order and shows full IST timestamps, actor names and evidence links. Each link opens a document drawer with the source, saved contents and related audit events. Payment views include the simulated receiving bank and UTR. Documents, correspondence and immutable submitted packets are organised in separate tabs.
 
 ## Starting records
 
@@ -12,12 +12,12 @@ Open **Cashless claims** or `/app/claims`. The starting worklist contains **10 d
 | Anita Fernandes | F-DEMO-0080 | Insurer pharmacy query |
 | Lata Dhamija | F-DEMO-0100 | Final authorisation; settlement pending |
 | Meenal Vyas | F-DEMO-0052 | Completed and reconciled |
-| Vivek Bedi | F-DEMO-0063 | Completed and reconciled |
-| Shweta Kulkarni | F-DEMO-0074 | Completed and reconciled |
-| Rohit Bhargava | F-DEMO-0085 | Completed and reconciled |
+| Vivek Bedi | F-DEMO-0063 | Payment received; accounts must reconcile |
+| Shweta Kulkarni | F-DEMO-0074 | Settlement packet sent; awaiting payment |
+| Rohit Bhargava | F-DEMO-0085 | Submitted; waiting on the insurer |
 | Tara Sanyal | F-DEMO-0096 | Completed and reconciled |
 
-The completed cases represent separate, explicitly synthetic historical admissions. They do not assert that these patients' current clinical admissions are discharged or their current illnesses resolved. Their episode IDs and mock clinical attachments are isolated from the live clinical workflow.
+The two completed cases (and the in-progress cases for Vivek, Shweta and Rohit) represent separate, explicitly synthetic historical admissions. They do not assert that these patients' current clinical admissions are discharged or their current illnesses resolved. Their episode IDs and mock clinical attachments are isolated from the live clinical workflow.
 
 ## Full pitch walkthrough
 
@@ -49,8 +49,8 @@ No additional hosting, model service or credentials are required. Claims save in
 - Changes affect only the selected claim; stale-window writes are rejected and supported browsers serialize writes with Web Locks.
 - Existing work from the original single-case demo is preserved and migrated alongside nine additional records. The original storage key is retained.
 - **Reset this claim** returns only that claim to document preparation.
-- The list's **Restore 10 demo records** action resets the whole claims worklist to five active and five completed cases after confirmation. It preserves clinical records, discharge work, notes and chats.
-- Completed counts increase as active cases are finished. Restore the starting worklist before repeating the initial five/five pitch.
+- The list's **Restore 10 demo records** action resets the whole claims worklist to the starting mix (3 early, 5 in progress, 2 completed) after confirmation. It preserves clinical records, discharge work, notes and chats.
+- Completed counts increase as active cases are finished. Restore the starting worklist before repeating the pitch.
 - Missing source records and storage failures surface errors rather than a false successful submission.
 
 ## Validation
@@ -77,3 +77,9 @@ The insurer is fictional, but the transfer is not simulated: VDoc generates real
 6. Authorisation, settlement and payment still use the hospital-side *Presenter controls*.
 
 Reset between runs: `curl -X POST localhost:5173/api/insurer/reset`, then *Restore 10 demo records* on the claims worklist.
+
+## In-progress claims are real on the insurer side too
+
+The first time the Claims page loads, every seeded claim that is past submission (7 of the 10: the five in progress and the two completed) is replayed into the insurer service: the saved packet and its PDFs, the query and response where there was one, and each authorisation, settlement, payment and closure, stamped with the claim's own dates. The claim then adopts the insurer's reference (`INS-2026-000N`), so the hospital timeline and `/insurer` match. Open any of them from either side; for example answer Anita's pharmacy query (F-DEMO-0080) and watch the response arrive on the same insurer claim.
+
+The replay is idempotent (a second browser reuses the same insurer claims) and is retried on the next load if the insurer service was unavailable. To start clean, `POST /api/insurer/reset` and use **Restore 10 demo records**.

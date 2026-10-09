@@ -11,7 +11,10 @@ export const claimStatusLabels: Record<ClaimCase['status'], string> = {
 export const money = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
 const uhidFor = (n: number) => `F-DEMO-${String(n).padStart(4, '0')}`;
 const completedDiagnoses = ['Acute gastroenteritis with dehydration', 'Community-acquired pneumonia', 'Distal radius fracture — operative fixation', 'Ureteric calculus — ureteroscopy', 'Uncomplicated cellulitis'];
-const initialStatuses: ClaimCase['status'][] = ['draft', 'needs_documents', 'review', 'query', 'authorised', 'completed', 'completed', 'completed', 'completed', 'completed'];
+// Three early, five in flight (query, authorised, payment received, settlement sent, awaiting insurer), two completed for history.
+const initialStatuses: ClaimCase['status'][] = ['draft', 'needs_documents', 'review', 'query', 'authorised', 'completed', 'payment_received', 'settlement_submitted', 'submitted', 'completed'];
+/** Past admissions that are still in flight use early-September dates so their latest event falls before the demo snapshot. */
+const inFlightHistorical = (index: number) => index >= 6 && index <= 8;
 
 function sources(state: WorkflowState, uhid = CLAIM_DEMO_UHID) {
   const patient = state.patients.find(item => item.uhid === uhid);
@@ -28,8 +31,8 @@ function sources(state: WorkflowState, uhid = CLAIM_DEMO_UHID) {
   if (number === 90 && !discharge?.summary.trim()) throw new Error('The demo needs Mohan’s discharge summary before preparing the claim.');
   const encounterId = historical ? `90000000-0000-4000-8000-${String(number).padStart(12, '0')}` : encounter!.id;
   const diagnosis = historical ? completedDiagnoses[index - 5] : patient.conditions[0];
-  const admissionDate = historical ? `2026-08-${String(10 + index - 5).padStart(2, '0')}` : encounter!.started_at.slice(0, 10);
-  const dischargeDate = historical ? `2026-08-${String(14 + index - 5).padStart(2, '0')}` : discharge!.target_date;
+  const admissionDate = historical ? (inFlightHistorical(index) ? `2026-09-0${index - 5}` : `2026-08-${String(10 + index - 5).padStart(2, '0')}`) : encounter!.started_at.slice(0, 10);
+  const dischargeDate = historical ? (inFlightHistorical(index) ? `2026-09-0${index - 2}` : `2026-08-${String(14 + index - 5).padStart(2, '0')}`) : discharge!.target_date;
   const doctor = historical ? 'Dr. Kavita Rao · synthetic attending' : encounter!.owner;
   const summary = historical
     ? `CLAIMS-ONLY SYNTHETIC PAST ADMISSION\nDiagnosis: ${diagnosis}\nAdmission: ${admissionDate}; discharge: ${dischargeDate}.\nCourse: inpatient assessment, investigations and ${index === 7 ? 'operative fixation with documented postoperative review' : index === 8 ? 'ureteroscopic intervention with postoperative observation' : 'conservative medical management'} completed.\nCondition at discharge: stable in this synthetic episode.\nFollow-up: treating department review in seven days; written discharge instructions provided.\nAttending: ${doctor}. Synthetic signed document fixture.\nThis episode is independent of the patient's current clinical admission.`
@@ -153,6 +156,13 @@ export function transitionClaim(current: ClaimCase, action: ClaimAction, state: 
     claim.status = 'submitted';
     const id = message('receipt', 'Final bill request received', `Reference: ${claim.submission.reference}\nBill: ${money(claim.bill_total)}\n${claim.submission.documents.length} documents received by the demo insurer.\nAwaiting final authorisation; this receipt is not approval.`);
     event('Reviewed claim submitted', 'Clinical and billing reviews completed; staff approved this packet.', [id, 'packet']);
+  } else if (action.type === 'link_insurer') {
+    // Replace a demo reference with the one the insurer service issued, everywhere it appears (packets, letters, audit trail).
+    const old = claim.submission?.reference;
+    if (!old) throw new Error('This claim has not been submitted.');
+    if (!/^INS-\d{4}-\d{4}$/.test(action.reference)) throw new Error('Not an insurer reference.');
+    if (old === action.reference) return current;
+    return claimCaseSchema.parse({ ...JSON.parse(JSON.stringify(claim).replaceAll(old, action.reference)), version: claim.version + 1 });
   } else if (action.type === 'send_query') {
     requireStatus('submitted'); claim.status = 'query';
     const id = message('query', 'Additional information required', `${action.note?.trim() || `Please provide the itemised pharmacy bill supporting the ${money(claim.pharmacy_total)} pharmacy charge in final bill DEMO-BILL-${suffix}.`}`);
@@ -204,24 +214,26 @@ export function seedWorklist(state: WorkflowState): ClaimsWorklist {
     let tick = 0;
     const run = (action: ClaimAction) => {
       const date = new Date(`${claim.discharge_date}T05:00:00.000Z`); date.setUTCMinutes(date.getUTCMinutes() + tick++ * 12);
-      if (action.type === 'receive_payment' || action.type === 'reconcile') date.setUTCDate(date.getUTCDate() + 10);
+      if (action.type === 'receive_payment' || action.type === 'reconcile') date.setUTCDate(date.getUTCDate() + (inFlightHistorical(index) ? 1 : 10));
       claim = transitionClaim(claim, action, state, date.toISOString());
     };
     run({ type: 'prepare' }); if (target === 'needs_documents') return claim;
     run({ type: 'attach_report' }); if (target === 'review') return claim;
     run({ type: 'review_clinical', reviewed_version: claim.version }); run({ type: 'review_billing', reviewed_version: claim.version });
-    run({ type: 'submit', reviewed_version: claim.version });
+    run({ type: 'submit', reviewed_version: claim.version }); if (target === 'submitted') return claim;
     if (target === 'query' || index % 2 === 0) {
       run({ type: 'send_query' }); if (target === 'query') return claim;
       run({ type: 'prepare_response' }); run({ type: 'submit_response', reviewed_version: claim.version });
     }
     run({ type: 'authorise' }); if (target === 'authorised') return claim;
-    run({ type: 'submit_settlement' }); run({ type: 'receive_payment' }); run({ type: 'reconcile' }); return claim;
+    run({ type: 'submit_settlement' }); if (target === 'settlement_submitted') return claim;
+    run({ type: 'receive_payment' }); if (target === 'payment_received') return claim;
+    run({ type: 'reconcile' }); return claim;
   });
   return claimsWorklistSchema.parse({ schema_version: 2, revision: 0, hospital_id: state.hospital_id, claims });
 }
 
-export const claimStorageKey = (hospitalId: string) => `vdoc.claims.demo.v2.${hospitalId}`;
+export const claimStorageKey = (hospitalId: string) => `vdoc.claims.demo.v3.${hospitalId}`; // v3: new stage mix (in-flight claims)
 export function readClaims(state: WorkflowState, storage: Pick<Storage, 'getItem'> = localStorage): ClaimsWorklist {
   const raw = storage.getItem(claimStorageKey(state.hospital_id));
   if (raw) {

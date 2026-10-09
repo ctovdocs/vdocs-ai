@@ -46,6 +46,7 @@ export type ClaimsWorklist = z.infer<typeof claimsWorklistSchema>;
 export type ClaimForm = z.infer<typeof claimFormSchema>;
 export type ClaimAction =
   | { type: 'send_query'; note?: string }
+  | { type: 'link_insurer'; reference: string }
   | { type: 'prepare' | 'attach_report' | 'prepare_response' | 'authorise' | 'submit_settlement' | 'receive_payment' | 'reconcile' }
   | { type: 'review_clinical' | 'review_billing'; reviewed_version: number }
   | { type: 'edit'; text: string }

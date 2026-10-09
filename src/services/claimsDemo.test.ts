@@ -110,14 +110,14 @@ describe('cashless claims demo', () => {
 });
 
 describe('ten-patient claims worklist', () => {
-  it('starts with ten distinct patients and five fully documented, reconciled claims', () => {
+  it('starts with ten distinct patients: three early, five in flight and two fully reconciled', () => {
     const before = structuredClone(state);
     const list = seedWorklist(state);
     expect(list.claims).toHaveLength(10);
     expect(new Set(list.claims.map(item => item.patient_id)).size).toBe(10);
     expect(list.claims.slice(0, 5).map(item => item.status)).toEqual(['draft', 'needs_documents', 'review', 'query', 'authorised']);
     const completed = list.claims.filter(item => item.status === 'completed');
-    expect(completed).toHaveLength(5);
+    expect(completed).toHaveLength(2);
     for (const item of completed) {
       expect(item.settlement).toBe('reconciled');
       expect(item.paid_amount! + item.patient_collected!).toBe(item.bill_total);
@@ -134,6 +134,35 @@ describe('ten-patient claims worklist', () => {
       expect(item.documents.find(doc => doc.kind === 'summary')?.body).toContain('independent');
     }
     expect(state).toEqual(before);
+  });
+
+  it('seeds five realistic in-flight claims across the payer journey, all dated before the demo snapshot', () => {
+    const list = seedWorklist(state);
+    expect(list.claims.map(item => item.status)).toEqual(['draft', 'needs_documents', 'review', 'query', 'authorised', 'completed', 'payment_received', 'settlement_submitted', 'submitted', 'completed']);
+    const inFlight = list.claims.filter(item => ['query', 'authorised', 'payment_received', 'settlement_submitted', 'submitted'].includes(item.status));
+    expect(inFlight).toHaveLength(5);
+    const byStatus = (status: string) => list.claims.find(item => item.status === status)!;
+    expect(byStatus('submitted').messages.map(message => message.kind)).toEqual(['receipt']);
+    expect(byStatus('settlement_submitted').settlement).toBe('submitted');
+    expect(byStatus('payment_received')).toMatchObject({ settlement: 'received', patient_collected: null });
+    expect(byStatus('payment_received').utr).toMatch(/^DEMO-UTR-/);
+    for (const item of list.claims.filter(claim => ['payment_received', 'settlement_submitted', 'submitted'].includes(claim.status))) {
+      expect(item.events.at(-1)!.at < '2026-09-08T07:30:00.000Z').toBe(true);
+      expect(item.events.map(event => event.at)).toEqual(item.events.map(event => event.at).sort());
+    }
+  });
+
+  it('adopts the insurer reference everywhere it appears when an in-flight claim is linked', () => {
+    const list = seedWorklist(state);
+    const item = list.claims.find(claim => claim.status === 'payment_received')!;
+    const old = item.submission!.reference;
+    const linked = transitionClaim(item, { type: 'link_insurer', reference: 'INS-2026-0004' }, state);
+    expect(JSON.stringify(linked)).not.toContain(old);
+    expect(linked.submission!.reference).toBe('INS-2026-0004');
+    expect(linked.messages.find(message => message.kind === 'receipt')!.body).toContain('INS-2026-0004');
+    expect(transitionClaim(linked, { type: 'link_insurer', reference: 'INS-2026-0004' }, state)).toBe(linked);
+    expect(() => transitionClaim(item, { type: 'link_insurer', reference: 'DEMO-1' }, state)).toThrow('insurer reference');
+    expect(() => transitionClaim(list.claims[0], { type: 'link_insurer', reference: 'INS-2026-0004' }, state)).toThrow('not been submitted');
   });
 
   it('requires both internal approvals and invalidates them when the form changes', () => {
@@ -167,7 +196,7 @@ describe('ten-patient claims worklist', () => {
     expect(() => run({ type: 'edit', text: 'Change closed claim' })).toThrow();
   });
 
-  it('changes only the selected claim and restores five completed cases without touching clinical data', () => {
+  it('changes only the selected claim and restores the two completed cases without touching clinical data', () => {
     const saved = new Map<string, string>([['clinical-work', 'preserved']]);
     const storage = { getItem: (key: string) => saved.get(key) ?? null, setItem: (key: string, value: string) => { saved.set(key, value); } };
     const list = readClaims(state, storage);
@@ -178,7 +207,7 @@ describe('ten-patient claims worklist', () => {
     expect(changed.claims.filter(item => item.id !== target.id)).toEqual(list.claims.filter(item => item.id !== target.id));
     expect(() => resetClaims(state, list.revision, storage)).toThrow('another window');
     const restored = resetClaims(state, changed.revision, storage);
-    expect(restored.claims.filter(item => item.status === 'completed')).toHaveLength(5);
+    expect(restored.claims.filter(item => item.status === 'completed')).toHaveLength(2);
     expect(restored.claims.find(item => item.id === target.id)?.status).toBe('needs_documents');
     expect(saved.get('clinical-work')).toBe('preserved');
     expect(readClaims(state, storage)).toEqual(restored);
@@ -195,6 +224,6 @@ describe('ten-patient claims worklist', () => {
     expect(migrated.claims[0].submission).toEqual(claim.submission);
     expect(migrated.claims[0].status).toBe('submitted');
     expect(migrated.claims[0].documents.length).toBeGreaterThan(legacy.documents.length);
-    expect(migrated.claims.filter(item => item.status === 'completed')).toHaveLength(5);
+    expect(migrated.claims.filter(item => item.status === 'completed')).toHaveLength(2);
   });
 });
