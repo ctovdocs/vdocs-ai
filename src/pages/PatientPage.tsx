@@ -169,7 +169,7 @@ export function PatientPage() {
           </ul>
         </div>}
 
-        <CareCoordinationCard requests={requests} workItems={history?.work_items ?? []} reports={allReports} />
+        <CareCoordinationCard patientId={patient.id} requests={requests} workItems={history?.work_items ?? []} reports={allReports} />
       </aside>
     </div>
 

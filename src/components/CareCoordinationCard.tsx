@@ -6,15 +6,16 @@ import type { Report } from '../domain/models';
 import { RequestDetail } from './RequestDetail';
 import { useWorkflowAction } from '../services/useWorkflow';
 import { Link } from 'react-router-dom';
+import { CreateClinicalAction } from './CreateClinicalAction';
 
-export function CareCoordinationCard({ requests, workItems, reports }: {
-  requests: PatientHistory['requests']; workItems: PatientHistory['work_items']; reports: Report[];
+export function CareCoordinationCard({ patientId, requests, workItems, reports }: {
+  patientId: string; requests: PatientHistory['requests']; workItems: PatientHistory['work_items']; reports: Report[];
 }) {
   const [openId, setOpenId] = useState<string | null>(null);
   const action = useWorkflowAction();
   const open = requests.find(request => request.id === openId);
   return <div className="side-card coordination-card">
-    <h5>Care coordination</h5>
+    <div className="section-toolbar-inline"><h5>Care coordination</h5><CreateClinicalAction kind="request" patientId={patientId} label="+ Add request" /></div>
     <div className="coordination-list">{requests.map(request => <div key={request.id} className="coordination-entry">
       <div className="coordination-head"><span className="coordination-route">{request.to_department}</span><Tag color={request.priority === 'urgent' ? 'red' : 'default'}>{request.status.replaceAll('_', ' ')}</Tag></div>
       <p className="coordination-reason">{request.reason}</p>
