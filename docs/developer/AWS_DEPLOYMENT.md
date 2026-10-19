@@ -4,6 +4,8 @@
 
 **Status:** proposed target and implementation instructions. This repository currently has no complete AWS deployment definition, product backend container, AI service container, worker, or production migration pipeline. The commands and resource names below describe what to implement, not infrastructure already available to run.
 
+For researched prices and hospital-size budgets, see the [deployment and business cost estimate](COST_ESTIMATE.md). It prices an Amplify Hosting frontend variant of this design and includes an editable USD/INR calculator.
+
 ## 1. Target deployment
 
 Use a static frontend behind CloudFront, a clinical API on ECS Fargate, a private AI service, a background worker, RDS PostgreSQL, and private S3 document storage. Keep the initial clinical backend modular and deploy AI separately. This fits the existing React/TypeScript code without requiring Kubernetes.

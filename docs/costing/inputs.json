@@ -1,0 +1,39 @@
+{
+  "estimate_date": "2026-10-19",
+  "region": "ap-south-1",
+  "hours_per_month": 730,
+  "days_per_month": 30,
+  "occupancy": 0.8,
+  "average_length_of_stay_days": 4,
+  "insured_admission_share": 0.6,
+  "usd_inr": 95.0194,
+  "fx_source_date": "2026-10-16",
+  "retry_multiplier": 1.1,
+  "contingency_fraction": 0.2,
+  "illustrative_tax_fraction": 0.18,
+  "primary_ai_model": "claude_sonnet_5_5",
+  "profiles": {
+    "light": {"opd_calls": 0.5, "ipd_day_calls": 1, "discharge_calls": 2, "claim_calls": 2, "input_tokens": 3000, "output_tokens": 400, "opd_voice_minutes": 0.5, "ipd_day_voice_minutes": 1, "discharge_voice_minutes": 2},
+    "standard": {"opd_calls": 2, "ipd_day_calls": 4, "discharge_calls": 4, "claim_calls": 4, "input_tokens": 6000, "output_tokens": 700, "opd_voice_minutes": 2, "ipd_day_voice_minutes": 3, "discharge_voice_minutes": 5},
+    "heavy": {"opd_calls": 6, "ipd_day_calls": 10, "discharge_calls": 10, "claim_calls": 10, "input_tokens": 15000, "output_tokens": 1500, "opd_voice_minutes": 6, "ipd_day_voice_minutes": 8, "discharge_voice_minutes": 10}
+  },
+  "storage": {"opd_mb": 2, "ipd_day_mb": 5, "discharge_mb": 10, "retention_months_for_snapshot": 12, "version_multiplier": 1.25, "mb_per_gb": 1000},
+  "cleanup": {"clip_minutes": 1, "input_tokens_per_clip": 500, "output_tokens_per_clip": 250, "model": "gemini_2_5_flash"},
+  "scenarios": [
+    {"name": "25 beds / 50 OPD", "beds": 25, "daily_opd": 50, "staff_mau": 40, "compute_vcpu": 1, "compute_gb": 2, "db_rate": "rds_t4g_medium_single_hour", "db_gb": 50, "multi_az": false, "backup_excess_gb": 20, "nat_count": 1, "nat_gb": 20, "public_ipv4_count": 3, "alb_lcu": 0.25, "frontend_gb": 30, "download_gb": 20, "log_gb": 10, "custom_metrics": 10, "alarms": 5, "waf_requests_million": 0.5, "cross_az_allowance_usd": 5, "security_allowance_usd": 10, "staging_allowance_usd": 100, "ci_allowance_usd": 10, "monthly_support_inr": 10000, "product_allocation_inr": 10000, "admin_allocation_inr": 5000},
+    {"name": "50 beds / 100 OPD", "beds": 50, "daily_opd": 100, "staff_mau": 80, "compute_vcpu": 1.75, "compute_gb": 3.5, "db_rate": "rds_t4g_medium_multi_hour", "db_gb": 100, "multi_az": true, "backup_excess_gb": 30, "nat_count": 2, "nat_gb": 35, "public_ipv4_count": 4, "alb_lcu": 0.5, "frontend_gb": 60, "download_gb": 50, "log_gb": 20, "custom_metrics": 15, "alarms": 8, "waf_requests_million": 1, "cross_az_allowance_usd": 10, "security_allowance_usd": 15, "staging_allowance_usd": 150, "ci_allowance_usd": 15, "monthly_support_inr": 15000, "product_allocation_inr": 15000, "admin_allocation_inr": 5000},
+    {"name": "100 beds / 200 OPD", "beds": 100, "daily_opd": 200, "staff_mau": 160, "compute_vcpu": 3.5, "compute_gb": 7, "db_rate": "rds_m7g_large_multi_hour", "db_gb": 200, "multi_az": true, "backup_excess_gb": 50, "nat_count": 2, "nat_gb": 60, "public_ipv4_count": 4, "alb_lcu": 1, "frontend_gb": 100, "download_gb": 100, "log_gb": 30, "custom_metrics": 20, "alarms": 10, "waf_requests_million": 2, "cross_az_allowance_usd": 20, "security_allowance_usd": 25, "staging_allowance_usd": 200, "ci_allowance_usd": 20, "monthly_support_inr": 25000, "product_allocation_inr": 30000, "admin_allocation_inr": 10000},
+    {"name": "200 beds / 500 OPD", "beds": 200, "daily_opd": 500, "staff_mau": 300, "compute_vcpu": 7, "compute_gb": 14, "db_rate": "rds_m7g_xlarge_multi_hour", "db_gb": 400, "multi_az": true, "backup_excess_gb": 100, "nat_count": 2, "nat_gb": 120, "public_ipv4_count": 4, "alb_lcu": 2, "frontend_gb": 200, "download_gb": 250, "log_gb": 60, "custom_metrics": 30, "alarms": 15, "waf_requests_million": 5, "cross_az_allowance_usd": 40, "security_allowance_usd": 40, "staging_allowance_usd": 300, "ci_allowance_usd": 30, "monthly_support_inr": 45000, "product_allocation_inr": 50000, "admin_allocation_inr": 20000}
+  ],
+  "company_example": {
+    "monthly_budget_inr": {"founder_product": 100000, "two_fullstack_engineers": 250000, "backend_devops_engineer": 150000, "ai_engineer": 150000, "qa": 75000, "support": 50000, "clinical_advisor": 40000},
+    "employment_overhead_fraction": 0.2,
+    "office_tools_legal_admin_monthly_inr": 75000,
+    "initial_build_months": 6,
+    "onboarding_hours": 120,
+    "onboarding_loaded_inr_per_hour": 1500,
+    "onboarding_travel_training_inr": 50000,
+    "external_security_review_allowance_inr": 200000,
+    "external_his_vendor_integration_allowance_inr": 300000
+  }
+}

@@ -8,6 +8,8 @@ New to the repository? Start with the [developer handbook](docs/developer/README
 
 The handbook was checked against the code on 19 October 2026. Some older sections below and older planning documents predate the current AI, voice, insurer portal, and simulator API implementations. Use the handbook for the current implementation and the source files it links for exact behavior.
 
+For commercial planning, see the [AWS, AI, voice and business cost estimate](docs/developer/COST_ESTIMATE.md), with official pricing references, multiple hospital sizes, USD/INR totals and an editable offline calculator.
+
 ## Run locally
 
 Requires Node.js 22.12+ (Node 22 recommended) and npm.

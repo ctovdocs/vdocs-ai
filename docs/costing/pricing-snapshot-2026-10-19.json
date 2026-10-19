@@ -1,0 +1,618 @@
+{
+  "checked": "2026-10-19",
+  "currency": "USD",
+  "region": "ap-south-1",
+  "fx": {
+    "usd_inr": 95.0194,
+    "as_of": "2026-10-16 13:00 IST",
+    "source": "https://www.rbi.org.in/",
+    "source_attribution": "FBIL reference rate displayed by RBI"
+  },
+  "rates": {
+    "fargate_vcpu_hour": {
+      "usd": 0.04256,
+      "unit": "hours",
+      "sku": "KV4FGA39G96M59TH",
+      "description": "AWS Fargate - vCPU  - Asia Pacific (Mumbai)",
+      "usage_type": "APS3-Fargate-vCPU-Hours:perCPU",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:44:25Z",
+      "rate_code": "KV4FGA39G96M59TH.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "fargate_gb_hour": {
+      "usd": 0.004655,
+      "unit": "hours",
+      "sku": "N4Q5MGA6V9TFA2MG",
+      "description": "AWS Fargate - Memory  - Asia Pacific (Mumbai)",
+      "usage_type": "APS3-Fargate-GB-Hours",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:44:25Z",
+      "rate_code": "N4Q5MGA6V9TFA2MG.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "rds_t4g_medium_single_hour": {
+      "usd": 0.084,
+      "unit": "Hrs",
+      "sku": "5PNHUMTVEBKPVQP3",
+      "description": "$ 0.084 per RDS db.t4g.medium Single-AZ instance hour (or partial hour) running PostgreSQL",
+      "usage_type": "APS3-InstanceUsage:db.t4g.medium",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-06T22:40:50Z",
+      "rate_code": "5PNHUMTVEBKPVQP3.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "rds_t4g_medium_multi_hour": {
+      "usd": 0.167,
+      "unit": "Hrs",
+      "sku": "XUYNKK7WVYNCNH6R",
+      "description": "$ 0.167 per RDS db.t4g.medium Multi-AZ instance hour (or partial hour) running PostgreSQL",
+      "usage_type": "APS3-Multi-AZUsage:db.t4g.medium",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-06T22:40:50Z",
+      "rate_code": "XUYNKK7WVYNCNH6R.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "rds_m7g_large_multi_hour": {
+      "usd": 0.479,
+      "unit": "Hrs",
+      "sku": "HFNZW7VBD7GQ6C96",
+      "description": "$ 0.479 per RDS db.m7g.large Multi-AZ instance hour (or partial hour) running PostgreSQL",
+      "usage_type": "APS3-Multi-AZUsage:db.m7g.large",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-06T22:40:50Z",
+      "rate_code": "HFNZW7VBD7GQ6C96.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "rds_m7g_xlarge_multi_hour": {
+      "usd": 0.958,
+      "unit": "Hrs",
+      "sku": "7QRZUKDEY9DA2DWJ",
+      "description": "$ 0.958 per RDS db.m7g.xlarge Multi-AZ instance hour (or partial hour) running PostgreSQL",
+      "usage_type": "APS3-Multi-AZUsage:db.m7g.xl",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-06T22:40:50Z",
+      "rate_code": "7QRZUKDEY9DA2DWJ.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "rds_gp3_single_gb_month": {
+      "usd": 0.131,
+      "unit": "GB-Mo",
+      "sku": "7Z4F2SQPHDHNHDBP",
+      "description": "$0.131 per GB-month of provisioned GP3 storage running PostgreSQL",
+      "usage_type": "APS3-RDS:GP3-Storage",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-06T22:40:50Z",
+      "rate_code": "7Z4F2SQPHDHNHDBP.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "rds_gp3_multi_gb_month": {
+      "usd": 0.262,
+      "unit": "GB-Mo",
+      "sku": "XM7MWF7WAQDJ997K",
+      "description": "$0.262 per GB-month of provisioned GP3 storage for Multi-AZ deployments running PostgreSQL",
+      "usage_type": "APS3-RDS:Multi-AZ-GP3-Storage",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-06T22:40:50Z",
+      "rate_code": "XM7MWF7WAQDJ997K.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "rds_backup_excess_gb_month": {
+      "usd": 0.095,
+      "unit": "GB-Mo",
+      "sku": "VSC6FNMFVC2ECQQ3",
+      "description": "$0.095 per additional GB-month of backup storage exceeding free allocation running PostgreSQL",
+      "usage_type": "APS3-RDS:ChargedBackupUsage",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-06T22:40:50Z",
+      "rate_code": "VSC6FNMFVC2ECQQ3.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "alb_hour": {
+      "usd": 0.0239,
+      "unit": "Hrs",
+      "sku": "WJ2MHASNP2ZNKFXX",
+      "description": "$0.0239 per Application LoadBalancer-hour (or partial hour)",
+      "usage_type": "APS3-LoadBalancerUsage",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:44Z",
+      "rate_code": "WJ2MHASNP2ZNKFXX.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "alb_lcu_hour": {
+      "usd": 0.008,
+      "unit": "LCU-Hrs",
+      "sku": "HFFD75W4GFXQPHZR",
+      "description": "$0.008 per used Application load balancer capacity unit-hour (or partial hour)",
+      "usage_type": "APS3-LCUUsage",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:44Z",
+      "rate_code": "HFFD75W4GFXQPHZR.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "ipv4_hour": {
+      "usd": 0.005,
+      "unit": "Hrs",
+      "sku": "H6SHSM3KDNNZRM9E",
+      "description": "$0.005 per In-use public IPv4 address per hour",
+      "usage_type": "APS3-PublicIPv4:InUseAddress",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonVPC/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-16T22:43:21Z",
+      "rate_code": "H6SHSM3KDNNZRM9E.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "interface_endpoint_az_hour": {
+      "usd": 0.013,
+      "unit": "Hrs",
+      "sku": "RZP4UFE8YBANMG22",
+      "description": "$0.013 per VPC Endpoint Hour",
+      "usage_type": "APS3-VpcEndpoint-Hours",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonVPC/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-16T22:43:21Z",
+      "rate_code": "RZP4UFE8YBANMG22.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "s3_gb_month": {
+      "usd": 0.025,
+      "unit": "GB-Mo",
+      "sku": "USGUTP2JY23N9GH2",
+      "description": "$0.025 per GB - first 50 TB / month of storage used",
+      "usage_type": "APS3-TimedStorage-ByteHrs",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-15T17:35:40Z",
+      "rate_code": "USGUTP2JY23N9GH2.JRTCKXETXF.PGHJ3S3EYE"
+    },
+    "s3_put_request": {
+      "usd": 5e-06,
+      "unit": "Requests",
+      "sku": "UJ844B8DVMQUFJQP",
+      "description": "$0.005 per 1,000 PUT, COPY, POST, or LIST requests",
+      "usage_type": "APS3-Requests-Tier1",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-15T17:35:40Z",
+      "rate_code": "UJ844B8DVMQUFJQP.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "s3_get_request": {
+      "usd": 4e-07,
+      "unit": "Requests",
+      "sku": "SF3QQQMZGA3PPF33",
+      "description": "$0.004 per 10,000 GET and all other requests",
+      "usage_type": "APS3-Requests-Tier2",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-15T17:35:40Z",
+      "rate_code": "SF3QQQMZGA3PPF33.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "log_ingest_gb": {
+      "usd": 0.67,
+      "unit": "GB",
+      "sku": "JBQP6QEETS2BK5DQ",
+      "description": "$0.67 per GB custom log data ingested in Standard log class - Asia Pacific (Mumbai)",
+      "usage_type": "APS3-DataProcessing-Bytes",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-07T11:55:40Z",
+      "rate_code": "JBQP6QEETS2BK5DQ.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "log_storage_gb_month": {
+      "usd": 0.03,
+      "unit": "GB-Mo",
+      "sku": "M9PG5USRE2QBB6FU",
+      "description": "$0.03 per GB-mo of log storage - Asia Pacific (Mumbai)",
+      "usage_type": "APS3-TimedStorage-ByteHrs",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-07T11:55:40Z",
+      "rate_code": "M9PG5USRE2QBB6FU.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "custom_metric_month": {
+      "usd": 0.3,
+      "unit": "Metrics",
+      "sku": "WJAN9NR7AQ8KWB2U",
+      "description": "$0.30 per metric-month for the first 10,000 metrics - Asia Pacific (Mumbai)",
+      "usage_type": "APS3-CW:MetricMonitorUsage",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-07T11:55:40Z",
+      "rate_code": "WJAN9NR7AQ8KWB2U.JRTCKXETXF.A6VD9GXV7W"
+    },
+    "alarm_month": {
+      "usd": 0.1,
+      "unit": "Alarms",
+      "sku": "MBFPHE42AKJWSCZH",
+      "description": "$0.10 per alarm metric month (standard resolution) - Asia Pacific (Mumbai)",
+      "usage_type": "APS3-CW:AlarmMonitorUsage",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-07T11:55:40Z",
+      "rate_code": "MBFPHE42AKJWSCZH.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "amplify_build_minute": {
+      "usd": 0.01,
+      "unit": "minutes",
+      "sku": "7EUDA8H6PUVBCZYN",
+      "description": "USD0.01 per minutes for BuildDuration in Asia Pacific (Mumbai)",
+      "usage_type": "APS3-BuildDuration",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSAmplify/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:22Z",
+      "rate_code": "7EUDA8H6PUVBCZYN.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "amplify_gb_served": {
+      "usd": 0.15,
+      "unit": "GigaBytes",
+      "sku": "MPAB7MJJJR444DXH",
+      "description": "USD0.15 per GigaBytes for DataTransferOut in Asia Pacific (Mumbai)",
+      "usage_type": "APS3-DataTransferOut",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSAmplify/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:22Z",
+      "rate_code": "MPAB7MJJJR444DXH.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "amplify_storage_gb_month": {
+      "usd": 0.023,
+      "unit": "GigaBytes",
+      "sku": "HJDQXC3VHQPK5RFS",
+      "description": "USD0.023 per GigaBytes for DataStorage in Asia Pacific (Mumbai)",
+      "usage_type": "APS3-DataStorage",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSAmplify/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:22Z",
+      "rate_code": "HJDQXC3VHQPK5RFS.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "amplify_waf_app_month": {
+      "usd": 15.0,
+      "unit": "Months",
+      "sku": "GA3579WVRSW9CDSC",
+      "description": "$15.00 per Months for APS3-AmplifyWAF in Asia Pacific (Mumbai)",
+      "usage_type": "APS3-AmplifyWAF",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSAmplify/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:22Z",
+      "rate_code": "GA3579WVRSW9CDSC.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "secret_month": {
+      "usd": 0.4,
+      "unit": "Secrets",
+      "sku": "AET58EC77HZBS8AB",
+      "description": "$0.40 per Secret",
+      "usage_type": "APS3-AWSSecretsManager-Secrets",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSSecretsManager/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:46:10Z",
+      "rate_code": "AET58EC77HZBS8AB.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "secret_request": {
+      "usd": 5e-06,
+      "unit": "API Requests",
+      "sku": "MU5JA4VMFRFD3S2W",
+      "description": "$0.05 per 10000 API Requests",
+      "usage_type": "APS3-AWSSecretsManagerAPIRequest",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSSecretsManager/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:46:10Z",
+      "rate_code": "MU5JA4VMFRFD3S2W.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "kms_key_month": {
+      "usd": 1.0,
+      "unit": "Keys",
+      "sku": "C7JZRTSGCPF9VEGG",
+      "description": "$1 per customer managed KMS key version in Asia Pacific (Mumbai)",
+      "usage_type": "ap-south-1-KMS-Keys",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awskms/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:46:01Z",
+      "rate_code": "C7JZRTSGCPF9VEGG.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "kms_request": {
+      "usd": 3e-06,
+      "unit": "Requests",
+      "sku": "GAG46BCKTJNCPRCD",
+      "description": "$0.03 per 10000 KMS requests in Asia Pacific (Mumbai)",
+      "usage_type": "ap-south-1-KMS-Requests",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awskms/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:46:01Z",
+      "rate_code": "GAG46BCKTJNCPRCD.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "sqs_request": {
+      "usd": 4e-07,
+      "unit": "Requests",
+      "sku": "Y6JJ7JBXQG364CH7",
+      "description": "$0.40 per million Amazon SQS standard requests in Tier1 in Asia Pacific (Mumbai)",
+      "usage_type": "APS3-Requests-Tier1",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:46:07Z",
+      "rate_code": "Y6JJ7JBXQG364CH7.JRTCKXETXF.VXGXCWQKTY"
+    },
+    "ses_email": {
+      "usd": 0.0001,
+      "unit": "Count",
+      "sku": "NFPBUCR79VXFBPC3",
+      "description": "USD1.0E-4 per Count for Recipients:Send in Asia Pacific (Mumbai)",
+      "usage_type": "APS3-Recipients",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonSES/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:07Z",
+      "rate_code": "NFPBUCR79VXFBPC3.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "internet_out_gb": {
+      "usd": 0.1093,
+      "unit": "GB",
+      "sku": "UKQ34C8EAAJUUK8Q",
+      "description": "$0.1093 per GB - first 10 TB / month data transfer out beyond the global free tier",
+      "usage_type": "APS3-DataTransfer-Out-Bytes",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSDataTransfer/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-16T13:22:08Z",
+      "rate_code": "UKQ34C8EAAJUUK8Q.JRTCKXETXF.Q3Z75P77EN"
+    },
+    "regional_transfer_gb": {
+      "usd": 0.01,
+      "unit": "GB",
+      "sku": "RKVEBKR3WT3XFXXW",
+      "description": "$0.010 per GB - regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB",
+      "usage_type": "APS3-DataTransfer-Regional-Bytes",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSDataTransfer/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-16T13:22:08Z",
+      "rate_code": "RKVEBKR3WT3XFXXW.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "waf_acl_month": {
+      "usd": 5.0,
+      "unit": "Month",
+      "sku": "TRJYTKTETA9WUKK7",
+      "description": "$5.00 per web ACL created (prorated hourly)",
+      "usage_type": "APS3-WebACLV2",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awswaf/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-14T16:39:21Z",
+      "rate_code": "TRJYTKTETA9WUKK7.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "waf_rule_month": {
+      "usd": 1.0,
+      "unit": "Month",
+      "sku": "48J4NPVJFBA6562W",
+      "description": "$1.00 per rule created (prorated hourly)",
+      "usage_type": "APS3-RuleV2",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awswaf/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-14T16:39:21Z",
+      "rate_code": "48J4NPVJFBA6562W.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "waf_request": {
+      "usd": 6e-07,
+      "unit": "Request",
+      "sku": "GN9XURKGE95YGPNF",
+      "description": "$0.60 per million requests processed",
+      "usage_type": "APS3-RequestV2-Tier1",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awswaf/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-14T16:39:21Z",
+      "rate_code": "GN9XURKGE95YGPNF.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "cognito_essentials_mau": {
+      "usd": 0.015,
+      "unit": "CognitoUserPoolsMAU",
+      "sku": "SS63SQ6T3Y6ASC3Q",
+      "description": "Cognito Essentials ap-south-1 tier 1 pricing",
+      "usage_type": "APS3-CognitoEssentialsMAU",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCognito/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-25T19:31:08Z",
+      "rate_code": "SS63SQ6T3Y6ASC3Q.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "ecr_gb_month": {
+      "usd": 0.1,
+      "unit": "GB-Mo",
+      "sku": "WRGBK4S2T45GRPMB",
+      "description": "$0.10 per GB-month of data storage",
+      "usage_type": "APS3-TimedStorage-ByteHrs",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECR/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:44:25Z",
+      "rate_code": "WRGBK4S2T45GRPMB.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "ocr_text_page": {
+      "usd": 0.0015,
+      "unit": "Pages",
+      "sku": "M3N36GNG6FRWZS2D",
+      "description": "USD 1.50 per 1,000 Pages for AsyncTextPagesProcessed in Asia Pacific (Mumbai): 0-1M pages tier",
+      "usage_type": "APS3-AsyncTextPagesProcessed",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonTextract/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:13Z",
+      "rate_code": "M3N36GNG6FRWZS2D.JRTCKXETXF.SB2VSFF4TP"
+    },
+    "ocr_forms_page": {
+      "usd": 0.05,
+      "unit": "Pages",
+      "sku": "EY2NJYYJBGEV4GCY",
+      "description": "USD 50.00 per 1,000 Pages for AsyncFormsPagesProcessed in Asia Pacific (Mumbai): 0-1M pages tier",
+      "usage_type": "APS3-AsyncFormsPagesProcessed",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonTextract/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:13Z",
+      "rate_code": "EY2NJYYJBGEV4GCY.JRTCKXETXF.SB2VSFF4TP"
+    },
+    "ocr_tables_page": {
+      "usd": 0.015,
+      "unit": "Pages",
+      "sku": "SUY4UBTFMDNYGGWR",
+      "description": "USD 15.00 per 1,000 Pages for AsyncTablesPagesProcessed in Asia Pacific (Mumbai): 0-1M pages tier",
+      "usage_type": "APS3-AsyncTablesPagesProcessed",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonTextract/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:45:13Z",
+      "rate_code": "SUY4UBTFMDNYGGWR.JRTCKXETXF.SB2VSFF4TP"
+    },
+    "nat_hour": {
+      "usd": 0.056,
+      "unit": "Hrs",
+      "sku": "DJ4GYZ29AWV3WFQX",
+      "description": "$0.056 per NAT Gateway Hour",
+      "usage_type": "APS3-NatGateway-Hours",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/ap-south-1/index.csv",
+      "catalog_publication": "2026-10-15T19:13:16Z",
+      "rate_code": "DJ4GYZ29AWV3WFQX.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "nat_gb": {
+      "usd": 0.056,
+      "unit": "GB",
+      "sku": "U3B5F5D6AU5THP8V",
+      "description": "$0.056 per GB Data Processed by NAT Gateways",
+      "usage_type": "APS3-NatGateway-Bytes",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/ap-south-1/index.csv",
+      "catalog_publication": "2026-10-15T19:13:16Z",
+      "rate_code": "U3B5F5D6AU5THP8V.JRTCKXETXF.6YS6EN2CT7"
+    },
+    "dns_zone_month": {
+      "usd": 0.5,
+      "unit": "zone-month",
+      "source": "https://aws.amazon.com/route53/pricing/",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed"
+    },
+    "dns_query": {
+      "usd": 4e-07,
+      "unit": "query",
+      "source": "https://aws.amazon.com/route53/pricing/",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed"
+    },
+    "dashboard_month": {
+      "usd": 3,
+      "unit": "dashboard-month",
+      "source": "https://aws.amazon.com/cloudwatch/pricing/",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed",
+      "corroborating_source": "https://aws.amazon.com/blogs/containers/implement-centralized-observability-for-multi-account-amazon-eks/"
+    },
+    "assemblyai_sync_hour": {
+      "usd": 0.3,
+      "unit": "audio-hour",
+      "source": "https://www.assemblyai.com/pricing",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed"
+    },
+    "assemblyai_async_hour": {
+      "usd": 0.21,
+      "unit": "audio-hour",
+      "source": "https://www.assemblyai.com/pricing",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed"
+    },
+    "assemblyai_async_keyterms_hour": {
+      "usd": 0.05,
+      "unit": "audio-hour",
+      "source": "https://www.assemblyai.com/pricing",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed"
+    },
+    "assemblyai_stream_hour": {
+      "usd": 0.15,
+      "unit": "connection-hour",
+      "source": "https://www.assemblyai.com/pricing",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed"
+    },
+    "assemblyai_stream_keyterms_hour": {
+      "usd": 0.04,
+      "unit": "connection-hour",
+      "source": "https://www.assemblyai.com/pricing",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed"
+    },
+    "assemblyai_realtime_pro_hour": {
+      "usd": 0.45,
+      "unit": "connection-hour",
+      "source": "https://www.assemblyai.com/pricing",
+      "checked": "2026-10-19",
+      "verification": "official pricing page; manually transcribed"
+    },
+    "aws_transcribe_batch_second": {
+      "usd": 0.0001,
+      "unit": "second",
+      "sku": "GMX2RE7GZJ5RKAYN",
+      "rate_code": "GMX2RE7GZJ5RKAYN.JRTCKXETXF.6YS6EN2CT7",
+      "description": "$0.0001 per second for TranscribeAudio in Asia Pacific (Mumbai)",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/transcribe/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:46:46Z"
+    },
+    "aws_transcribe_stream_second": {
+      "usd": 0.0001667,
+      "unit": "second",
+      "sku": "3HAFX3QTB7CVHV5Y",
+      "rate_code": "3HAFX3QTB7CVHV5Y.JRTCKXETXF.6YS6EN2CT7",
+      "description": "$0.0001667 per second for StreamingAudio in Asia Pacific (Mumbai)",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/transcribe/current/ap-south-1/index.json",
+      "catalog_publication": "2026-09-11T12:46:46Z"
+    },
+    "lambda_gb_second": {
+      "usd": 1.66667e-05,
+      "unit": "Lambda-GB-Second",
+      "sku": "PHDF9YNAFR3HDSR8",
+      "rate_code": "PHDF9YNAFR3HDSR8.JRTCKXETXF.CUKFZ388N3",
+      "description": "AWS Lambda - Total Compute - Asia Pacific (Mumbai)-Tier-1",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-16T18:23:59Z"
+    },
+    "lambda_request": {
+      "usd": 2e-07,
+      "unit": "Request",
+      "sku": "VPGUBFQ4KNZKMKGJ",
+      "rate_code": "VPGUBFQ4KNZKMKGJ.JRTCKXETXF.6YS6EN2CT7",
+      "description": "AWS Lambda - Total Requests - Asia Pacific (Mumbai)",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-16T18:23:59Z"
+    },
+    "http_api_request": {
+      "usd": 1.05e-06,
+      "unit": "Requests",
+      "sku": "S2BWD3VP3K4M5Q9P",
+      "rate_code": "S2BWD3VP3K4M5Q9P.JRTCKXETXF.9NXBCPDZYR",
+      "description": "$1.05/million requests - API Gateway HTTP API (first 300 million)",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonApiGateway/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-13T00:30:44Z"
+    }
+  },
+  "models": {
+    "claude_haiku_5_5": {
+      "name": "Claude Haiku 5.5",
+      "input": 0.1,
+      "output": 0.5,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "note": "Prompts <=100k tokens; higher tier is $0.50/$2.50 above 100k."
+    },
+    "claude_haiku_4_5": {
+      "name": "Claude Haiku 4.5",
+      "input": 1,
+      "output": 5,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "claude_sonnet_5_5": {
+      "name": "Claude Sonnet 5.5",
+      "input": 2,
+      "output": 10,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "claude_sonnet_4_6": {
+      "name": "Claude Sonnet 4.6",
+      "input": 3,
+      "output": 15,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "claude_opus_5_5": {
+      "name": "Claude Opus 5.5",
+      "input": 4,
+      "output": 20,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "gemini_2_5_flash": {
+      "name": "Gemini 2.5 Flash",
+      "input": 0.3,
+      "output": 2.5,
+      "source": "https://ai.google.dev/gemini-api/docs/pricing",
+      "note": "Text standard paid tier; output includes thinking tokens."
+    },
+    "gemini_2_5_flash_lite": {
+      "name": "Gemini 2.5 Flash-Lite",
+      "input": 0.1,
+      "output": 0.4,
+      "source": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    "bedrock_sonnet_5_5_global": {
+      "name": "Bedrock Sonnet 5.5 global",
+      "input": 2.0,
+      "output": 10.0,
+      "input_sku": "U6JMPEESMNY5G7D7",
+      "output_sku": "9BQ5ARJPW5RK7H5T",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrockFoundationModels/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-12T08:40:08Z",
+      "note": "Pricing SKU in Mumbai billing catalog does not prove inference stays in India; verify model/profile routing."
+    },
+    "bedrock_sonnet_5_regional": {
+      "name": "Bedrock Sonnet 5 standard regional SKU",
+      "input": 2.2,
+      "output": 11.0,
+      "input_sku": "XNRPHRUCHMKD6N8X",
+      "output_sku": "MZQ2H986VSRYPDYS",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrockFoundationModels/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-12T08:40:08Z",
+      "note": "Pricing SKU in Mumbai billing catalog does not prove inference stays in India; verify model/profile routing."
+    },
+    "bedrock_haiku_4_5_regional": {
+      "name": "Bedrock Haiku 4.5 standard regional SKU",
+      "input": 1.1,
+      "output": 5.5,
+      "input_sku": "R2H73U3JDWK2D8SK",
+      "output_sku": "527D94ZUEQEAD6Q8",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrockFoundationModels/current/ap-south-1/index.json",
+      "catalog_publication": "2026-10-12T08:40:08Z",
+      "note": "Pricing SKU in Mumbai billing catalog does not prove inference stays in India; verify model/profile routing."
+    }
+  }
+}
