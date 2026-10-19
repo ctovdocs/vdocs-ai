@@ -2,6 +2,8 @@
 
 This is the starting point for a developer joining VDocs. Read it to understand what runs today, where a change belongs, and what still needs to be built for a production product on AWS.
 
+Prefer a single formal report? Read the [26-page architecture PDF](../architecture/VDocs_Architecture.pdf) or its [editable source](../architecture/VDocs_Architecture.md).
+
 **Reviewed:** 19 October 2026, against the local source based on commit `cb2c985`. This is a code review of the repository, not verification of the deployed Vercel application, database policies, external providers, or AWS infrastructure.
 
 ## Read in this order
