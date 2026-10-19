@@ -10,6 +10,8 @@ The handbook was checked against the code on 19 October 2026. Some older section
 
 For commercial planning, see the [AWS, AI, voice and business cost estimate](docs/developer/COST_ESTIMATE.md), with official pricing references, multiple hospital sizes, USD/INR totals and an editable offline calculator.
 
+For the leanest shared pilot, see the [simple minimum-cost estimate for up to five hospitals](docs/developer/MINIMUM_SHARED_COST.md).
+
 ## Run locally
 
 Requires Node.js 22.12+ (Node 22 recommended) and npm.

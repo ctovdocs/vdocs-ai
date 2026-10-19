@@ -23,6 +23,7 @@ This is the starting point for a developer joining VDocs. Read it to understand 
 | [13. Production roadmap](PRODUCTION_ROADMAP.md) | The gaps, service boundaries, API contracts, migration sequence, and release gates |
 | [14. AWS deployment](AWS_DEPLOYMENT.md) | The proposed AWS layout and how to build, deploy, observe, and recover it |
 | [15. Deployment and business costs](COST_ESTIMATE.md) | Researched AWS/model/voice prices, hospital-size scenarios, USD/INR budgets, pricing and fundraising inputs |
+| [16. Minimum shared cost](MINIMUM_SHARED_COST.md) | Simple low-cost setup for three to five hospitals sharing one server, database and frontend |
 
 For the first hour, read guides 1–4, run the app, and follow one patient through an order, a referral, and a discharge. Then read the flow you will work on. Read guides 13–14 before changing deployment or persistence.
 
