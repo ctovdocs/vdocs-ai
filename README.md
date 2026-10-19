@@ -2,6 +2,12 @@
 
 Patient-centric clinical workflow foundation using synthetic data. This is an independent internal demo, not an official Fortis product or a live hospital integration.
 
+## Developer handbook
+
+New to the repository? Start with the [developer handbook](docs/developer/README.md). It explains the current architecture, folders, important files, persistence, and each workflow separately, with diagrams. The [production roadmap](docs/developer/PRODUCTION_ROADMAP.md) and [AWS deployment guide](docs/developer/AWS_DEPLOYMENT.md) describe future work; they are not implemented infrastructure.
+
+The handbook was checked against the code on 19 October 2026. Some older sections below and older planning documents predate the current AI, voice, insurer portal, and simulator API implementations. Use the handbook for the current implementation and the source files it links for exact behavior.
+
 ## Run locally
 
 Requires Node.js 22.12+ (Node 22 recommended) and npm.
