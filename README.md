@@ -1,6 +1,6 @@
-# VDoc · Fortis Workflow Demo
+# VDoc · Hospital Workflow Demo
 
-Patient-centric clinical workflow foundation using synthetic data. This is an independent internal demo, not an official Fortis product or a live hospital integration.
+Patient-centric clinical workflow foundation using synthetic data. This is an independent internal demo, not an official hospital product or a live hospital integration.
 
 ## Developer handbook
 
